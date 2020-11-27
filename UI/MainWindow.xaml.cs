@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Infrastructure;
+using Logic;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PackagesOfFuture.UI
 {
@@ -20,9 +23,14 @@ namespace PackagesOfFuture.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UnitOfWork unitOfWork { get; }
+
         public MainWindow()
         {
             InitializeComponent();
+            Startup.ConfigureServices();
+            var serviceProvider = Startup.GetServiceProviderInstance();
+            unitOfWork = serviceProvider.GetService<UnitOfWork>();
         }
     }
 }
