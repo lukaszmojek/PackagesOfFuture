@@ -2,9 +2,8 @@
 
 namespace Persistance.Entities
 {
-    public class Client
+    public class Client : Entity
     {
-        public int ClientId { get; set; }        
         public string UserName { get; set; }        
         public string FirstName { get; set; }        
         public string LastName { get; set; }

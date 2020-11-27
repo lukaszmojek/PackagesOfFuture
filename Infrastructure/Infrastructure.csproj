@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Persistance\Persistance.csproj" />
+    <ProjectReference Include="..\Persistance\Data.csproj" />
   </ItemGroup>
 
 </Project>
