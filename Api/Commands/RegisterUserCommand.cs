@@ -1,0 +1,13 @@
+﻿using MediatR;
+
+namespace WebApplication.Commands
+{
+    public class RegisterUserCommand : IRequest<RegisterUserResponse>
+    {
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public int Type { get; set; }
+    }
+}
