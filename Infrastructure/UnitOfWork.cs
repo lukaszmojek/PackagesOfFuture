@@ -1,17 +1,21 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Persistance.Entities;
 
 namespace Infrastructure
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-        public IRepository<Client> ClientRepository;
-        public IRepository<Address> AddressRepository;
-
-        public UnitOfWork(IRepository<Client> clientRepository, IRepository<Address> addressRepository)
+        private readonly DbContext _dbContext;
+        
+        public UnitOfWork(IRepository<User> clientRepository, IRepository<Address> addressRepository, DbContext dbContext)
         {
-            ClientRepository = clientRepository ?? throw new ArgumentNullException(nameof(clientRepository));
-            AddressRepository = addressRepository ?? throw new ArgumentNullException(nameof(addressRepository));
+            _dbContext = dbContext;
+        }
+
+        public void SaveChanges()
+        {
+            _dbContext.SaveChanges();
         }
     }
 }

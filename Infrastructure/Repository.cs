@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Persistance;
 
@@ -6,18 +7,42 @@ namespace Infrastructure.Repositories
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        private DbSet<T> dbSet { get; }
+        private readonly DbContext _dbContext;
+        private readonly DbSet<T> _dbSet;
 
         public Repository(DbContext context)
         {
-            this.dbSet = context.Set<T>();
+            _dbContext = context;
+            _dbSet = context.Set<T>();
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return await this.dbSet
+            return await this._dbSet
                 .FindAsync(id)
                 .ConfigureAwait(false);
+        }
+
+        public async Task<IReadOnlyCollection<T>> GetAsync()
+        {
+            return await this._dbSet
+                .ToListAsync()
+                .ConfigureAwait(false);
+        }
+
+        public async Task AddAsync(T resource)
+        {
+            await _dbSet.AddAsync(resource);
+        }
+
+        public async Task AddRangeAsync(IReadOnlyCollection<T> collection)
+        {
+            await _dbSet.AddRangeAsync(collection);
+        }
+
+        public async Task SaveChanges()
+        {
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

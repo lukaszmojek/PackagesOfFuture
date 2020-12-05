@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Lukasz\.nuget\packages\microsoft.net.test.sdk\16.7.1\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Lukasz\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Lukasz\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Lukasz\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Lukasz\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\Lukasz\.nuget\packages\xunit.runner.visualstudio\2.4.3\build\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\Lukasz\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Lukasz\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_PackagesOfFuture.-817860040.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture" t="IncludeFlat">
+      <e p="Api" t="IncludeRecursive">
+        <e p="Api.csproj" t="IncludeRecursive" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Commands" t="Include">
+          <e p="RegisterUser.cs" t="Include" />
+          <e p="Seed.cs" t="Include" />
+        </e>
+        <e p="Contracts" t="Include">
+          <e p="PackageDto.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="PackagesController.cs" t="Include" />
+          <e p="SeedController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
+        </e>
+        <e p="Handlers" t="Include">
+          <e p="GetPackagesHandler.cs" t="Include" />
+          <e p="RegisterUserHandler.cs" t="Include" />
+          <e p="SeedHandler.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Profiles" t="Include">
+          <e p="PackageMapping.cs" t="Include" />
+          <e p="UserProfile.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Queries" t="Include">
+          <e p="GetPackages.cs" t="Include" />
+        </e>
+        <e p="Responses" t="Include">
+          <e p="SeedResponse.cs" t="Include" />
+        </e>
+        <e p="ServiceCollectionExtensions.cs" t="Include" />
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="Api.Tests" t="IncludeRecursive">
+        <e p="Api.Tests.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Api.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Infrastructure" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IRepository.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Infrastructure.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repository.cs" t="Include" />
+        <e p="UnitOfWork.cs" t="Include" />
+      </e>
+      <e p="Infrastructure.Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Infrastructure.Tests.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Infrastructure.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Logic" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientManager.cs" t="Include" />
+        <e p="Logic.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Logic.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Logic.Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Logic.Tests.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Logic.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PackagesOfFuture.sln" t="IncludeFlat" />
+      <e p="Persistance" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Entities" t="Include">
+          <e p="Address.cs" t="Include" />
+          <e p="Drone.cs" t="Include" />
+          <e p="Package.cs" t="Include" />
+          <e p="Payment.cs" t="Include" />
+          <e p="Service.cs" t="Include" />
+          <e p="Sorting.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+          <e p="Vehicle.cs" t="Include" />
+        </e>
+        <e p="Entity.cs" t="Include" />
+        <e p="Enums" t="Include">
+          <e p="PackageStatus.cs" t="Include" />
+          <e p="PaymentStatus.cs" t="Include" />
+          <e p="PaymentType.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20201125215232_InitialCreate.cs" t="Include" />
+          <e p="20201125215232_InitialCreate.Designer.cs" t="Include" />
+          <e p="20201126124128_IdPropertyRename.cs" t="Include" />
+          <e p="20201126124128_IdPropertyRename.Designer.cs" t="Include" />
+          <e p="20201205095400_Package_added.cs" t="Include" />
+          <e p="20201205095400_Package_added.Designer.cs" t="Include" />
+          <e p="20201205113301_Full database concept.cs" t="Include" />
+          <e p="20201205113301_Full database concept.Designer.cs" t="Include" />
+          <e p="PackagesOfFutureDbContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Persistance.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PackagesOfFutureDbContext.cs" t="Include" />
+        <e p="Persistance.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="UI" t="IncludeRecursive">
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0-windows" t="Include">
+              <e p="App.g.cs" t="Include" />
+              <e p="MainWindow.g.cs" t="Include" />
+              <e p="UI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UI.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
