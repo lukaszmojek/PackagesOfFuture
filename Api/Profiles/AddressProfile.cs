@@ -8,6 +8,9 @@ namespace WebApplication.Profiles
     {
         public AddressProfile()
         {
+            CreateMap<AddAddressDto, AddAddressCommand>();
+            CreateMap<AddAddressCommand, Address>();
+            
             CreateMap<Address, AddressDto>();
         }
     }

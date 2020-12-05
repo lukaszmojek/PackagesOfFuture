@@ -10,8 +10,8 @@ using Persistance;
 namespace Data.Migrations
 {
     [DbContext(typeof(PackagesOfFutureDbContext))]
-    [Migration("20201205180814_Initial")]
-    partial class Initial
+    [Migration("20201205213024_User-Address relation change p1")]
+    partial class UserAddressrelationchangep1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,9 @@ namespace Data.Migrations
             modelBuilder.Entity("Persistance.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
@@ -38,7 +40,12 @@ namespace Data.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Addresses");
                 });
@@ -223,13 +230,9 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Persistance.Entities.Address", b =>
                 {
-                    b.HasOne("Persistance.Entities.User", "User")
-                        .WithOne("Address")
-                        .HasForeignKey("Persistance.Entities.Address", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                    b.HasOne("Persistance.Entities.User", null)
+                        .WithMany("Addresses")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Persistance.Entities.Drone", b =>
@@ -317,7 +320,7 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Persistance.Entities.User", b =>
                 {
-                    b.Navigation("Address");
+                    b.Navigation("Addresses");
                 });
 #pragma warning restore 612, 618
         }

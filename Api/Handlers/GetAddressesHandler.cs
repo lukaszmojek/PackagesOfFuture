@@ -8,7 +8,7 @@ using Persistance.Entities;
 
 namespace WebApplication.Controllers
 {
-    public class GetAddressesHandler : IRequestHandler<GetAddresses, ICollection<AddressDto>>
+    public class GetAddressesHandler : IRequestHandler<GetAddressesQuery, ICollection<AddressDto>>
     {
         private readonly IRepository<Address> _repository;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace WebApplication.Controllers
             _mapper = mapper;
         }
 
-        public async Task<ICollection<AddressDto>> Handle(GetAddresses request, CancellationToken cancellationToken)
+        public async Task<ICollection<AddressDto>> Handle(GetAddressesQuery request, CancellationToken cancellationToken)
         {
             return _mapper.Map<ICollection<AddressDto>>(await _repository.GetAsync());
         }

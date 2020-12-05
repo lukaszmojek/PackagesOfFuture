@@ -18,12 +18,14 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
+          <e p="AddAddressCommand.cs" t="Include" />
           <e p="ChangeUserDetailsCommand.cs" t="Include" />
           <e p="RegisterUserCommand.cs" t="Include" />
           <e p="SeedCommand.cs" t="Include" />
           <e p="UnregisterUserCommand.cs" t="Include" />
         </e>
         <e p="Contracts" t="Include">
+          <e p="AddAddressDto.cs" t="Include" />
           <e p="AddressDto.cs" t="Include" />
           <e p="ChangeUserDetailsDto.cs" t="Include" />
           <e p="PackageDto.cs" t="Include" />
@@ -31,6 +33,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="AddressesController.cs" t="Include" />
+          <e p="DronesController.cs" t="Include" />
           <e p="PackagesController.cs" t="Include" />
           <e p="SeedController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
@@ -39,6 +42,7 @@
           <e p="ResponseFactory.cs" t="Include" />
         </e>
         <e p="Handlers" t="Include">
+          <e p="AddAddressHandler.cs" t="Include" />
           <e p="ChangeUserDetailsHandler.cs" t="Include" />
           <e p="GetAddressesHandler.cs" t="Include" />
           <e p="GetPackagesHandler.cs" t="Include" />
@@ -55,7 +59,8 @@
         </e>
         <e p="Profiles" t="Include">
           <e p="AddressProfile.cs" t="Include" />
-          <e p="PackageMapping.cs" t="Include" />
+          <e p="DroneProfile.cs" t="Include" />
+          <e p="PackageProfile.cs" t="Include" />
           <e p="UserProfile.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
@@ -67,6 +72,7 @@
           <e p="GetPackages.cs" t="Include" />
         </e>
         <e p="Responses" t="Include">
+          <e p="AddAddressResponse.cs" t="Include" />
           <e p="ChangeUserDetailsResponse.cs" t="Include" />
           <e p="RegisterUserResponse.cs" t="Include" />
           <e p="Response.cs" t="Include" />
@@ -159,8 +165,10 @@
           <e p="PaymentType.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20201205180814_Initial.cs" t="Include" />
-          <e p="20201205180814_Initial.Designer.cs" t="Include" />
+          <e p="20201205205456_Initial.cs" t="Include" />
+          <e p="20201205205456_Initial.Designer.cs" t="Include" />
+          <e p="20201205213024_User-Address relation change p1.cs" t="Include" />
+          <e p="20201205213024_User-Address relation change p1.Designer.cs" t="Include" />
           <e p="PackagesOfFutureDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

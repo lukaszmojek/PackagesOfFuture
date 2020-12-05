@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Queries;
 
 namespace WebApplication.Controllers
 {
@@ -24,8 +22,16 @@ namespace WebApplication.Controllers
         [HttpGet("")]
         public async Task<ActionResult<ICollection<AddressDto>>> GetAddresses()
         {
-            var result = await _mediator.Send(new GetAddresses());
+            var result = await _mediator.Send(new GetAddressesQuery());
             return result.Any() ? (ActionResult<ICollection<AddressDto>>) Ok(result) : NotFound();
+        }
+        
+        [HttpPost("")]
+        public async Task<IActionResult> AddAddress([FromBody] AddAddressDto addAddressDto)
+        {
+            var command = _mapper.Map<AddAddressCommand>(addAddressDto);
+            var result = await _mediator.Send(command);
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
         }
     }
 }

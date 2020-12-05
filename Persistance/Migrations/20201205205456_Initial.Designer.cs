@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(PackagesOfFutureDbContext))]
-    partial class PackagesOfFutureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201205205456_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,14 @@ namespace Data.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Addresses");
                 });
@@ -231,6 +238,12 @@ namespace Data.Migrations
                     b.HasOne("Persistance.Entities.User", null)
                         .WithMany("Addresses")
                         .HasForeignKey("UserId");
+
+                    b.HasOne("Persistance.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Persistance.Entities.Drone", b =>
