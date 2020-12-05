@@ -22,14 +22,17 @@
           <e p="Seed.cs" t="Include" />
         </e>
         <e p="Contracts" t="Include">
+          <e p="AddressDto.cs" t="Include" />
           <e p="PackageDto.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="AddressesController.cs" t="Include" />
           <e p="PackagesController.cs" t="Include" />
           <e p="SeedController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
         </e>
         <e p="Handlers" t="Include">
+          <e p="GetAddressesHandler.cs" t="Include" />
           <e p="GetPackagesHandler.cs" t="Include" />
           <e p="RegisterUserHandler.cs" t="Include" />
           <e p="SeedHandler.cs" t="Include" />
@@ -42,6 +45,7 @@
           </e>
         </e>
         <e p="Profiles" t="Include">
+          <e p="AddressProfile.cs" t="Include" />
           <e p="PackageMapping.cs" t="Include" />
           <e p="UserProfile.cs" t="Include" />
         </e>
@@ -50,9 +54,11 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Queries" t="Include">
+          <e p="GetAddresses.cs" t="Include" />
           <e p="GetPackages.cs" t="Include" />
         </e>
         <e p="Responses" t="Include">
+          <e p="RegisterUserResponse.cs" t="Include" />
           <e p="SeedResponse.cs" t="Include" />
         </e>
         <e p="ServiceCollectionExtensions.cs" t="Include" />
@@ -141,14 +147,10 @@
           <e p="PaymentType.cs" t="Include" />
         </e>
         <e p="Migrations" t="Include">
-          <e p="20201125215232_InitialCreate.cs" t="Include" />
-          <e p="20201125215232_InitialCreate.Designer.cs" t="Include" />
-          <e p="20201126124128_IdPropertyRename.cs" t="Include" />
-          <e p="20201126124128_IdPropertyRename.Designer.cs" t="Include" />
-          <e p="20201205095400_Package_added.cs" t="Include" />
-          <e p="20201205095400_Package_added.Designer.cs" t="Include" />
-          <e p="20201205113301_Full database concept.cs" t="Include" />
-          <e p="20201205113301_Full database concept.Designer.cs" t="Include" />
+          <e p="20201205165637_Initial.cs" t="Include" />
+          <e p="20201205165637_Initial.Designer.cs" t="Include" />
+          <e p="20201205170124_Initial 2.cs" t="Include" />
+          <e p="20201205170124_Initial 2.Designer.cs" t="Include" />
           <e p="PackagesOfFutureDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

@@ -24,12 +24,26 @@ namespace WebApplication.Handlers
 
         public async Task<SeedResponse> Handle(Seed request, CancellationToken cancellationToken)
         {
-            var packages = new List<Package>()
+            var deliveryAddress = new Address(){City = "Dupowo", HouseAndFlatNumber = "12/3", Street = "Osla laka"};
+            var receiveAddress = new Address(){City = "Chujowo", HouseAndFlatNumber = "69", Street = "Rowek"};
+            var payment = new Payment(){};
+            
+            var package = new Package()
             {
-                new Package() { DeliveryDate = DateTime.Now, Status = PackageStatus.Delivered, Width = 12, Height = 12, Length = 12, Weight = 30}
+                Id = 10,
+                DeliveryDate = DateTime.Now,
+                Status = PackageStatus.Delivered,
+                Width = 12,
+                Height = 12,
+                Length = 12,
+                Weight = 30,
+                DeliveryAddress = deliveryAddress,
+                ReceiveAddress = receiveAddress,
+                Payment = payment
             };
-
-            await _repository.AddRangeAsync(packages);
+            
+            
+            await _repository.AddAsync(package);
             _unitOfWork.SaveChanges();
 
             return new SeedResponse() {Succeded = true};

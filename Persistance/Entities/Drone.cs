@@ -4,5 +4,7 @@
     {
         public string Model { get; set; }
         public int Range { get; set; }
+        
+        public virtual Sorting Sorting { get; set; }
     }
 }

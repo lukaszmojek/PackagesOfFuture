@@ -8,7 +8,7 @@ namespace Persistance
     public class PackagesOfFutureDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Address> Adresses { get; set; }
+        public DbSet<Address> Addresses { get; set; }
         public DbSet<Package> Packages { get; set; }
         public DbSet<Sorting> Sortings { get; set; }
         public DbSet<Drone> Drones { get; set; }
@@ -37,7 +37,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
 
@@ -45,7 +45,21 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
+            
+            builder.HasOne(o => o.User)
+                .WithOne(o => o.Address)
+                .HasForeignKey<User>(a => a.Id);
+
+            builder.HasMany(a => a.PackagesDelivered)
+                .WithOne()
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(a => a.DeliveryAddressId);
+            
+            builder.HasMany(a => a.PackagesReceived)
+                .WithOne()
+                .OnDelete(DeleteBehavior.NoAction)
+                .HasForeignKey(a => a.ReceiveAddressId);
         }
     }
     
@@ -53,7 +67,17 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Package> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
+            
+            builder.HasOne(o => o.Payment)
+                .WithOne(p => p.Package)
+                .HasForeignKey<Package>(x => x.Id);
+
+            builder.HasOne(p => p.DeliveryAddress)
+                .WithMany(a => a.PackagesDelivered);
+
+            builder.HasOne(p => p.ReceiveAddress)
+                .WithMany(a => a.PackagesReceived);
         }
     }
     
@@ -61,7 +85,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Sorting> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
     
@@ -69,7 +93,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Drone> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
     
@@ -77,7 +101,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Vehicle> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
     
@@ -85,7 +109,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Service> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
     
@@ -93,7 +117,7 @@ namespace Persistance
     {
         public void Configure(EntityTypeBuilder<Payment> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder.HasKey(d => d.Id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 
 namespace Persistance.Entities
 {
@@ -9,8 +9,7 @@ namespace Persistance.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Type { get; set; }
-
-        public int? AdressId { get; set; }
-        public virtual Address Adress { get; set; }
+        
+        public virtual Address Address { get; set; }
     }
 }
