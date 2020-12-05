@@ -8,7 +8,7 @@ using WebApplication.Commands;
 
 namespace WebApplication.Handlers
 {
-    public class RegisterUserHandler : IRequestHandler<RegisterUser, RegisterUserResponse>
+    public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, RegisterUserResponse>
     {
         private readonly IRepository<User> _repository;
         private readonly IMapper _mapper;
@@ -19,12 +19,14 @@ namespace WebApplication.Handlers
             _mapper = mapper;
         }
         
-        public async Task<RegisterUserResponse> Handle(RegisterUser request, CancellationToken cancellationToken)
+        public async Task<RegisterUserResponse> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
             var user = _mapper.Map<User>(request);
-            await _repository.AddAsync(user);
             
-            return new RegisterUserResponse() {Succeded = true};
+            await _repository.AddAsync(user);
+            await _repository.SaveChangesAsync();
+            
+            return new RegisterUserResponse() {Succeeded = true};
         }
     }
 }

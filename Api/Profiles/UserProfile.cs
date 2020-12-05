@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Persistance.Entities;
 using WebApplication.Commands;
+using WebApplication.Controllers;
 
 namespace WebApplication.Profiles
 {
@@ -8,17 +9,11 @@ namespace WebApplication.Profiles
     {
         public UserProfile()
         {
-            CreateMap<RegisterUserDto, RegisterUser>();
-            CreateMap<RegisterUser, User>();
-        }
-    }
+            CreateMap<RegisterUserDto, RegisterUserCommand>();
+            CreateMap<RegisterUserCommand, User>();
 
-    public class RegisterUserDto
-    {
-        public string UserName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Type { get; set; }
+            CreateMap<ChangeUserDetailsDto, ChangeUserDetailsCommand>();
+            CreateMap<ChangeUserDetailsCommand, User>();
+        }
     }
 }

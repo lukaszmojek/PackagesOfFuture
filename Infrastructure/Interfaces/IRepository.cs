@@ -13,6 +13,8 @@ namespace Infrastructure
         
         public Task AddRangeAsync(IReadOnlyCollection<T> collection);
 
-        public Task SaveChanges();
+        public void DeleteAsync(T resource);
+
+        public Task SaveChangesAsync();
     }
 }

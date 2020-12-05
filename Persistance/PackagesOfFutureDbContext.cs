@@ -38,6 +38,10 @@ namespace Persistance
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(d => d.Id);
+            
+            builder.HasOne(o => o.Address)
+                .WithOne(o => o.User)
+                .HasForeignKey<Address>(a => a.Id);
         }
     }
 
@@ -46,10 +50,6 @@ namespace Persistance
         public void Configure(EntityTypeBuilder<Address> builder)
         {
             builder.HasKey(d => d.Id);
-            
-            builder.HasOne(o => o.User)
-                .WithOne(o => o.Address)
-                .HasForeignKey<User>(a => a.Id);
 
             builder.HasMany(a => a.PackagesDelivered)
                 .WithOne()

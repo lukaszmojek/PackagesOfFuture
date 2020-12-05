@@ -1,7 +1,8 @@
-﻿namespace WebApplication.Commands
+﻿using WebApplication.Responses;
+
+namespace WebApplication.Commands
 {
-    public class RegisterUserResponse
+    public class RegisterUserResponse : Response
     {
-        public bool Succeded { get; set; }
     }
 }

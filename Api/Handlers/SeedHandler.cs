@@ -11,7 +11,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class SeedHandler : IRequestHandler<Seed, SeedResponse>
+    public class SeedHandler : IRequestHandler<SeedCommand, SeedResponse>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<Package> _repository;
@@ -22,7 +22,7 @@ namespace WebApplication.Handlers
             _repository = repository;
         }
 
-        public async Task<SeedResponse> Handle(Seed request, CancellationToken cancellationToken)
+        public async Task<SeedResponse> Handle(SeedCommand request, CancellationToken cancellationToken)
         {
             var deliveryAddress = new Address(){City = "Dupowo", HouseAndFlatNumber = "12/3", Street = "Osla laka"};
             var receiveAddress = new Address(){City = "Chujowo", HouseAndFlatNumber = "69", Street = "Rowek"};
@@ -46,7 +46,7 @@ namespace WebApplication.Handlers
             await _repository.AddAsync(package);
             _unitOfWork.SaveChanges();
 
-            return new SeedResponse() {Succeded = true};
+            return new SeedResponse() {Succeeded = true};
         }
     }
 }

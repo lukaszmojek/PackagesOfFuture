@@ -24,8 +24,8 @@ namespace WebApplication.Controllers
         [HttpPost("")]
         public async Task<IActionResult> Seed()
         {
-            var result = await _mediator.Send(new Seed());
-            return result.Succeded ? (IActionResult) Ok() : BadRequest();
+            var result = await _mediator.Send(new SeedCommand());
+            return result.Succeeded ? (IActionResult) Ok() : BadRequest();
         }
     }
 }

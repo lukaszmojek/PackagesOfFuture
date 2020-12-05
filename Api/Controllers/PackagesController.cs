@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
@@ -24,7 +25,7 @@ namespace WebApplication.Controllers
         public async Task<ActionResult<ICollection<PackageDto>>> GetPackages()
         {
             var result = await _mediator.Send(new GetPackages());
-            return result != null ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
+            return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
     }
 }

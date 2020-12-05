@@ -39,8 +39,13 @@ namespace Infrastructure.Repositories
         {
             await _dbSet.AddRangeAsync(collection);
         }
+        
+        public void DeleteAsync(T resource)
+        {
+            _dbSet.Remove(resource);
+        }
 
-        public async Task SaveChanges()
+        public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
         }

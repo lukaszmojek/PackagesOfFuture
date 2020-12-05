@@ -1,7 +1,6 @@
 ﻿namespace WebApplication.Responses
 {
-    public class SeedResponse
+    public class SeedResponse : Response
     {
-        public bool Succeded { get; set; } = false;
     }
 }

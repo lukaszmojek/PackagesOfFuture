@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Commands;
 using WebApplication.Profiles;
-using WebApplication.Queries;
 
 namespace WebApplication.Controllers
 {
@@ -25,9 +22,27 @@ namespace WebApplication.Controllers
         [HttpPost("")]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUserDto registerUserDto)
         {
-            var command = _mapper.Map<Commands.RegisterUser>(registerUserDto);
+            var command = _mapper.Map<RegisterUserCommand>(registerUserDto);
             var result = await _mediator.Send(command);
-            return result.Succeded ? (IActionResult) Ok() : BadRequest();
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+        }
+        
+        [HttpPost("{id}/changeDetails")]
+        public async Task<IActionResult> ChangeUserDetails(
+            [FromRoute] int id,
+            [FromBody] ChangeUserDetailsDto changeUserDetailsDto)
+        {
+            var command = _mapper.Map<ChangeUserDetailsCommand>(changeUserDetailsDto);
+            var result = await _mediator.Send(command);
+            return result.Succeeded ? (IActionResult) NoContent() : NotFound();
+        }
+        
+        [HttpDelete("{id}/unregister")]
+        public async Task<IActionResult> UnregisterUser(
+            [FromRoute] int id)
+        {
+            var result = await _mediator.Send(new UnregisterUserCommand(){ UserId = id });
+            return result.Succeeded ? (IActionResult) NoContent() : NotFound();
         }
     }
 }
