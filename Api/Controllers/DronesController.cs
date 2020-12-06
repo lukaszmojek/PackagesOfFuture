@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Contracts;
 using WebApplication.Queries;
 
 namespace WebApplication.Controllers
@@ -34,6 +34,16 @@ namespace WebApplication.Controllers
             var command = _mapper.Map<RegisterDroneCommand>(registerDroneDto);
             var result = await _mediator.Send(command);
             return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+        }
+        
+        [HttpPost("{droneId}/moveToSorting")]
+        public async Task<IActionResult> MoveDroneToSorting(
+            [FromRoute] int droneId,
+            [FromBody] MoveDroneToSortingDto moveDroneDroneToSortingDto)
+        {
+            var command = _mapper.Map<MoveDroneToSortingCommand>(moveDroneDroneToSortingDto);
+            var result = await _mediator.Send(command);
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
         }
     }
 }

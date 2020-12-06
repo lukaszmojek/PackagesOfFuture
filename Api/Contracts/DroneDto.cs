@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Controllers
+﻿namespace WebApplication.Contracts
 {
     public class DroneDto
     {

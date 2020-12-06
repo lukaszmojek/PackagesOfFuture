@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Persistance.Entities;
+using WebApplication.Contracts;
 using WebApplication.Controllers;
 
 namespace WebApplication.Profiles
@@ -10,6 +11,8 @@ namespace WebApplication.Profiles
         {
             CreateMap<RegisterDroneDto, RegisterDroneCommand>();
             CreateMap<RegisterDroneCommand, Drone>();
+
+            CreateMap<MoveDroneToSortingDto, MoveDroneToSortingCommand>();
             
             CreateMap<Drone, DroneDto>();
         }
