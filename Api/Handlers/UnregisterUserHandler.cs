@@ -3,9 +3,11 @@ using System.Threading.Tasks;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
+using WebApplication.Controllers;
 using WebApplication.Factories;
+using WebApplication.Responses;
 
-namespace WebApplication.Controllers
+namespace WebApplication.Handlers
 {
     public class UnregisterUserHandler : IRequestHandler<UnregisterUserCommand, UnregisterUserResponse>
     {

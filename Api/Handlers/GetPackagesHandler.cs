@@ -7,6 +7,7 @@ using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Entities;
+using WebApplication.Contracts;
 using WebApplication.Queries;
 
 namespace WebApplication.Handlers

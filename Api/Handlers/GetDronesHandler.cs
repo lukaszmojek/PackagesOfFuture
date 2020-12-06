@@ -5,8 +5,11 @@ using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
+using WebApplication.Contracts;
+using WebApplication.Controllers;
+using WebApplication.Queries;
 
-namespace WebApplication.Controllers
+namespace WebApplication.Handlers
 {
     public class GetDronesHandler : IRequestHandler<GetDronesQuery, ICollection<DroneDto>>
     {

@@ -3,6 +3,7 @@ using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Commands;
+using WebApplication.Contracts;
 using WebApplication.Profiles;
 
 namespace WebApplication.Controllers

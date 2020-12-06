@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Contracts;
 using WebApplication.Queries;
 
 namespace WebApplication.Controllers

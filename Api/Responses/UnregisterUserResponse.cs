@@ -1,6 +1,4 @@
-﻿using WebApplication.Responses;
-
-namespace WebApplication.Controllers
+﻿namespace WebApplication.Responses
 {
     public class UnregisterUserResponse : Response
     {

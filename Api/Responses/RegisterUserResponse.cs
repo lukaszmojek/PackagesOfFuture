@@ -1,6 +1,4 @@
-﻿using WebApplication.Responses;
-
-namespace WebApplication.Commands
+﻿namespace WebApplication.Responses
 {
     public class RegisterUserResponse : Response
     {

@@ -5,9 +5,11 @@ using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
+using WebApplication.Controllers;
 using WebApplication.Factories;
+using WebApplication.Responses;
 
-namespace WebApplication.Controllers
+namespace WebApplication.Handlers
 {
     public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, ChangeUserDetailsResponse>
     {

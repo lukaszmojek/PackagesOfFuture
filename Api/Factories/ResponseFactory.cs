@@ -1,5 +1,4 @@
-﻿using System;
-using WebApplication.Responses;
+﻿using WebApplication.Responses;
 
 namespace WebApplication.Factories
 {
@@ -13,11 +12,12 @@ namespace WebApplication.Factories
             };
         }
         
-        public static T CreateFailureResponse<T>() where T : Response, new() 
+        public static T CreateFailureResponse<T>(string errorMessage = "") where T : Response, new() 
         {
             return new T()
             {
-                Succeeded = false
+                Succeeded = false,
+                Error = errorMessage
             };
         }
     }

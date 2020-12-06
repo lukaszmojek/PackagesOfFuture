@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Profiles
+﻿namespace WebApplication.Contracts
 {
     public class RegisterUserDto
     {
