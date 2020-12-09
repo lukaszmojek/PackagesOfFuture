@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using MediatR;
-using WebApplication.Contracts;
+using Api.Contracts;
 
 namespace WebApplication.Queries
 {

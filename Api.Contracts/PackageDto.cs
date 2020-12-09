@@ -1,7 +1,7 @@
 ﻿using System;
 using Persistance;
 
-namespace WebApplication.Contracts
+namespace Api.Contracts
 {
     public class PackageDto
     {

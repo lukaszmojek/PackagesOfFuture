@@ -40,7 +40,7 @@ namespace WebApplication.Handlers
 
                 return ResponseFactory.CreateSuccessResponse<ChangeUserDetailsResponse>();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return ResponseFactory.CreateFailureResponse<ChangeUserDetailsResponse>(); 
             }

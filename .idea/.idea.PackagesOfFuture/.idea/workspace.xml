@@ -27,21 +27,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f41f7f-8b13-4c2a-ba29-39798a01d115" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Contracts/LogInDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Contracts/UserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Queries/LogInQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Responses/GetUsersReponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Responses/LogInResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api.Tests/Api.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Tests/Api.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/AddAddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/AddAddressDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/AddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/AddressDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/ChangeUserDetailsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/ChangeUserDetailsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/DroneDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/DroneDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/LogInDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/LogInDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/MoveDroneToSortingDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/MoveDroneToSortingDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/PackageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/PackageDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/RegisterDroneDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/RegisterDroneDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/DronesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/DronesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetPackagesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetPackagesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PackagesOfFuture.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesOfFuture.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UI/UI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,36 +72,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Controllers/AddressesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Profiles/DroneProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795B-F41B-4E62-8161-509ECA0F5822/3/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/LogInDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/Package.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Commands/AddAddressCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Contracts/DroneDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/AddAddressDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Controllers/AddressesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Profiles/DroneProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795B-F41B-4E62-8161-509ECA0F5822/3/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/AddressDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Controllers/DronesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Api/Commands/SeedCommand.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entity.cs" />
-        <option value="$PROJECT_DIR$/Api/Program.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
-        <option value="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/User.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Address.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" />
-        <option value="$PROJECT_DIR$/Api/Commands/AddAddressCommand.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" />
-        <option value="$PROJECT_DIR$/Api/Queries/GetPackagesQuery.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/DronesController.cs" />
-        <option value="$PROJECT_DIR$/Api/Contracts/MoveDroneToSortingDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Contracts/AddAddressDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Contracts/AddressDto.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/ChangeUserDetailsDto.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/DroneDto.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/PackageDto.cs" />
@@ -89,14 +96,11 @@
         <option value="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" />
         <option value="$PROJECT_DIR$/Api/Factories/ResponseFactory.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/RegisterDroneHandler.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs" />
         <option value="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" />
-        <option value="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" />
         <option value="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" />
         <option value="$PROJECT_DIR$/Api/Responses/AddAddressResponse.cs" />
         <option value="$PROJECT_DIR$/Api/Responses/ChangeUserDetailsResponse.cs" />
@@ -105,17 +109,37 @@
         <option value="$PROJECT_DIR$/Api/Responses/RegisterUserResponse.cs" />
         <option value="$PROJECT_DIR$/Api/Responses/Response.cs" />
         <option value="$PROJECT_DIR$/Api/Responses/UnregisterUserResponse.cs" />
-        <option value="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
         <option value="$PROJECT_DIR$/Api/Responses/LogInResponse.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/LogInDto.cs" />
         <option value="$PROJECT_DIR$/Api/Queries/LogInQuery.cs" />
         <option value="$PROJECT_DIR$/Api/Controllers/LoginController.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/UsersController.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/UserDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/GetUsersReponse.cs" />
         <option value="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/UsersController.cs" />
+        <option value="$PROJECT_DIR$/Api/Startup.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/Class1.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/AddressDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/ChangeUserDetailsDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/DroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/LogInDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/MoveDroneToSortingDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/PackageDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/RegisterDroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/RegisterUserDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" />
       </list>
     </option>
   </component>
@@ -282,7 +306,7 @@
       <workItem from="1607161385333" duration="6754000" />
       <workItem from="1607172573083" duration="19956000" />
       <workItem from="1607198273655" duration="5679000" />
-      <workItem from="1607209617948" duration="8980000" />
+      <workItem from="1607209617948" duration="10207000" />
     </task>
     <task id="LOCAL-00001" summary="- Fixed relations between entities&#10;- Added AddressesController.cs">
       <created>1607189082713</created>
@@ -319,7 +343,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607247250399</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemented GetUsers and LogIn methods in UsersController.cs">
+      <created>1607553495490</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607553495490</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deleted UnitOfWork as it is not needed">
+      <created>1607553570784</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607553570784</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +383,9 @@
     <MESSAGE value="- Updated User-Address relation&#10;- Added controllers for Drones" />
     <MESSAGE value="Fixed namespaces" />
     <MESSAGE value="MoveDroneToSorting added" />
-    <option name="LAST_COMMIT_MESSAGE" value="MoveDroneToSorting added" />
+    <MESSAGE value="Implemented GetUsers and LogIn methods in UsersController.cs" />
+    <MESSAGE value="Deleted UnitOfWork as it is not needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted UnitOfWork as it is not needed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="178" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607160452412">
@@ -440,10 +480,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1234" height="327" key="GridCell.Tab.4.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
-    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size" timestamp="1607552126412">
+    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size" timestamp="1607553630093">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607552126412" />
+    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607553630093" />
     <state x="147" y="197" key="RiderGenerateDialog" timestamp="1607165200524">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -496,13 +536,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Api/Controllers/AddressesController.cs</url>
-          <line>34</line>
+          <line>35</line>
           <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Controllers\AddressesController.cs" initialLine="37">
             <startOffsets>
-              <option value="1111" />
+              <option value="1132" />
             </startOffsets>
             <endOffsets>
-              <option value="1154" />
+              <option value="1175" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />

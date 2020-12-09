@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Api.Contracts;
+using AutoMapper;
 using Persistance.Entities;
 using WebApplication.Contracts;
 using WebApplication.Controllers;

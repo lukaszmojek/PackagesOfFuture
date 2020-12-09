@@ -26,18 +26,6 @@
           <e p="SeedCommand.cs" t="Include" />
           <e p="UnregisterUserCommand.cs" t="Include" />
         </e>
-        <e p="Contracts" t="Include">
-          <e p="AddAddressDto.cs" t="Include" />
-          <e p="AddressDto.cs" t="Include" />
-          <e p="ChangeUserDetailsDto.cs" t="Include" />
-          <e p="DroneDto.cs" t="Include" />
-          <e p="LogInDto.cs" t="Include" />
-          <e p="MoveDroneToSortingDto.cs" t="Include" />
-          <e p="PackageDto.cs" t="Include" />
-          <e p="RegisterDroneDto.cs" t="Include" />
-          <e p="RegisterUserDto.cs" t="Include" />
-          <e p="UserDto.cs" t="Include" />
-        </e>
         <e p="Controllers" t="Include">
           <e p="AddressesController.cs" t="Include" />
           <e p="DronesController.cs" t="Include" />
@@ -90,7 +78,6 @@
         <e p="Responses" t="Include">
           <e p="AddAddressResponse.cs" t="Include" />
           <e p="ChangeUserDetailsResponse.cs" t="Include" />
-          <e p="GetUsersReponse.cs" t="Include" />
           <e p="LogInResponse.cs" t="Include" />
           <e p="MoveDroneToSortingResponse.cs" t="Include" />
           <e p="RegisterDroneResponse.cs" t="Include" />
@@ -102,12 +89,31 @@
         <e p="ServiceCollectionExtensions.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
       </e>
+      <e p="Api.Contracts" t="IncludeRecursive">
+        <e p="AddAddressDto.cs" t="Include" />
+        <e p="AddressDto.cs" t="Include" />
+        <e p="Api.Contracts.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ChangeUserDetailsDto.cs" t="Include" />
+        <e p="DroneDto.cs" t="Include" />
+        <e p="LogInDto.cs" t="Include" />
+        <e p="MoveDroneToSortingDto.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.1" t="Include">
+              <e p="Api.Contracts.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PackageDto.cs" t="Include" />
+        <e p="RegisterDroneDto.cs" t="Include" />
+        <e p="RegisterUserDto.cs" t="Include" />
+        <e p="UserDto.cs" t="Include" />
+      </e>
       <e p="Api.Tests" t="IncludeRecursive">
         <e p="Api.Tests.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Controllers" t="Include">
-          <e p="UserControllerTests.cs" t="Include" />
-        </e>
+        <e p="Controllers" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -121,7 +127,6 @@
         <e p="Infrastructure.csproj" t="IncludeRecursive" />
         <e p="Interfaces" t="Include">
           <e p="IRepository.cs" t="Include" />
-          <e p="IUnitOfWork.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -131,7 +136,6 @@
           </e>
         </e>
         <e p="Repository.cs" t="Include" />
-        <e p="UnitOfWork.cs" t="Include" />
       </e>
       <e p="Infrastructure.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Persistance.Entities;
-using WebApplication.Contracts;
 using WebApplication.Controllers;
+using Api.Contracts;
+using WebApplication.Contracts;
 
 namespace WebApplication.Profiles
 {

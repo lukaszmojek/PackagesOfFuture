@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Api.Contracts;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
