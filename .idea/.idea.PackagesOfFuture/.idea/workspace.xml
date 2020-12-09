@@ -27,33 +27,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f41f7f-8b13-4c2a-ba29-39798a01d115" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Api/Commands/ChangeUserDetailsCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Commands/UnregisterUserCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Contracts/ChangeUserDetailsDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Factories/ResponseFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Responses/ChangeUserDetailsResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Responses/Response.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Responses/UnregisterUserResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Commands/RegisterUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Commands/RegisterUserCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Commands/Seed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Commands/SeedCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api.Tests/Api.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Tests/Api.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/AddAddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/AddAddressDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/AddressDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/AddressDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/ChangeUserDetailsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/ChangeUserDetailsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/DroneDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/DroneDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/LogInDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/LogInDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/MoveDroneToSortingDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/MoveDroneToSortingDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/PackageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/PackageDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/RegisterDroneDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/RegisterDroneDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Contracts/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api.Contracts/UserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/DronesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/DronesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/SeedController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/SeedController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Handlers/RegisterUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/RegisterUserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Responses/RegisterUserResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Responses/RegisterUserResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Responses/SeedResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Responses/SeedResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Interfaces/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Interfaces/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetPackagesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetPackagesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PackagesOfFuture.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesOfFuture.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UI/UI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,65 +72,74 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795B-F41B-4E62-8161-509ECA0F5822/3/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/LogInDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/Package.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Commands/AddAddressCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Contracts/DroneDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/AddAddressDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Controllers/AddressesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Profiles/DroneProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795B-F41B-4E62-8161-509ECA0F5822/3/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/AddressDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Controllers/DronesController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api.Contracts/UserDto.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Api/Queries/GetPackages.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Client.cs" />
-        <option value="$PROJECT_DIR$/Persistance/PackageStatus.cs" />
-        <option value="$PROJECT_DIR$/Api/Program.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Startup.cs" />
-        <option value="$PROJECT_DIR$/UI/MainWindow.xaml.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure.Tests/StartupTests.cs" />
-        <option value="$PROJECT_DIR$/Api.Tests/UnitTest1.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/SeedHadler.cs" />
-        <option value="$PROJECT_DIR$/Api/Commands/Seed.cs" />
-        <option value="$PROJECT_DIR$/Api/Startup.cs" />
-        <option value="$PROJECT_DIR$/Api/Mapping/PackageMapping.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/PackageMapping.cs" />
-        <option value="$PROJECT_DIR$/Api/Commands/RegisterUser.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Enums/PaymentType.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Enums/PaymentStatus.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/UnitOfWork.cs" />
-        <option value="$PROJECT_DIR$/Api/ServiceCollectionExtensions.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Vehicle.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Drone.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Service.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Payment.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Sorting.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entity.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Address.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/Package.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" />
-        <option value="$PROJECT_DIR$/Persistance/Entities/User.cs" />
-        <option value="$PROJECT_DIR$/Api/Commands/SeedCommand.cs" />
-        <option value="$PROJECT_DIR$/Api/Responses/RegisterUserResponse.cs" />
-        <option value="$PROJECT_DIR$/Api/Responses/ChangeUserDetailsResponse.cs" />
-        <option value="$PROJECT_DIR$/Api/Responses/SeedResponse.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/SeedController.cs" />
-        <option value="$PROJECT_DIR$/Api/Commands/RegisterUserCommand.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/RegisterUserHandler.cs" />
-        <option value="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Repository.cs" />
-        <option value="$PROJECT_DIR$/Infrastructure/Interfaces/IRepository.cs" />
-        <option value="$PROJECT_DIR$/Api/Factories/ResponseFacotry.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" />
-        <option value="$PROJECT_DIR$/Api/Controllers/UsersController.cs" />
-        <option value="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" />
         <option value="$PROJECT_DIR$/Api/Contracts/ChangeUserDetailsDto.cs" />
-        <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
-        <option value="$PROJECT_DIR$/Api/Responses/Response.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/DroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/PackageDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/RegisterDroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/RegisterUserDto.cs" />
         <option value="$PROJECT_DIR$/Api/Factories/ResponseFactory.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/RegisterDroneHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/AddAddressResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/ChangeUserDetailsResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/MoveDroneToSortingResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/RegisterDroneResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/RegisterUserResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/Response.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/UnregisterUserResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/LogInResponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/LogInDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/LogInQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/LoginController.cs" />
+        <option value="$PROJECT_DIR$/Api/Contracts/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Responses/GetUsersReponse.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/UsersController.cs" />
+        <option value="$PROJECT_DIR$/Api/Startup.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/Class1.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/DroneProfile.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/AddressDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" />
+        <option value="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetAddressesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Controllers/AddressesController.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/ChangeUserDetailsDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/DroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/LogInDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/MoveDroneToSortingDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/PackageDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/RegisterDroneDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/RegisterUserDto.cs" />
+        <option value="$PROJECT_DIR$/Api.Contracts/UserDto.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api.Tests/Controllers/UserControllerTests.cs" />
       </list>
     </option>
   </component>
@@ -136,8 +153,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995845" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008313" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.16957606" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.14546967" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="XThreadsFramesViewSplitterKey" value="0.7004831" />
@@ -287,7 +304,9 @@
       <workItem from="1607157514665" duration="3685000" />
       <workItem from="1607161278329" duration="96000" />
       <workItem from="1607161385333" duration="6754000" />
-      <workItem from="1607172573083" duration="19153000" />
+      <workItem from="1607172573083" duration="19956000" />
+      <workItem from="1607198273655" duration="5679000" />
+      <workItem from="1607209617948" duration="10207000" />
     </task>
     <task id="LOCAL-00001" summary="- Fixed relations between entities&#10;- Added AddressesController.cs">
       <created>1607189082713</created>
@@ -296,7 +315,49 @@
       <option name="project" value="LOCAL" />
       <updated>1607189082713</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Fixed relations between entities&#10;- Added AddressesController.cs">
+      <created>1607195143099</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607195143099</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Updated User-Address relation&#10;- Added controllers for Drones">
+      <created>1607211322685</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607211322685</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed namespaces">
+      <created>1607247225017</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607247225017</updated>
+    </task>
+    <task id="LOCAL-00005" summary="MoveDroneToSorting added">
+      <created>1607247250399</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607247250399</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented GetUsers and LogIn methods in UsersController.cs">
+      <created>1607553495490</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607553495490</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deleted UnitOfWork as it is not needed">
+      <created>1607553570784</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607553570784</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,102 +379,111 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="- Fixed relations between entities&#10;- Added AddressesController.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed relations between entities&#10;- Added AddressesController.cs" />
+    <MESSAGE value="Added UsersController.cs with methods for registering, changing and unregistering user" />
+    <MESSAGE value="- Updated User-Address relation&#10;- Added controllers for Drones" />
+    <MESSAGE value="Fixed namespaces" />
+    <MESSAGE value="MoveDroneToSorting added" />
+    <MESSAGE value="Implemented GetUsers and LogIn methods in UsersController.cs" />
+    <MESSAGE value="Deleted UnitOfWork as it is not needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted UnitOfWork as it is not needed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="94" y="178" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607160452412">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="94" y="178" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607160452412" />
-    <state width="489" height="464" key="DebuggerActiveHint" timestamp="1607194619539">
+    <state width="489" height="464" key="DebuggerActiveHint" timestamp="1607211072082">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="489" height="464" key="DebuggerActiveHint/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194619539" />
-    <state width="1234" height="329" key="GridCell.Tab.0.bottom" timestamp="1607194720223">
+    <state width="489" height="464" key="DebuggerActiveHint/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607211072082" />
+    <state x="480" y="412" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1607195208828">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720223" />
-    <state width="1234" height="329" key="GridCell.Tab.0.center" timestamp="1607194720223">
+    <state x="480" y="412" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607195208828" />
+    <state width="1234" height="327" key="GridCell.Tab.0.bottom" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.0.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720223" />
-    <state width="1234" height="329" key="GridCell.Tab.0.left" timestamp="1607194720223">
+    <state width="1234" height="327" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.0.center" timestamp="1607247382192">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.0.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720223" />
-    <state width="1234" height="329" key="GridCell.Tab.0.right" timestamp="1607194720223">
+    <state width="1234" height="327" key="GridCell.Tab.0.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382192" />
+    <state width="1234" height="327" key="GridCell.Tab.0.left" timestamp="1607247382192">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.0.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720223" />
-    <state width="1234" height="329" key="GridCell.Tab.1.bottom" timestamp="1607194730196">
+    <state width="1234" height="327" key="GridCell.Tab.0.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382192" />
+    <state width="1234" height="327" key="GridCell.Tab.0.right" timestamp="1607247382192">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.1.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194730196" />
-    <state width="1234" height="329" key="GridCell.Tab.1.center" timestamp="1607194730196">
+    <state width="1234" height="327" key="GridCell.Tab.0.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382192" />
+    <state width="1234" height="327" key="GridCell.Tab.1.bottom" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.1.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194730196" />
-    <state width="1234" height="329" key="GridCell.Tab.1.left" timestamp="1607194730196">
+    <state width="1234" height="327" key="GridCell.Tab.1.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.1.center" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.1.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194730196" />
-    <state width="1234" height="329" key="GridCell.Tab.1.right" timestamp="1607194730196">
+    <state width="1234" height="327" key="GridCell.Tab.1.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.1.left" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.1.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194730196" />
-    <state width="1234" height="329" key="GridCell.Tab.2.bottom" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.1.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.1.right" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.2.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.2.center" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.1.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.2.bottom" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.2.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.2.left" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.2.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.2.center" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.2.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.2.right" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.2.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.2.left" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.2.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.3.bottom" timestamp="1607194720001">
+    <state width="1234" height="327" key="GridCell.Tab.2.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.2.right" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.3.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720001" />
-    <state width="1234" height="329" key="GridCell.Tab.3.center" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.2.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.3.bottom" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.3.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.3.left" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.3.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.3.center" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.3.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.3.right" timestamp="1607194720000">
+    <state width="1234" height="327" key="GridCell.Tab.3.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.3.left" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.3.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720000" />
-    <state width="1234" height="329" key="GridCell.Tab.4.bottom" timestamp="1607194720001">
+    <state width="1234" height="327" key="GridCell.Tab.3.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.3.right" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.4.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720001" />
-    <state width="1234" height="329" key="GridCell.Tab.4.center" timestamp="1607194720001">
+    <state width="1234" height="327" key="GridCell.Tab.3.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.4.bottom" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.4.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720001" />
-    <state width="1234" height="329" key="GridCell.Tab.4.left" timestamp="1607194720001">
+    <state width="1234" height="327" key="GridCell.Tab.4.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.4.center" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.4.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720001" />
-    <state width="1234" height="329" key="GridCell.Tab.4.right" timestamp="1607194720001">
+    <state width="1234" height="327" key="GridCell.Tab.4.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.4.left" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="329" key="GridCell.Tab.4.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607194720001" />
-    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size" timestamp="1607160363972">
+    <state width="1234" height="327" key="GridCell.Tab.4.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state width="1234" height="327" key="GridCell.Tab.4.right" timestamp="1607247382193">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607160363972" />
+    <state width="1234" height="327" key="GridCell.Tab.4.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247382193" />
+    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size" timestamp="1607553630093">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="232" y="255" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607553630093" />
     <state x="147" y="197" key="RiderGenerateDialog" timestamp="1607165200524">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -422,47 +492,73 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="141" y="168" key="SettingsEditor/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607165753536" />
-    <state x="93" y="100" width="1094" height="847" key="VCS.FileHistoryDialog" timestamp="1607190643137">
+    <state x="93" y="100" width="1094" height="847" key="VCS.FileHistoryDialog" timestamp="1607201506901">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="93" y="100" width="1094" height="847" key="VCS.FileHistoryDialog/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607190643137" />
-    <state x="232" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607189157672">
+    <state x="93" y="100" width="1094" height="847" key="VCS.FileHistoryDialog/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607201506901" />
+    <state x="232" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607247488273">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="232" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607189157672" />
-    <state width="647" height="523" key="XDebugger.FullValuePopup" timestamp="1607193876655">
+    <state x="232" y="256" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607247488273" />
+    <state width="647" height="523" key="XDebugger.FullValuePopup" timestamp="1607209683879">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="647" height="523" key="XDebugger.FullValuePopup/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607193876655" />
+    <state width="647" height="523" key="XDebugger.FullValuePopup/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1607209683879" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Api/Handlers/RegisterUserHandler.cs</url>
-          <line>25</line>
+          <line>26</line>
           <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\RegisterUserHandler.cs" initialLine="25">
             <startOffsets>
-              <option value="801" />
+              <option value="833" />
             </startOffsets>
             <endOffsets>
-              <option value="834" />
+              <option value="866" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs</url>
-          <line>22</line>
+          <line>24</line>
           <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\UnregisterUserHandler.cs" initialLine="22">
             <startOffsets>
-              <option value="731" />
+              <option value="794" />
             </startOffsets>
             <endOffsets>
-              <option value="761" />
+              <option value="824" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Api/Controllers/AddressesController.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Controllers\AddressesController.cs" initialLine="37">
+            <startOffsets>
+              <option value="1132" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1175" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\AddAddressHandler.cs" initialLine="25">
+            <startOffsets>
+              <option value="860" />
+            </startOffsets>
+            <endOffsets>
+              <option value="896" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

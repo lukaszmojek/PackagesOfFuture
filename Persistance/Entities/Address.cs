@@ -9,7 +9,6 @@ namespace Persistance.Entities
         public string City { get; set; }
         public string PostalCode { get; set; }
         
-        public virtual User User { get; set; }
         public virtual ICollection<Package> PackagesReceived { get; set; }
         public virtual ICollection<Package> PackagesDelivered { get; set; }
     }

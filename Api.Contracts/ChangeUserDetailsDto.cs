@@ -1,9 +1,10 @@
-﻿namespace WebApplication.Profiles
+﻿namespace Api.Contracts
 {
-    public class RegisterUserDto
+    public class ChangeUserDetailsDto
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
-        public string FirstName { get; set; }
+        public string FirstName { get; set; }        
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Type { get; set; }

@@ -1,13 +1,13 @@
-﻿namespace WebApplication.Controllers
+﻿namespace Api.Contracts
 {
-    public class ChangeUserDetailsDto
+    public class UserDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }        
         public string LastName { get; set; }
         public string Email { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         public string Password { get; set; }
     }
 }

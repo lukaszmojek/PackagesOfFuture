@@ -5,9 +5,11 @@ using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
+using WebApplication.Controllers;
 using WebApplication.Factories;
+using WebApplication.Responses;
 
-namespace WebApplication.Controllers
+namespace WebApplication.Handlers
 {
     public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, ChangeUserDetailsResponse>
     {
@@ -38,7 +40,7 @@ namespace WebApplication.Controllers
 
                 return ResponseFactory.CreateSuccessResponse<ChangeUserDetailsResponse>();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return ResponseFactory.CreateFailureResponse<ChangeUserDetailsResponse>(); 
             }

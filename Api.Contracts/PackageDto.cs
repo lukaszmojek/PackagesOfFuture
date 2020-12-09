@@ -1,0 +1,18 @@
+﻿using System;
+using Persistance;
+
+namespace Api.Contracts
+{
+    public class PackageDto
+    {
+        public DateTime DeliveryDate { get; set; }
+        public PackageStatus Status { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
+        public double Length { get; set; }
+        public double Weight { get; set; }
+        
+        public int DeliveryAddressId { get; set; }
+        public int ReceiveAddressId { get; set; }
+    }
+}

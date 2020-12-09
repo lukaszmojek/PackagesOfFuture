@@ -1,14 +1,12 @@
-﻿using MediatR;
-using WebApplication.Responses;
-
-namespace WebApplication.Commands
+﻿namespace Api.Contracts
 {
-    public class RegisterUserCommand : IRequest<RegisterUserResponse>
+    public class RegisterUserDto
     {
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Type { get; set; }
+        public string Password { get; set; }
     }
 }

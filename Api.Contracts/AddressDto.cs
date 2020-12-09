@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Controllers
+﻿namespace Api.Contracts
 {
     public class AddressDto
     {

@@ -1,26 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Contracts;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Persistance.Entities;
+using WebApplication.Contracts;
 using WebApplication.Queries;
 
 namespace WebApplication.Handlers
 {
-    public class GetPackagesHandler : IRequestHandler<GetPackages, ICollection<PackageDto>>
+    public class GetPackagesHandler : IRequestHandler<GetPackagesQuery, ICollection<PackageDto>>
     {
         private readonly IRepository<Package> _repository;
         private readonly IMapper _mapper;
+        private DbContext _dbContext;
 
-        public GetPackagesHandler(IRepository<Package> repository, IMapper mapper)
+        public GetPackagesHandler(IRepository<Package> repository, IMapper mapper, DbContext dbContext)
         {
             _repository = repository;
             _mapper = mapper;
+            _dbContext = dbContext;
         }
 
-        public async Task<ICollection<PackageDto>> Handle(GetPackages request, CancellationToken cancellationToken)
+        public async Task<ICollection<PackageDto>> Handle(GetPackagesQuery request, CancellationToken cancellationToken)
         {
             var packages = await _repository.GetAsync();
             return this._mapper.Map<ICollection<PackageDto>>(packages);

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Contracts;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Contracts;
 using WebApplication.Queries;
 
 namespace WebApplication.Controllers
@@ -24,7 +26,7 @@ namespace WebApplication.Controllers
         [HttpGet("")]
         public async Task<ActionResult<ICollection<PackageDto>>> GetPackages()
         {
-            var result = await _mediator.Send(new GetPackages());
+            var result = await _mediator.Send(new GetPackagesQuery());
             return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
     }

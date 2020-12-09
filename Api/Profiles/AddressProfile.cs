@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Persistance.Entities;
 using WebApplication.Controllers;
+using Api.Contracts;
+using WebApplication.Contracts;
 
 namespace WebApplication.Profiles
 {
@@ -8,6 +10,9 @@ namespace WebApplication.Profiles
     {
         public AddressProfile()
         {
+            CreateMap<AddAddressDto, AddAddressCommand>();
+            CreateMap<AddAddressCommand, Address>();
+            
             CreateMap<Address, AddressDto>();
         }
     }

@@ -38,10 +38,9 @@ namespace Persistance
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(d => d.Id);
-            
-            builder.HasOne(o => o.Address)
-                .WithOne(o => o.User)
-                .HasForeignKey<Address>(a => a.Id);
+
+            builder.HasMany(o => o.Addresses)
+                .WithOne();
         }
     }
 
