@@ -39,10 +39,9 @@ namespace WebApplication
             
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
-            
+
             services.AddSingleton<DbContext, PackagesOfFutureDbContext>()
-                .RegisterRepositories()
-                .AddScoped<IUnitOfWork, UnitOfWork>();
+                .RegisterRepositories();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

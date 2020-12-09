@@ -13,12 +13,10 @@ namespace WebApplication.Handlers
 {
     public class SeedHandler : IRequestHandler<SeedCommand, SeedResponse>
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<Package> _repository;
 
-        public SeedHandler(IUnitOfWork unitOfWork, IRepository<Package> repository)
+        public SeedHandler(IRepository<Package> repository)
         {
-            _unitOfWork = unitOfWork;
             _repository = repository;
         }
 
@@ -45,7 +43,7 @@ namespace WebApplication.Handlers
             
             
             await _repository.AddAsync(package);
-            _unitOfWork.SaveChanges();
+            await _repository.SaveChangesAsync();
 
             return new SeedResponse() {Succeeded = true};
         }
