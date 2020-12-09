@@ -1,0 +1,10 @@
+﻿using System.Collections.Generic;
+using MediatR;
+using WebApplication.Contracts;
+
+namespace WebApplication.Queries
+{
+    public class GetUsersQuery : IRequest<ICollection<UserDto>>
+    {
+    }
+}

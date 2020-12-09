@@ -1,8 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Collections;
+using System.Collections.Generic;
+using AutoMapper;
 using Persistance.Entities;
 using WebApplication.Commands;
 using WebApplication.Contracts;
 using WebApplication.Controllers;
+using WebApplication.Queries;
+using WebApplication.Responses;
 
 namespace WebApplication.Profiles
 {
@@ -15,6 +19,11 @@ namespace WebApplication.Profiles
 
             CreateMap<ChangeUserDetailsDto, ChangeUserDetailsCommand>();
             CreateMap<ChangeUserDetailsCommand, User>();
+
+            CreateMap<LogInDto, LogInQuery>();
+            CreateMap<User, LogInResponse>();
+
+            CreateMap<User, UserDto>();
         }
     }
 }

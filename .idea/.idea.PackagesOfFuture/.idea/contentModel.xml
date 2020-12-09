@@ -20,6 +20,7 @@
         <e p="Commands" t="Include">
           <e p="AddAddressCommand.cs" t="Include" />
           <e p="ChangeUserDetailsCommand.cs" t="Include" />
+          <e p="MoveDroneToSortingCommand.cs" t="Include" />
           <e p="RegisterDroneCommand.cs" t="Include" />
           <e p="RegisterUserCommand.cs" t="Include" />
           <e p="SeedCommand.cs" t="Include" />
@@ -30,13 +31,17 @@
           <e p="AddressDto.cs" t="Include" />
           <e p="ChangeUserDetailsDto.cs" t="Include" />
           <e p="DroneDto.cs" t="Include" />
+          <e p="LogInDto.cs" t="Include" />
+          <e p="MoveDroneToSortingDto.cs" t="Include" />
           <e p="PackageDto.cs" t="Include" />
           <e p="RegisterDroneDto.cs" t="Include" />
           <e p="RegisterUserDto.cs" t="Include" />
+          <e p="UserDto.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="AddressesController.cs" t="Include" />
           <e p="DronesController.cs" t="Include" />
+          <e p="LoginController.cs" t="Include" />
           <e p="PackagesController.cs" t="Include" />
           <e p="SeedController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
@@ -50,6 +55,9 @@
           <e p="GetAddressesHandler.cs" t="Include" />
           <e p="GetDronesHandler.cs" t="Include" />
           <e p="GetPackagesHandler.cs" t="Include" />
+          <e p="GetUsersHandler.cs" t="Include" />
+          <e p="LogInHandler.cs" t="Include" />
+          <e p="MoveDroneToSortingHandler.cs" t="Include" />
           <e p="RegisterDroneHandler.cs" t="Include" />
           <e p="RegisterUserHandler.cs" t="Include" />
           <e p="SeedHandler.cs" t="Include" />
@@ -76,10 +84,15 @@
           <e p="GetAddressesQuery.cs" t="Include" />
           <e p="GetDronesQuery.cs" t="Include" />
           <e p="GetPackagesQuery.cs" t="Include" />
+          <e p="GetUsersQuery.cs" t="Include" />
+          <e p="LogInQuery.cs" t="Include" />
         </e>
         <e p="Responses" t="Include">
           <e p="AddAddressResponse.cs" t="Include" />
           <e p="ChangeUserDetailsResponse.cs" t="Include" />
+          <e p="GetUsersReponse.cs" t="Include" />
+          <e p="LogInResponse.cs" t="Include" />
+          <e p="MoveDroneToSortingResponse.cs" t="Include" />
           <e p="RegisterDroneResponse.cs" t="Include" />
           <e p="RegisterUserResponse.cs" t="Include" />
           <e p="Response.cs" t="Include" />
@@ -92,6 +105,9 @@
       <e p="Api.Tests" t="IncludeRecursive">
         <e p="Api.Tests.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="UserControllerTests.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
