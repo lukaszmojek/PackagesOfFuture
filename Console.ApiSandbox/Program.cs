@@ -3,6 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Api.Contracts;
 using Newtonsoft.Json;
+using WebApplication.Responses;
 
 namespace Console.ApiSandbox
 {
@@ -21,6 +22,7 @@ namespace Console.ApiSandbox
 
             if (response.IsSuccessStatusCode)
             {
+                var user = JsonConvert.DeserializeObject<Response<LogInResponse>>(await response.Content.ReadAsStringAsync()).Content;
                 System.Console.WriteLine("Oł je, zalogowany dzban");
             }
             else

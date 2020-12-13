@@ -22,11 +22,11 @@ namespace WebApplication.Controllers
         }
         
         [HttpPost("")]
-        public async Task<ActionResult<LogInResponse>> LogIn(LogInDto logInDto)
+        public async Task<ActionResult<Response<LogInResponse>>> LogIn([FromBody] LogInDto logInDto)
         {
             var query = _mapper.Map<LogInQuery>(logInDto);
             var result = await _mediator.Send(query);
-            return result.Succeeded ? (ActionResult<LogInResponse>) Ok(result) : NotFound();
+            return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : NotFound();
         }
     }
 }

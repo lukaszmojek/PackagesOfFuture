@@ -3,7 +3,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Commands
 {
-    public class SeedCommand : IRequest<SeedResponse>
+    public class SeedCommand : IRequest<Response<SeedResponse>>
     {
         
     }

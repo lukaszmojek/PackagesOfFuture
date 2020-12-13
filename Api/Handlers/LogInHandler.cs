@@ -11,7 +11,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Controllers
 {
-    public class LogInHandler : IRequestHandler<LogInQuery, LogInResponse>
+    public class LogInHandler : IRequestHandler<LogInQuery, Response<LogInResponse>>
     {
         private readonly IRepository<User> _repository;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace WebApplication.Controllers
             _mapper = mapper;
         }
         
-        public async Task<LogInResponse> Handle(LogInQuery request, CancellationToken cancellationToken)
+        public async Task<Response<LogInResponse>> Handle(LogInQuery request, CancellationToken cancellationToken)
         {
             var user = (await _repository.GetAsync())
                 .SingleOrDefault(u => u.UserName.Equals(request.Username)
@@ -33,7 +33,7 @@ namespace WebApplication.Controllers
                 return ResponseFactory.CreateFailureResponse<LogInResponse>();
             }
 
-            return _mapper.Map<LogInResponse>(user);
+            return ResponseFactory.CreateSuccessResponse<LogInResponse>(_mapper.Map<LogInResponse>(user));
         }
     }
 }

@@ -4,17 +4,19 @@ namespace WebApplication.Factories
 {
     public static class ResponseFactory
     {
-        public static T CreateSuccessResponse<T>() where T : Response, new() 
+        public static Response<T> CreateSuccessResponse<T>(T content = default) where T : new() 
         {
-            return new T()
+            return new Response<T>()
             {
-                Succeeded = true
+                Succeeded = true,
+                Error = null,
+                Content = content
             };
         }
         
-        public static T CreateFailureResponse<T>(string errorMessage = "") where T : Response, new() 
+        public static Response<T> CreateFailureResponse<T>(string errorMessage = "") where T : new() 
         {
-            return new T()
+            return new Response<T>()
             {
                 Succeeded = false,
                 Error = errorMessage

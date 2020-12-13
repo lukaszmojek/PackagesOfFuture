@@ -9,7 +9,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class MoveDroneToSortingHandler : IRequestHandler<MoveDroneToSortingCommand, MoveDroneToSortingResponse>
+    public class MoveDroneToSortingHandler : IRequestHandler<MoveDroneToSortingCommand, Response<MoveDroneToSortingResponse>>
     {
         private readonly IRepository<Drone> _repository;
 
@@ -18,7 +18,7 @@ namespace WebApplication.Handlers
             _repository = repository;
         }
 
-        public async Task<MoveDroneToSortingResponse> Handle(MoveDroneToSortingCommand request, CancellationToken cancellationToken)
+        public async Task<Response<MoveDroneToSortingResponse>> Handle(MoveDroneToSortingCommand request, CancellationToken cancellationToken)
         {
             var drone = await _repository.GetByIdAsync(request.DroneId);
 
