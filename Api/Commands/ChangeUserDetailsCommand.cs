@@ -3,7 +3,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Controllers
 {
-    public class ChangeUserDetailsCommand : IRequest<ChangeUserDetailsResponse>
+    public class ChangeUserDetailsCommand : IRequest<Response<ChangeUserDetailsResponse>>
     {
         public int Id { get; set; }
         public string UserName { get; set; }

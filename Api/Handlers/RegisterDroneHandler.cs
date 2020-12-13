@@ -10,7 +10,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class RegisterDroneHandler : IRequestHandler<RegisterDroneCommand, RegisterDroneResponse>
+    public class RegisterDroneHandler : IRequestHandler<RegisterDroneCommand, Response<RegisterDroneResponse>>
     {
         private readonly IRepository<Drone> _repository;
         private readonly IMapper _mapper;
@@ -21,7 +21,7 @@ namespace WebApplication.Handlers
             _mapper = mapper;
         }
 
-        public async Task<RegisterDroneResponse> Handle(RegisterDroneCommand request, CancellationToken cancellationToken)
+        public async Task<Response<RegisterDroneResponse>> Handle(RegisterDroneCommand request, CancellationToken cancellationToken)
         {
             var drone = _mapper.Map<Drone>(request);
 

@@ -9,7 +9,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class UnregisterUserHandler : IRequestHandler<UnregisterUserCommand, UnregisterUserResponse>
+    public class UnregisterUserHandler : IRequestHandler<UnregisterUserCommand, Response<UnregisterUserResponse>>
     {
         private readonly IRepository<User> _repository;
         
@@ -18,7 +18,7 @@ namespace WebApplication.Handlers
             _repository = repository;
         }
         
-        public async Task<UnregisterUserResponse> Handle(UnregisterUserCommand request, CancellationToken cancellationToken)
+        public async Task<Response<UnregisterUserResponse>> Handle(UnregisterUserCommand request, CancellationToken cancellationToken)
         {
             var user = await _repository.GetByIdAsync(request.UserId);
             

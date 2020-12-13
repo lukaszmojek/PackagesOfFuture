@@ -11,7 +11,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, ChangeUserDetailsResponse>
+    public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, Response<ChangeUserDetailsResponse>>
     {
         private readonly IRepository<User> _repository;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace WebApplication.Handlers
             _mapper = mapper;
         }
 
-        public async Task<ChangeUserDetailsResponse> Handle(ChangeUserDetailsCommand command, CancellationToken cancellationToken)
+        public async Task<Response<ChangeUserDetailsResponse>> Handle(ChangeUserDetailsCommand command, CancellationToken cancellationToken)
         {
             try
             {

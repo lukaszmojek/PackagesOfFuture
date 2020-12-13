@@ -3,12 +3,13 @@ using WebApplication.Responses;
 
 namespace WebApplication.Commands
 {
-    public class RegisterUserCommand : IRequest<RegisterUserResponse>
+    public class RegisterUserCommand : IRequest<Response<RegisterUserResponse>>
     {
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public int Type { get; set; }
+        public string Password { get; set; }
     }
 }

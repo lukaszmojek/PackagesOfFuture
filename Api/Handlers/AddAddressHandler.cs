@@ -10,7 +10,7 @@ using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class AddAddressHandler : IRequestHandler<AddAddressCommand, AddAddressResponse>
+    public class AddAddressHandler : IRequestHandler<AddAddressCommand, Response<AddAddressResponse>>
     {
         private readonly IRepository<Address> _repository;
         private readonly IMapper _mapper;
@@ -21,7 +21,7 @@ namespace WebApplication.Handlers
             _mapper = mapper;
         }
 
-        public async Task<AddAddressResponse> Handle(AddAddressCommand request, CancellationToken cancellationToken)
+        public async Task<Response<AddAddressResponse>> Handle(AddAddressCommand request, CancellationToken cancellationToken)
         {
             var address = _mapper.Map<Address>(request);
             
