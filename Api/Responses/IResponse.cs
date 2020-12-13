@@ -1,6 +1,7 @@
 ﻿namespace WebApplication.Responses
 {
-    public class RegisterDroneResponse : IResponse
+    internal interface IResponse
     {
+        
     }
 }

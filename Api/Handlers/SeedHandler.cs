@@ -7,11 +7,12 @@ using MediatR;
 using Persistance;
 using Persistance.Entities;
 using WebApplication.Commands;
+using WebApplication.Factories;
 using WebApplication.Responses;
 
 namespace WebApplication.Handlers
 {
-    public class SeedHandler : IRequestHandler<SeedCommand, SeedResponse>
+    public class SeedHandler : IRequestHandler<SeedCommand, Response<SeedResponse>>
     {
         private readonly IRepository<Package> _repository;
 
@@ -20,7 +21,7 @@ namespace WebApplication.Handlers
             _repository = repository;
         }
 
-        public async Task<SeedResponse> Handle(SeedCommand request, CancellationToken cancellationToken)
+        public async Task<Response<SeedResponse>> Handle(SeedCommand request, CancellationToken cancellationToken)
         {
             var user = new User() { };
              var deliveryAddress = new Address(){Id = 13, City = "Dupowo", HouseAndFlatNumber = "12/3", Street = "Osla laka"};
@@ -41,11 +42,10 @@ namespace WebApplication.Handlers
                  Payment = payment
              };
             
-            
             await _repository.AddAsync(package);
             await _repository.SaveChangesAsync();
 
-            return new SeedResponse() {Succeeded = true};
+            return ResponseFactory.CreateSuccessResponse<SeedResponse>();
         }
     }
 }
