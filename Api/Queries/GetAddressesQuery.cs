@@ -2,7 +2,7 @@
 using MediatR;
 using Api.Contracts;
 
-namespace WebApplication.Queries
+namespace Api.Queries
 {
     public class GetAddressesQuery : IRequest<ICollection<AddressDto>>
     {

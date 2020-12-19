@@ -1,6 +1,6 @@
-﻿using WebApplication.Responses;
+﻿using Api.Responses;
 
-namespace WebApplication.Factories
+namespace Api.Factories
 {
     public static class ResponseFactory
     {

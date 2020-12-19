@@ -1,10 +1,10 @@
-﻿using Api.Contracts;
+﻿using Api.Commands;
+using Api.Contracts;
+using Api.Controllers;
 using AutoMapper;
 using Persistance.Entities;
-using WebApplication.Contracts;
-using WebApplication.Controllers;
 
-namespace WebApplication.Profiles
+namespace Api.Profiles
 {
     public class DroneProfile : Profile
     {

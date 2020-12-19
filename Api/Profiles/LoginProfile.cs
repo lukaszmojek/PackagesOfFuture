@@ -1,8 +1,8 @@
 ﻿using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
-using WebApplication.Queries;
 
-namespace WebApplication.Profiles
+namespace Api.Profiles
 {
     public class LoginProfile : Profile
     {

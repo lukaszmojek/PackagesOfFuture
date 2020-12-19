@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Api.Commands;
 using Api.Contracts;
+using Api.Controllers;
+using Api.Queries;
 using AutoMapper;
 using Persistance.Entities;
-using WebApplication.Commands;
-using WebApplication.Contracts;
-using WebApplication.Controllers;
-using WebApplication.Queries;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Profiles
+namespace Api.Profiles
 {
     public class UserProfile : Profile
     {

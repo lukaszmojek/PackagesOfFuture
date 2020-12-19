@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Queries
+namespace Api.Queries
 {
     public class LogInQuery : IRequest<Response<LogInResponse>>
     {

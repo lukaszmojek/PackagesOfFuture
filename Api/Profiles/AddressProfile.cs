@@ -1,10 +1,10 @@
-﻿using AutoMapper;
+﻿using Api.Commands;
+using AutoMapper;
 using Persistance.Entities;
-using WebApplication.Controllers;
 using Api.Contracts;
-using WebApplication.Contracts;
+using Api.Controllers;
 
-namespace WebApplication.Profiles
+namespace Api.Profiles
 {
     public class AddressProfile : Profile
     {

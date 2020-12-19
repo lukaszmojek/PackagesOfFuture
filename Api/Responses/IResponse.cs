@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Responses
+﻿namespace Api.Responses
 {
     internal interface IResponse
     {

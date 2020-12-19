@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using WebApplication.Contracts;
-using WebApplication.Controllers;
-using WebApplication.Queries;
-using WebApplication.Responses;
+using Api.Controllers;
+using Api.Responses;
 
-namespace WebApplication.Handlers
+namespace Api.Handlers
 {
     public class GetUsersHandler : IRequestHandler<GetUsersQuery, ICollection<UserDto>>
     {

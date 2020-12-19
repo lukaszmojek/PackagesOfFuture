@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Api.Commands;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Commands;
-using WebApplication.Queries;
+using Api.Queries;
 
-namespace WebApplication.Controllers
+namespace Api.Controllers
 {
     [Route("[controller]")]
     public class SeedController : ControllerBase

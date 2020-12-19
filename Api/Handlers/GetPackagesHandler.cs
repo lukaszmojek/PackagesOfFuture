@@ -2,15 +2,14 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Entities;
-using WebApplication.Contracts;
-using WebApplication.Queries;
 
-namespace WebApplication.Handlers
+namespace Api.Handlers
 {
     public class GetPackagesHandler : IRequestHandler<GetPackagesQuery, ICollection<PackageDto>>
     {

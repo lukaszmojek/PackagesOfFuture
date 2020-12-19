@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Responses
+﻿namespace Api.Responses
 {
     public class SeedResponse : IResponse
     {

@@ -1,15 +1,15 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Factories;
+using Api.Queries;
+using Api.Responses;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using WebApplication.Factories;
-using WebApplication.Queries;
-using WebApplication.Responses;
 
-namespace WebApplication.Controllers
+namespace Api.Handlers
 {
     public class LogInHandler : IRequestHandler<LogInQuery, Response<LogInResponse>>
     {

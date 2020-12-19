@@ -1,14 +1,14 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Api.Commands;
+using Api.Factories;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using WebApplication.Commands;
-using WebApplication.Factories;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Handlers
+namespace Api.Handlers
 {
     public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, Response<RegisterUserResponse>>
     {

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Commands;
+using Api.Controllers;
+using Api.Factories;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using WebApplication.Controllers;
-using WebApplication.Factories;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Handlers
+namespace Api.Handlers
 {
     public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, Response<ChangeUserDetailsResponse>>
     {
