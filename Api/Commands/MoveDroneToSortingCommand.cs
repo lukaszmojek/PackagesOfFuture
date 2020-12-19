@@ -1,7 +1,7 @@
-﻿using MediatR;
-using WebApplication.Responses;
+﻿using Api.Responses;
+using MediatR;
 
-namespace WebApplication.Controllers
+namespace Api.Commands
 {
     public class MoveDroneToSortingCommand : IRequest<Response<MoveDroneToSortingResponse>>
     {

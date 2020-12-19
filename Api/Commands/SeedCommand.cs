@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Commands
+namespace Api.Commands
 {
     public class SeedCommand : IRequest<Response<SeedResponse>>
     {

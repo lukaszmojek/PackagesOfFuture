@@ -3,7 +3,7 @@ using Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Persistance.Entities;
 
-namespace WebApplication
+namespace Api
 {
     internal static class ServiceCollectionExtensions
     {

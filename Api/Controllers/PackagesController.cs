@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Contracts;
-using WebApplication.Queries;
 
-namespace WebApplication.Controllers
+namespace Api.Controllers
 {
     [Route("[controller]")]
     public class PackagesController : ControllerBase

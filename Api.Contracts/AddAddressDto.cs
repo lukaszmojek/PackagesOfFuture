@@ -1,4 +1,4 @@
-﻿namespace WebApplication.Contracts
+﻿namespace Api.Contracts
 {
     public class AddAddressDto
     {

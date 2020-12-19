@@ -1,9 +1,8 @@
 ﻿using Api.Contracts;
 using AutoMapper;
 using Persistance.Entities;
-using WebApplication.Contracts;
 
-namespace WebApplication.Profiles
+namespace Api.Profiles
 {
     public class PackageProfile : Profile
     {

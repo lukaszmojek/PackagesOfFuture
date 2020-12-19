@@ -2,8 +2,8 @@
 using System.Text;
 using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Contracts.Responses;
 using Newtonsoft.Json;
-using WebApplication.Responses;
 
 namespace Console.ApiSandbox
 {

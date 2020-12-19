@@ -1,13 +1,12 @@
 ﻿using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication.Contracts;
-using WebApplication.Queries;
-using WebApplication.Responses;
+using Api.Responses;
 
-namespace WebApplication.Controllers
+namespace Api.Controllers
 {
     [Route("[controller]")]
     public class LoginController : ControllerBase

@@ -17,7 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Persistance;
 
-namespace WebApplication
+namespace Api
 {
     public class Startup
     {

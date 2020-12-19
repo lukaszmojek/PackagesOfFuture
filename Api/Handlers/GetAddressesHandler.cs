@@ -2,13 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Contracts;
+using Api.Queries;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using WebApplication.Queries;
 
-namespace WebApplication.Handlers
+namespace Api.Handlers
 {
     public class GetAddressesHandler : IRequestHandler<GetAddressesQuery, ICollection<AddressDto>>
     {
