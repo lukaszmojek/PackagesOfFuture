@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Contracts.Responses;
 using Api.Factories;
 using Api.Queries;
-using Api.Responses;
 using AutoMapper;
 using Infrastructure;
 using MediatR;

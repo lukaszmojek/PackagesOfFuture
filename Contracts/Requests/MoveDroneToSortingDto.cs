@@ -1,4 +1,4 @@
-﻿namespace Api.Contracts
+﻿namespace Contracts.Requests
 {
     public class MoveDroneToSortingDto
     {

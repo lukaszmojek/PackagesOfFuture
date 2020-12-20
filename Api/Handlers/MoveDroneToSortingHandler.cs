@@ -1,12 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
-using Api.Controllers;
+using Contracts.Responses;
 using Api.Factories;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using Api.Responses;
 
 namespace Api.Handlers
 {

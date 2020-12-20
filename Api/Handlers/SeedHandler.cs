@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
+using Contracts.Responses;
 using Api.Factories;
 using Infrastructure;
 using MediatR;
 using Persistance;
 using Persistance.Entities;
-using Api.Responses;
 
 namespace Api.Handlers
 {

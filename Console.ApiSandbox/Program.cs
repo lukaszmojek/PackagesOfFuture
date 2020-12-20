@@ -1,8 +1,9 @@
 ﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Api.Contracts;
-using Api.Contracts.Responses;
+using Contracts;
+using Contracts.Requests;
+using Contracts.Responses;
 using Newtonsoft.Json;
 
 namespace Console.ApiSandbox

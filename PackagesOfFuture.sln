@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{0B15
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{752FB3DA-EF5F-4A45-946F-98E4D744641E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Contracts", "Api.Contracts\Api.Contracts.csproj", "{35A1C78D-79B6-4B5F-A532-EDCB24C4F309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{35A1C78D-79B6-4B5F-A532-EDCB24C4F309}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.ApiSandbox", "Console.ApiSandbox\Console.ApiSandbox.csproj", "{35FD0E33-9C58-440E-9921-E0472975AC65}"
 EndProject

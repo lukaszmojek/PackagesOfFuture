@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Api.Commands;
-using Api.Contracts;
-using Api.Controllers;
+﻿using Api.Commands;
+using Contracts;
+using Contracts.Responses;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using Persistance.Entities;
-using Api.Responses;
 
 namespace Api.Profiles
 {

@@ -1,4 +1,4 @@
-﻿namespace Api.Contracts.Responses
+﻿namespace Contracts.Responses
 {
     public class UnregisterUserResponse : IResponse
     {

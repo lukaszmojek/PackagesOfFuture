@@ -1,4 +1,4 @@
-﻿namespace Api.Responses
+﻿namespace Contracts.Responses
 {
     public class Response<T>
     {

@@ -1,6 +1,6 @@
-﻿namespace Api.Contracts
+﻿namespace Contracts.Requests
 {
-    public class RegisterDroneDto
+    public class DroneDto
     {
         public string Model { get; set; }
         public int Range { get; set; }

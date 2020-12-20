@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Api.Contracts;
+using Contracts;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

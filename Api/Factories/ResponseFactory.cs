@@ -1,4 +1,4 @@
-﻿using Api.Responses;
+﻿using Contracts.Responses;
 
 namespace Api.Factories
 {

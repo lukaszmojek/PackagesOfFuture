@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
-using Api.Contracts;
+using Contracts;
+using Contracts.Responses;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Api.Responses;
 
 namespace Api.Controllers
 {

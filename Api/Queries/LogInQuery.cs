@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Api.Responses;
+﻿using Contracts.Responses;
+using MediatR;
 
 namespace Api.Queries
 {

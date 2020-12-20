@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Contracts;
+using Contracts;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
