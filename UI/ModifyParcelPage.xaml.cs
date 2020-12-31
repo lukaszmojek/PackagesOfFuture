@@ -11,32 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-
+using System.Windows.Shapes;
 
 namespace UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy ModifyParcelPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ModifyParcelPage : Page
     {
-        
-
-        public MainWindow()
+        public ModifyParcelPage()
         {
             InitializeComponent();
-            Application.Current.MainWindow = this;
-            Loaded += OnMainWindowLoaded;
         }
 
-        private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ChangeView(new StartupPage());
-        }
-
-        public void ChangeView(Page view)
-        {
-            MainFrame.NavigationService.Navigate(view);
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new MainAppPage());
         }
     }
 }
