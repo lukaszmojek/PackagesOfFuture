@@ -11,32 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-
+using System.Windows.Shapes;
 
 namespace UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegisterPage : Page
     {
-        
-
-        public MainWindow()
+        public RegisterPage()
         {
             InitializeComponent();
-            Application.Current.MainWindow = this;
-            Loaded += OnMainWindowLoaded;
         }
 
-        private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ChangeView(new StartupPage());
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new StartupPage());
         }
 
-        public void ChangeView(Page view)
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.NavigationService.Navigate(view);
+
         }
     }
 }
