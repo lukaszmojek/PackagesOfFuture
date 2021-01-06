@@ -25,6 +25,7 @@ namespace Api.Controllers
         {
             var query = _mapper.Map<LogInQuery>(logInDto);
             var result = await _mediator.Send(query);
+            
             return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : NotFound();
         }
     }

@@ -13,6 +13,7 @@ namespace Api.Profiles
             CreateMap<AddAddressCommand, Address>();
             
             CreateMap<Address, AddressDto>();
+            CreateMap<AddressDto, Address>();
         }
     }
 }

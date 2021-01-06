@@ -2,9 +2,9 @@
 {
     public enum PaymentType
     {
-        Blik,
-        Check,
-        Cash,
-        BankTransfer
+        Blik = 1,
+        Check = 2,
+        Cash = 3,
+        BankTransfer = 4
     }
 }
