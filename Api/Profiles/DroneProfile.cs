@@ -1,6 +1,4 @@
 ﻿using Api.Commands;
-using Contracts;
-using Api.Controllers;
 using AutoMapper;
 using Contracts.Requests;
 using Persistance.Entities;

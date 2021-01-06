@@ -1,8 +1,6 @@
 ﻿using Api.Commands;
 using AutoMapper;
 using Persistance.Entities;
-using Contracts;
-using Api.Controllers;
 using Contracts.Requests;
 
 namespace Api.Profiles

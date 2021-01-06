@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Contracts;
 using Contracts.Requests;
 using MediatR;
 

@@ -1,5 +1,4 @@
-﻿using Contracts;
-using AutoMapper;
+﻿using AutoMapper;
 using Contracts.Requests;
 using Persistance.Entities;
 
