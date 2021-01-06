@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainAppPage.xaml
+    /// Interaction logic for MainAppPage.xaml
     /// </summary>
     public partial class MainAppPage : Page
     {

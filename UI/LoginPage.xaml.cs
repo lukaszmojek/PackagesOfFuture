@@ -26,7 +26,7 @@ using Newtonsoft.Json;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy LoginPage.xaml
+    /// Interaction logic for LoginPage.xaml
     /// </summary>
     public partial class LoginPage : Page
     {
@@ -55,7 +55,7 @@ namespace UI
                 string login = LoginField.Text;
                 string password = PasswordField.Password;
 
-                var wynik = await UserManager.Loguj(login, password);
+                var wynik = await UserManager.LogIn(login, password);
                 
                 if(wynik)
                 {

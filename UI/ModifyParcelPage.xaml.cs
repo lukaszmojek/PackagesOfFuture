@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy ModifyParcelPage.xaml
+    /// Interaction logic for ModifyParcelPage.xaml
     /// </summary>
     public partial class ModifyParcelPage : Page
     {

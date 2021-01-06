@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy StartupPage.xaml
+    /// Interaction logic for StartupPage.xaml
     /// </summary>
     public partial class StartupPage : Page
     {

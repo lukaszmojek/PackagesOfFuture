@@ -14,20 +14,26 @@ namespace Logic
 {
     public static class UserManager
     {
-        public static async Task<bool> Loguj(string username, string password)
+        public static async Task<bool> LogIn(string username, string password)
         {
             using var http = new HttpClient();
 
-            var loginDetails = new LogInDto() { Username = username, Password = password };
+            var loginDetails = new LogInDto()
+            {
+                Username = username, 
+                Password = password
+            };
 
             var json = JsonConvert.SerializeObject(loginDetails);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await http.PostAsync("https://localhost:5001/login", data);
+            var response = await http.PostAsync(AppSettings.Endpoints.Login, data);
 
             if (response.IsSuccessStatusCode)
             {
-                var user = JsonConvert.DeserializeObject<Response<LogInResponse>>(await response.Content.ReadAsStringAsync()).Content;
+                var user = JsonConvert.DeserializeObject<Response<LogInResponse>>(
+                    await response.Content.ReadAsStringAsync()
+                    ).Content;
                 return true;
             }
            

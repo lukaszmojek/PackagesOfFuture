@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy ReviewNotifyPage.xaml
+    /// Interaction logic for ReviewNotifyPage.xaml
     /// </summary>
     public partial class ReviewNotifyPage : Page
     {

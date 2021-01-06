@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy SendParcelPage.xaml
+    /// Interaction logic for SendParcelPage.xaml
     /// </summary>
     public partial class SendParcelPage : Page
     {

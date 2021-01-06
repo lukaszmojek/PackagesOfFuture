@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy NewNotifyPage.xaml
+    /// Interaction logic for NewNotifyPage.xaml
     /// </summary>
     public partial class NewNotifyPage : Page
     {

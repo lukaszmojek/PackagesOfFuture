@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy RegisterPage.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
     public partial class RegisterPage : Page
     {

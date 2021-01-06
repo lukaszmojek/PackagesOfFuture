@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace UI
 {
     /// <summary>
-    /// Logika interakcji dla klasy ReviewParcelPage.xaml
+    /// Interaction logic for ReviewParcelPage.xaml
     /// </summary>
     public partial class ReviewParcelPage : Page
     {
