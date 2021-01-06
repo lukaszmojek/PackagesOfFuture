@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-
 using Api.Contracts;
 using Api.Contracts.Responses;
 using Newtonsoft.Json;
