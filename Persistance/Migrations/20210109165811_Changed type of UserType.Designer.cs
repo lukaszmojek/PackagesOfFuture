@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(PackagesOfFutureDbContext))]
-    partial class PackagesOfFutureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210109165811_Changed type of UserType")]
+    partial class ChangedtypeofUserType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

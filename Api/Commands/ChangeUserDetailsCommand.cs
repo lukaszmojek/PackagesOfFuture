@@ -1,5 +1,6 @@
 ﻿using Contracts.Responses;
 using MediatR;
+using Persistance;
 
 namespace Api.Commands
 {
@@ -10,7 +11,7 @@ namespace Api.Commands
         public string FirstName { get; set; }        
         public string LastName { get; set; }
         public string Email { get; set; }
-        public int Type { get; set; }
+        public UserType Type { get; set; }
         public string Password { get; set; }
     }
 }

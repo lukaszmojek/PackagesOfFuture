@@ -1,8 +1,8 @@
 ﻿using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Api.Contracts;
-using Api.Contracts.Responses;
+using Contracts.Requests;
+using Contracts.Responses;
 using Newtonsoft.Json;
 
 
@@ -16,7 +16,7 @@ namespace Logic
 
             var loginDetails = new LogInDto()
             {
-                Username = username, 
+                Email = username, 
                 Password = password
             };
 

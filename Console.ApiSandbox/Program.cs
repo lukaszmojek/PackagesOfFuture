@@ -14,7 +14,7 @@ namespace Console.ApiSandbox
         {
             using var http = new HttpClient();
             
-            var loginDetails = new LogInDto() {Username = "hjanek", Password = "debil123"};
+            var loginDetails = new LogInDto() {Email = "hjanek", Password = "debil123"};
             
             var json = JsonConvert.SerializeObject(loginDetails);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
