@@ -25,7 +25,7 @@ namespace Api.Handlers
         public async Task<Response<LogInResponse>> Handle(LogInQuery request, CancellationToken cancellationToken)
         {
             var user = (await _repository.GetAsync())
-                .SingleOrDefault(u => u.UserName.Equals(request.Email)
+                .SingleOrDefault(u => u.Email.Equals(request.Email)
                                       && u.Password.Equals(request.Password));
 
             if (user == null)

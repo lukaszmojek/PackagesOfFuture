@@ -29,7 +29,6 @@ namespace Api.Handlers
                 var user = await _repository.GetByIdAsync(command.Id)
                            ?? throw new Exception("User does not exist");
 
-                user.UserName = command.UserName;
                 user.FirstName = command.FirstName;
                 user.LastName = command.LastName;
                 user.Email = command.Email;

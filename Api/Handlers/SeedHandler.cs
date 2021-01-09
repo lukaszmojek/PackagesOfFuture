@@ -36,7 +36,6 @@ namespace Api.Handlers
                 new User
                 {
                     Id = 1,
-                    UserName = "dawbla",
                     FirstName = "Dawid",
                     LastName = "Blaszkiewicz",
                     Email = "dawid@gmail.com",

@@ -4,11 +4,10 @@ namespace Persistance.Entities
 {
     public class User : Entity
     {
-        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public int Type { get; set; }
+        public UserType Type { get; set; }
         public string Password { get; set; }
         
         public virtual ICollection<Address> Addresses { get; set; }
