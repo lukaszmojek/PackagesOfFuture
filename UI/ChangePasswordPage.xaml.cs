@@ -11,32 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-
+using System.Windows.Shapes;
 
 namespace UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy ChangePasswordPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChangePasswordPage : Page
     {
-        
-
-        public MainWindow()
+        public ChangePasswordPage()
         {
             InitializeComponent();
-            Application.Current.MainWindow = this;
-            Loaded += OnMainWindowLoaded;
         }
 
-        private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            ChangeView(new StartupPage());
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new MainAppPage());
         }
 
-        public void ChangeView(Page view)
+        private void ChangePasswordButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.NavigationService.Navigate(view);
+
         }
     }
 }
