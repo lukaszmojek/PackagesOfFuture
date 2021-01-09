@@ -360,3 +360,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.idea/.idea.PackagesOfFuture/.idea/codeStyles/codeStyleConfig.xml
+/.idea/.idea.PackagesOfFuture/.idea/modules.xml
+/.idea/.idea.PackagesOfFuture/.idea/projectSettingsUpdater.xml
+/.idea/.idea.PackagesOfFuture/riderModule.iml
+/.idea/.idea.PackagesOfFuture/.idea/vcs.xml
