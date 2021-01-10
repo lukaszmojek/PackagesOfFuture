@@ -36,8 +36,9 @@ namespace UI
 
                 var wynik = await UserManager.LogIn(login, password);
                 
-                if(wynik)
+                if (wynik)
                 {
+                    var user = State.User;
                     var mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow?.ChangeView(new MainAppPage());
                 }

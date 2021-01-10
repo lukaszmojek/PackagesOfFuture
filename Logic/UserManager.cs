@@ -27,14 +27,14 @@ namespace Logic
 
             if (response.IsSuccessStatusCode)
             {
-                var user = JsonConvert.DeserializeObject<Response<LogInResponse>>(
+                State.User = JsonConvert.DeserializeObject<Response<LogInResponse>>(
                     await response.Content.ReadAsStringAsync()
                     ).Content;
+
                 return true;
             }
            
             return false;
-            
         }
     }
 }
