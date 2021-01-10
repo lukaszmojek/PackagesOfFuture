@@ -2,13 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
-using Api.Controllers;
+using Contracts.Responses;
 using Api.Factories;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using Api.Responses;
 
 namespace Api.Handlers
 {
@@ -30,7 +29,6 @@ namespace Api.Handlers
                 var user = await _repository.GetByIdAsync(command.Id)
                            ?? throw new Exception("User does not exist");
 
-                user.UserName = command.UserName;
                 user.FirstName = command.FirstName;
                 user.LastName = command.LastName;
                 user.Email = command.Email;

@@ -1,11 +1,10 @@
-﻿using MediatR;
-using Api.Responses;
+﻿using Contracts.Responses;
+using MediatR;
 
 namespace Api.Commands
 {
     public class RegisterUserCommand : IRequest<Response<RegisterUserResponse>>
     {
-        public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

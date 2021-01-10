@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Api.Commands;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Api.Queries;
 
 namespace Api.Controllers
 {

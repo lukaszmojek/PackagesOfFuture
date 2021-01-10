@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Contracts;
 using Api.Queries;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using Api.Controllers;
+using Contracts.Requests;
 
 namespace Api.Handlers
 {

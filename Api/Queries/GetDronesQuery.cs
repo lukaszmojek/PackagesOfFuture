@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Api.Contracts;
+using Contracts.Requests;
 using MediatR;
 
 namespace Api.Queries

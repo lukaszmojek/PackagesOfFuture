@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Contracts;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using Infrastructure;
 using MediatR;
 using Persistance.Entities;
-using Api.Controllers;
-using Api.Responses;
 
 namespace Api.Handlers
 {

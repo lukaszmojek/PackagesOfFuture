@@ -1,6 +1,6 @@
-﻿using Api.Contracts;
-using Api.Queries;
+﻿using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 
 namespace Api.Profiles
 {

@@ -1,27 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Api.Contracts;
-using Api.Contracts.Responses;
 using Logic;
-using Newtonsoft.Json;
 
 namespace UI
 {
@@ -57,8 +36,9 @@ namespace UI
 
                 var wynik = await UserManager.LogIn(login, password);
                 
-                if(wynik)
+                if (wynik)
                 {
+                    var user = State.User;
                     var mainWindow = (MainWindow)Application.Current.MainWindow;
                     mainWindow?.ChangeView(new MainAppPage());
                 }

@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using Api.Contracts;
+using Contracts.Responses;
 using Api.Queries;
 using AutoMapper;
+using Contracts.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Api.Responses;
 
 namespace Api.Controllers
 {
@@ -25,6 +25,7 @@ namespace Api.Controllers
         {
             var query = _mapper.Map<LogInQuery>(logInDto);
             var result = await _mediator.Send(query);
+            
             return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : NotFound();
         }
     }

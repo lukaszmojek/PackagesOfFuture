@@ -1,8 +1,7 @@
 ﻿using Api.Commands;
 using AutoMapper;
 using Persistance.Entities;
-using Api.Contracts;
-using Api.Controllers;
+using Contracts.Requests;
 
 namespace Api.Profiles
 {
@@ -14,6 +13,7 @@ namespace Api.Profiles
             CreateMap<AddAddressCommand, Address>();
             
             CreateMap<Address, AddressDto>();
+            CreateMap<AddressDto, Address>();
         }
     }
 }
