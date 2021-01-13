@@ -32,7 +32,10 @@ namespace Api
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
 
-            services.AddSingleton<DbContext, PackagesOfFutureDbContext>()
+            string connectionString = Configuration.GetConnectionString("DatabaseUrl");
+            services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
+                builder.UseSqlServer(connectionString)
+                    .EnableSensitiveDataLogging())
                 .RegisterRepositories();
         }
 
