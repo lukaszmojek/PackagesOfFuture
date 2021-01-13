@@ -10,21 +10,30 @@
 
     <Grid RenderTransformOrigin="0.479,0.549" Width="800" Height="800" HorizontalAlignment="Left" VerticalAlignment="Top">
         <Grid.Background>
-            <ImageBrush ImageSource="/loginBackground.png"/>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
         </Grid.Background>
-        <Button x:Name="BackButton" Content="Powrót&#xA;" HorizontalAlignment="Left" Margin="544,705,0,0" VerticalAlignment="Top" Height="30" Width="200" Click="BackButton_Click" Background="#FF0023FF" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.031,-0.093"/>
-        <Grid Margin="180,229,180,277">
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Grid Margin="100,158,100,215" Width="410" RenderTransformOrigin="0.479,0.549">
             <Grid.Background>
-                <ImageBrush ImageSource="/droga2.png" Stretch="UniformToFill"/>
+                <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="#d2d2d2" Offset="7" />
+                    <GradientStop Color="#222222" Offset="0.2" />
+                </RadialGradientBrush>
             </Grid.Background>
-            <TextBox x:Name="LoginField" HorizontalAlignment="Left" Margin="104,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="25"/>
-            <Label Content="Adres e-mail&#xD;&#xA;" HorizontalAlignment="Left" Margin="102,45,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <PasswordBox x:Name="PasswordField" HorizontalAlignment="Left" Margin="104,197,0,0" VerticalAlignment="Top" Width="200" Height="25"/>
-            <Label Content="Hasło:" HorizontalAlignment="Left" Margin="102,160,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" RenderTransformOrigin="1.17,1.626"/>
-            <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="349,230,0,24" Click="LogInButton_Click" Width="81" RenderTransformOrigin="-2.277,-2.163" Foreground="White" Background="#FF0023FF" FontWeight="Bold" Height="40"/>
-            <Button x:Name="ForgotPassword" Content="Zapomniałeś hasła?&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="165" Foreground="White" FontSize="16" FontWeight="Bold" Height="25" Click="ForgotPassword_Click" BorderBrush="{x:Null}"/>
+            <Image Margin="-179,433,334,-219" Stretch="Fill" Source="/package.png"/>
+            <TextBox x:Name="LoginField" HorizontalAlignment="Center" Margin="0,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="25"/>
+            <Label Content="Adres e-mail&#xD;&#xA;" HorizontalAlignment="Left" Margin="105,130,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <PasswordBox x:Name="PasswordField" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="200" Height="25"/>
+            <Label Content="Hasło:" HorizontalAlignment="Left" Margin="105,200,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" RenderTransformOrigin="1.17,1.626"/>
+            <Button x:Name="ForgotPassword" Content="Zapomniałeś hasła?&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,262,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="165" Foreground="White" FontSize="16" FontWeight="Bold" Height="25" Click="ForgotPassword_Click" BorderBrush="{x:Null}"/>
         </Grid>
-        <Label x:Name="testowyLabel" Content="Label" HorizontalAlignment="Left" Margin="301,85,0,0" VerticalAlignment="Top" Height="94" Width="465" Background="Red" Foreground="White" FontSize="10" FontWeight="Bold"/>
         <Button x:Name="GoToNextPageButton" Content="EmergencyButton &#xD;&#xA;(jesli sie nie zalogujesz)" HorizontalAlignment="Left" Margin="482,523,0,0" VerticalAlignment="Top" Height="51" Width="138" Background="#FFF300FF" BorderBrush="#FFE800FF" Foreground="White" FontWeight="Bold" Click="GoToNextPageButton_Click"/>
+
+        <Button x:Name="BackButton" Content="Powrót&#xA;" HorizontalAlignment="Left" Margin="195,650,0,100"  Height="50" Width="200" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.031,-0.093" FontSize="26"/>
+        <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="405,650,0,100" Click="LogInButton_Click" Width="200" RenderTransformOrigin="0,0" Foreground="White" Background="#2d2d2d" FontWeight="Bold" Height="50" FontSize="26"/>
+        <Label x:Name="testowyLabel" Visibility="Hidden" Content="Label" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="68" Width="352" Background="Transparent" Foreground="White" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using Logic;
 
@@ -27,7 +28,7 @@ namespace UI
             
             if (PasswordField.Password == "" || LoginField.Text == "")
             {
-                MessageBox.Show("Login/hasło nie może być puste!");
+                testowyLabel.Content = "Login/hasło nie może być puste!";
             }
             else
             {
@@ -44,10 +45,15 @@ namespace UI
                 }
                 else
                 {
-                    MessageBox.Show("Zły login lub hasło");
-                    testowyLabel.Content = "Bledne haslo lub login";
+                    testowyLabel.Visibility = Visibility.Visible;
+                    testowyLabel.Content = "Zły login lub hasło";
                 }
-            }   
+            }
+
+            testowyLabel.Visibility = await Task.Delay(3000).ContinueWith(_ =>
+            {
+                return Visibility.Hidden;
+            });
         }
 
         private void ForgotPassword_Click(object sender, RoutedEventArgs e)
