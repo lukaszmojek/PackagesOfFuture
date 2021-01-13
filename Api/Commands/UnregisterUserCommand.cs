@@ -1,5 +1,6 @@
 ﻿using Contracts.Responses;
 using MediatR;
+using Persistance;
 
 namespace Api.Commands
 {
