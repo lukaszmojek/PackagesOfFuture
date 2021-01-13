@@ -1,7 +1,7 @@
 ﻿using Contracts.Reponses;
 using Contracts.Responses;
 using MediatR;
-using Persistance;
+using ResourceEnums;
 
 namespace Api.Commands
 {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ResourceEnums;
 
 namespace Persistance.Entities
 {

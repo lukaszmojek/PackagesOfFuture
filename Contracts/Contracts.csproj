@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Persistance\Persistance.csproj" />
+      <ProjectReference Include="..\ResourceEnums\ResourceEnums.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System;
+using ResourceEnums;
 
 namespace Persistance.Entities
 {

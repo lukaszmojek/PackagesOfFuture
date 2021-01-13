@@ -9,6 +9,7 @@ using Infrastructure;
 using MediatR;
 using Persistance;
 using Persistance.Entities;
+using ResourceEnums;
 
 namespace Api.Handlers
 {
