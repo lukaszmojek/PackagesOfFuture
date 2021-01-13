@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Queries;
@@ -26,7 +27,11 @@ namespace Api.Handlers
 
         public async Task<ICollection<PackageDto>> Handle(GetPackagesQuery request, CancellationToken cancellationToken)
         {
-            var packages = await _repository.GetAsync();
+            var packages = 
+                await _dbContext.Set<Package>()
+                    .Include(x => x.Payment)
+                    .ToListAsync();
+
             return this._mapper.Map<ICollection<PackageDto>>(packages);
         }
     }

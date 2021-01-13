@@ -13,6 +13,8 @@ namespace Contracts.Requests
         public double Length { get; set; }
         public double Weight { get; set; }
         
+        public PaymentDto Payment { get; set; }
+
         public int DeliveryAddressId { get; set; }
         public int ReceiveAddressId { get; set; }
     }

@@ -16,16 +16,10 @@ namespace Persistance
         public DbSet<Service> Services { get; set; }
         public DbSet<Payment> Payments { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Server=tcp:shaggy.database.windows.net,1433;" +
-                                    "Initial Catalog=packages-of-future;" +
-                                    "Persist Security Info=False;" +
-                                    "User ID=PackagesOfFutureServiceAccount;" +
-                                    "Password=SilneHaslo123$;" +
-                                    "MultipleActiveResultSets=False;" +
-                                    "Encrypt=True;" +
-                                    "TrustServerCertificate=False;" +
-                                    "Connection Timeout=30;");
+        public PackagesOfFutureDbContext(DbContextOptions<PackagesOfFutureDbContext> options)
+            : base(options)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
