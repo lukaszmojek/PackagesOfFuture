@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
+using Data.Entities;
 using Infrastructure;
+using Infrastructure.Interfaces;
 using MediatR;
-using Persistance;
-using Persistance.Entities;
+using ResourceEnums;
 
 namespace Api.Handlers
 {

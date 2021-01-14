@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Persistance
+namespace Data
 {
     public abstract class Entity
     {

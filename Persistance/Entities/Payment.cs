@@ -1,4 +1,6 @@
-﻿namespace Persistance.Entities
+﻿using ResourceEnums;
+
+namespace Data.Entities
 {
     public class Payment : Entity
     {

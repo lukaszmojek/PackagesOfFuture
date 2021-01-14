@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
+using Data.Entities;
 using Infrastructure;
+using Infrastructure.Interfaces;
 using MediatR;
-using Persistance.Entities;
 
 namespace Api.Handlers
 {

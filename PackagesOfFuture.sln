@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Cont
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console.ApiSandbox", "Console.ApiSandbox\Console.ApiSandbox.csproj", "{35FD0E33-9C58-440E-9921-E0472975AC65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceEnums", "ResourceEnums\ResourceEnums.csproj", "{17839F47-1CE4-4BAB-AEB1-1661C4664831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{35FD0E33-9C58-440E-9921-E0472975AC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35FD0E33-9C58-440E-9921-E0472975AC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35FD0E33-9C58-440E-9921-E0472975AC65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17839F47-1CE4-4BAB-AEB1-1661C4664831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17839F47-1CE4-4BAB-AEB1-1661C4664831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17839F47-1CE4-4BAB-AEB1-1661C4664831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17839F47-1CE4-4BAB-AEB1-1661C4664831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

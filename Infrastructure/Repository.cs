@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Data;
+using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Persistance;
 
-namespace Infrastructure.Repositories
+namespace Infrastructure
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {

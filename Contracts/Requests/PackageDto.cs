@@ -1,5 +1,5 @@
 ﻿using System;
-using Persistance;
+using ResourceEnums;
 
 namespace Contracts.Requests
 {

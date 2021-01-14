@@ -1,4 +1,4 @@
-namespace Persistance
+namespace ResourceEnums
 {
     public enum UserType
     {

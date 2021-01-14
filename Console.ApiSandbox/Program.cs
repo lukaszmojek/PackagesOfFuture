@@ -1,7 +1,6 @@
 ﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Contracts;
 using Contracts.Requests;
 using Contracts.Responses;
 using Newtonsoft.Json;

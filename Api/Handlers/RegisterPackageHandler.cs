@@ -6,10 +6,11 @@ using Api.Factories;
 using AutoMapper;
 using Contracts.Requests;
 using Contracts.Responses;
+using Data.Entities;
 using Infrastructure;
+using Infrastructure.Interfaces;
 using MediatR;
-using Persistance;
-using Persistance.Entities;
+using ResourceEnums;
 
 namespace Api.Handlers
 {

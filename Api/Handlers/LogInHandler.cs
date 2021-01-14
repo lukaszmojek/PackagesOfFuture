@@ -5,9 +5,10 @@ using Contracts.Responses;
 using Api.Factories;
 using Api.Queries;
 using AutoMapper;
+using Data.Entities;
 using Infrastructure;
+using Infrastructure.Interfaces;
 using MediatR;
-using Persistance.Entities;
 
 namespace Api.Handlers
 {

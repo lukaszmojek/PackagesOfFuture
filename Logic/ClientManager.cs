@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Infrastructure.Repositories;
-using Persistance.Entities;
+using Data.Entities;
+using Infrastructure;
 
 namespace Logic
 {
