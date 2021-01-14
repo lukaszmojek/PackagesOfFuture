@@ -10,8 +10,7 @@ namespace Data.Configurations
         {
             builder.HasKey(d => d.Id);
 
-            builder.HasMany(o => o.Addresses)
-                .WithOne();
+            builder.HasOne(o => o.Address);
         }
     }
 }

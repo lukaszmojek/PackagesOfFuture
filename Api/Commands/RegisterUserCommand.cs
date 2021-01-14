@@ -1,4 +1,5 @@
-﻿using Contracts.Responses;
+﻿using Contracts.Requests;
+using Contracts.Responses;
 using MediatR;
 
 namespace Api.Commands
@@ -10,5 +11,6 @@ namespace Api.Commands
         public string Email { get; set; }
         public int Type { get; set; }
         public string Password { get; set; }
+        public CreateAddressDto Address { get; set; }
     }
 }

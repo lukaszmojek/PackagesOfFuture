@@ -11,6 +11,6 @@ namespace Data.Entities
         public UserType Type { get; set; }
         public string Password { get; set; }
         
-        public virtual ICollection<Address> Addresses { get; set; }
+        public virtual Address Address { get; set; }
     }
 }
