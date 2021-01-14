@@ -1,4 +1,5 @@
-﻿using ResourceEnums;
+﻿using Contracts.Requests;
+using ResourceEnums;
 
 namespace Contracts.Responses
 {
@@ -10,5 +11,6 @@ namespace Contracts.Responses
         public string LastName { get; set; }
         public string Email { get; set; }
         public UserType Type { get; set; }
+        public AddressDto Address { get; set; }
     }
 }

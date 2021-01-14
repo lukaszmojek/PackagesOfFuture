@@ -9,23 +9,27 @@ using Data.Entities;
 using Infrastructure;
 using Infrastructure.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Handlers
 {
     public class LogInHandler : IRequestHandler<LogInQuery, Response<LogInResponse>>
     {
         private readonly IRepository<User> _repository;
+        private readonly DbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public LogInHandler(IRepository<User> repository, IMapper mapper)
+        public LogInHandler(IRepository<User> repository, IMapper mapper, DbContext dbContext)
         {
             _repository = repository;
             _mapper = mapper;
+            _dbContext = dbContext;
         }
         
         public async Task<Response<LogInResponse>> Handle(LogInQuery request, CancellationToken cancellationToken)
         {
-            var user = (await _repository.GetAsync())
+            var user = await _dbContext.Set<User>()
+                .Include(x => x.Addresses)
                 .SingleOrDefault(u => u.Email.Equals(request.Email)
                                       && u.Password.Equals(request.Password));
 
