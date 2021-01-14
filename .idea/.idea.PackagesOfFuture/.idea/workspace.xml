@@ -28,25 +28,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f41f7f-8b13-4c2a-ba29-39798a01d115" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Api/Commands/RegisterPackageCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/RegisterPackageHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Profiles/PaymentProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contracts/Requests/PackageDetailsDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contracts/Requests/PaymentDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contracts/Requests/RegisterPackageDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contracts/Responses/RegisterPackageResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Enums/UserType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Controllers/VehiclesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Handlers/GetVehicleQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Profiles/VehicleProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Queries/GetVehiclesQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts/Requests/VehicleDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/AddressConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/ClientConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/DroneConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/PackageConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/PaymentConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/ServiceConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/SortingConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/VehicleConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Commands/ChangeUserDetailsCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Commands/ChangeUserDetailsCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/LoginController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Controllers/PackagesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/AddressProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Profiles/PackageProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/Requests/PackageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/Requests/PackageDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Enums/PaymentType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Enums/PaymentType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205205456_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205205456_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Initial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205213024_User-Address relation change p1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/UserAddressrelationchangep1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205213024_User-Address relation change p1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/UserAddressrelationchangep1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109165811_Changed type of UserType.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/ChangedtypeofUserType.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109165811_Changed type of UserType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/ChangedtypeofUserType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109174337_Removed username from user.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Removedusernamefromuser.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109174337_Removed username from user.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Removedusernamefromuser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +63,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dawid" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,46 +71,20 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Controllers/AddressesController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/ModifyParcelPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0F7057F5-1F0A-484E-9999-CCC4282DF389/228/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/Package.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/ReviewParcelPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Controllers/LoginController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/NewNotifyPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Api/Commands/RegisterPackageCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Console.ApiSandbox/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Profiles/AddressProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Queries/GetPackagesQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/RegisterPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Handlers/GetUsersHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Contracts/Requests/LogInDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Queries/LogInQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Queries/GetUsersQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/App.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Queries/GetDronesQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/SendParcelPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/StartupPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Queries/GetDronesQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Handlers/GetAddressesHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Handlers/GetPackagesHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Profiles/PackageProfile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Commands/AddAddressCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Queries/GetUsersQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Queries/GetAddressesQuery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Controllers/DronesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/ReviewNotifyPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Controllers/PackagesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Profiles/LoginProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/LoginPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Controllers/AddressesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Logic/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Logic/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Controllers/SeedController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Profiles/DroneProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/UI/MainAppPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/shaggy/Repos/PackagesOfFuture/Api/Handlers/GetDronesHandler.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -122,10 +103,8 @@
       <option value="$PROJECT_DIR$/Api/Commands/SeedCommand.cs" />
       <option value="$PROJECT_DIR$/Api/Commands/UnregisterUserCommand.cs" />
       <option value="$PROJECT_DIR$/Api/Queries/LogInQuery.cs" />
-      <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
       <option value="$PROJECT_DIR$/Contracts/Requests/AddAddressDto.cs" />
       <option value="$PROJECT_DIR$/Contracts/Responses/RegisterPackageResponse.cs" />
-      <option value="$PROJECT_DIR$/Api/Controllers/LoginController.cs" />
       <option value="$PROJECT_DIR$/Api/Commands/AddAddressCommand.cs" />
       <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
       <option value="$PROJECT_DIR$/Persistance/Entities/Package.cs" />
@@ -144,10 +123,14 @@
       <option value="$PROJECT_DIR$/Api/Handlers/SeedHandler.cs" />
       <option value="$PROJECT_DIR$/Persistance/Entities/User.cs" />
       <option value="$PROJECT_DIR$/Api/Commands/ChangeUserDetailsCommand.cs" />
+      <option value="$PROJECT_DIR$/Api/Startup.cs" />
+      <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
+      <option value="$PROJECT_DIR$/Api/Controllers/LoginController.cs" />
+      <option value="$PROJECT_DIR$/Api/Controllers/VehicleController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lELnzjEFE7H2d9CJ3JDeDsS6Ot" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -405,34 +388,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Yet another namespace fix + removed duplicated classes" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Api/Handlers/RegisterUserHandler.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\RegisterUserHandler.cs" initialLine="25" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Api/Handlers/UnregisterUserHandler.cs</url>
-          <line>23</line>
-          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\UnregisterUserHandler.cs" initialLine="22" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Api/Controllers/AddressesController.cs</url>
-          <line>36</line>
-          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Controllers\AddressesController.cs" initialLine="37" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture\Api\Handlers\AddAddressHandler.cs" initialLine="25" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Api.Commands.RegisterPackageCommand" memberName="DeliveryAddress" />

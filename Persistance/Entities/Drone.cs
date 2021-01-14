@@ -1,4 +1,4 @@
-﻿namespace Persistance.Entities
+﻿namespace Data.Entities
 {
     public class Drone : Entity
     {

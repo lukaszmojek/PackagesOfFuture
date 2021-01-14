@@ -1,5 +1,4 @@
-﻿using Contracts.Reponses;
-using Contracts.Responses;
+﻿using Contracts.Responses;
 using MediatR;
 using ResourceEnums;
 

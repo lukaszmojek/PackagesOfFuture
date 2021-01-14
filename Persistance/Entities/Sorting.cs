@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Persistance.Entities
+namespace Data.Entities
 {
     public class Sorting : Entity
     {

@@ -3,7 +3,7 @@ using Contracts.Responses;
 using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
-using Persistance.Entities;
+using Data.Entities;
 
 namespace Api.Profiles
 {

@@ -1,4 +1,5 @@
 using AutoMapper;
+using Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Persistance;
 
 namespace Api
 {
@@ -32,9 +32,8 @@ namespace Api
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
 
-            string connectionString = Configuration.GetConnectionString("DatabaseUrl");
             services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
-                builder.UseSqlServer(connectionString)
+                builder.UseSqlServer(Configuration.GetConnectionString("DatabaseUrl"))
                     .EnableSensitiveDataLogging())
                 .RegisterRepositories();
         }

@@ -1,7 +1,7 @@
-﻿using Infrastructure;
-using Infrastructure.Repositories;
+﻿using Data.Entities;
+using Infrastructure;
+using Infrastructure.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Persistance.Entities;
 
 namespace Api
 {

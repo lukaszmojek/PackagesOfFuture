@@ -5,8 +5,9 @@ using Api.Queries;
 using AutoMapper;
 using Infrastructure;
 using MediatR;
-using Persistance.Entities;
 using Contracts.Requests;
+using Data.Entities;
+using Infrastructure.Interfaces;
 
 namespace Api.Handlers
 {

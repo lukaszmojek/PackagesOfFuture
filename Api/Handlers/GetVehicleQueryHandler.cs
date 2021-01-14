@@ -1,0 +1,29 @@
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Api.Queries;
+using AutoMapper;
+using Contracts.Requests;
+using Data.Entities;
+using Infrastructure.Interfaces;
+using MediatR;
+
+namespace Api.Handlers
+{
+    public class GetVehicleQueryHandler : IRequestHandler<GetVehiclesQuery, ICollection<VehicleDto>>
+    {
+        private IRepository<Vehicle> _repository;
+        private IMapper _mapper;
+        
+        public GetVehicleQueryHandler(IRepository<Vehicle> repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+        
+        public async Task<ICollection<VehicleDto>> Handle(GetVehiclesQuery request, CancellationToken cancellationToken)
+        {
+            return _mapper.Map<ICollection<VehicleDto>>(await _repository.GetAsync());
+        }
+    }
+}

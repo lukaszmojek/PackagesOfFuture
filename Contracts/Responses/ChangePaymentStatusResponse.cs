@@ -1,6 +1,4 @@
-﻿using Contracts.Responses;
-
-namespace Contracts.Reponses
+﻿namespace Contracts.Responses
 {
     public class ChangePaymentStatusResponse : IResponse
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using ResourceEnums;
 
-namespace Persistance.Entities
+namespace Data.Entities
 {
     public class Package : Entity
     {

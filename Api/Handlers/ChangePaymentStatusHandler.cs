@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Api.Factories;
 using AutoMapper;
-using Contracts.Reponses;
 using Contracts.Responses;
+using Data.Entities;
 using Infrastructure;
+using Infrastructure.Interfaces;
 using MediatR;
-using Persistance.Entities;
 
 namespace Api.Handlers
 {
