@@ -24,10 +24,16 @@ namespace UI
         public MainAppPage()
         {
             InitializeComponent();
+            
+            string name = State.User?.FirstName;
+            string lastName = State.User?.LastName;
+            welcomeLabel.Content = "Witaj " + name + " " + lastName;
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
+            State.User = null;
+
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new StartupPage());
         }

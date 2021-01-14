@@ -1,4 +1,6 @@
-﻿namespace Contracts.Responses
+﻿using ResourceEnums;
+
+namespace Contracts.Responses
 {
     public class LogInResponse : IResponse
     {
@@ -7,6 +9,6 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string Type { get; set; }
+        public UserType Type { get; set; }
     }
 }

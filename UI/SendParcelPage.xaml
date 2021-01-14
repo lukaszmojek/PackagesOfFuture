@@ -12,20 +12,20 @@
         <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
         <Label x:Name="TestLabel" Content="Test" HorizontalAlignment="Left" Margin="34,21,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         <Grid Margin="244,21,244,505" Background="#FFFF35BF">
-            <ComboBox x:Name="TypeOfParcel" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,49,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfParcel_SelectionChanged">
+            <ComboBox x:Name="TypeOfParcel" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,49,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfParcel_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Paczka A (10x10x10cm - 5kg)" Tag="0"/>
                 <ComboBoxItem Content="Paczka B (50x50x50cm - 10kg)" Tag="1"/>
                 <ComboBoxItem Content="Paczka C (100x100x100cm - 20kg)" Tag="2"/>
             </ComboBox>
             <Label Content="Wybierz rodzaj przesyłki" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Wybierz rodzaj kuriera" HorizontalAlignment="Left" Margin="33,88,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <ComboBox x:Name="TypeOfCourier" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfCourier_SelectionChanged">
+            <ComboBox x:Name="TypeOfCourier" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfCourier_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Kurier Standard" Tag="0"/>
                 <ComboBoxItem Content="Kurier Ekspres" Tag="1"/>
                 <ComboBoxItem Content="Kurier Weekend" Tag="2"/>
             </ComboBox>
             <Label Content="Wybierz rodzaj płatności" HorizontalAlignment="Left" Margin="33,159,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfPayment_SelectionChanged">
+            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfPayment_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Karta" Tag="0"/>
                 <ComboBoxItem Content="Blik" Tag="1"/>
                 <ComboBoxItem Content="Przelew" Tag="2"/>
@@ -33,21 +33,21 @@
         </Grid>
         <Grid Margin="34,332,430,185" Background="#FF76FF28">
             <Label Content="Adres nadawcy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Miejscowość" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Numer domu" HorizontalAlignment="Left" Margin="33,122,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Kod pocztowy" HorizontalAlignment="Left" Margin="33,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34"/>
+            <TextBox HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34" FontSize="20"/>
         </Grid>
         <Grid Margin="423,332,41,185" Background="#FF76FF28">
             <Label Content="Adres odbiorcy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Miejscowość" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Numer domu" HorizontalAlignment="Left" Margin="33,122,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Kod pocztowy" HorizontalAlignment="Left" Margin="33,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34"/>
+            <TextBox MaxLength="5" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34" FontSize="20"/>
         </Grid>
         <Label Content="Do zapłaty:" HorizontalAlignment="Center" Margin="0,635,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         <Label x:Name="priceLabel" Content="" HorizontalAlignment="Center" Margin="0,669,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162" Background="White" Width="93"/>

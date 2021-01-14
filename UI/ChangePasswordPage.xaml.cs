@@ -33,7 +33,24 @@ namespace UI
 
         private void ChangePasswordButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if(currentPasswordField.Password == "" || newPasswordField.Password == "" || confirmNewPasswordField.Password == "")
+            {
+                MessageBox.Show("Pola nie mogą być puste");
+                currentPasswordField.Clear();
+                newPasswordField.Clear();
+                confirmNewPasswordField.Clear();
+            }
+            else
+            {
+                if(newPasswordField.Password== confirmNewPasswordField.Password)
+                {
+                    MessageBox.Show("Hasla sie zgadzaja");
+                }
+                else
+                {
+                    MessageBox.Show("Hasla musza byc takie same");
+                }
+            }
         }
     }
 }

@@ -33,7 +33,18 @@ namespace UI
 
         private void RecoverPasswordButton_Click(object sender, RoutedEventArgs e)
         {
-            RecoverPasswordLabel.Content = "Nowe_haslo_here";
+            
+            if(emailField.Text == "" || nameField.Text == "" || lastNameField.Text == "")
+            {
+                MessageBox.Show("Zadne pole nie moze byc puste!");
+            }
+            else
+            {
+                string haslo = "bajojajo";
+                recoverPasswordLabel.Content = "Hasło: " + haslo;
+            }
+
+            
         }
     }
 }

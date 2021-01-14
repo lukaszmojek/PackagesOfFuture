@@ -23,8 +23,7 @@
                     <GradientStop Color="#222222" Offset="0.2" />
                 </RadialGradientBrush>
             </Grid.Background>
-            <Label Content="Witaj" HorizontalAlignment="Left" Margin="27,22,0,0" VerticalAlignment="Top" Height="44" Width="75" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="22"/>
-            <Label x:Name="NameLastNameLabel" Content="+ Imie + Nazwisko" HorizontalAlignment="Left" Margin="102,22,0,0" VerticalAlignment="Top" Height="44" Width="224" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="22"/>
+            <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Left" Margin="30,22,0,0" VerticalAlignment="Top" Height="44" Width="224" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="22"/>
             <Label x:Name="NameLastNameLabel_Copy" Content="Co chcesz zrobić?" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="60" Width="314" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="36"/>
         </Grid>
         <Grid Margin="50,229,37,69" RenderTransformOrigin="0.479,0.549">
@@ -35,7 +34,7 @@
             <Button x:Name="ReviewNotify" Content="Przegląd zgłoszeń" HorizontalAlignment="Left" Margin="391,41,0,0" VerticalAlignment="Top" Height="50" Width="312" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ReviewNotify_Click" />
             <Button x:Name="NewNotify" Content="Twórz nowe zgłoszenie" HorizontalAlignment="Left" Margin="391,154,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="NewNotify_Click" />
             <Button x:Name="ChangePassword" Content="Zmień hasło" HorizontalAlignment="Left" Margin="391,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ChangePassword_Click" />
-            
+
         </Grid>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
     </Grid>

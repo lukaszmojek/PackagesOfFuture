@@ -24,20 +24,18 @@
                 </RadialGradientBrush>
             </Grid.Background>
             <Image Margin="-179,433,334,-219" Stretch="Fill" Source="/package.png"/>
-            <TextBox x:Name="NameField" HorizontalAlignment="Center" Margin="0,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
-            <Label Content="Imię" HorizontalAlignment="Left" Margin="100,78,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox x:Name="LastNameField" HorizontalAlignment="Center" Margin="0,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
-            <TextBox x:Name="EmailField" HorizontalAlignment="Center" Margin="0,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
-            <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="100,137,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <Label Content="Adres e-mail&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <Label Content="Hasło" HorizontalAlignment="Left" Margin="100,259,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox x:Name="UserNameField" HorizontalAlignment="Center" Margin="0,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
-            <Label Content="Nazwa użytkownika&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <TextBox x:Name="nameField" HorizontalAlignment="Center" Margin="0,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
+            <Label Content="Imię" HorizontalAlignment="Left" Margin="100,55,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <TextBox x:Name="lastNameField" HorizontalAlignment="Center" Margin="0,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
+            <TextBox x:Name="emailField" HorizontalAlignment="Center" Margin="0,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="24"/>
+            <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="100,114,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <Label Content="Adres e-mail&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,178,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <Label Content="Hasło" HorizontalAlignment="Left" Margin="100,236,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         </Grid>
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="195,650,0,0" VerticalAlignment="Top" Height="50" Width="200" Click="BackButton_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
         <Button x:Name="RegisterButton" Content="Zarejestruj" HorizontalAlignment="Right" Margin="280,650,195,0" VerticalAlignment="Top" Width="200" Height="50" FontWeight="Bold" Background="#2d2d2d" Foreground="White" Click="RegisterButton_Click" FontSize="26"/>
-        <PasswordBox x:Name="ConfirmPasswordField" HorizontalAlignment="Center" Margin="0,515,0,0" VerticalAlignment="Top" Width="200" Height="24"/>
-        <Label Content="Powtórz hasło&#xA;" HorizontalAlignment="Left" Margin="300,481,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-        <PasswordBox x:Name="PasswordField" HorizontalAlignment="Center" Margin="0,452,0,0" VerticalAlignment="Top" Width="200" Height="24"/>
+        <PasswordBox x:Name="confirmPasswordField" HorizontalAlignment="Center" Margin="0,492,0,0" VerticalAlignment="Top" Width="200" Height="24"/>
+        <Label Content="Powtórz hasło&#xA;" HorizontalAlignment="Left" Margin="300,458,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+        <PasswordBox x:Name="passwordField" HorizontalAlignment="Center" Margin="0,429,0,0" VerticalAlignment="Top" Width="200" Height="24"/>
     </Grid>
 </Page>
