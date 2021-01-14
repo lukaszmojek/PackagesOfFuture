@@ -36,14 +36,14 @@ namespace Api.Handlers
         {
             var addresses = await _addressRepository.GetAsync();
 
-            var pickupAddress = addresses.FirstOrDefault(x => AddressesAreEqual(x, request.PickUpAddress));
+            var pickupAddress = addresses.FirstOrDefault(x => AddressesAreEqual(x, request.ReceiveAddress));
             var destinationAddress = addresses.FirstOrDefault(x => AddressesAreEqual(x, request.DeliveryAddress));
 
             var package = _mapper.Map<Package>(request.Package);
 
             if (pickupAddress == null)
             {
-                var pickupAddressEntity = _mapper.Map<Address>(request.PickUpAddress);
+                var pickupAddressEntity = _mapper.Map<Address>(request.ReceiveAddress);
                 await _addressRepository.AddAsync(pickupAddressEntity);
                 package.ReceiveAddress = pickupAddressEntity;
             }
