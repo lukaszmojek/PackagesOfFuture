@@ -1,6 +1,6 @@
 ﻿namespace Contracts.Responses
 {
-    internal interface IResponse
+    public interface IResponse
     {
         
     }

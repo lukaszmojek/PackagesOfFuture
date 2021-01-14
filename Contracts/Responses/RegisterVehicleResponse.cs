@@ -1,6 +1,6 @@
 namespace Contracts.Responses
 {
-    public class RegisterVehicleResponse : Response<RegisterVehicleResponse>
+    public class RegisterVehicleResponse : IResponse
     {
     }
 }

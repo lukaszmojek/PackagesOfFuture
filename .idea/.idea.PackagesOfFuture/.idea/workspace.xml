@@ -28,32 +28,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f41f7f-8b13-4c2a-ba29-39798a01d115" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Api/Controllers/VehiclesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Handlers/GetVehicleQueryHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Profiles/VehicleProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Api/Queries/GetVehiclesQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Contracts/Requests/VehicleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/AddressConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/ClientConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/DroneConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/PackageConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/PaymentConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/ServiceConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/SortingConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistance/Configurations/VehicleConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205205456_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Initial.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205205456_Initial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Initial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205213024_User-Address relation change p1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/UserAddressrelationchangep1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20201205213024_User-Address relation change p1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/UserAddressrelationchangep1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109165811_Changed type of UserType.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/ChangedtypeofUserType.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109165811_Changed type of UserType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/ChangedtypeofUserType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109174337_Removed username from user.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Removedusernamefromuser.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/Migrations/20210109174337_Removed username from user.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/Migrations/Removedusernamefromuser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Commands/RegisterServiceCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Controllers/RegisterServiceDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Controllers/ServicesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Handlers/GetServicesHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Handlers/RegisterServiceHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Handlers/RegisterServiceResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Queries/GetServicesQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts/Requests/ServiceDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetVehicleQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetVehiclesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contracts/Responses/IResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/Responses/IResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contracts/Responses/RegisterVehicleResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/Responses/RegisterVehicleResponse.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +112,13 @@
       <option value="$PROJECT_DIR$/Api/Profiles/UserProfile.cs" />
       <option value="$PROJECT_DIR$/Api/Controllers/LoginController.cs" />
       <option value="$PROJECT_DIR$/Api/Controllers/VehicleController.cs" />
+      <option value="$PROJECT_DIR$/Api/Profiles/VehicleProfile.cs" />
+      <option value="$PROJECT_DIR$/Api/Controllers/RegisterVehicleHandler.cs" />
+      <option value="$PROJECT_DIR$/Api/Handlers/GetVehiclesHandler.cs" />
+      <option value="$PROJECT_DIR$/Contracts/Responses/RegisterVehicleResponse.cs" />
+      <option value="$PROJECT_DIR$/Api/Controllers/VehiclesController.cs" />
+      <option value="$PROJECT_DIR$/Api/Handlers/RegisterVehicleHandler.cs" />
+      <option value="$PROJECT_DIR$/Api/Commands/RegisterServiceCommand.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lELnzjEFE7H2d9CJ3JDeDsS6Ot" />
@@ -356,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608470608362</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Addjusted namespaces&#10;Added Vehicles controller with GetVehicles and RegisterVehicle actions">
+      <created>1610582608045</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610582608045</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +384,8 @@
     <MESSAGE value="Implemented GetUsers and LogIn methods in UsersController.cs" />
     <MESSAGE value="Deleted UnitOfWork as it is not needed" />
     <MESSAGE value="Yet another namespace fix + removed duplicated classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Yet another namespace fix + removed duplicated classes" />
+    <MESSAGE value="Addjusted namespaces&#10;Added Vehicles controller with GetVehicles and RegisterVehicle actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addjusted namespaces&#10;Added Vehicles controller with GetVehicles and RegisterVehicle actions" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

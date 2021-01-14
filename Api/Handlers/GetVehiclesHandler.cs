@@ -10,12 +10,12 @@ using MediatR;
 
 namespace Api.Handlers
 {
-    public class GetVehicleQueryHandler : IRequestHandler<GetVehiclesQuery, ICollection<VehicleDto>>
+    public class GetVehiclesHandler : IRequestHandler<GetVehiclesQuery, ICollection<VehicleDto>>
     {
         private IRepository<Vehicle> _repository;
         private IMapper _mapper;
         
-        public GetVehicleQueryHandler(IRepository<Vehicle> repository, IMapper mapper)
+        public GetVehiclesHandler(IRepository<Vehicle> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
