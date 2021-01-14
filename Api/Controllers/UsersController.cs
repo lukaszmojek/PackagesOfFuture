@@ -6,6 +6,7 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -40,12 +41,23 @@ namespace Api.Controllers
             return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
         }
         
-        [HttpPost("{id}/changeDetails")]
+        [HttpPost("{id}/change-details")]
         public async Task<IActionResult> ChangeUserDetails(
             [FromRoute] int id,
             [FromBody] ChangeUserDetailsDto changeUserDetailsDto)
         {
             var command = _mapper.Map<ChangeUserDetailsCommand>(changeUserDetailsDto);
+            var result = await _mediator.Send(command);
+            
+            return result.Succeeded ? (IActionResult) NoContent() : NotFound();
+        }
+        
+        [HttpPost("{id}/change-password")]
+        public async Task<IActionResult> ChangeUserPassword(
+            [FromRoute] int id,
+            [FromBody] ChangeUserPasswordDto changeUserPasswordDto)
+        {
+            var command = _mapper.Map<ChangeUserPasswordCommand>(changeUserPasswordDto);
             var result = await _mediator.Send(command);
             
             return result.Succeeded ? (IActionResult) NoContent() : NotFound();

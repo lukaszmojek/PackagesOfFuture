@@ -9,7 +9,8 @@ namespace Logic
             public static string Login { get =>  _host + "/login"; }
             public static string Register { get => _host + "/users"; }
             public static string GetUsers { get => _host + "/users"; }
-            public static string ChangeUserDetails(int id) => $"{_host}/users/{id}/changeDetails";
+            public static string ChangeUserDetails(int id) => $"{_host}/users/{id}/change-details";
+            public static string ChangeUserPassword(int id) => $"{_host}/users/{id}/change-password";
             public static string UnregisterUser(int id) => $"{_host}/users/{id}/unregister";
             public static string GetPackages { get => _host + "/packages"; }
             public static string RegisterPackage { get => _host + "/packages"; }

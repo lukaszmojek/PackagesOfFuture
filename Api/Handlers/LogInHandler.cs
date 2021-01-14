@@ -34,7 +34,7 @@ namespace Api.Handlers
                 return ResponseFactory.CreateFailureResponse<LogInResponse>();
             }
 
-            return ResponseFactory.CreateSuccessResponse<LogInResponse>(_mapper.Map<LogInResponse>(user));
+            return ResponseFactory.CreateSuccessResponse(_mapper.Map<LogInResponse>(user));
         }
     }
 }
