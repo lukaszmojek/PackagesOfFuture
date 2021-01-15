@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -77,6 +78,7 @@ namespace Api.Handlers
             
             package.Id = 10;
             package.Payment = payment;
+            package.DeliveryDate = DateTime.UtcNow.AddDays(4);
             
             await _packageRepository.AddAsync(package);
             await _packageRepository.SaveChangesAsync();

@@ -21,6 +21,8 @@ namespace Logic
 
         public static IList<SupportIssueDto> IssuesForSupport { get; set; }
 
+        public static SupportIssueDto SelectedSupportIssue { get; set; }
+
         public static void DeleteData()
         {
             User = null;

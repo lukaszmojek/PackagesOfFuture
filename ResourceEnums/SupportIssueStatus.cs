@@ -1,4 +1,4 @@
-﻿namespace Data.Entities
+﻿namespace ResourceEnums
 {
     public enum SupportIssueStatus
     {

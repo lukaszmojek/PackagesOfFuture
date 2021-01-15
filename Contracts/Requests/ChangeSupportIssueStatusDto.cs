@@ -1,6 +1,6 @@
-﻿using Data.Entities;
+﻿using ResourceEnums;
 
-namespace Api.Controllers
+namespace Contracts.Requests
 {
     public class ChangeSupportIssueStatusDto
     {

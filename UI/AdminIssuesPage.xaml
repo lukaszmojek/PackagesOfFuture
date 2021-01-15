@@ -17,8 +17,8 @@
         </Grid.Background>
         <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
-        <Grid Margin="101,134,120,193" Background="#FF766E6E">
-            <ListView x:Name="IssuesListView" Margin="-1,0,0,0">
+        <Grid Margin="111,82,110,245" Background="#FF766E6E">
+            <ListView x:Name="IssuesListView" SelectionChanged="IssuesListView_OnSelectionChanged" Margin="-1,-2,0,0">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
@@ -30,6 +30,9 @@
                 </ListView.View>
             </ListView>
         </Grid>
-        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="100,650,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Left" Margin="520,585,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="CancelButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Button x:Name="ResolveButton" Content="Rozwiąż" HorizontalAlignment="Center" Margin="0,585,0,0" VerticalAlignment="Top" Height="55" Width="130" Click="ResolveButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Button x:Name="StartButton" Content="Rozpocznij" HorizontalAlignment="Left" Margin="140,585,0,0" VerticalAlignment="Top" Height="55" Width="140" Click="StartButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="315,679,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
     </Grid>
 </Page>

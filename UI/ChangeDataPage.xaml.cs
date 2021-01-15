@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Contracts.Requests;
 using Logic;
 
 namespace UI
@@ -65,7 +66,7 @@ namespace UI
             mainWindow?.ChangeView(new MainAppPage());
         }
 
-        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        private async void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             String name = nameField.Text;
             String lastName = lastNameField.Text;
@@ -74,12 +75,23 @@ namespace UI
             String code = codeField.Text;
             String city = cityField.Text;
 
-            State.User.FirstName = name;
-            State.User.LastName = lastName;
-            State.User.Address.Street = street;
-            State.User.Address.HouseAndFlatNumber = house;
-            State.User.Address.PostalCode = code;
-            State.User.Address.City = city;
+            var address = new AddressDto()
+            {
+                Street = street,
+                HouseAndFlatNumber = house,
+                PostalCode = code,
+                City = city
+            };
+
+            if (await UserManager.ChangeUserDetails(name, lastName, address))
+            {
+                State.User.FirstName = name;
+                State.User.LastName = lastName;
+                State.User.Address.Street = street;
+                State.User.Address.HouseAndFlatNumber = house;
+                State.User.Address.PostalCode = code;
+                State.User.Address.City = city;
+            }
         }
 
         private void TextChangedFunction(object sender, TextChangedEventArgs e)

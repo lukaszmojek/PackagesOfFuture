@@ -10,6 +10,7 @@ using Data.Entities;
 using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ResourceEnums;
 
 namespace Api.Handlers
 {

@@ -23,7 +23,7 @@
                     <GradientStop Color="#222222" Offset="0.2" />
                 </RadialGradientBrush>
             </Grid.Background>
-            <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Left" Margin="30,22,0,0" VerticalAlignment="Top" Height="44" Width="224" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="22"/>
+            <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Height="44" Width="655" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="22"/>
             <Label x:Name="NameLastNameLabel_Copy" Content="Co chcesz zrobić?" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="60" Width="314" Background="Transparent" Foreground="White" FontWeight="Bold" FontSize="36"/>
         </Grid>
         <Grid Margin="50,229,37,69" RenderTransformOrigin="0.479,0.549">

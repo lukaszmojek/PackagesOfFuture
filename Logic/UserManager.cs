@@ -6,6 +6,8 @@ using Contracts.Responses;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Data.Entities;
+using ResourceEnums;
 
 namespace Logic
 {
@@ -115,6 +117,31 @@ namespace Logic
             return false;
         }
 
+        public static async Task<bool> ChangeUserDetails(string firstname, string lastname, AddressDto address)
+        {
+            using var http = new HttpClient();
+
+            var userDetails = new ChangeUserDetailsDto()
+            {
+                Id = State.User.Id,
+                FirstName = firstname,
+                LastName = lastname,
+                Address = address
+            };
+
+            var json = JsonConvert.SerializeObject(userDetails);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await http.PostAsync(AppSettings.Endpoints.ChangeUserDetails(State.User.Id), data);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static async Task<bool> DeleteUser(int userId)
         {
             using var http = new HttpClient();
@@ -186,6 +213,29 @@ namespace Logic
 
                 State.IssuesForSupport = issues;
 
+                return true;
+            }
+
+            return false;
+        }
+
+        public static async Task<bool> ChangeSupportIssueStatus(int id, SupportIssueStatus status)
+        {
+            using var http = new HttpClient();
+
+            var issueDetails = new ChangeSupportIssueStatusDto()
+            {
+                Id = id,
+                Status = status
+            };
+
+            var json = JsonConvert.SerializeObject(issueDetails);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await http.PostAsync(AppSettings.Endpoints.ChangeSupportIssueStatus, data);
+
+            if (response.IsSuccessStatusCode)
+            {
                 return true;
             }
 

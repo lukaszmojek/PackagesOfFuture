@@ -18,7 +18,7 @@
         <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="260,665,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
-        <Grid Margin="140,136,140,182" Background="#FFF19595">
+        <Grid Margin="140,85,140,233" Background="#FFF19595">
             <ListView x:Name="IssuesListView">
                 <ListView.View>
                     <GridView>

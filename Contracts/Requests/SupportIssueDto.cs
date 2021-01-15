@@ -1,4 +1,4 @@
-﻿using Data.Entities;
+﻿using ResourceEnums;
 
 namespace Contracts.Requests
 {

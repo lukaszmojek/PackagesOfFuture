@@ -14,7 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Contracts.Requests;
+using Data.Entities;
 using Logic;
+using ResourceEnums;
 
 namespace UI
 {
@@ -40,6 +42,7 @@ namespace UI
                     listOfIssues.Add(issues);
                 }
             }
+
             IssuesListView.ItemsSource = listOfIssues;
         }
 
@@ -48,6 +51,46 @@ namespace UI
             State.IssuesForSupport = null;
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new AdminPage());
+        }
+
+        private async void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            await HandleStatusChange(SupportIssueStatus.Cancelled);
+        }
+
+        private async void ResolveButton_Click(object sender, RoutedEventArgs e)
+        {
+            await HandleStatusChange(SupportIssueStatus.Resolved);
+        }
+
+        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            await HandleStatusChange(SupportIssueStatus.Investigation);
+        }
+
+        private async Task HandleStatusChange(SupportIssueStatus status)
+        {
+            SetButtonState(false);
+
+            if (await UserManager.ChangeSupportIssueStatus(State.SelectedSupportIssue.Id, status))
+            {
+                listOfIssues = new ObservableCollection<SupportIssueDto>();
+                LoadIssues();
+            }
+
+            SetButtonState(true);
+        }
+
+        private void SetButtonState(bool state)
+        {
+            CancelButton.IsEnabled = state;
+            ResolveButton.IsEnabled = state;
+            StartButton.IsEnabled = state;
+        }
+
+        private void IssuesListView_OnSelectionChanged(object sender, RoutedEventArgs e)
+        {
+            State.SelectedSupportIssue = IssuesListView.SelectedItem as SupportIssueDto;
         }
     }
 }

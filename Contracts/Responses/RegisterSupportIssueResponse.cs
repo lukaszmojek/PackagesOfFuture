@@ -1,6 +1,4 @@
-﻿using Contracts.Responses;
-
-namespace Api.Controllers
+﻿namespace Contracts.Responses
 {
     public class RegisterSupportIssueResponse : IResponse
     {

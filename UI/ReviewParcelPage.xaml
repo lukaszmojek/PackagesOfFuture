@@ -19,14 +19,16 @@
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="255,664,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
 
-        <Grid Margin="154,171,160,165" Background="White">
+        <Grid Margin="40,171,40,165" Background="White">
             <ListView x:Name="PackagesListView" SelectionChanged="PackagesListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
+                            <GridViewColumn Header="Planowana data doręczenia" DisplayMemberBinding="{Binding Path=DeliveryDate}"/>
                             <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
                             <GridViewColumn Header="Szerokość" DisplayMemberBinding="{Binding Path=Width}"/>
                             <GridViewColumn Header="Wysokość" DisplayMemberBinding="{Binding Path=Height}"/>
+                            <GridViewColumn Header="Długość" DisplayMemberBinding="{Binding Path=Length}"/>
                             <GridViewColumn Header="Waga" DisplayMemberBinding="{Binding Path=Weight}"/>
                         </GridView.Columns>
                     </GridView>

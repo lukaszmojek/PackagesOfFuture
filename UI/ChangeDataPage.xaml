@@ -8,7 +8,13 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="ChangeDataPage">
 
-    <Grid Background="#FFFFB3B3">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="36,707,0,0" VerticalAlignment="Top" Height="50" Width="310" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="BackButton_Click" RenderTransformOrigin="0.477,0.618"/>
         <Label Content="Edycja danych" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="36" RenderTransformOrigin="0.237,0.224"/>
         <Grid Margin="113,163,113,209" RenderTransformOrigin="0.479,0.549">

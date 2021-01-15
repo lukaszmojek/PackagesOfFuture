@@ -2,6 +2,7 @@
 using Contracts.Responses;
 using Data.Entities;
 using MediatR;
+using ResourceEnums;
 
 namespace Api.Commands
 {

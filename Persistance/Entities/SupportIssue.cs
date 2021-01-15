@@ -1,4 +1,6 @@
-﻿namespace Data.Entities
+﻿using ResourceEnums;
+
+namespace Data.Entities
 {
     public class SupportIssue : Entity
     {
