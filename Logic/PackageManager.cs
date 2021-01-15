@@ -37,7 +37,7 @@ namespace Logic
         }
 
 
-        public static async Task<bool> getPaczka()
+        public static async Task<bool> GetPaczka()
         {
             using var http = new HttpClient();
 
@@ -50,6 +50,8 @@ namespace Logic
                 var package = JsonConvert.DeserializeObject<IList<PackageDto>>(
                     await response.Content.ReadAsStringAsync()
                     );
+
+                State.Packages = package;
 
                 return true;
             }

@@ -1,4 +1,4 @@
-﻿namespace Api.Controllers
+﻿namespace Contracts.Requests
 {
     public class RegisterSupportIssueDto
     {

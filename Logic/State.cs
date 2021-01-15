@@ -2,6 +2,7 @@
 using Contracts.Responses;
 using System.Collections.Generic;
 
+
 namespace Logic
 {
     public static class State
@@ -12,6 +13,11 @@ namespace Logic
 
         public static IList<UserDto> Users { get; set; }
 
+        public static IList<PackageDto> Packages { get; set; }
+
         public static UserDto UserSelectedForDeleting { get; set; }
+
+        public static IList<SupportIssueDto> Issues { get; set; }
+ 
     }
 }

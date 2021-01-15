@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace UI
 {
@@ -29,6 +30,27 @@ namespace UI
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new MainAppPage());
+        }
+
+        private async void NewNotifyButton_Click(object sender, RoutedEventArgs e)
+        {
+            String description = NotifyDescription.Text;
+
+            var wynik = await UserManager.NewIssue(State.User.Id, description);
+
+            if(wynik)
+            {
+                MessageBox.Show("Zgloszenie przyjete");
+                NotifyDescription.Clear();
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow?.ChangeView(new MainAppPage());
+            }
+            else
+            {
+                MessageBox.Show("Blad");
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow?.ChangeView(new MainAppPage());
+            }
         }
     }
 }

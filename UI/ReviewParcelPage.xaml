@@ -10,6 +10,21 @@
 
     <Grid Background="#FFDCFF00" Width="800" Height="800">
         <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
+        <Grid Margin="154,171,217,171" Background="White">
+            <ListView x:Name="PackagesListView" SelectionChanged="PackagesListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FirstName}"/>
+                            <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LastName}"/>
+                            <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
+
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
 
     </Grid>
 </Page>

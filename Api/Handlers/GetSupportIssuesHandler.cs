@@ -2,10 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Contracts.Requests;
 using Data.Entities;
 using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Api.Controllers
 {

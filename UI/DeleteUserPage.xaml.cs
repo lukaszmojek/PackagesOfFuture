@@ -43,8 +43,6 @@ namespace UI
             }
 
             UserListView.ItemsSource = listOfNames;
-
-            labelTest.Content = State.Users.First().Email;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -56,15 +54,6 @@ namespace UI
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
             DeleteUser();
-            // listOfNames.Add("test");
-
-            //UserListView.Items.Add("test");
-
-            //int test UserListView.SelectedIndex;
-            //listOfNames.RemoveAt(test);
-
-
-            //UserListView.Items.RemoveAt(test)
         }
 
         private async void DeleteUser()

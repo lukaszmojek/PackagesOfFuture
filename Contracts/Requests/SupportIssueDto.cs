@@ -1,6 +1,6 @@
 ﻿using Data.Entities;
 
-namespace Api.Controllers
+namespace Contracts.Requests
 {
     public class SupportIssueDto
     {

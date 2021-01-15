@@ -128,5 +128,48 @@ namespace Logic
 
             return false;
         }
+
+
+        public static async Task<bool> NewIssue(int userID, string description)
+        {
+            using var http = new HttpClient();
+
+            var issueDetails = new RegisterSupportIssueDto()
+            {
+                UserId = userID,
+                Description = description
+            };
+
+            var json = JsonConvert.SerializeObject(issueDetails);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await http.PostAsync(AppSettings.Endpoints.RegisterSupportIssue, data);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static async Task<bool> GetIssuesForUser(int userID)
+        {
+            using var http = new HttpClient();
+
+            var response = await http.GetAsync(AppSettings.Endpoints.GetSupportIssuesForUser(userID));
+
+            if (response.IsSuccessStatusCode)
+            {
+                var issues = JsonConvert.DeserializeObject<IList<SupportIssueDto>>(
+                    await response.Content.ReadAsStringAsync()
+                    );
+
+                State.Issues = issues;
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -11,7 +11,7 @@
     <Grid Background="#FFFF88E9">
         <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
         <Label Content="Każde zgłoszenie rozpatrywane  jest indywidualnie,&#xD;&#xA; prosze opisz swój problem" HorizontalAlignment="Left" Margin="124,71,0,0" VerticalAlignment="Top" Height="152" Width="576" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="NewNotifyButton" Content="Zatwierdź zgłoszenie" HorizontalAlignment="Left" Margin="502,709,0,0" VerticalAlignment="Top" Height="39" Width="220" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" />
+        <Button x:Name="NewNotifyButton" Content="Zatwierdź zgłoszenie" HorizontalAlignment="Left" Margin="502,709,0,0" VerticalAlignment="Top" Height="39" Width="220" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="NewNotifyButton_Click" />
         <TextBox x:Name="NotifyDescription" HorizontalAlignment="Left" Margin="195,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="324" Height="325"/>
     </Grid>
 </Page>
