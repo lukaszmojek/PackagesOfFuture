@@ -36,7 +36,7 @@ namespace UI
         {
             if (await UserManager.GetUsers())
             {
-                foreach (var user in State.Users)
+                foreach (var user in State.Users.Where(x => x.Id != State.User.Id))
                 {
                     listOfNames.Add(user);
                 }
@@ -44,7 +44,6 @@ namespace UI
 
             UserListView.ItemsSource = listOfNames;
 
-            
             labelTest.Content = State.Users.First().Email;
         }
 
@@ -56,8 +55,8 @@ namespace UI
 
         private void ButtonTest_Click(object sender, RoutedEventArgs e)
         {
-
-           // listOfNames.Add("test");
+            DeleteUser();
+            // listOfNames.Add("test");
 
             //UserListView.Items.Add("test");
 
@@ -68,5 +67,19 @@ namespace UI
             //UserListView.Items.RemoveAt(test)
         }
 
+        private async void DeleteUser()
+        {
+            if (await UserManager.DeleteUser(State.UserSelectedForDeleting.Id))
+            {
+                State.UserSelectedForDeleting = null;
+                listOfNames = new ObservableCollection<UserDto>();
+                test();
+            }
+        }
+
+        private void UserListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            State.UserSelectedForDeleting = UserListView.SelectedItem as UserDto;
+        }
     }
 }

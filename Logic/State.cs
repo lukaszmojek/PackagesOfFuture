@@ -11,5 +11,7 @@ namespace Logic
         public static string Password { get; set; }
 
         public static IList<UserDto> Users { get; set; }
+
+        public static UserDto UserSelectedForDeleting { get; set; }
     }
 }

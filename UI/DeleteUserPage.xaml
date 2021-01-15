@@ -12,7 +12,7 @@
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="136,696,0,0" VerticalAlignment="Top" Height="35" Width="80" Click="BackButton_Click"/>
         <Label x:Name="labelTest" Content="Label" HorizontalAlignment="Left" Margin="44,52,0,0" VerticalAlignment="Top"/>
         <Grid Margin="142,94,142,176" Background="#FFFFA6A6">
-            <ListView x:Name="UserListView">
+            <ListView x:Name="UserListView" SelectionChanged="UserListView_OnSelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>

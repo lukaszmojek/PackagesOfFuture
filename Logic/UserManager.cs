@@ -5,6 +5,7 @@ using Contracts.Requests;
 using Contracts.Responses;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Logic
 {
@@ -114,14 +115,18 @@ namespace Logic
             return false;
         }
 
+        public static async Task<bool> DeleteUser(int userId)
+        {
+            using var http = new HttpClient();
 
+            var response = await http.DeleteAsync(AppSettings.Endpoints.UnregisterUser(userId));
 
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
 
-
-
-
-
-
-
+            return false;
+        }
     }
 }
