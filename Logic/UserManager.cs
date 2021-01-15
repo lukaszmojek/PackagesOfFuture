@@ -55,11 +55,17 @@ namespace Logic
 
             var response = await http.PostAsync(AppSettings.Endpoints.Register, data);
 
+
             if (response.IsSuccessStatusCode)
             {
                 return true;
             }
+            var error = await response.Content.ReadAsStringAsync();
+               
 
+            //var error = JsonConvert.DeserializeObject<string>(
+            //await response.Content.ReadAsStringAsync()
+       // );
             return false;
         }
 
@@ -100,7 +106,7 @@ namespace Logic
                     await response.Content.ReadAsStringAsync()
                     );
 
-                
+                State.Users = users;
 
                 return true;
             }
