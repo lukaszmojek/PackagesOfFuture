@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Logic;
 using Contracts.Requests;
 using System.Text.RegularExpressions;
+using ResourceEnums;
 
 namespace UI
 {
@@ -26,6 +27,20 @@ namespace UI
         public RegisterPage()
         {
             InitializeComponent();
+
+            
+            var user = State.User;
+            if (user?.Type == UserType.Administrator)
+            {
+
+            }
+            else
+            {
+                TypeOfAccount.SelectedIndex = 0;
+                TypeOfAccount.IsEnabled = false;
+            }
+
+
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -36,8 +51,20 @@ namespace UI
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow?.ChangeView(new StartupPage());
+
+            var user = State.User;
+            if (user?.Type == UserType.Administrator)
+            {
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow?.ChangeView(new AdminPage());
+            }
+            else
+            {
+                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                mainWindow?.ChangeView(new StartupPage());
+            }
+
+
         }
 
         private async void RegisterButton_Click(object sender, RoutedEventArgs e)
@@ -59,7 +86,7 @@ namespace UI
                     string lastName = lastNameField.Text;
                     string email = emailField.Text;
                     string password = passwordField.Password;
-                    int type = 2;
+                    int type = Int32.Parse(TypeOfAccount.SelectedValue.ToString());
                     var wynik = await UserManager.Register(name, lastName, email, type, password, address);
                     
                     if(wynik)

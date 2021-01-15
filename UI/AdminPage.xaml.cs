@@ -42,69 +42,16 @@ namespace UI
             mainWindow?.ChangeView(new StartupPage());
         }
 
-        private void ClearField()
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
-            cityField.Clear();
-            houseField.Clear();
-            codeField.Clear();
-            streetField.Clear();
-            nameField.Clear();
-            lastNameField.Clear();
-            emailField.Clear();
-            passwordField.Clear();
-            confirmPasswordField.Clear();
-            accountTypeBox.SelectedIndex = -1;
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new RegisterPage());
         }
 
-        private async void RegisterButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteUsersButton_Click(object sender, RoutedEventArgs e)
         {
-            if (nameField.Text == "" || lastNameField.Text == "" || emailField.Text == "" || passwordField.Password == "" || confirmPasswordField.Password == "" || streetField.Text == "" || houseField.Text == "" || codeField.Text == "" || cityField.Text == "" || accountTypeBox.SelectedValue is null)
-            {
-                MessageBox.Show("Zadne pole nie moze byc puste!!!");
-                passwordField.Clear();
-                confirmPasswordField.Clear();
-            }
-            else
-            {
-                if (passwordField.Password == confirmPasswordField.Password)
-                {
-                    CreateAddressDto address = new CreateAddressDto();
-                    address.City = cityField.Text;
-                    address.HouseAndFlatNumber = houseField.Text;
-                    address.PostalCode = codeField.Text;
-                    address.Street = streetField.Text;
-                    string name = nameField.Text;
-                    string lastName = lastNameField.Text;
-                    string email = emailField.Text;
-                    string password = passwordField.Password;
-                    int type = Int32.Parse(accountTypeBox.SelectedValue.ToString()); ;
-                    var wynik = await UserManager.Register(name, lastName, email, type, password, address);
-
-                    if (wynik)
-                    {
-                        MessageBox.Show("Rejestracja przebiegla pomyslnie");
-                        ClearField();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Rejestracja niepomyslna - zajety email");
-                        emailField.Clear();
-                        passwordField.Clear();
-                        confirmPasswordField.Clear();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Hasla musza byc takie same");
-                    passwordField.Clear();
-                    confirmPasswordField.Clear();
-                }
-            }
-        }
-
-        private void CancelRegisterField_Click(object sender, RoutedEventArgs e)
-        {
-            ClearField();
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new DeleteUserPage());
         }
     }
 }
