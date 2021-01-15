@@ -14,6 +14,7 @@ namespace Api.Profiles
             CreateMap<ChangePaymentStatusDto, ChangePaymentStatusCommand>();
 
             CreateMap<Payment, PaymentDto>();
+            CreateMap<CreatePaymentDto, PaymentDto>();
         }
     }
 }
