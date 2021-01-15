@@ -13,11 +13,13 @@ namespace Logic
 
         public static IList<UserDto> Users { get; set; }
 
-        public static IList<PackageDto> Packages { get; set; }
+        public static IList<PackageDto> UserPackages { get; set; }
 
         public static UserDto UserSelectedForDeleting { get; set; }
 
-        public static IList<SupportIssueDto> Issues { get; set; }
+        public static IList<SupportIssueDto> IssuesForUser { get; set; }
+
+        public static IList<SupportIssueDto> IssuesForSupport { get; set; }
  
     }
 }

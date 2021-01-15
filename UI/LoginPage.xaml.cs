@@ -31,6 +31,7 @@ namespace UI
             }
             else
             {
+                LogInButton.IsEnabled = false;
                 string login = loginField.Text;
                 string password = passwordField.Password;
 
@@ -53,6 +54,7 @@ namespace UI
                 else
                 {
                     MessageBox.Show("Zły login lub haslo");
+                    LogInButton.IsEnabled = true;
                 }
             }
 

@@ -53,5 +53,11 @@ namespace UI
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new DeleteUserPage());
         }
+
+        private void IssuesButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new AdminIssuesPage());
+        }
     }
 }

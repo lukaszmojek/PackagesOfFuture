@@ -1,5 +1,4 @@
-﻿using Contracts.Requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -14,30 +13,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Contracts.Requests;
 using Logic;
-
 
 namespace UI
 {
     /// <summary>
-    /// Interaction logic for ReviewNotifyPage.xaml
+    /// Logika interakcji dla klasy AdminIssuesPage.xaml
     /// </summary>
-    public partial class ReviewNotifyPage : Page
+    public partial class AdminIssuesPage : Page
     {
         ObservableCollection<SupportIssueDto> listOfIssues = new ObservableCollection<SupportIssueDto>();
-
-        public ReviewNotifyPage()
+        public AdminIssuesPage()
         {
             InitializeComponent();
+
             LoadIssues();
         }
 
-
         private async void LoadIssues()
         {
-            if (await UserManager.GetIssuesForUser(State.User.Id))
+            if (await UserManager.GetIssuesForSupport())
             {
-                foreach (var issues in State.IssuesForUser)
+                foreach (var issues in State.IssuesForSupport)
                 {
                     listOfIssues.Add(issues);
                 }
@@ -47,8 +45,9 @@ namespace UI
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            State.IssuesForSupport = null;
             var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow?.ChangeView(new MainAppPage());
+            mainWindow?.ChangeView(new AdminPage());
         }
     }
 }

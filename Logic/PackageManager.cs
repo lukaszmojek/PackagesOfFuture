@@ -37,12 +37,11 @@ namespace Logic
         }
 
 
-        public static async Task<bool> GetPaczka()
+        public static async Task<bool> GetPackage()
         {
             using var http = new HttpClient();
 
             var response = await http.GetAsync(AppSettings.Endpoints.GetPackages);
-
 
             if (response.IsSuccessStatusCode)
             {
@@ -51,12 +50,14 @@ namespace Logic
                     await response.Content.ReadAsStringAsync()
                     );
 
-                State.Packages = package;
+                State.UserPackages = package;
 
                 return true;
             }
 
             return false;
         }
+
+
     }
 }

@@ -75,6 +75,7 @@ namespace UI
             }
             else
             {
+                RegisterButton.IsEnabled = false;
                 if(passwordField.Password == confirmPasswordField.Password)
                 {
                     CreateAddressDto address = new CreateAddressDto();
@@ -102,11 +103,13 @@ namespace UI
                         emailField.Clear();
                         passwordField.Clear();
                         confirmPasswordField.Clear();
+                        RegisterButton.IsEnabled = true;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Hasla musza byc takie same");
+                    RegisterButton.IsEnabled = true;
                     passwordField.Clear();
                     confirmPasswordField.Clear();
                 }

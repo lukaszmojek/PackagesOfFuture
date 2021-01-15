@@ -164,7 +164,27 @@ namespace Logic
                     await response.Content.ReadAsStringAsync()
                     );
 
-                State.Issues = issues;
+                State.IssuesForUser = issues;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static async Task<bool> GetIssuesForSupport()
+        {
+            using var http = new HttpClient();
+
+            var response = await http.GetAsync(AppSettings.Endpoints.GetSupportIssues);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var issues = JsonConvert.DeserializeObject<IList<SupportIssueDto>>(
+                    await response.Content.ReadAsStringAsync()
+                    );
+
+                State.IssuesForSupport = issues;
 
                 return true;
             }
