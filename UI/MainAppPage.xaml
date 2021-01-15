@@ -33,6 +33,7 @@
             <Button x:Name="ReviewNotify" Content="Przegląd zgłoszeń" HorizontalAlignment="Left" Margin="357,153,0,0" VerticalAlignment="Top" Height="50" Width="312" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ReviewNotify_Click" />
             <Button x:Name="NewNotify" Content="Twórz nowe zgłoszenie" HorizontalAlignment="Left" Margin="16,153,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="NewNotify_Click" />
             <Button x:Name="ChangePassword" Content="Zmień hasło" HorizontalAlignment="Left" Margin="16,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ChangePassword_Click" />
+            <Button x:Name="ChangeData" Content="Zmień dane" HorizontalAlignment="Left" Margin="358,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ChangeData_Click" />
 
         </Grid>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>

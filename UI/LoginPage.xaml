@@ -32,7 +32,7 @@
         </Grid>
 
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="195,650,0,90" Width="200" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26" RenderTransformOrigin="0.031,-0.093" />
-        <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="405,650,0,90" Click="LogInButton_Click" Width="200" RenderTransformOrigin="0,0" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26"/>
+        <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="405,650,0,90" Click="LogInButton_Click" Width="200" RenderTransformOrigin="0,0" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" Height="60"/>
         <Label x:Name="testowyLabel" Visibility="Hidden" Content="Label" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="68" Width="352" Background="Transparent" Foreground="White" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Page>

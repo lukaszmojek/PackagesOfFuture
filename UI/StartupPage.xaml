@@ -17,8 +17,10 @@
         </Grid.Background>
         <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
-        <Button x:Name="LoginButton" Content="Zaloguj sie" HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Center" Height="60" Width="103" Click="LoginButton_Click"/>
-        <Button x:Name="RegisterButton" Content="Zarejestruj się" HorizontalAlignment="Left" Margin="328,216,0,0" VerticalAlignment="Top" Height="60" Width="104" Click="RegisterButton_Click"/>
+        <Grid Margin="200,250,200,250" OpacityMask="#FFF03232" Background="#7F000000">
+            <Button x:Name="LoginButton" Content="Zaloguj sie" HorizontalAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Height="60" Width="200" Click="LoginButton_Click" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" />
+            <Button x:Name="RegisterButton" Content="Zarejestruj się" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Width="200" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" Click="RegisterButton_Click" Margin="0,180,0,0"/>
+        </Grid>
 
     </Grid>
 </Page>

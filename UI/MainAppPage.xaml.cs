@@ -67,5 +67,11 @@ namespace UI
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new NewNotifyPage());
         }
+
+        private void ChangeData_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new ChangeDataPage());
+        }
     }
 }
