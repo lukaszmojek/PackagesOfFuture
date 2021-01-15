@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Contracts.Requests;
 using Logic;
 
 namespace UI
@@ -22,14 +23,7 @@ namespace UI
     /// </summary>
     public partial class DeleteUserPage : Page
     {
-        ObservableCollection<PersonData> listOfNames = new ObservableCollection<PersonData>();
-
-        class PersonData
-        {
-            public string Name { get; set; }
-            public int Age { get; set; }
-            public string Email { get; set; }
-        }
+        ObservableCollection<UserDto> listOfNames = new ObservableCollection<UserDto>();
 
 
         public DeleteUserPage()
@@ -40,12 +34,13 @@ namespace UI
 
         private async void test()
         {
-            var wynik = await UserManager.GetUsers();
-
-            
-            listOfNames.Add(new PersonData() { Name = "Test", Age = 20, Email = "email@int.pl3" });
-            listOfNames.Add(new PersonData() { Name = "Test2", Age = 203, Email = "email@int.pl4" });
-            listOfNames.Add(new PersonData() { Name = "Test3", Age = 204, Email = "email@int.pl5" });
+            if (await UserManager.GetUsers())
+            {
+                foreach (var user in State.Users)
+                {
+                    listOfNames.Add(user);
+                }
+            }
 
             UserListView.ItemsSource = listOfNames;
 

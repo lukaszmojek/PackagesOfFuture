@@ -16,8 +16,9 @@
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
-                            <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Path=Age}"/>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FirstName}"/>
+                            <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LastName}"/>
                             <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
 
                         </GridView.Columns>
