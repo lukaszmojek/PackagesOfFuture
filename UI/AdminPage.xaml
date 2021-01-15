@@ -8,12 +8,21 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="AdminPage">
 
-    <Grid Background="#FFFF5A5A">
-        <Button x:Name="LogoutButton" Content="Wyloguj" HorizontalAlignment="Left" Margin="39,696,0,0" VerticalAlignment="Top" Height="44" Width="70" Click="LogoutButton_Click"/>
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
+
+        <Button x:Name="LogoutButton" Content="Wyloguj" HorizontalAlignment="Left" Margin="80,670,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="LogoutButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
         <Label Content="Panel administratora" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-        <Button x:Name="AddUserButton" Content="Dodaj &#xD;&#xA;użytkownika" HorizontalAlignment="Left" Margin="74,80,0,0" VerticalAlignment="Top" Height="53" Width="83" Click="AddUserButton_Click"/>
-        <Button x:Name="DeleteUsersButton" Content="Usun uzytkownika" HorizontalAlignment="Left" Margin="420,80,0,0" VerticalAlignment="Top" Height="53" Width="83" Click="DeleteUsersButton_Click"/>
-        <Button x:Name="IssuesButton" Content="Zgloszenia" HorizontalAlignment="Left" Margin="297,304,0,0" VerticalAlignment="Top" Height="66" Width="103" Click="IssuesButton_Click"/>
+        <Button x:Name="AddUserButton" Content="Dodaj użytkownika" HorizontalAlignment="Left" Margin="435,159,0,0" VerticalAlignment="Top" Height="71" Width="285" Click="AddUserButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="DeleteUsersButton" Content="Usuń użytkownika" HorizontalAlignment="Left" Margin="80,160,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="DeleteUsersButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="IssuesButton" Content="Zgloszenia" HorizontalAlignment="Left" Margin="80,300,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="IssuesButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
 
     </Grid>
 </Page>

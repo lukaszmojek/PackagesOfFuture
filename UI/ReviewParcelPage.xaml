@@ -8,9 +8,18 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="ReviewParcelPage">
 
-    <Grid Background="#FFDCFF00" Width="800" Height="800">
-        <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
-        <Grid Margin="154,171,217,171" Background="White">
+    <Grid Width="800" Height="800">
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="255,664,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+
+        <Grid Margin="154,171,160,165" Background="White">
             <ListView x:Name="PackagesListView" SelectionChanged="PackagesListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
