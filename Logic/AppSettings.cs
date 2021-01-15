@@ -13,6 +13,7 @@ namespace Logic
             public static string ChangeUserPassword(int id) => $"{_host}/users/{id}/change-password";
             public static string UnregisterUser(int id) => $"{_host}/users/{id}/unregister";
             public static string GetPackages { get => _host + "/packages"; }
+            public static string GetUserPackages(int id) => $"{_host}/packages/user-packages/{id}";
             public static string RegisterPackage { get => _host + "/packages"; }
             public static string GetAdresses { get => _host + "/adresses"; }
             public static string AddAdresses { get => _host + "/adresses"; }
