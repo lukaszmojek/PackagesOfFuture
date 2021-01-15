@@ -8,15 +8,12 @@
 
   <ItemGroup>
     <None Remove="delivery.png" />
-    <None Remove="droga2.png" />
     <None Remove="droneDelivery.png" />
     <None Remove="hands.png" />
-    <None Remove="loginBackground.png" />
     <None Remove="loginBackgroundPage.png" />
     <None Remove="loginPageBackground.png" />
     <None Remove="package.png" />
     <None Remove="registerBackground1.jpg" />
-    <None Remove="startupPageBackground.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,13 +29,10 @@
 
   <ItemGroup>
     <Resource Include="delivery.png" />
-    <Resource Include="droga2.png" />
     <Resource Include="droneDelivery.png" />
     <Resource Include="hands.png" />
-    <Resource Include="loginBackground.png" />
     <Resource Include="package.png" />
     <Resource Include="registerBackground1.jpg" />
-    <Resource Include="startupPageBackground.jpg" />
   </ItemGroup>
 
 </Project>

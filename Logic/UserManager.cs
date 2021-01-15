@@ -23,27 +23,20 @@ namespace Logic
             var json = JsonConvert.SerializeObject(loginDetails);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-           // var response = await http.PostAsync(AppSettings.Endpoints.Login, data); //
-            var response = await http.GetAsync(AppSettings.Endpoints.Register); //
-            
+            var response = await http.PostAsync(AppSettings.Endpoints.Login, data); 
             
             if (response.IsSuccessStatusCode)
             {
-                //State.User = JsonConvert.DeserializeObject<Response<LogInResponse>>(
-                //    await response.Content.ReadAsStringAsync()
-                //    ).Content;
-                var Users = JsonConvert.DeserializeObject<IList<UserDto>>(
+                State.Password = password;
+                State.User = JsonConvert.DeserializeObject<Response<LogInResponse>>(
                     await response.Content.ReadAsStringAsync()
-                    );
-                ;
-                
+                   ).Content;  
                 return true;
             }
-           
             return false;
         }
 
-        public static async Task<bool> Register(string firstName, string lastName, string email, int type, string password)
+        public static async Task<bool> Register(string firstName, string lastName, string email, int type, string password, CreateAddressDto address)
         {
             using var http = new HttpClient();
 
@@ -53,7 +46,8 @@ namespace Logic
                 LastName = lastName,
                 Email = email,
                 Type = type,
-                Password = password
+                Password = password,
+                Address = address
             };
 
             var json = JsonConvert.SerializeObject(registerDetails);
@@ -68,5 +62,60 @@ namespace Logic
 
             return false;
         }
+
+
+        public static async Task<bool> ChangePassword(int userID, string newPassword)
+        {
+            using var http = new HttpClient();
+
+            var userDetails = new ChangeUserPasswordDto()
+            {
+                UserId = userID,
+                NewPassword = newPassword
+            };
+
+            var json = JsonConvert.SerializeObject(userDetails);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await http.PostAsync(AppSettings.Endpoints.ChangeUserPassword(userID), data);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static async Task<bool> GetUsers()
+        {
+            using var http = new HttpClient();
+
+            var response = await http.GetAsync(AppSettings.Endpoints.GetUsers);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                var users = JsonConvert.DeserializeObject<IList<UserDto>>(
+                    await response.Content.ReadAsStringAsync()
+                    );
+
+                
+
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

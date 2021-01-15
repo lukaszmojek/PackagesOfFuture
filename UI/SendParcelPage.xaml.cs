@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
+using Contracts;
+using Contracts.Requests;
+using ResourceEnums;
 
 namespace UI
 {
@@ -24,11 +28,13 @@ namespace UI
         public SendParcelPage()
         {
             InitializeComponent();
+
+            
         }
 
         int[,] cennik = new int[3, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 } };
 
-        void ValueOfParcel()
+        private int ValueOfParcel()
         {
             if (TypeOfParcel.SelectedValue is not null && TypeOfCourier.SelectedValue is not null)
             {
@@ -37,6 +43,51 @@ namespace UI
                 int price = cennik[courier, parcel];
 
                 priceLabel.Content = price;
+
+                return price;
+            }
+            return 0;
+        }
+
+        private int[] DimensionsPackage()
+        {
+            int parcel = Int32.Parse(TypeOfParcel.SelectedValue.ToString());
+
+            int[] wymiary = new int[3];
+
+            switch(parcel)
+            {
+                case 0:
+                    wymiary = new int[] {10, 15, 20, 5};
+                    break;
+                case 1:
+                    wymiary = new int[] {30, 40, 50, 10};
+                    break;
+                case 2:
+                    wymiary = new int[] {100, 100, 100, 20};
+                    break;
+                default:
+                    break;
+            }
+            return wymiary;
+        }
+
+        private PaymentType paymentType()
+        {
+            int courier = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
+            
+            switch(courier)
+            {
+                case 0: return PaymentType.BankTransfer;
+                    break;
+                case 1: return PaymentType.Blik;
+                    break;
+                case 2: return PaymentType.Cash;
+                    break;
+                case 3: return PaymentType.Check;
+                    break;
+                default: return 0;
+                    break;
             }
         }
 
@@ -67,9 +118,76 @@ namespace UI
             TestLabel.Content = TypeOfPayment.SelectedValue;
         }
 
-        private void SendParcelButton_Click(object sender, RoutedEventArgs e)
+        private async void SendParcelButton_Click(object sender, RoutedEventArgs e)
         {
-               
+            if(TypeOfParcel.SelectedValue is null || TypeOfCourier is null)
+            {
+                MessageBox.Show("Musisz wybrac rodzaj paczki!");
+            }
+            else
+            {
+                if (TypeOfPayment is null)
+                {
+                    MessageBox.Show("Wybierz rodzaj platnosci!!");
+                }
+                else
+                {
+                    if (streetSenderField.Text == "" || houseSenderField.Text == "" || codeSenderField.Text == "" || citySenderField.Text == "" || streetReceiverField.Text == "" || houseReceiverField.Text == "" || codeReceiverField.Text == "" || cityReceiverField.Text == "")
+                    {
+                        MessageBox.Show("Pola adresowe nie mogą być puste!");
+                    }
+                    else
+                    {
+
+                        AddressDto deliveryAddress = new AddressDto();
+                        AddressDto pickUpAddress = new AddressDto();
+                        PackageDetailsDto package = new PackageDetailsDto();
+                        int serviceID;
+                        CreatePaymentDto payment = new CreatePaymentDto();
+
+                        deliveryAddress.Street = streetSenderField.Text;
+                        deliveryAddress.HouseAndFlatNumber = houseSenderField.Text;
+                        deliveryAddress.PostalCode = codeSenderField.Text;
+                        deliveryAddress.City = citySenderField.Text;
+
+                        pickUpAddress.Street = streetReceiverField.Text;
+                        pickUpAddress.HouseAndFlatNumber = houseReceiverField.Text;
+                        pickUpAddress.PostalCode = codeReceiverField.Text;
+                        pickUpAddress.City = cityReceiverField.Text;
+
+                        int[] wymiary = DimensionsPackage();
+
+                        package.Height = wymiary[0];
+                        package.Width = wymiary[1];
+                        package.Length = wymiary[2];
+                        package.Weight = wymiary[3];
+
+                        serviceID = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
+
+                        payment.Amount = ValueOfParcel();
+                        payment.Type = paymentType();
+
+                        var wynik = await PackageManager.AddPackage(deliveryAddress, pickUpAddress, package, serviceID, payment);
+
+                        if(wynik)
+                        {
+                            MessageBox.Show("Paczka nadana pomyślnie");
+                            streetSenderField.Clear();
+                            houseSenderField.Clear();
+                            codeSenderField.Clear();
+                            citySenderField.Clear();
+                            streetReceiverField.Clear();
+                            houseReceiverField.Clear();
+                            codeReceiverField.Clear();
+                            cityReceiverField.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Blad");
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -29,11 +29,10 @@
         <Grid Margin="50,229,37,69" RenderTransformOrigin="0.479,0.549">
             <Button x:Name="LogoutButton" Content="Wyloguj" HorizontalAlignment="Left" Margin="391,424,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="LogoutButton_Click" RenderTransformOrigin="0.477,0.618"/>
             <Button x:Name="SendParcel" Content="Nadaj przesyłkę" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="SendParcel_Click" />
-            <Button x:Name="ParcelReview" Content="Przegląd przesyłek" HorizontalAlignment="Left" Margin="16,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ParcelReview_Click" />
-            <Button x:Name="ModifyParcel" Content="Modyfikacja przesyłek" HorizontalAlignment="Left" Margin="16,154,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ModifyParcel_Click" />
-            <Button x:Name="ReviewNotify" Content="Przegląd zgłoszeń" HorizontalAlignment="Left" Margin="391,41,0,0" VerticalAlignment="Top" Height="50" Width="312" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ReviewNotify_Click" />
-            <Button x:Name="NewNotify" Content="Twórz nowe zgłoszenie" HorizontalAlignment="Left" Margin="391,154,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="NewNotify_Click" />
-            <Button x:Name="ChangePassword" Content="Zmień hasło" HorizontalAlignment="Left" Margin="391,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ChangePassword_Click" />
+            <Button x:Name="ParcelReview" Content="Przegląd przesyłek" HorizontalAlignment="Left" Margin="357,40,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ParcelReview_Click" />
+            <Button x:Name="ReviewNotify" Content="Przegląd zgłoszeń" HorizontalAlignment="Left" Margin="357,153,0,0" VerticalAlignment="Top" Height="50" Width="312" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ReviewNotify_Click" />
+            <Button x:Name="NewNotify" Content="Twórz nowe zgłoszenie" HorizontalAlignment="Left" Margin="16,153,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="NewNotify_Click" />
+            <Button x:Name="ChangePassword" Content="Zmień hasło" HorizontalAlignment="Left" Margin="16,251,0,0" VerticalAlignment="Top" Height="50" Width="311" Foreground="White" FontWeight="Bold" FontSize="26" Background="#2d2d2d" Click="ChangePassword_Click" />
 
         </Grid>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>

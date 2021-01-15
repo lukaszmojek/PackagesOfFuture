@@ -24,9 +24,7 @@ namespace UI
         }
 
         private async void LogInButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            
+        { 
             if (passwordField.Password == "" || loginField.Text == "")
             {
                 MessageBox.Show("Pola nie moga byc puste!!!");
@@ -41,12 +39,10 @@ namespace UI
                 if (wynik)
                 {
                     var user = State.User;
-
-
                     if(user.Type == UserType.Administrator)
                     {
                         var mainWindow = (MainWindow)Application.Current.MainWindow;
-                        mainWindow?.ChangeView(new MainAppPage());
+                        mainWindow?.ChangeView(new AdminPage());
                     }
                     else
                     {

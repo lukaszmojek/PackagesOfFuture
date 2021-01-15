@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,18 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Logic;
 using Contracts.Requests;
-using System.Text.RegularExpressions;
+using Logic;
 
 namespace UI
 {
     /// <summary>
-    /// Interaction logic for RegisterPage.xaml
+    /// Logika interakcji dla klasy AdminPage.xaml
     /// </summary>
-    public partial class RegisterPage : Page
+    public partial class AdminPage : Page
     {
-        public RegisterPage()
+        public AdminPage()
         {
             InitializeComponent();
         }
@@ -33,22 +33,40 @@ namespace UI
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
+            State.User = null;
+            State.Password = null;
+
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new StartupPage());
         }
 
+        private void ClearField()
+        {
+            cityField.Clear();
+            houseField.Clear();
+            codeField.Clear();
+            streetField.Clear();
+            nameField.Clear();
+            lastNameField.Clear();
+            emailField.Clear();
+            passwordField.Clear();
+            confirmPasswordField.Clear();
+            accountTypeBox.SelectedIndex = -1;
+        }
+
         private async void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            if(nameField.Text == "" || lastNameField.Text == "" || emailField.Text == "" || passwordField.Password == "" || confirmPasswordField.Password == "" || streetField.Text == "" || houseField.Text == "" || codeField.Text == "" || cityField.Text == "")
+            if (nameField.Text == "" || lastNameField.Text == "" || emailField.Text == "" || passwordField.Password == "" || confirmPasswordField.Password == "" || streetField.Text == "" || houseField.Text == "" || codeField.Text == "" || cityField.Text == "" || accountTypeBox.SelectedValue is null)
             {
                 MessageBox.Show("Zadne pole nie moze byc puste!!!");
+                passwordField.Clear();
+                confirmPasswordField.Clear();
             }
             else
             {
-                if(passwordField.Password == confirmPasswordField.Password)
+                if (passwordField.Password == confirmPasswordField.Password)
                 {
                     CreateAddressDto address = new CreateAddressDto();
                     address.City = cityField.Text;
@@ -59,15 +77,13 @@ namespace UI
                     string lastName = lastNameField.Text;
                     string email = emailField.Text;
                     string password = passwordField.Password;
-                    int type = 2;
+                    int type = Int32.Parse(accountTypeBox.SelectedValue.ToString()); ;
                     var wynik = await UserManager.Register(name, lastName, email, type, password, address);
-                    
-                    if(wynik)
-                    {
-                        MessageBox.Show("Rejestracja przebiegla pomyslnie, przeniose cie na strone logowania");
 
-                        var mainWindow = (MainWindow)Application.Current.MainWindow;
-                        mainWindow?.ChangeView(new LoginPage());
+                    if (wynik)
+                    {
+                        MessageBox.Show("Rejestracja przebiegla pomyslnie");
+                        ClearField();
                     }
                     else
                     {
@@ -84,6 +100,11 @@ namespace UI
                     confirmPasswordField.Clear();
                 }
             }
+        }
+
+        private void CancelRegisterField_Click(object sender, RoutedEventArgs e)
+        {
+            ClearField();
         }
     }
 }
