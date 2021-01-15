@@ -32,7 +32,6 @@ namespace Api.Handlers
 
                 user.FirstName = command.FirstName;
                 user.LastName = command.LastName;
-                user.Email = command.Email;
                 user.Type = command.Type;
                 user.Password = command.Password;
 

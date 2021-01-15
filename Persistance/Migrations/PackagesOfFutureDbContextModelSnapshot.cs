@@ -171,6 +171,34 @@ namespace Data.Migrations
                     b.ToTable("Sortings");
                 });
 
+            modelBuilder.Entity("Data.Entities.SupportIssue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("SupportIssues");
+                });
+
             modelBuilder.Entity("Data.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -271,6 +299,19 @@ namespace Data.Migrations
                     b.Navigation("Sorting");
                 });
 
+            modelBuilder.Entity("Data.Entities.SupportIssue", b =>
+                {
+                    b.HasOne("Data.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("Data.Entities.User", null)
+                        .WithMany("SupportIssues")
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Data.Entities.User", b =>
                 {
                     b.HasOne("Data.Entities.Address", "Address")
@@ -313,6 +354,11 @@ namespace Data.Migrations
                     b.Navigation("Packages");
 
                     b.Navigation("Vehicles");
+                });
+
+            modelBuilder.Entity("Data.Entities.User", b =>
+                {
+                    b.Navigation("SupportIssues");
                 });
 #pragma warning restore 612, 618
         }

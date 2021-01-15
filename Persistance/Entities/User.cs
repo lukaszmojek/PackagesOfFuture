@@ -12,5 +12,6 @@ namespace Data.Entities
         public string Password { get; set; }
         
         public virtual Address Address { get; set; }
+        public virtual ICollection<SupportIssue> SupportIssues { get; set; }
     }
 }
