@@ -8,10 +8,18 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="NewNotifyPage">
 
-    <Grid Background="#FFFF88E9">
-        <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
-        <Label Content="Każde zgłoszenie rozpatrywane  jest indywidualnie,&#xD;&#xA; prosze opisz swój problem" HorizontalAlignment="Left" Margin="124,71,0,0" VerticalAlignment="Top" Height="152" Width="576" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="NewNotifyButton" Content="Zatwierdź zgłoszenie" HorizontalAlignment="Left" Margin="502,709,0,0" VerticalAlignment="Top" Height="39" Width="220" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" />
-        <TextBox x:Name="NotifyDescription" HorizontalAlignment="Left" Margin="195,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="324" Height="325"/>
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="80,659,0,0" VerticalAlignment="Top" Height="71" Width="245" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Label Content="Każde zgłoszenie rozpatrywane  jest indywidualnie,&#xD;&#xA; prosze opisz swój problem" HorizontalAlignment="Left" Margin="119,48,0,0" VerticalAlignment="Top" Height="152" Width="576" FontWeight="Bold" FontSize="20" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="NewNotifyButton" Content="Zatwierdź zgłoszenie" HorizontalAlignment="Left" Margin="430,660,0,0" VerticalAlignment="Top" Height="71" Width="290" Click="NewNotifyButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <TextBox x:Name="NotifyDescription" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="640" Height="430"/>
     </Grid>
 </Page>

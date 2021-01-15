@@ -29,6 +29,13 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
         
+        [HttpGet("user-packages/{userId}")]
+        public async Task<ActionResult<ICollection<PackageDto>>> GetUserPackages([FromRoute] int userId)
+        {
+            var result = await _mediator.Send(new GetUserPackagesQuery() { UserId = userId});
+            return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
+        }
+        
         [HttpPost("")]
         public async Task<IActionResult> RegisterPackage([FromBody] RegisterPackageDto registerPackageDto)
         {

@@ -31,6 +31,8 @@ namespace Api.Handlers
             var packages = 
                 await _dbContext.Set<Package>()
                     .Include(x => x.Payment)
+                    .Include(x => x.DeliveryAddress)
+                    .Include(x => x.ReceiveAddress)
                     .ToListAsync();
 
             return this._mapper.Map<ICollection<PackageDto>>(packages);

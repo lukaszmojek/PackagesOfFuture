@@ -24,16 +24,15 @@
                 </RadialGradientBrush>
             </Grid.Background>
             <Image Margin="-179,433,334,-219" Stretch="Fill" Source="/package.png"/>
-            <TextBox x:Name="LoginField" HorizontalAlignment="Center" Margin="0,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="25"/>
+            <TextBox x:Name="loginField" HorizontalAlignment="Center" Margin="0,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="25"/>
             <Label Content="Adres e-mail&#xD;&#xA;" HorizontalAlignment="Left" Margin="105,130,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <PasswordBox x:Name="PasswordField" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="200" Height="25"/>
+            <PasswordBox x:Name="passwordField" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="200" Height="25"/>
             <Label Content="Hasło:" HorizontalAlignment="Left" Margin="105,200,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" RenderTransformOrigin="1.17,1.626"/>
             <Button x:Name="ForgotPassword" Content="Zapomniałeś hasła?&#xD;&#xA;" HorizontalAlignment="Left" Margin="100,262,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="165" Foreground="White" FontSize="16" FontWeight="Bold" Height="25" Click="ForgotPassword_Click" BorderBrush="{x:Null}"/>
         </Grid>
-        <Button x:Name="GoToNextPageButton" Content="EmergencyButton &#xD;&#xA;(jesli sie nie zalogujesz)" HorizontalAlignment="Left" Margin="482,523,0,0" VerticalAlignment="Top" Height="51" Width="138" Background="#FFF300FF" BorderBrush="#FFE800FF" Foreground="White" FontWeight="Bold" Click="GoToNextPageButton_Click"/>
 
-        <Button x:Name="BackButton" Content="Powrót&#xA;" HorizontalAlignment="Left" Margin="195,650,0,100"  Height="50" Width="200" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.031,-0.093" FontSize="26"/>
-        <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="405,650,0,100" Click="LogInButton_Click" Width="200" RenderTransformOrigin="0,0" Foreground="White" Background="#2d2d2d" FontWeight="Bold" Height="50" FontSize="26"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="195,650,0,90" Width="200" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26" RenderTransformOrigin="0.031,-0.093" />
+        <Button x:Name="LogInButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="405,650,0,90" Click="LogInButton_Click" Width="200" RenderTransformOrigin="0,0" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" Height="60"/>
         <Label x:Name="testowyLabel" Visibility="Hidden" Content="Label" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="68" Width="352" Background="Transparent" Foreground="White" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Page>

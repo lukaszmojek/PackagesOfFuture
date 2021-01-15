@@ -14,6 +14,8 @@ namespace Contracts.Requests
         public double Weight { get; set; }
         
         public PaymentDto Payment { get; set; }
+        public AddressDto DeliveryAddress { get; set; }
+        public AddressDto ReceiveAddress { get; set; }
 
         public int DeliveryAddressId { get; set; }
         public int ReceiveAddressId { get; set; }

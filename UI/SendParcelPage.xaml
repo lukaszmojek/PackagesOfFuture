@@ -8,50 +8,63 @@
       d:DesignHeight="800" d:DesignWidth="800"
       Title="SendParcelPage">
 
-    <Grid Background="Magenta" Width="800" Height="800">
-        <Button x:Name="BackButton" Content="Wróć do menu" HorizontalAlignment="Left" Margin="45,709,0,0" VerticalAlignment="Top" Height="39" Width="157" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="BackButton_Click" />
-        <Label x:Name="TestLabel" Content="Test" HorizontalAlignment="Left" Margin="34,21,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-        <Grid Margin="244,21,244,505" Background="#FFFF35BF">
-            <ComboBox x:Name="TypeOfParcel" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,49,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfParcel_SelectionChanged">
-                <ComboBoxItem Content="Paczka A (10x10x10cm - 5kg)" Tag="0"/>
-                <ComboBoxItem Content="Paczka B (50x50x50cm - 10kg)" Tag="1"/>
+    <Grid Width="800" Height="800">
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="60,700,0,0" VerticalAlignment="Top" Height="60" Width="240" Click="BackButton_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
+        <Grid Margin="244,21,244,515" Background="#2d2d2d">
+            <ComboBox x:Name="TypeOfParcel" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,49,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfParcel_SelectionChanged" FontSize="16">
+                <ComboBoxItem Content="Paczka A (10x15x20cm - 5kg)" Tag="0"/>
+                <ComboBoxItem Content="Paczka B (30x40x50cm - 10kg)" Tag="1"/>
                 <ComboBoxItem Content="Paczka C (100x100x100cm - 20kg)" Tag="2"/>
             </ComboBox>
             <Label Content="Wybierz rodzaj przesyłki" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Wybierz rodzaj kuriera" HorizontalAlignment="Left" Margin="33,88,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <ComboBox x:Name="TypeOfCourier" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfCourier_SelectionChanged">
+            <ComboBox x:Name="TypeOfCourier" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfCourier_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Kurier Standard" Tag="0"/>
                 <ComboBoxItem Content="Kurier Ekspres" Tag="1"/>
                 <ComboBoxItem Content="Kurier Weekend" Tag="2"/>
+                <ComboBoxItem Content="Dostawa dronem" Tag="3"/>
             </ComboBox>
             <Label Content="Wybierz rodzaj płatności" HorizontalAlignment="Left" Margin="33,159,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfPayment_SelectionChanged">
-                <ComboBoxItem Content="Karta" Tag="0"/>
+            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" FontSize="16">
+                <ComboBoxItem Content="Przelew" Tag="0"/>
                 <ComboBoxItem Content="Blik" Tag="1"/>
-                <ComboBoxItem Content="Przelew" Tag="2"/>
+                <ComboBoxItem Content="Gotówka" Tag="2"/>
+                <ComboBoxItem Content="Czek" Tag="3"/>
             </ComboBox>
         </Grid>
-        <Grid Margin="34,332,430,185" Background="#FF76FF28">
+        <Grid Margin="20,320,440,180" Background="#2d2d2d">
             <Label Content="Adres nadawcy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
-            <Label Content="Miejscowość" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <TextBox x:Name="streetSenderField" HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
+            <Label Content="Ulica" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Numer domu" HorizontalAlignment="Left" Margin="33,122,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox x:Name="houseSenderField" HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Kod pocztowy" HorizontalAlignment="Left" Margin="33,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34"/>
+            <TextBox x:Name="codeSenderField" MaxLength="5" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Height="34" FontSize="20"/>
+            <TextBox x:Name="citySenderField" HorizontalAlignment="Left" Margin="126,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="34" FontSize="20"/>
+            <Label Content="Miasto" HorizontalAlignment="Left" Margin="240,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         </Grid>
-        <Grid Margin="423,332,41,185" Background="#FF76FF28">
+        <Grid Margin="435,320,28,180" Background="#2d2d2d">
             <Label Content="Adres odbiorcy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
-            <Label Content="Miejscowość" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
+            <TextBox x:Name="streetReceiverField" HorizontalAlignment="Left" Margin="33,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
+            <Label Content="Ulica" HorizontalAlignment="Left" Margin="33,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
             <Label Content="Numer domu" HorizontalAlignment="Left" Margin="33,122,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34"/>
+            <TextBox x:Name="houseReceiverField" HorizontalAlignment="Left" Margin="33,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="34" FontSize="20"/>
             <Label Content="Kod pocztowy" HorizontalAlignment="Left" Margin="33,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <TextBox HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="34"/>
+            <TextBox x:Name="codeReceiverField" MaxLength="5" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="33,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68" Height="34" FontSize="20"/>
+            <TextBox x:Name="cityReceiverField" HorizontalAlignment="Left" Margin="126,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Height="34" FontSize="20"/>
+            <Label Content="Miasto" HorizontalAlignment="Left" Margin="240,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         </Grid>
         <Label Content="Do zapłaty:" HorizontalAlignment="Center" Margin="0,635,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         <Label x:Name="priceLabel" Content="" HorizontalAlignment="Center" Margin="0,669,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162" Background="White" Width="93"/>
-        <Button x:Name="SendParcelButton" Content="Nadaj przesyłkę" HorizontalAlignment="Left" Margin="354,709,0,0" VerticalAlignment="Top" Height="39" Width="405" Foreground="White" FontWeight="Bold" FontSize="20" Background="#FF3AFF00" Click="SendParcelButton_Click"/>
+        <Button x:Name="SendParcelButton" Content="Nadaj przesyłkę" HorizontalAlignment="Left" Margin="505,700,0,0" VerticalAlignment="Top" Height="60" Width="240" Click="SendParcelButton_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
 
     </Grid>
 </Page>

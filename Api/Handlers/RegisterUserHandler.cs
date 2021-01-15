@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
@@ -25,6 +26,12 @@ namespace Api.Handlers
         public async Task<Response<RegisterUserResponse>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
             var user = _mapper.Map<User>(request);
+            var usersInDatabase = await _repository.GetAsync();
+
+            if (usersInDatabase.FirstOrDefault(x => x.Email.Equals(request.Email)) != null)
+            {
+                return ResponseFactory.CreateFailureResponse<RegisterUserResponse>("Mail już znajduje się w bazie!");
+            }
             
             await _repository.AddAsync(user);
             await _repository.SaveChangesAsync();

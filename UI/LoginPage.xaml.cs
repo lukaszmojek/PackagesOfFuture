@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using Logic;
+using ResourceEnums;
 
 namespace UI
 {
@@ -23,30 +24,37 @@ namespace UI
         }
 
         private async void LogInButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            
-            if (PasswordField.Password == "" || LoginField.Text == "")
+        { 
+            if (passwordField.Password == "" || loginField.Text == "")
             {
-                testowyLabel.Content = "Login/hasło nie może być puste!";
+                MessageBox.Show("Pola nie moga byc puste!!!");
             }
             else
             {
-                string login = LoginField.Text;
-                string password = PasswordField.Password;
+                LogInButton.IsEnabled = false;
+                string login = loginField.Text;
+                string password = passwordField.Password;
 
                 var wynik = await UserManager.LogIn(login, password);
                 
                 if (wynik)
                 {
                     var user = State.User;
-                    var mainWindow = (MainWindow)Application.Current.MainWindow;
-                    mainWindow?.ChangeView(new MainAppPage());
+                    if(user.Type == UserType.Administrator)
+                    {
+                        var mainWindow = (MainWindow)Application.Current.MainWindow;
+                        mainWindow?.ChangeView(new AdminPage());
+                    }
+                    else
+                    {
+                        var mainWindow = (MainWindow)Application.Current.MainWindow;
+                        mainWindow?.ChangeView(new MainAppPage());
+                    }
                 }
                 else
                 {
-                    testowyLabel.Visibility = Visibility.Visible;
-                    testowyLabel.Content = "Zły login lub hasło";
+                    MessageBox.Show("Zły login lub haslo");
+                    LogInButton.IsEnabled = true;
                 }
             }
 

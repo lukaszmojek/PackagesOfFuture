@@ -1,4 +1,5 @@
 ﻿using Api.Commands;
+using Api.Controllers;
 using Contracts.Responses;
 using Api.Queries;
 using AutoMapper;
@@ -21,6 +22,8 @@ namespace Api.Profiles
             CreateMap<User, LogInResponse>();
 
             CreateMap<User, UserDto>();
+
+            CreateMap<ChangeUserPasswordDto, ChangeUserPasswordCommand>();
         }
     }
 }
