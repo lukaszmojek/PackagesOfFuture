@@ -18,7 +18,6 @@
         <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
         <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="60,700,0,0" VerticalAlignment="Top" Height="60" Width="240" Click="BackButton_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
-        <Label x:Name="TestLabel" Content="Test" HorizontalAlignment="Left" Margin="605,650,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         <Grid Margin="244,21,244,515" Background="#2d2d2d">
             <ComboBox x:Name="TypeOfParcel" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,49,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfParcel_SelectionChanged" FontSize="16">
                 <ComboBoxItem Content="Paczka A (10x15x20cm - 5kg)" Tag="0"/>
@@ -34,7 +33,7 @@
                 <ComboBoxItem Content="Dostawa dronem" Tag="3"/>
             </ComboBox>
             <Label Content="Wybierz rodzaj płatności" HorizontalAlignment="Left" Margin="33,159,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
-            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" SelectionChanged="TypeOfPayment_SelectionChanged" FontSize="16">
+            <ComboBox x:Name="TypeOfPayment" SelectedValuePath="Tag" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="222" Height="34" RenderTransformOrigin="0.505,0.556" FontSize="16">
                 <ComboBoxItem Content="Przelew" Tag="0"/>
                 <ComboBoxItem Content="Blik" Tag="1"/>
                 <ComboBoxItem Content="Gotówka" Tag="2"/>

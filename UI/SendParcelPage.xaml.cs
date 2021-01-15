@@ -40,7 +40,7 @@ namespace UI
             citySenderField.IsEnabled = false;
         }
 
-        int[,] cennik = new int[3, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 } };
+        int[,] cennik = new int[4, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 }, {50, 100, 200} };
 
         private int ValueOfParcel()
         {
@@ -123,11 +123,6 @@ namespace UI
         private void TypeOfCourier_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ValueOfParcel();
-        }
-
-        private void TypeOfPayment_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            TestLabel.Content = TypeOfPayment.SelectedValue;
         }
 
         private async void SendParcelButton_Click(object sender, RoutedEventArgs e)
