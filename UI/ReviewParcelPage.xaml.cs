@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace UI
 {
@@ -31,10 +32,21 @@ namespace UI
         {
             InitializeComponent();
 
-
+            LoadPackages();
         }
 
+        private async void LoadPackages()
+        {
+            if (await PackageManager.GetUserPackage(State.User.Id))
+            {
+                foreach (var package in State.UserPackages)
+                {
+                    listOfPackages.Add(package);
+                }
+            }
 
+            PackagesListView.ItemsSource = listOfPackages;
+        }
 
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

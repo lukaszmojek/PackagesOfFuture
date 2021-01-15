@@ -29,10 +29,10 @@ namespace UI
         public DeleteUserPage()
         {
             InitializeComponent();
-            test();
+            LoadUsers();
         }
 
-        private async void test()
+        private async void LoadUsers()
         {
             if (await UserManager.GetUsers())
             {
@@ -62,7 +62,7 @@ namespace UI
             {
                 State.UserSelectedForDeleting = null;
                 listOfNames = new ObservableCollection<UserDto>();
-                test();
+                LoadUsers();
             }
         }
 

@@ -37,11 +37,11 @@ namespace Logic
         }
 
 
-        public static async Task<bool> GetPackage()
+        public static async Task<bool> GetUserPackage(int userID)
         {
             using var http = new HttpClient();
 
-            var response = await http.GetAsync(AppSettings.Endpoints.GetPackages);
+            var response = await http.GetAsync(AppSettings.Endpoints.GetUserPackages(userID));
 
             if (response.IsSuccessStatusCode)
             {

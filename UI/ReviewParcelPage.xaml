@@ -24,16 +24,14 @@
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
-                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FirstName}"/>
-                            <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LastName}"/>
-                            <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
-
+                            <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
+                            <GridViewColumn Header="Szerokość" DisplayMemberBinding="{Binding Path=Width}"/>
+                            <GridViewColumn Header="Wysokość" DisplayMemberBinding="{Binding Path=Height}"/>
+                            <GridViewColumn Header="Waga" DisplayMemberBinding="{Binding Path=Weight}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
-
     </Grid>
 </Page>

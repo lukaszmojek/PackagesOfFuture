@@ -35,8 +35,7 @@ namespace UI
         }
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            State.User = null;
-            State.Password = null;
+            State.DeleteData();
 
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new StartupPage());

@@ -65,7 +65,7 @@
         </Grid>
         <Label Content="Do zapłaty:" HorizontalAlignment="Center" Margin="0,635,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162"/>
         <Label x:Name="priceLabel" Content="" HorizontalAlignment="Center" Margin="0,669,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.567,0.162" Background="White" Width="93"/>
-        <Button x:Name="SendParcelButton" Content="Nadaj przesyłkę" HorizontalAlignment="Left" Margin="505,700,0,0" VerticalAlignment="Top" Height="60" Width="240" Click="BackButtonSendParcelButton_Click_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
+        <Button x:Name="SendParcelButton" Content="Nadaj przesyłkę" HorizontalAlignment="Left" Margin="505,700,0,0" VerticalAlignment="Top" Height="60" Width="240" Click="SendParcelButton_Click" FontWeight="Bold" Background="#2d2d2d" Foreground="White" FontSize="26"/>
 
     </Grid>
 </Page>

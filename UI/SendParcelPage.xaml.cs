@@ -29,7 +29,15 @@ namespace UI
         {
             InitializeComponent();
 
-            
+            streetSenderField.Text = State.User.Address.Street;
+            houseSenderField.Text = State.User.Address.HouseAndFlatNumber;
+            codeSenderField.Text = State.User.Address.PostalCode;
+            citySenderField.Text = State.User.Address.City;
+
+            streetSenderField.IsEnabled = false;
+            houseSenderField.IsEnabled = false;
+            codeSenderField.IsEnabled = false;
+            citySenderField.IsEnabled = false;
         }
 
         int[,] cennik = new int[3, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 } };
@@ -74,21 +82,25 @@ namespace UI
 
         private PaymentType paymentType()
         {
-            int courier = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
+            int payment = Int32.Parse(TypeOfPayment.SelectedValue.ToString());
             
-            switch(courier)
+            if(payment == 0)
             {
-                case 0: return PaymentType.BankTransfer;
-                    break;
-                case 1: return PaymentType.Blik;
-                    break;
-                case 2: return PaymentType.Cash;
-                    break;
-                case 3: return PaymentType.Check;
-                    break;
-                default: return 0;
-                    break;
+                return PaymentType.BankTransfer;
             }
+            else if(payment == 1)
+            {
+                return PaymentType.Blik;
+            }
+            else if(payment == 2)
+            {
+                return PaymentType.Cash;
+            }
+            else
+            {
+                return PaymentType.Check;
+            }
+
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -138,22 +150,21 @@ namespace UI
                     }
                     else
                     {
-
                         AddressDto deliveryAddress = new AddressDto();
                         AddressDto pickUpAddress = new AddressDto();
                         PackageDetailsDto package = new PackageDetailsDto();
                         int serviceID;
                         CreatePaymentDto payment = new CreatePaymentDto();
 
-                        deliveryAddress.Street = streetSenderField.Text;
-                        deliveryAddress.HouseAndFlatNumber = houseSenderField.Text;
-                        deliveryAddress.PostalCode = codeSenderField.Text;
-                        deliveryAddress.City = citySenderField.Text;
+                        pickUpAddress.Street = streetSenderField.Text;
+                        pickUpAddress.HouseAndFlatNumber = houseSenderField.Text;
+                        pickUpAddress.PostalCode = codeSenderField.Text;
+                        pickUpAddress.City = citySenderField.Text;
 
-                        pickUpAddress.Street = streetReceiverField.Text;
-                        pickUpAddress.HouseAndFlatNumber = houseReceiverField.Text;
-                        pickUpAddress.PostalCode = codeReceiverField.Text;
-                        pickUpAddress.City = cityReceiverField.Text;
+                        deliveryAddress.Street = streetReceiverField.Text;
+                        deliveryAddress.HouseAndFlatNumber = houseReceiverField.Text;
+                        deliveryAddress.PostalCode = codeReceiverField.Text;
+                        deliveryAddress.City = cityReceiverField.Text;
 
                         int[] wymiary = DimensionsPackage();
 
@@ -164,6 +175,7 @@ namespace UI
 
                         serviceID = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
 
+
                         payment.Amount = ValueOfParcel();
                         payment.Type = paymentType();
 
@@ -172,14 +184,16 @@ namespace UI
                         if(wynik)
                         {
                             MessageBox.Show("Paczka nadana pomyślnie");
-                            streetSenderField.Clear();
-                            houseSenderField.Clear();
-                            codeSenderField.Clear();
-                            citySenderField.Clear();
-                            streetReceiverField.Clear();
-                            houseReceiverField.Clear();
-                            codeReceiverField.Clear();
-                            cityReceiverField.Clear();
+                            var mainWindow = (MainWindow)Application.Current.MainWindow;
+                            mainWindow?.ChangeView(new MainAppPage());
+                            //streetSenderField.Clear();
+                            //houseSenderField.Clear();
+                            //codeSenderField.Clear();
+                            //citySenderField.Clear();
+                            //streetReceiverField.Clear();
+                            //houseReceiverField.Clear();
+                            //codeReceiverField.Clear();
+                            //cityReceiverField.Clear();
                         }
                         else
                         {
