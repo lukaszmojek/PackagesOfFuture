@@ -47,5 +47,14 @@ namespace Api.Controllers
             
             return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
         }
+        
+        [HttpPost("change-status")]
+        public async Task<IActionResult> ChangeServiceIssueStatus([FromBody] ChangeSupportIssueStatusDto changeSupportIssueStatusDto)
+        {
+            var command = _mapper.Map<ChangeSupportIssueStatusCommand>(changeSupportIssueStatusDto);
+            var result = await _mediator.Send(command);
+            
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+        }
     }
 }

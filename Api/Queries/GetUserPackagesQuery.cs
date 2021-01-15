@@ -4,7 +4,8 @@ using MediatR;
 
 namespace Api.Queries
 {
-    public class GetSupportIssuesQuery : IRequest<ICollection<SupportIssueDto>>
+    public class GetUserPackagesQuery : IRequest<ICollection<PackageDto>>
     {
+        public int UserId { get; set; }
     }
 }

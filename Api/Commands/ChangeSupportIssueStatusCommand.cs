@@ -1,0 +1,13 @@
+﻿using Api.Controllers;
+using Contracts.Responses;
+using Data.Entities;
+using MediatR;
+
+namespace Api.Commands
+{
+    public class ChangeSupportIssueStatusCommand : IRequest<Response<ChangeSupportIssueStatusResponse>>
+    {
+        public int Id { get; set; }
+        public SupportIssueStatus Status { get; set; }
+    }
+}

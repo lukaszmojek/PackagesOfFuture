@@ -1,5 +1,4 @@
 ﻿using Api.Commands;
-using Api.Controllers;
 using AutoMapper;
 using Contracts.Requests;
 using Data.Entities;
@@ -17,17 +16,6 @@ namespace Api.Profiles
             CreateMap<AddressDto, Address>();
             
             CreateMap<CreateAddressDto, Address>();
-        }
-    }
-    
-    public class SupportIssueProfile : Profile
-    {
-        public SupportIssueProfile()
-        {
-            CreateMap<SupportIssue, SupportIssueDto>();
-            
-            CreateMap<RegisterSupportIssueDto, RegisterSupportIssueCommand>();
-            CreateMap<RegisterSupportIssueCommand, SupportIssue>();
         }
     }
 }

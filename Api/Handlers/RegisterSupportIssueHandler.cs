@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Commands;
+using Api.Controllers;
 using Api.Factories;
 using AutoMapper;
 using Contracts.Responses;
@@ -9,7 +11,7 @@ using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Api.Controllers
+namespace Api.Handlers
 {
     public class RegisterSupportIssueHandler : IRequestHandler<RegisterSupportIssueCommand, Response<RegisterSupportIssueResponse>>
     {

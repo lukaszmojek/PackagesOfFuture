@@ -29,6 +29,7 @@ namespace Logic
             public static string GetSupportIssues { get => _host + "/support-issues"; }
             public static string GetSupportIssuesForUser (int id) => $"{_host}/support-issues/user-issues/{id}";
             public static string RegisterSupportIssue { get => _host + "/support-issues"; }
+            public static string ChangeSupportIssueStatus { get => _host + "/support-issues/change-status"; }
         }
     }
 }

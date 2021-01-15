@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
 using Data.Entities;
@@ -9,7 +10,7 @@ using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Api.Controllers
+namespace Api.Handlers
 {
     public class GetUserSupportIssuesHandler : IRequestHandler<GetUserSupportIssuesQuery, ICollection<SupportIssueDto>>
     {

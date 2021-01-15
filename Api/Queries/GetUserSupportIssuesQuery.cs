@@ -2,7 +2,7 @@
 using Contracts.Requests;
 using MediatR;
 
-namespace Api.Controllers
+namespace Api.Queries
 {
     public class GetUserSupportIssuesQuery : IRequest<ICollection<SupportIssueDto>>
     {

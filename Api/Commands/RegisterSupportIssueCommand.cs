@@ -1,7 +1,8 @@
-﻿using Contracts.Responses;
+﻿using Api.Controllers;
+using Contracts.Responses;
 using MediatR;
 
-namespace Api.Controllers
+namespace Api.Commands
 {
     public class RegisterSupportIssueCommand : IRequest<Response<RegisterSupportIssueResponse>>
     {
