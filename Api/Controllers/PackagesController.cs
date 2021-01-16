@@ -6,7 +6,6 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -36,6 +35,13 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
         
+        [HttpGet("user-packages/{userId}")]
+        public async Task<ActionResult<ICollection<PackageDto>>> GetUserPackages([FromRoute] int userId)
+        {
+            var result = await _mediator.Send(new GetUserPackagesQuery() { UserId = userId});
+            return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
+        }
+        
         /// <summary>
         /// Registers a new package
         /// </summary>
@@ -49,7 +55,7 @@ namespace Api.Controllers
             var command = _mapper.Map<RegisterPackageCommand>(registerPackageDto);
             var result = await _mediator.Send(command);
             
-            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+            return result.Succeeded ? (IActionResult) Ok() : NotFound();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace UI
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            State.User = null;
+            State.DeleteData();
 
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new StartupPage());
@@ -56,12 +56,6 @@ namespace UI
             mainWindow?.ChangeView(new ChangePasswordPage());
         }
 
-        private void ModifyParcel_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow?.ChangeView(new ModifyParcelPage());
-        }
-
         private void ReviewNotify_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
@@ -72,6 +66,12 @@ namespace UI
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new NewNotifyPage());
+        }
+
+        private void ChangeData_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new ChangeDataPage());
         }
     }
 }

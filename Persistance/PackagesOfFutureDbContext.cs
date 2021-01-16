@@ -14,6 +14,7 @@ namespace Data
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<SupportIssue> SupportIssues { get; set; }
 
         public PackagesOfFutureDbContext(DbContextOptions<PackagesOfFutureDbContext> options)
             : base(options)

@@ -14,6 +14,8 @@ namespace Api.Profiles
             
             CreateMap<Address, AddressDto>();
             CreateMap<AddressDto, Address>();
+            
+            CreateMap<CreateAddressDto, Address>();
         }
     }
 }

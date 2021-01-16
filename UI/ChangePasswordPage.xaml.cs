@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace UI
 {
@@ -31,7 +32,7 @@ namespace UI
             mainWindow?.ChangeView(new MainAppPage());
         }
 
-        private void ChangePasswordButton_Click(object sender, RoutedEventArgs e)
+        private async void ChangePasswordButton_Click(object sender, RoutedEventArgs e)
         {
             if(currentPasswordField.Password == "" || newPasswordField.Password == "" || confirmNewPasswordField.Password == "")
             {
@@ -42,13 +43,53 @@ namespace UI
             }
             else
             {
-                if(newPasswordField.Password== confirmNewPasswordField.Password)
+                if(currentPasswordField.Password != State.Password)
                 {
-                    MessageBox.Show("Hasla sie zgadzaja");
+                    MessageBox.Show("Wprowadz poprawne aktualne haslo!");
+                    currentPasswordField.Clear();
+                    newPasswordField.Clear();
+                    confirmNewPasswordField.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Hasla musza byc takie same");
+                    if (newPasswordField.Password != confirmNewPasswordField.Password)
+                    {
+                        MessageBox.Show("Hasla musza byc takie same");
+                        currentPasswordField.Clear();
+                        newPasswordField.Clear();
+                        confirmNewPasswordField.Clear();
+                    }
+                    else
+                    {
+                        if(newPasswordField.Password == State.Password)
+                        {
+                            MessageBox.Show("Nowe haslo musi byc inne nie z stare");
+                            currentPasswordField.Clear();
+                            newPasswordField.Clear();
+                            confirmNewPasswordField.Clear();
+                        }
+                        else
+                        {
+                            String newPassword = newPasswordField.Password;
+
+                            var wynik = await UserManager.ChangePassword(State.User.Id, newPassword);
+
+                            if (wynik)
+                            {
+                                MessageBox.Show("Haslo zmienione pomyslnie!");
+                                var mainWindow = (MainWindow)Application.Current.MainWindow;
+                                mainWindow?.ChangeView(new MainAppPage());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Blad");
+                                currentPasswordField.Clear();
+                                newPasswordField.Clear();
+                                confirmNewPasswordField.Clear();
+                            }
+                        }
+
+                    }
                 }
             }
         }

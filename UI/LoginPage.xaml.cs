@@ -24,15 +24,14 @@ namespace UI
         }
 
         private async void LogInButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            
+        { 
             if (passwordField.Password == "" || loginField.Text == "")
             {
                 MessageBox.Show("Pola nie moga byc puste!!!");
             }
             else
             {
+                LogInButton.IsEnabled = false;
                 string login = loginField.Text;
                 string password = passwordField.Password;
 
@@ -41,12 +40,10 @@ namespace UI
                 if (wynik)
                 {
                     var user = State.User;
-
-
                     if(user.Type == UserType.Administrator)
                     {
                         var mainWindow = (MainWindow)Application.Current.MainWindow;
-                        mainWindow?.ChangeView(new MainAppPage());
+                        mainWindow?.ChangeView(new AdminPage());
                     }
                     else
                     {
@@ -57,6 +54,7 @@ namespace UI
                 else
                 {
                     MessageBox.Show("Zły login lub haslo");
+                    LogInButton.IsEnabled = true;
                 }
             }
 

@@ -17,6 +17,7 @@ namespace Api
             services.AddScoped<IRepository<Vehicle>, Repository<Vehicle>>();
             services.AddScoped<IRepository<Service>, Repository<Service>>();
             services.AddScoped<IRepository<Payment>, Repository<Payment>>();
+            services.AddScoped<IRepository<SupportIssue>, Repository<SupportIssue>>();
 
             return services;
         }

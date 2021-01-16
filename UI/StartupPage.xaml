@@ -10,10 +10,17 @@
 
     <Grid Width="800" Height="800">
         <Grid.Background>
-            <ImageBrush ImageSource="/registerBackground1.jpg"/>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
         </Grid.Background>
-        <Button x:Name="LoginButton" Content="Zaloguj sie" HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Center" Height="60" Width="103" Click="LoginButton_Click"/>
-        <Button x:Name="RegisterButton" Content="Zarejestruj się" HorizontalAlignment="Left" Margin="328,216,0,0" VerticalAlignment="Top" Height="60" Width="104" Click="RegisterButton_Click"/>
+        <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
+        <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
+        <Grid Margin="200,250,200,250" OpacityMask="#FFF03232" Background="#7F000000">
+            <Button x:Name="LoginButton" Content="Zaloguj sie" HorizontalAlignment="Center" Margin="0,46,0,0" VerticalAlignment="Top" Height="60" Width="200" Click="LoginButton_Click" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" />
+            <Button x:Name="RegisterButton" Content="Zarejestruj się" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Width="200" Foreground="White" Background="#2d2d2d" FontWeight="Bold" FontSize="26" Click="RegisterButton_Click" Margin="0,180,0,0"/>
+        </Grid>
 
     </Grid>
 </Page>

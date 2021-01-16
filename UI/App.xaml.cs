@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace PackagesOfFuture.UI
+namespace UI
 {
     /// <summary>
     /// Interaction logic for App.xaml

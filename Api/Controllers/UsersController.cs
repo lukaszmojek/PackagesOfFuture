@@ -51,7 +51,7 @@ namespace Api.Controllers
             var command = _mapper.Map<RegisterUserCommand>(registerUserDto);
             var result = await _mediator.Send(command);
             
-            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
         }
 
         /// <summary>
