@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Api.Queries;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 using Infrastructure.Interfaces;
 using MediatR;

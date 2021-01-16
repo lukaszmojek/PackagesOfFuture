@@ -1,11 +1,10 @@
-﻿using Contracts.Requests;
-using Newtonsoft.Json;
-using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Contracts.Dtos;
 
 namespace Logic
 {
@@ -32,14 +31,15 @@ namespace Logic
             return false;
         }
 
-        public static async Task<bool> AddDrone(string model, int range)
+        public static async Task<bool> AddDrone(string model, int range, int sortingId)
         {
             using var http = new HttpClient();
 
-            var dronDetails = new DroneDto()
+            var dronDetails = new RegisterDroneDto()
             {
                 Model = model,
-                Range = range
+                Range = range,
+                SortingId = sortingId
             };
 
             var json = JsonConvert.SerializeObject(dronDetails);
@@ -55,42 +55,42 @@ namespace Logic
             return false;
         }
 
-        //public static async Task<bool> DeleteDrone(int droneID)
-        //{
-        //    using var http = new HttpClient();
+        public static async Task<bool> DeleteDrone(int droneID)
+        {
+            using var http = new HttpClient();
 
-        //    var response = await http.DeleteAsync(AppSettings.Endpoints.UnregisterDrone(droneID));
+            var response = await http.DeleteAsync(AppSettings.Endpoints.UnregisterDrone(droneID));
 
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        return true;
-        //    }
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
 
-        //    return false;
-        //}
+            return false;
+        }
 
 
-        //public static async Task<bool> ChangeDroneLocation(int droneID, int locationID)
-        //{
-        //    using var http = new HttpClient();
+        public static async Task<bool> ChangeDroneLocation(int droneID, int locationID)
+        {
+            using var http = new HttpClient();
 
-        //    var changeDetails = new ChangeDroneDto()
-        //    {
-        //        
-        //        
-        //    };
+            var changeDetails = new MoveDroneToSortingDto()
+            {
+                DroneId = droneID,
+                SortingId = locationID
+            };
 
-        //    var json = JsonConvert.SerializeObject(changeDetails);
-        //    var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var json = JsonConvert.SerializeObject(changeDetails);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-        //    var response = await http.PostAsync(AppSettings.Endpoints.ChangeSupportIssueStatus, data);
+            var response = await http.PostAsync(AppSettings.Endpoints.MoveDroneToSorting(droneID), data);
 
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        return true;
-        //    }
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
 
-        //    return false;
-        //}
+            return false;
+        }
     }
 }

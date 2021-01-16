@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Contracts.Requests;
 using Contracts.Responses;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Contracts.Dtos;
 using Data.Entities;
 using ResourceEnums;
 

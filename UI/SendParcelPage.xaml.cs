@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Logic;
 using Contracts;
-using Contracts.Requests;
+using Contracts.Dtos;
 using ResourceEnums;
 
 namespace UI

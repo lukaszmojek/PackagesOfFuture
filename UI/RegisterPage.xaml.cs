@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Logic;
-using Contracts.Requests;
 using System.Text.RegularExpressions;
+using Contracts.Dtos;
 using ResourceEnums;
 
 namespace UI

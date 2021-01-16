@@ -19,7 +19,8 @@ namespace Logic
             public static string AddAdresses { get => _host + "/adresses"; }
             public static string GetDrones { get => _host + "/drones"; }
             public static string RegisterDrone { get => _host + "/drones"; }
-            public static string MoveDroneToSorting(int id) => $"{_host}/drones/{id}/moveToSorting";
+            public static string MoveDroneToSorting(int id) => $"{_host}/drones/{id}/move-to-sorting";
+            public static string UnregisterDrone(int id) => $"{_host}/drones/{id}/unregister";
             public static string GetVehicles { get => _host + "/vehicles"; }
             public static string RegisterVehicle { get => _host + "/vehicles"; }
             public static string GetServices { get => _host + "/services"; }
@@ -30,6 +31,9 @@ namespace Logic
             public static string GetSupportIssuesForUser (int id) => $"{_host}/support-issues/user-issues/{id}";
             public static string RegisterSupportIssue { get => _host + "/support-issues"; }
             public static string ChangeSupportIssueStatus { get => _host + "/support-issues/change-status"; }
+            public static string GetSortings { get => _host + "/sortings"; }
+            public static string RegisterSorting { get => _host + "/sortings"; }
+            public static string ChangeSortingDetails(int id) => $"{_host}/sortings/{id}/change-details";
         }
     }
 }

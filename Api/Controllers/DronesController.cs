@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
+using Api.Factories;
 using Api.Queries;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
+using Contracts.Responses;
+using Data.Entities;
+using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -61,7 +66,7 @@ namespace Api.Controllers
         /// <returns>Nothing. Query GetDrones for current database status</returns>
         /// <response code="204">When drone was moved</response>
         /// <response code="400">When error regarding input occurred</response>
-        [HttpPost("{droneId}/moveToSorting")]
+        [HttpPost("{droneId}/move-to-sorting")]
         public async Task<IActionResult> MoveDroneToSorting(
             [FromRoute] int droneId,
             [FromBody] MoveDroneToSortingDto moveDroneDroneToSortingDto)
@@ -69,6 +74,50 @@ namespace Api.Controllers
             var command = _mapper.Map<MoveDroneToSortingCommand>(moveDroneDroneToSortingDto);
             var result = await _mediator.Send(command);
             return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
+        }
+
+        /// <summary>
+        /// Unregisters drone
+        /// </summary>
+        /// <param name="droneId">Id of drone</param>
+        /// <returns>Nothing. Query GetDrones for current database status</returns>
+        /// <response code="204">When drone was moved</response>
+        /// <response code="400">When error regarding input occurred</response>
+        [HttpDelete("{droneId}/unregister")]
+        public async Task<IActionResult> UnregisterDrone(
+            [FromRoute] int droneId
+            )
+        {
+            var result = await _mediator.Send(new UnregisterDroneCommand() { Id = droneId });
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
+        }
+    }
+
+    public class UnregisterDroneCommand : IRequest<Response<UnregisterDroneResponse>>
+    {
+        public int Id { get; set; }
+    }
+
+    public class UnregisterDroneResponse : IResponse
+    {
+    }
+    
+    public class UnregisterDroneHandler : IRequestHandler<UnregisterDroneCommand, Response<UnregisterDroneResponse>>
+    {
+        private IRepository<Drone> _repository;
+
+        public UnregisterDroneHandler(IRepository<Drone> repository)
+        {
+            _repository = repository;
+        }
+
+        public async Task<Response<UnregisterDroneResponse>> Handle(UnregisterDroneCommand request, CancellationToken cancellationToken)
+        {
+            var drone = await _repository.GetByIdAsync(request.Id);
+            _repository.DeleteAsync(drone);
+            await _repository.SaveChangesAsync();
+            
+            return ResponseFactory.CreateSuccessResponse<UnregisterDroneResponse>();
         }
     }
 }

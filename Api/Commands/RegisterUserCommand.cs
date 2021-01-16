@@ -1,4 +1,4 @@
-﻿using Contracts.Requests;
+﻿using Contracts.Dtos;
 using Contracts.Responses;
 using MediatR;
 

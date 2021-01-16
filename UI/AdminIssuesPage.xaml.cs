@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 using Logic;
 using ResourceEnums;

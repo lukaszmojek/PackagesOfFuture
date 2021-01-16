@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
@@ -7,29 +8,34 @@ using Data.Entities;
 using Infrastructure;
 using Infrastructure.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Handlers
 {
     public class MoveDroneToSortingHandler : IRequestHandler<MoveDroneToSortingCommand, Response<MoveDroneToSortingResponse>>
     {
         private readonly IRepository<Drone> _repository;
+        private readonly DbContext _dbContext;
 
-        public MoveDroneToSortingHandler(IRepository<Drone> repository)
+        public MoveDroneToSortingHandler(IRepository<Drone> repository, DbContext dbContext)
         {
             _repository = repository;
+            _dbContext = dbContext;
         }
 
         public async Task<Response<MoveDroneToSortingResponse>> Handle(MoveDroneToSortingCommand request, CancellationToken cancellationToken)
         {
-            var drone = await _repository.GetByIdAsync(request.DroneId);
-
+            var drone = await _dbContext.Set<Drone>().Include(x => x.Sorting).FirstOrDefaultAsync(x => x.Id == request.DroneId, cancellationToken: cancellationToken);
+            
             if (drone.Sorting.Id == request.SortingId)
             {
                 return ResponseFactory.CreateFailureResponse<MoveDroneToSortingResponse>(
                     "Drone already exists in this sorting!");
             }
 
-            drone.Sorting.Id = request.DroneId;
+            var sorting = await _dbContext.Set<Sorting>().FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
+            drone.Sorting = sorting;
+
             await _repository.SaveChangesAsync();
             
             return ResponseFactory.CreateSuccessResponse<MoveDroneToSortingResponse>();

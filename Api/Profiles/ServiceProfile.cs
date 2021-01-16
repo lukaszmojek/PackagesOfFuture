@@ -2,7 +2,7 @@ using Api.Commands;
 using Api.Controllers;
 using Api.Handlers;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 
 namespace Api.Profiles

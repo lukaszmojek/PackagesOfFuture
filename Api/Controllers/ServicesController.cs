@@ -5,7 +5,7 @@ using Api.Commands;
 using Api.Handlers;
 using Api.Queries;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

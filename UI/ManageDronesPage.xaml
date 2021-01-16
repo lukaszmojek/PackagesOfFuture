@@ -15,29 +15,30 @@
                 <GradientStop Color="#0c0317" Offset="1" />
             </RadialGradientBrush>
         </Grid.Background>
-        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="315,679,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="50,675,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
         <Grid Margin="50,114,368,241" Background="#FFB08585">
             <ListView x:Name="DroneListView" SelectionChanged="DroneListView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
                             <GridViewColumn Header="Model" DisplayMemberBinding="{Binding Path=Model}"/>
-                            <GridViewColumn Header="Range" DisplayMemberBinding="{Binding Path=Range}"/>
+                            <GridViewColumn Header="Zasięg" DisplayMemberBinding="{Binding Path=Range}"/>
+                            <GridViewColumn Header="Nazwa sortowni" DisplayMemberBinding="{Binding Path=SortingName}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
-        <ComboBox x:Name="TypeOfSorting" HorizontalAlignment="Left" Margin="471,114,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" SelectedValuePath="Tag">
+        <ComboBox x:Name="TypeOfSorting" HorizontalAlignment="Left" Margin="471,299,0,0" VerticalAlignment="Top" Width="199" SelectionChanged="ComboBox_SelectionChanged" SelectedValuePath="Tag" Height="46">
 
         </ComboBox>
-        <Button x:Name="SelectSortButton" Content="Wybierz" HorizontalAlignment="Left" Margin="626,114,0,0" VerticalAlignment="Top" Click="SelectSortButton_Click" Height="55" Width="140" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
-        <Button x:Name="DeleteDronButton" Content="Usun" HorizontalAlignment="Left" Margin="461,240,0,0" VerticalAlignment="Top" Click="DeleteDronButton_Click" Height="54" Width="140" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
-        <TextBox x:Name="ModelField" HorizontalAlignment="Left" Margin="461,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Background="White" Height="26" TextChanged="TextFieldChanged"/>
-        <TextBox x:Name="RangeField" HorizontalAlignment="Left" Margin="461,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="26"  TextChanged="TextFieldChanged"/>
-        <Button x:Name="AddDronButton" Content="Dodaj" HorizontalAlignment="Left" Margin="556,504,0,0" VerticalAlignment="Top" Click="AddDronButton_Click" Height="55" Width="140" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
-        <Label Content="Model" HorizontalAlignment="Left" Margin="461,356,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,0.616" Foreground="White" FontWeight="Bold" FontSize="20" Height="34"/>
-        <Label Content="Zasięg" HorizontalAlignment="Left" Margin="460,421,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,0.616" Foreground="White" FontWeight="Bold" FontSize="20" Height="34"/>
+        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Left" Margin="470,449,0,0" VerticalAlignment="Top" Click="CancelButton_Click" Height="46" Width="200" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Button x:Name="DeleteDronButton" Content="Usuń" HorizontalAlignment="Left" Margin="471,510,0,0" VerticalAlignment="Top" Click="DeleteDronButton_Click" Height="49" Width="199" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <TextBox x:Name="ModelField" HorizontalAlignment="Left" Margin="470,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="26" TextChanged="TextFieldChanged"/>
+        <TextBox x:Name="RangeField" HorizontalAlignment="Left" Margin="470,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Background="White" Height="26"  TextChanged="TextFieldChanged"/>
+        <Button x:Name="AddDronButton" Content="Dodaj" HorizontalAlignment="Left" Margin="470,385,0,0" VerticalAlignment="Top" Click="AddDronButton_Click" Height="50" Width="200" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Label Content="Model" HorizontalAlignment="Left" Margin="466,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,0.616" Foreground="White" FontWeight="Bold" FontSize="20" Height="34"/>
+        <Label Content="Zasięg" HorizontalAlignment="Left" Margin="465,200,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,0.616" Foreground="White" FontWeight="Bold" FontSize="20" Height="40"/>
 
     </Grid>
 </Page>

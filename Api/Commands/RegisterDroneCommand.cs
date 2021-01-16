@@ -7,5 +7,6 @@ namespace Api.Commands
     {
         public string Model { get; set; }
         public int Range { get; set; }
+        public int SortingId { get; set; }
     }
 }
