@@ -35,6 +35,13 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
         
+        /// <summary>
+        /// Gets packages for user
+        /// </summary>
+        /// <param name="userId">Id of user</param>
+        /// <returns>User packages from database</returns>
+        /// <response code="200">When there are packages</response>
+        /// <response code="404">If there are no packages</response>
         [HttpGet("user-packages/{userId}")]
         public async Task<ActionResult<ICollection<PackageDto>>> GetUserPackages([FromRoute] int userId)
         {

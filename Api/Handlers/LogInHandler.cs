@@ -29,9 +29,9 @@ namespace Api.Handlers
         public async Task<Response<LogInResponse>> Handle(LogInQuery request, CancellationToken cancellationToken)
         {
             var user = await _dbContext.Set<User>()
-                .Include(x => x.Addresses)
-                .SingleOrDefault(u => u.Email.Equals(request.Email)
-                                      && u.Password.Equals(request.Password));
+                .Include(x => x.Address)
+                .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
+                                      && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
 
             if (user == null)
             {
