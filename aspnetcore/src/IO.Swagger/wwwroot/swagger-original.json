@@ -1,0 +1,1359 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "PackagesOfFuture.Api",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/Addresses" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Gets all addresses",
+        "responses" : {
+          "200" : {
+            "description" : "When addresses exist",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/AddressDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/AddressDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/AddressDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Registers a new package",
+        "requestBody" : {
+          "description" : "Representation of address to add",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddAddressDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddAddressDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddAddressDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When package was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Drones" : {
+      "get" : {
+        "tags" : [ "Drones" ],
+        "summary" : "Gets all drones",
+        "responses" : {
+          "200" : {
+            "description" : "When there are drones",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/DroneDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/DroneDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/DroneDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no drones"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Drones" ],
+        "summary" : "Registers a new drone",
+        "requestBody" : {
+          "description" : "Representation of drone to register",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterDroneDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterDroneDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterDroneDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When drone was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Drones/{droneId}/moveToSorting" : {
+      "post" : {
+        "tags" : [ "Drones" ],
+        "summary" : "Moves drone to different sorting",
+        "parameters" : [ {
+          "name" : "droneId",
+          "in" : "path",
+          "description" : "Id of drone",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "description" : "Id of drone",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Details of moving drone",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MoveDroneToSortingDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MoveDroneToSortingDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MoveDroneToSortingDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When drone was moved"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Login" : {
+      "post" : {
+        "tags" : [ "Login" ],
+        "summary" : "Logs user into the system",
+        "requestBody" : {
+          "description" : "Representation of login details",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LogInDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LogInDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LogInDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "When user was logged in",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LogInResponseResponse"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LogInResponseResponse"
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LogInResponseResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "When no user with selected email and password exists"
+          }
+        }
+      }
+    },
+    "/Packages" : {
+      "get" : {
+        "tags" : [ "Packages" ],
+        "summary" : "Gets all packages",
+        "responses" : {
+          "200" : {
+            "description" : "When there are packages",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PackageDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PackageDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PackageDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no packages"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Packages" ],
+        "summary" : "Registers a new package",
+        "requestBody" : {
+          "description" : "Representation of package to register",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterPackageDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterPackageDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterPackageDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When package was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Payments" : {
+      "get" : {
+        "tags" : [ "Payments" ],
+        "summary" : "Gets all payments",
+        "responses" : {
+          "200" : {
+            "description" : "When there are payments",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PaymentDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PaymentDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PaymentDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no payments"
+          }
+        }
+      }
+    },
+    "/Payments/change-status/{id}" : {
+      "post" : {
+        "tags" : [ "Payments" ],
+        "summary" : "Changes status of a payment",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Details of payment status change",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangePaymentStatusDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangePaymentStatusDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangePaymentStatusDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When payment status was changed"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Seed" : {
+      "post" : {
+        "tags" : [ "Seed" ],
+        "summary" : "Seeds a database with predefined data",
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When data was seeded"
+          },
+          "400" : {
+            "description" : "When error occurred"
+          }
+        }
+      }
+    },
+    "/Services" : {
+      "get" : {
+        "tags" : [ "Services" ],
+        "summary" : "Gets all services",
+        "responses" : {
+          "200" : {
+            "description" : "When there are services",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ServiceDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ServiceDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ServiceDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no services"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services" ],
+        "summary" : "Registers a new service",
+        "requestBody" : {
+          "description" : "Representation of service to register",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterServiceDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterServiceDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterServiceDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When service was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Users" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "Gets all users",
+        "responses" : {
+          "200" : {
+            "description" : "When there are users",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/UserDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/UserDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/UserDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no users"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Registers a new user",
+        "requestBody" : {
+          "description" : "Representation of user to register",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterUserDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterUserDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When user was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Users/{id}/change-details" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Changes user details",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Id of a user",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "description" : "Id of a user",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Representation of user details to change",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserDetailsDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserDetailsDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserDetailsDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When user details was changed"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Users/{id}/change-password" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Changes user password",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Id of a user",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "description" : "Id of a user",
+            "format" : "int32"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Representation of user password to change",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserPasswordDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserPasswordDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ChangeUserPasswordDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When user password was changed"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    },
+    "/Users/{id}/unregister" : {
+      "delete" : {
+        "tags" : [ "Users" ],
+        "summary" : "Changes user details",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Id of a user",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "description" : "Id of a user",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When user was unregistered"
+          },
+          "404" : {
+            "description" : "When no user with selected id exists"
+          }
+        }
+      }
+    },
+    "/Vehicles" : {
+      "get" : {
+        "tags" : [ "Vehicles" ],
+        "summary" : "Gets all vehicles",
+        "responses" : {
+          "200" : {
+            "description" : "When there are vehicles",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleDto"
+                  },
+                  "x-content-type" : "text/plain"
+                }
+              },
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleDto"
+                  }
+                }
+              },
+              "text/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/VehicleDto"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "If there are no vehicles"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Vehicles" ],
+        "summary" : "Registers a new vehicle",
+        "requestBody" : {
+          "description" : "Representation of vehicle to register",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterVehicleDto"
+              }
+            },
+            "text/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterVehicleDto"
+              }
+            },
+            "application/*+json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterVehicleDto"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "204" : {
+            "description" : "When vehicle was registered"
+          },
+          "400" : {
+            "description" : "When error regarding input occurred"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AddressDto" : {
+        "type" : "object",
+        "properties" : {
+          "street" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "houseAndFlatNumber" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "city" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "postalCode" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "houseAndFlatNumber" : "houseAndFlatNumber",
+          "city" : "city",
+          "street" : "street",
+          "postalCode" : "postalCode"
+        }
+      },
+      "AddAddressDto" : {
+        "type" : "object",
+        "properties" : {
+          "street" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "houseAndFlatNumber" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "city" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "postalCode" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "DroneDto" : {
+        "type" : "object",
+        "properties" : {
+          "model" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "range" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "range" : 0,
+          "model" : "model"
+        }
+      },
+      "RegisterDroneDto" : {
+        "type" : "object",
+        "properties" : {
+          "model" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "range" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "MoveDroneToSortingDto" : {
+        "type" : "object",
+        "properties" : {
+          "droneId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sortingId" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "LogInDto" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "password" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UserType" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 0, 1, 2 ]
+      },
+      "LogInResponse" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "userName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "firstName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/UserType"
+          },
+          "address" : {
+            "$ref" : "#/components/schemas/AddressDto"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "firstName" : "firstName",
+          "lastName" : "lastName",
+          "address" : {
+            "houseAndFlatNumber" : "houseAndFlatNumber",
+            "city" : "city",
+            "street" : "street",
+            "postalCode" : "postalCode"
+          },
+          "id" : 0,
+          "userName" : "userName",
+          "type" : 6,
+          "email" : "email"
+        }
+      },
+      "LogInResponseResponse" : {
+        "type" : "object",
+        "properties" : {
+          "succeeded" : {
+            "type" : "boolean"
+          },
+          "error" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "content" : {
+            "$ref" : "#/components/schemas/LogInResponse"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "error" : "error",
+          "content" : {
+            "firstName" : "firstName",
+            "lastName" : "lastName",
+            "address" : {
+              "houseAndFlatNumber" : "houseAndFlatNumber",
+              "city" : "city",
+              "street" : "street",
+              "postalCode" : "postalCode"
+            },
+            "id" : 0,
+            "userName" : "userName",
+            "type" : 6,
+            "email" : "email"
+          },
+          "succeeded" : true
+        }
+      },
+      "PackageStatus" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 0, 1, 2 ]
+      },
+      "PaymentType" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 1, 2, 3, 4 ]
+      },
+      "PaymentStatus" : {
+        "type" : "integer",
+        "format" : "int32",
+        "enum" : [ 0, 1, 2 ]
+      },
+      "PaymentDto" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/PaymentType"
+          },
+          "amount" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/PaymentStatus"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "amount" : 9.301444243932576,
+          "id" : 2,
+          "type" : 7,
+          "status" : 3
+        }
+      },
+      "PackageDto" : {
+        "type" : "object",
+        "properties" : {
+          "deliveryDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/PackageStatus"
+          },
+          "width" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "height" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "length" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "weight" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "payment" : {
+            "$ref" : "#/components/schemas/PaymentDto"
+          },
+          "deliveryAddress" : {
+            "$ref" : "#/components/schemas/AddressDto"
+          },
+          "receiveAddress" : {
+            "$ref" : "#/components/schemas/AddressDto"
+          },
+          "deliveryAddressId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "receiveAddressId" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "deliveryAddressId" : 2,
+          "receiveAddressId" : 4,
+          "deliveryAddress" : {
+            "houseAndFlatNumber" : "houseAndFlatNumber",
+            "city" : "city",
+            "street" : "street",
+            "postalCode" : "postalCode"
+          },
+          "receiveAddress" : null,
+          "width" : 6.027456183070403,
+          "length" : 5.962133916683182,
+          "weight" : 5.637376656633329,
+          "payment" : {
+            "amount" : 9.301444243932576,
+            "id" : 2,
+            "type" : 7,
+            "status" : 3
+          },
+          "deliveryDate" : "2000-01-23T04:56:07.000+00:00",
+          "status" : 0,
+          "height" : 1.4658129805029452
+        }
+      },
+      "PackageDetailsDto" : {
+        "type" : "object",
+        "properties" : {
+          "width" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "height" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "length" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "weight" : {
+            "type" : "number",
+            "format" : "double"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "CreatePaymentDto" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "$ref" : "#/components/schemas/PaymentType"
+          },
+          "amount" : {
+            "type" : "number",
+            "format" : "double"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "RegisterPackageDto" : {
+        "type" : "object",
+        "properties" : {
+          "deliveryAddress" : {
+            "$ref" : "#/components/schemas/AddressDto"
+          },
+          "receiveAddress" : {
+            "$ref" : "#/components/schemas/AddressDto"
+          },
+          "package" : {
+            "$ref" : "#/components/schemas/PackageDetailsDto"
+          },
+          "serviceId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "payment" : {
+            "$ref" : "#/components/schemas/CreatePaymentDto"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ChangePaymentStatusDto" : {
+        "type" : "object",
+        "properties" : {
+          "paymentId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "paymentStatus" : {
+            "$ref" : "#/components/schemas/PaymentStatus"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ServiceDto" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "description" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "price" : {
+            "type" : "number",
+            "format" : "double"
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "price" : 0.8008281904610115,
+          "name" : "name",
+          "description" : "description"
+        }
+      },
+      "RegisterServiceDto" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "description" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "price" : {
+            "type" : "number",
+            "format" : "double"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "UserDto" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "firstName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "type" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "password" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "firstName" : "firstName",
+          "lastName" : "lastName",
+          "password" : "password",
+          "id" : 0,
+          "type" : "type",
+          "email" : "email"
+        }
+      },
+      "RegisterUserDto" : {
+        "type" : "object",
+        "properties" : {
+          "firstName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "type" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "password" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ChangeUserDetailsDto" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "firstName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "lastName" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "email" : {
+            "type" : "string",
+            "nullable" : true
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/UserType"
+          },
+          "password" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ChangeUserPasswordDto" : {
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "newPassword" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      },
+      "VehicleDto" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "model" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false,
+        "example" : {
+          "model" : "model",
+          "id" : 0
+        }
+      },
+      "RegisterVehicleDto" : {
+        "type" : "object",
+        "properties" : {
+          "model" : {
+            "type" : "string",
+            "nullable" : true
+          }
+        },
+        "additionalProperties" : false
+      }
+    }
+  }
+}
