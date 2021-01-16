@@ -23,6 +23,8 @@ namespace Logic
 
         public static SupportIssueDto SelectedSupportIssue { get; set; }
 
+        public static IList<DroneDto> AdminDrones { get; set; }
+
         public static void DeleteData()
         {
             User = null;

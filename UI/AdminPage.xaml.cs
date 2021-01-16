@@ -58,5 +58,17 @@ namespace UI
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new AdminIssuesPage());
         }
+
+        private void DronesBUtton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new ManageDronesPage());
+        }
+
+        private void LocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new AdminLocationPage());
+        }
     }
 }

@@ -23,6 +23,8 @@
         <Button x:Name="AddUserButton" Content="Dodaj użytkownika" HorizontalAlignment="Left" Margin="435,159,0,0" VerticalAlignment="Top" Height="71" Width="285" Click="AddUserButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
         <Button x:Name="DeleteUsersButton" Content="Usuń użytkownika" HorizontalAlignment="Left" Margin="80,160,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="DeleteUsersButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
         <Button x:Name="IssuesButton" Content="Zgloszenia" HorizontalAlignment="Left" Margin="80,300,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="IssuesButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="DronesButton" Content="Drony" HorizontalAlignment="Left" Margin="435,300,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="DronesBUtton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="LocationButton" Content="Lokacje" HorizontalAlignment="Left" Margin="80,430,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="LocationButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
 
     </Grid>
 </Page>

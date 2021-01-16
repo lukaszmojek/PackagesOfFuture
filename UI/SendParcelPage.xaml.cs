@@ -38,6 +38,9 @@ namespace UI
             houseSenderField.IsEnabled = false;
             codeSenderField.IsEnabled = false;
             citySenderField.IsEnabled = false;
+
+            TypeOfCourier.IsEnabled = false;
+            TypeOfPayment.IsEnabled = false;
         }
 
         int[,] cennik = new int[4, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 }, {50, 100, 200} };
@@ -113,15 +116,21 @@ namespace UI
         {
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new MainAppPage());
+
+            
         }
 
         private void TypeOfParcel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (TypeOfCourier.IsEnabled == false)
+                TypeOfCourier.IsEnabled = true;
             ValueOfParcel();
         }
 
         private void TypeOfCourier_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (TypeOfPayment.IsEnabled == false)
+                TypeOfPayment.IsEnabled = true;
             ValueOfParcel();
         }
 
