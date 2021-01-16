@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
+    /// <summary>
+    /// Controller for managing on drones
+    /// </summary>
     [Route("[controller]")]
     public class DronesController : ControllerBase
     {
@@ -22,6 +25,12 @@ namespace Api.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Gets all drones
+        /// </summary>
+        /// <returns>All drones from database</returns>
+        /// <response code="200">When there are drones</response>
+        /// <response code="404">If there are no drones</response>
         [HttpGet("")]
         public async Task<ActionResult<ICollection<DroneDto>>> GetDrones()
         {
@@ -29,14 +38,29 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<DroneDto>>) Ok(result) : NotFound();
         }
         
+        /// <summary>
+        /// Registers a new drone
+        /// </summary>
+        /// <param name="registerDroneDto">Representation of drone to register</param>
+        /// <returns>Nothing. Query GetPackages for current database status</returns>
+        /// <response code="204">When drone was registered</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("")]
         public async Task<IActionResult> RegisterDrone([FromBody] RegisterDroneDto registerDroneDto)
         {
             var command = _mapper.Map<RegisterDroneCommand>(registerDroneDto);
             var result = await _mediator.Send(command);
-            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
         }
-        
+
+        /// <summary>
+        /// Moves drone to different sorting
+        /// </summary>
+        /// <param name="droneId">Id of drone</param>
+        /// <param name="moveDroneDroneToSortingDto">Details of moving drone</param>
+        /// <returns>Nothing. Query GetDrones for current database status</returns>
+        /// <response code="204">When drone was moved</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("{droneId}/moveToSorting")]
         public async Task<IActionResult> MoveDroneToSorting(
             [FromRoute] int droneId,

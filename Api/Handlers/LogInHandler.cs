@@ -30,8 +30,8 @@ namespace Api.Handlers
         {
             var user = await _dbContext.Set<User>()
                 .Include(x => x.Addresses)
-                .SingleOrDefault(u => u.Email.Equals(request.Email)
-                                      && u.Password.Equals(request.Password));
+                .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
+                                      && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
 
             if (user == null)
             {

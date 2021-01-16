@@ -6,6 +6,7 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Requests;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -22,6 +23,12 @@ namespace Api.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Gets all packages
+        /// </summary>
+        /// <returns>All packages from database</returns>
+        /// <response code="200">When there are packages</response>
+        /// <response code="404">If there are no packages</response>
         [HttpGet("")]
         public async Task<ActionResult<ICollection<PackageDto>>> GetPackages()
         {
@@ -29,13 +36,20 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<PackageDto>>) Ok(result) : NotFound();
         }
         
+        /// <summary>
+        /// Registers a new package
+        /// </summary>
+        /// <param name="registerPackageDto">Representation of package to register</param>
+        /// <returns>Nothing. Query GetPackages for current database status</returns>
+        /// <response code="204">When package was registered</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("")]
         public async Task<IActionResult> RegisterPackage([FromBody] RegisterPackageDto registerPackageDto)
         {
             var command = _mapper.Map<RegisterPackageCommand>(registerPackageDto);
             var result = await _mediator.Send(command);
             
-            return result.Succeeded ? (IActionResult) Ok() : NotFound();
+            return result.Succeeded ? (IActionResult) NoContent() : BadRequest();
         }
     }
 }

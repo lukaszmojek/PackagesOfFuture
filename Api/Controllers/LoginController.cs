@@ -20,13 +20,20 @@ namespace Api.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Logs user into the system
+        /// </summary>
+        /// <param name="logInDto">Representation of login details</param>
+        /// <returns>User details</returns>
+        /// <response code="200">When user was logged in</response>
+        /// <response code="400">When no user with selected email and password exists</response>
         [HttpPost("")]
         public async Task<ActionResult<Response<LogInResponse>>> LogIn([FromBody] LogInDto logInDto)
         {
             var query = _mapper.Map<LogInQuery>(logInDto);
             var result = await _mediator.Send(query);
             
-            return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : NotFound();
+            return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : BadRequest();
         }
     }
 }
