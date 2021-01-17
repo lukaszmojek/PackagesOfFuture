@@ -27,6 +27,7 @@ namespace Logic
         public static IList<SortingDto> AdminSortings { get; set; }
         public static SortingDto LocationSelectedForEditing { get; set; }
         public static DroneDto SelectedDrone { get; set; }
+        public static PackageDto SelectedPackage { get; set; }
 
         public static void DeleteData()
         {

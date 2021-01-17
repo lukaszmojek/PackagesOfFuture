@@ -5,6 +5,7 @@ using Contracts.Responses;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Contracts.Dtos;
+using ResourceEnums;
 
 namespace Logic
 {
@@ -58,6 +59,34 @@ namespace Logic
             return false;
         }
 
+        public static async Task<bool> PayForPackage(int paymentId)
+        {
+            using var http = new HttpClient();
 
+            var payment = new ChangePaymentStatusDto()
+            {
+                PaymentId = paymentId,
+                PaymentStatus = PaymentStatus.Completed
+            };
+            
+            var json = JsonConvert.SerializeObject(payment);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            
+            var response = await http.PostAsync(AppSettings.Endpoints.ChangePaymentStatus(paymentId), data);
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                var package = JsonConvert.DeserializeObject<IList<PackageDto>>(
+                    await response.Content.ReadAsStringAsync()
+                );
+
+                State.UserPackages = package;
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Contracts.Dtos;
 using Logic;
+using ResourceEnums;
 
 namespace UI
 {
@@ -39,6 +40,8 @@ namespace UI
         {
             if (await PackageManager.GetUserPackage(State.User.Id))
             {
+                listOfPackages = new ObservableCollection<PackageDto>();
+                
                 foreach (var package in State.UserPackages)
                 {
                     listOfPackages.Add(package);
@@ -57,7 +60,21 @@ namespace UI
 
         private void PackagesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            State.SelectedPackage = PackagesListView.SelectedItem as PackageDto;
 
+            if (State.SelectedPackage != null)
+            {
+                PayButton.IsEnabled = State.SelectedPackage.Payment.Status == PaymentStatus.InProgress;
+            }
+        }
+
+        private async void PayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (await PackageManager.PayForPackage(State.SelectedPackage.Payment.Id))
+            {
+                PayButton.IsEnabled = false;
+                LoadPackages();
+            }
         }
     }
 }

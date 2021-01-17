@@ -17,6 +17,7 @@ using Logic;
 using Contracts;
 using Contracts.Dtos;
 using ResourceEnums;
+using System.Collections.ObjectModel;
 
 namespace UI
 {
@@ -25,9 +26,17 @@ namespace UI
     /// </summary>
     public partial class SendParcelPage : Page
     {
+        //internal static class Courier {
+        //    public string Content { get; set; }
+        //}
+
+        ObservableCollection<string> packages = new ObservableCollection<string>() { "Paczka A (10x15x20cm - 5kg)", "Paczka B (30x40x50cm - 10kg)", "Paczka C (100x100x100cm - 20kg)" };
+        ObservableCollection<string> couriers = new ObservableCollection<string>() { "Kurier Standard", "Kurier Ekspres", "Kurier Weekend", "Dostawa dronem" };
+        
         public SendParcelPage()
         {
             InitializeComponent();
+            LoadPackages();
 
             streetSenderField.Text = State.User.Address.Street;
             houseSenderField.Text = State.User.Address.HouseAndFlatNumber;
@@ -43,14 +52,31 @@ namespace UI
             TypeOfPayment.IsEnabled = false;
         }
 
+        private void LoadPackages()
+        {
+            TypeOfParcel.ItemsSource = packages;
+        }
+        
+        private void LoadCouriers()
+        {
+            if (TypeOfParcel.SelectedItem != "Paczka C (100x100x100cm - 20kg)")
+            {
+                TypeOfCourier.ItemsSource = couriers;
+            }
+            else
+            {
+                TypeOfCourier.ItemsSource = couriers.Where(x => x != "Dostawa dronem");
+            }
+        }
+
         int[,] cennik = new int[4, 3] { { 10, 15, 20 }, { 12, 17, 22 }, { 15, 20, 25 }, {50, 100, 200} };
 
         private int ValueOfParcel()
         {
-            if (TypeOfParcel.SelectedValue is not null && TypeOfCourier.SelectedValue is not null)
+            if (TypeOfParcel.SelectedItem is not null && TypeOfCourier.SelectedItem is not null)
             {
-                int parcel = Int32.Parse(TypeOfParcel.SelectedValue.ToString());
-                int courier = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
+                int parcel = TypeOfParcel.SelectedIndex;
+                int courier = TypeOfCourier.SelectedIndex;
                 int price = cennik[courier, parcel];
 
                 priceLabel.Content = price;
@@ -62,7 +88,7 @@ namespace UI
 
         private int[] DimensionsPackage()
         {
-            int parcel = Int32.Parse(TypeOfParcel.SelectedValue.ToString());
+            int parcel = TypeOfParcel.SelectedIndex;
 
             int[] wymiary = new int[3];
 
@@ -85,7 +111,7 @@ namespace UI
 
         private PaymentType paymentType()
         {
-            int payment = Int32.Parse(TypeOfPayment.SelectedValue.ToString());
+            int payment = TypeOfPayment.SelectedIndex;
             
             if(payment == 0)
             {
@@ -122,6 +148,7 @@ namespace UI
 
         private void TypeOfParcel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            LoadCouriers();
             if (TypeOfCourier.IsEnabled == false)
                 TypeOfCourier.IsEnabled = true;
             ValueOfParcel();
@@ -136,7 +163,7 @@ namespace UI
 
         private async void SendParcelButton_Click(object sender, RoutedEventArgs e)
         {
-            if(TypeOfParcel.SelectedValue is null || TypeOfCourier is null)
+            if(TypeOfParcel.SelectedIndex == -1 || TypeOfCourier.SelectedIndex == -1)
             {
                 MessageBox.Show("Musisz wybrac rodzaj paczki!");
             }
@@ -177,7 +204,7 @@ namespace UI
                         package.Length = wymiary[2];
                         package.Weight = wymiary[3];
 
-                        serviceID = Int32.Parse(TypeOfCourier.SelectedValue.ToString());
+                        serviceID = TypeOfCourier.SelectedIndex;
 
 
                         payment.Amount = ValueOfParcel();
