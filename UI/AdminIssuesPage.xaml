@@ -25,6 +25,7 @@
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
                             <GridViewColumn Header="Opis" DisplayMemberBinding="{Binding Path=Description}"/>
                             <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
+                            <GridViewColumn Header="Kontakt" DisplayMemberBinding="{Binding Path=User.Email}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

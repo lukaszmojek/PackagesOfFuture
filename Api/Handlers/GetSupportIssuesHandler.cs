@@ -27,7 +27,8 @@ namespace Api.Handlers
         public async Task<ICollection<SupportIssueDto>> Handle(GetSupportIssuesQuery request, CancellationToken cancellationToken)
         {
             var supportIssues = await _dbContext.Set<SupportIssue>()
-                .ToListAsync();
+                .Include(x => x.User)
+                .ToListAsync(cancellationToken: cancellationToken);
 
             return _mapper.Map<ICollection<SupportIssueDto>>(supportIssues);
         }

@@ -295,6 +295,8 @@
         <e p="AdminIssuesPage.xaml.cs" t="Include" />
         <e p="AdminLocationPage.xaml" t="Include" />
         <e p="AdminLocationPage.xaml.cs" t="Include" />
+        <e p="AdminPackagePage.xaml" t="Include" />
+        <e p="AdminPackagePage.xaml.cs" t="Include" />
         <e p="AdminPage.xaml" t="Include" />
         <e p="AdminPage.xaml.cs" t="Include" />
         <e p="App.xaml" t="Include" />

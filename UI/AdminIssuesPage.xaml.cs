@@ -31,6 +31,8 @@ namespace UI
             InitializeComponent();
 
             LoadIssues();
+            
+            SetButtonState(State.SelectedSupportIssue != null);
         }
 
         private async void LoadIssues()
@@ -91,6 +93,8 @@ namespace UI
         private void IssuesListView_OnSelectionChanged(object sender, RoutedEventArgs e)
         {
             State.SelectedSupportIssue = IssuesListView.SelectedItem as SupportIssueDto;
+
+            SetButtonState(State.SelectedSupportIssue != null);
         }
     }
 }
