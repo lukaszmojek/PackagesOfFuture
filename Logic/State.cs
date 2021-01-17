@@ -15,6 +15,8 @@ namespace Logic
 
         public static IList<PackageDto> UserPackages { get; set; }
 
+        public static IList<PackageDto> AdminPackages { get; set; }
+
         public static UserDto UserSelectedForDeleting { get; set; }
 
         public static IList<SupportIssueDto> IssuesForUser { get; set; }

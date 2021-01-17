@@ -72,6 +72,7 @@ namespace UI
         {
             State.AdminDrones = null;
             var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new AdminPage());
         }
 
         private void DroneListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,9 +83,11 @@ namespace UI
                 TypeOfSorting.IsEnabled = false;
                 TypeOfSorting.SelectedIndex = -1;
                 DeleteDronButton.IsEnabled = false;
+                CancelButton.IsEnabled = false;
             }
             else
             {
+                CancelButton.IsEnabled = true;
                 TypeOfSorting.IsEnabled = true;
                 DeleteDronButton.IsEnabled = true;
                 State.SelectedDrone = DroneListView.SelectedItem as DroneDto;
@@ -200,6 +203,8 @@ namespace UI
             RangeField.IsEnabled = true;
             DroneListView.SelectedIndex = -1;
             DeleteDronButton.IsEnabled = false;
+            ModelField.Text = "";
+            RangeField.Text = "";
         }
     }
 }

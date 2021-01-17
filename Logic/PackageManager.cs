@@ -59,6 +59,27 @@ namespace Logic
             return false;
         }
 
+        public static async Task<bool> GetAdminPackage()
+        {
+            using var http = new HttpClient();
+
+            var response = await http.GetAsync(AppSettings.Endpoints.GetPackages);
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                var package = JsonConvert.DeserializeObject<IList<PackageDto>>(
+                    await response.Content.ReadAsStringAsync()
+                    );
+
+                State.AdminPackages = package;
+
+                return true;
+            }
+
+            return false;
+        }
+
         public static async Task<bool> PayForPackage(int paymentId)
         {
             using var http = new HttpClient();

@@ -69,5 +69,11 @@ namespace UI
             var mainWindow = (MainWindow)Application.Current.MainWindow;
             mainWindow?.ChangeView(new AdminLocationPage());
         }
+
+        private void PackageButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = (MainWindow)Application.Current.MainWindow;
+            mainWindow?.ChangeView(new AdminPackagePage());
+        }
     }
 }
