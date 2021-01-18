@@ -84,6 +84,8 @@ namespace UI
                 TypeOfSorting.SelectedIndex = -1;
                 DeleteDronButton.IsEnabled = false;
                 CancelButton.IsEnabled = false;
+                ModelField.IsEnabled = true;
+                RangeField.IsEnabled = true;
             }
             else
             {
@@ -148,6 +150,8 @@ namespace UI
         {
             if (await DroneManager.DeleteDrone(State.SelectedDrone.Id))
             {
+                ModelField.Text = "";
+                RangeField.Text = "";
                 DroneListView.SelectedIndex = -1;
                 TypeOfSorting.SelectedIndex = -1;
                 State.SelectedDrone = null;
@@ -160,7 +164,7 @@ namespace UI
         {
             if (ModelField.Text == "" || RangeField.Text == "")
             {
-                MessageBox.Show("Pola nei moga byc puste");
+                MessageBox.Show("Pola nie moga byc puste");
             }
             else
             {
@@ -194,6 +198,11 @@ namespace UI
         private void TextFieldChanged(object sender, TextChangedEventArgs e)
         {
             HasSomethingChanged();
+
+            if (ModelField.Text == "" || RangeField.Text == "")
+                TypeOfSorting.IsEnabled = false;
+            else
+                TypeOfSorting.IsEnabled = true;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -205,6 +214,8 @@ namespace UI
             DeleteDronButton.IsEnabled = false;
             ModelField.Text = "";
             RangeField.Text = "";
+
+            TypeOfSorting.IsEnabled = true;
         }
     }
 }
