@@ -15,13 +15,11 @@ namespace Api.Handlers
 {
     public class LogInHandler : IRequestHandler<LogInQuery, Response<LogInResponse>>
     {
-        private readonly IRepository<User> _repository;
         private readonly DbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public LogInHandler(IRepository<User> repository, IMapper mapper, DbContext dbContext)
+        public LogInHandler(IMapper mapper, DbContext dbContext)
         {
-            _repository = repository;
             _mapper = mapper;
             _dbContext = dbContext;
         }
@@ -33,12 +31,9 @@ namespace Api.Handlers
                 .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
                                       && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
 
-            if (user == null)
-            {
-                return ResponseFactory.CreateFailureResponse<LogInResponse>();
-            }
-
-            return ResponseFactory.CreateSuccessResponse(_mapper.Map<LogInResponse>(user));
+            return user == null 
+                ? ResponseFactory.CreateFailureResponse<LogInResponse>() 
+                : ResponseFactory.CreateSuccessResponse(_mapper.Map<LogInResponse>(user));
         }
     }
 }

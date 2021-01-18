@@ -28,10 +28,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89f41f7f-8b13-4c2a-ba29-39798a01d115" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PackagesOfFuture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/Dtos/SupportIssueDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/Dtos/SupportIssueDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/AdminIssuesPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/AdminIssuesPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeSortingDetailsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeSortingDetailsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeSupportIssueStatusHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeSupportIssueStatusHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/ChangeUserPasswordHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/ChangeUserPasswordHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetPaymentsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetPaymentsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetServicesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetServicesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetSortingsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetSortingsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetSupportIssuesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetSupportIssuesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetUserPackagesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetUserPackagesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetUserSupportIssuesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetUserSupportIssuesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/GetVehiclesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/GetVehiclesHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Handlers/RegisterPackageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Handlers/RegisterPackageHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +70,17 @@
     <setting file="file://$PROJECT_DIR$/Api/Queries/GetAddressesQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/App.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/UI/AdminIssuesPage.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/Entities/Package.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Handlers/AddAddressHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/UI/AdminIssuesPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Commands/RegisterPackageCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Persistance/PackagesOfFutureDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3BFDB86-DA53-416A-9A76-296E6325A7B3/40/c15ab339/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Contracts/Dtos/SupportIssueDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Api/Commands/AddAddressCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Lukasz/Desktop/Repos/PackagesOfFuture/Api/Handlers/GetSupportIssuesHandler.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -80,7 +98,6 @@
         <option value="$PROJECT_DIR$/UI/ManageDronesPage.xaml" />
         <option value="$PROJECT_DIR$/Api/Controllers/DronesController.cs" />
         <option value="$PROJECT_DIR$/Logic/AppSettings.cs" />
-        <option value="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" />
         <option value="$PROJECT_DIR$/Logic/SortingManager.cs" />
         <option value="$PROJECT_DIR$/Logic/DroneManager.cs" />
         <option value="$PROJECT_DIR$/UI/ManageDronesPage.xaml.cs" />
@@ -93,6 +110,24 @@
         <option value="$PROJECT_DIR$/Contracts/Dtos/AddressDto.cs" />
         <option value="$PROJECT_DIR$/UI/AdminIssuesPage.xaml.cs" />
         <option value="$PROJECT_DIR$/Contracts/Dtos/SupportIssueDto.cs" />
+        <option value="$PROJECT_DIR$/UI/AdminIssuesPage.xaml" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeSortingDetailsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeSupportIssueStatusHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserDetailsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/ChangeUserPasswordHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetDronesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetPackagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetPaymentsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetServicesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetSortingsHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetSupportIssuesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetUserPackagesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetUsersHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetUserSupportIssuesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/GetVehiclesHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/LogInHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/MoveDroneToSortingHandler.cs" />
+        <option value="$PROJECT_DIR$/Api/Handlers/RegisterPackageHandler.cs" />
       </list>
     </option>
   </component>
@@ -282,7 +317,7 @@
       <workItem from="1610816788193" duration="143000" />
       <workItem from="1610818699056" duration="4011000" />
       <workItem from="1610867110232" duration="3316000" />
-      <workItem from="1610874374585" duration="1427000" />
+      <workItem from="1610874374585" duration="8294000" />
     </task>
     <task id="LOCAL-00001" summary="- Fixed relations between entities&#10;- Added AddressesController.cs">
       <created>1607189082713</created>
@@ -368,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610870207522</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added user to support issue">
+      <created>1610876232649</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610876232650</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +443,8 @@
     <MESSAGE value="Migration" />
     <MESSAGE value="Fixes and improvements regarding Sortings and Drones" />
     <MESSAGE value="Added PayingForPackages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added PayingForPackages" />
+    <MESSAGE value="Added user to support issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added user to support issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610815471936">
@@ -412,22 +455,22 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="538" height="464" key="DebuggerActiveHint/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610821253301" />
-    <state width="1234" height="276" key="GridCell.Tab.0.bottom" timestamp="1610875629908">
+    <state width="2517" height="882" key="GridCell.Tab.0.bottom" timestamp="1610892460273">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610875629908" />
-    <state width="1234" height="276" key="GridCell.Tab.0.center" timestamp="1610875629907">
+    <state width="2517" height="882" key="GridCell.Tab.0.bottom/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610892460273" />
+    <state width="2517" height="882" key="GridCell.Tab.0.center" timestamp="1610892460273">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="276" key="GridCell.Tab.0.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610875629907" />
-    <state width="1234" height="276" key="GridCell.Tab.0.left" timestamp="1610875629907">
+    <state width="2517" height="882" key="GridCell.Tab.0.center/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610892460273" />
+    <state width="2517" height="882" key="GridCell.Tab.0.left" timestamp="1610892460273">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="276" key="GridCell.Tab.0.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610875629907" />
-    <state width="1234" height="276" key="GridCell.Tab.0.right" timestamp="1610875629908">
+    <state width="2517" height="882" key="GridCell.Tab.0.left/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610892460273" />
+    <state width="2517" height="882" key="GridCell.Tab.0.right" timestamp="1610892460273">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1234" height="276" key="GridCell.Tab.0.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610875629908" />
+    <state width="2517" height="882" key="GridCell.Tab.0.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610892460273" />
     <state width="1234" height="303" key="GridCell.Tab.1.bottom" timestamp="1610870437079">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -492,10 +535,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1234" height="303" key="GridCell.Tab.4.right/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610870437080" />
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610870218948">
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2" timestamp="1610876237035">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610870218948" />
+    <state x="872" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1920.0.1920.1040@0.0.2560.1040" timestamp="1610876237035" />
     <state x="1097" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610874376608">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

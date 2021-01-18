@@ -13,7 +13,7 @@ namespace Api.Handlers
 {
     public class ChangeUserPasswordHandler : IRequestHandler<ChangeUserPasswordCommand, Response<ChangeUserPasswordResponse>>
     {
-        private IRepository<User> _repository;
+        private readonly IRepository<User> _repository;
 
         public ChangeUserPasswordHandler(IRepository<User> repository)
         {

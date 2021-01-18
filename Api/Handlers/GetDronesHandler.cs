@@ -14,13 +14,11 @@ namespace Api.Handlers
 {
     public class GetDronesHandler : IRequestHandler<GetDronesQuery, ICollection<DroneDto>>
     {
-        private IRepository<Drone> _repository;
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetDronesHandler(IRepository<Drone> repository, IMapper mapper, DbContext dbContext)
+        public GetDronesHandler(IMapper mapper, DbContext dbContext)
         {
-            _repository = repository;
             _mapper = mapper;
             _dbContext = dbContext;
         }

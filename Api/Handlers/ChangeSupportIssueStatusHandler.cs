@@ -12,7 +12,7 @@ namespace Api.Handlers
 {
     public class ChangeSupportIssueStatusHandler : IRequestHandler<ChangeSupportIssueStatusCommand, Response<ChangeSupportIssueStatusResponse>>
     {
-        private IRepository<SupportIssue> _repository;
+        private readonly IRepository<SupportIssue> _repository;
 
         public ChangeSupportIssueStatusHandler(IRepository<SupportIssue> repository)
         {

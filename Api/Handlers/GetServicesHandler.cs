@@ -12,8 +12,8 @@ namespace Api.Handlers
 {
     public class GetServicesHandler : IRequestHandler<GetServicesQuery, ICollection<ServiceDto>>
     {
-        private IRepository<Service> _repository;
-        private IMapper _mapper;
+        private readonly IRepository<Service> _repository;
+        private readonly IMapper _mapper;
         
         public GetServicesHandler(IRepository<Service> repository, IMapper mapper)
         {
