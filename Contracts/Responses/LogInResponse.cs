@@ -1,4 +1,4 @@
-﻿using Contracts.Requests;
+﻿using Contracts.Dtos;
 using ResourceEnums;
 
 namespace Contracts.Responses

@@ -1,0 +1,94 @@
+﻿<Page x:Class="UI.AdminLocationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="AdminLocationPage">
+
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5" Center="1,1" RadiusX="1" RadiusY="1">
+                <GradientStop Color="#3a1c5c" Offset="0.1" />
+                <GradientStop Color="#0c0317" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="35,620,0,0" VerticalAlignment="Top" Height="71" Width="175" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Grid Margin="34,64,295,257" Background="#FFFF8383">
+            <ListView x:Name="LocationListView" SelectionChanged="LocationListView_SelectionChanged" Margin="0,0,0,-2" HorizontalAlignment="Center" Width="471">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                            <GridViewColumn Header="Nazwa" DisplayMemberBinding="{Binding Path=Name}"/>
+                            <GridViewColumn Header="Ulica" DisplayMemberBinding="{Binding Path=Address.Street}"/>
+                            <GridViewColumn Header="Numer lokalu" DisplayMemberBinding="{Binding Path=Address.HouseAndFlatNumber}"/>
+                            <GridViewColumn Header="Miasto" DisplayMemberBinding="{Binding Path=Address.City}"/>
+                            <GridViewColumn Header="Kod pocztowy" DisplayMemberBinding="{Binding Path=Address.PostalCode}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <TextBox x:Name="NameLocationField" HorizontalAlignment="Left" Margin="540,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="White" Height="35"  TextChanged="NameLocationField_TextChanged" />
+        <Button x:Name="AddLocation" Content="Dodaj" HorizontalAlignment="Left" Margin="540,565,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.252,0.576" Click="AddLocation_Click" Height="55" Width="180" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+        <Label Content="Nazwa sortowni" HorizontalAlignment="Left" Margin="536,65,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.386"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.708"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="NameLocationField_Copy" HorizontalAlignment="Left" Margin="540,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="White" Height="35"  TextChanged="NameLocationField_TextChanged" />
+        <Label Content="Ulica" HorizontalAlignment="Left" Margin="536,160,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.386"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.708"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="NameLocationField_Copy1" HorizontalAlignment="Left" Margin="540,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="White" Height="35"  TextChanged="NameLocationField_TextChanged" />
+        <Label Content="Numer lokalu" HorizontalAlignment="Left" Margin="536,260,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.386"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.708"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="NameLocationField_Copy2" HorizontalAlignment="Left" Margin="540,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="White" Height="35"  TextChanged="NameLocationField_TextChanged" />
+        <Label Content="Miasto" HorizontalAlignment="Left" Margin="536,360,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.386"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.708"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="NameLocationField_Copy3" HorizontalAlignment="Left" Margin="540,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Background="White" Height="35"  TextChanged="NameLocationField_TextChanged" />
+        <Label Content="Kod pocztowy" HorizontalAlignment="Left" Margin="536,465,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" Height="34" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.386"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.708"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Left" Margin="540,640,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.252,0.576" Click="CancelLocation_Click" Height="55" Width="180" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="20"/>
+
+    </Grid>
+</Page>

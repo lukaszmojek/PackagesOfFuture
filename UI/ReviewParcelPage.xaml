@@ -17,7 +17,8 @@
         </Grid.Background>
         <Image Margin="528,67,72,533" Stretch="Fill" Source="/droneDelivery.png"/>
         <Image Margin="10,595,580,36" Stretch="Fill" Source="/package.png"/>
-        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="255,664,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="BackButton" Content="Powrót" HorizontalAlignment="Left" Margin="45,659,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="BackButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
+        <Button x:Name="PayButton" Content="Opłać" HorizontalAlignment="Left" Margin="480,659,0,0" VerticalAlignment="Top" Height="71" Width="275" Click="PayButton_Click" Background="#2d2d2d" FontWeight="Bold" Foreground="White" FontSize="26"/>
 
         <Grid Margin="40,171,40,165" Background="White">
             <ListView x:Name="PackagesListView" SelectionChanged="PackagesListView_SelectionChanged">
@@ -30,6 +31,9 @@
                             <GridViewColumn Header="Wysokość" DisplayMemberBinding="{Binding Path=Height}"/>
                             <GridViewColumn Header="Długość" DisplayMemberBinding="{Binding Path=Length}"/>
                             <GridViewColumn Header="Waga" DisplayMemberBinding="{Binding Path=Weight}"/>
+                            <GridViewColumn Header="Status płatności" DisplayMemberBinding="{Binding Path=Payment.Status}"/>
+                            <GridViewColumn Header="Od" DisplayMemberBinding="{Binding Path=ReceiveAddress}"/>
+                            <GridViewColumn Header="Do" DisplayMemberBinding="{Binding Path=DeliveryAddress}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

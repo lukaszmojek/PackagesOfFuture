@@ -9,6 +9,8 @@ namespace Data.Configurations
         public void Configure(EntityTypeBuilder<Sorting> builder)
         {
             builder.HasKey(d => d.Id);
+
+            builder.HasOne(x => x.Address).WithOne();
         }
     }
 }

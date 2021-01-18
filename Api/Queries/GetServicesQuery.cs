@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Api.Handlers;
-using Contracts.Requests;
+using Contracts.Dtos;
 using MediatR;
 
 namespace Api.Queries

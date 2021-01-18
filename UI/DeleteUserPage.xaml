@@ -28,7 +28,6 @@
                             <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=FirstName}"/>
                             <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding Path=LastName}"/>
                             <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
-
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

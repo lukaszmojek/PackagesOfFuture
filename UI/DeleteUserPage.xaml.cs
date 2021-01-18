@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Logic;
 
 namespace UI
@@ -58,7 +58,7 @@ namespace UI
 
         private async void DeleteUser()
         {
-            if (await UserManager.DeleteUser(State.UserSelectedForDeleting.Id))
+            if (State.UserSelectedForDeleting != null && await UserManager.DeleteUser(State.UserSelectedForDeleting.Id))
             {
                 State.UserSelectedForDeleting = null;
                 listOfNames = new ObservableCollection<UserDto>();

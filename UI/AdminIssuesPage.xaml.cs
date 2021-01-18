@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 using Logic;
 using ResourceEnums;
@@ -31,6 +31,8 @@ namespace UI
             InitializeComponent();
 
             LoadIssues();
+            
+            SetButtonState(State.SelectedSupportIssue != null);
         }
 
         private async void LoadIssues()
@@ -91,6 +93,8 @@ namespace UI
         private void IssuesListView_OnSelectionChanged(object sender, RoutedEventArgs e)
         {
             State.SelectedSupportIssue = IssuesListView.SelectedItem as SupportIssueDto;
+
+            SetButtonState(State.SelectedSupportIssue != null);
         }
     }
 }

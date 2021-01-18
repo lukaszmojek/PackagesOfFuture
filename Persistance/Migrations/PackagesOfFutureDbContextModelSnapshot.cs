@@ -163,10 +163,16 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AddressId")
+                        .IsUnique();
 
                     b.ToTable("Sortings");
                 });
@@ -187,14 +193,9 @@ namespace Data.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("SupportIssues");
                 });
@@ -299,15 +300,22 @@ namespace Data.Migrations
                     b.Navigation("Sorting");
                 });
 
+            modelBuilder.Entity("Data.Entities.Sorting", b =>
+                {
+                    b.HasOne("Data.Entities.Address", "Address")
+                        .WithOne()
+                        .HasForeignKey("Data.Entities.Sorting", "AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+                });
+
             modelBuilder.Entity("Data.Entities.SupportIssue", b =>
                 {
                     b.HasOne("Data.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("Data.Entities.User", null)
                         .WithMany("SupportIssues")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

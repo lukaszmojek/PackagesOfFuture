@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_PackagesOfFuture.-246504166.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
+    <e p="C:\Users\Lukasz\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Lukasz\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_PackagesOfFuture.-817860040.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Lukasz\Desktop\Repos\PackagesOfFuture" t="IncludeFlat">
       <e p="Api" t="IncludeRecursive">
         <e p="Api.csproj" t="IncludeRecursive" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
           <e p="AddAddressCommand.cs" t="Include" />
           <e p="ChangePaymentStatusCommand.cs" t="Include" />
+          <e p="ChangeSortingDetailsCommand.cs" t="Include" />
+          <e p="ChangeSupportIssueStatusCommand.cs" t="Include" />
           <e p="ChangeUserDetailsCommand.cs" t="Include" />
+          <e p="ChangeUserPasswordCommand.cs" t="Include" />
           <e p="MoveDroneToSortingCommand.cs" t="Include" />
           <e p="RegisterDroneCommand.cs" t="Include" />
           <e p="RegisterPackageCommand.cs" t="Include" />
           <e p="RegisterServiceCommand.cs" t="Include" />
+          <e p="RegisterSortingCommand.cs" t="Include" />
+          <e p="RegisterSupportIssueCommand.cs" t="Include" />
           <e p="RegisterUserCommand.cs" t="Include" />
           <e p="RegisterVehicleCommand.cs" t="Include" />
           <e p="SeedCommand.cs" t="Include" />
@@ -25,9 +33,10 @@
           <e p="LoginController.cs" t="Include" />
           <e p="PackagesController.cs" t="Include" />
           <e p="PaymentsController.cs" t="Include" />
-          <e p="RegisterServiceDto.cs" t="Include" />
           <e p="SeedController.cs" t="Include" />
           <e p="ServicesController.cs" t="Include" />
+          <e p="SortingsController.cs" t="Include" />
+          <e p="SupportIssuesController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
           <e p="VehiclesController.cs" t="Include" />
         </e>
@@ -37,24 +46,39 @@
         <e p="Handlers" t="Include">
           <e p="AddAddressHandler.cs" t="Include" />
           <e p="ChangePaymentStatusHandler.cs" t="Include" />
+          <e p="ChangeSortingDetailsHandler.cs" t="Include" />
+          <e p="ChangeSupportIssueStatusHandler.cs" t="Include" />
           <e p="ChangeUserDetailsHandler.cs" t="Include" />
+          <e p="ChangeUserPasswordHandler.cs" t="Include" />
           <e p="GetAddressesHandler.cs" t="Include" />
           <e p="GetDronesHandler.cs" t="Include" />
           <e p="GetPackagesHandler.cs" t="Include" />
           <e p="GetPaymentsHandler.cs" t="Include" />
           <e p="GetServicesHandler.cs" t="Include" />
+          <e p="GetSortingsHandler.cs" t="Include" />
+          <e p="GetSupportIssuesHandler.cs" t="Include" />
+          <e p="GetUserPackagesHandler.cs" t="Include" />
           <e p="GetUsersHandler.cs" t="Include" />
+          <e p="GetUserSupportIssuesHandler.cs" t="Include" />
           <e p="GetVehiclesHandler.cs" t="Include" />
           <e p="LogInHandler.cs" t="Include" />
           <e p="MoveDroneToSortingHandler.cs" t="Include" />
           <e p="RegisterDroneHandler.cs" t="Include" />
           <e p="RegisterPackageHandler.cs" t="Include" />
           <e p="RegisterServiceHandler.cs" t="Include" />
-          <e p="RegisterServiceResponse.cs" t="Include" />
+          <e p="RegisterSortingHandler.cs" t="Include" />
+          <e p="RegisterSupportIssueHandler.cs" t="Include" />
           <e p="RegisterUserHandler.cs" t="Include" />
           <e p="RegisterVehicleHandler.cs" t="Include" />
           <e p="SeedHandler.cs" t="Include" />
           <e p="UnregisterUserHandler.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Profiles" t="Include">
           <e p="AddressProfile.cs" t="Include" />
@@ -62,7 +86,9 @@
           <e p="LoginProfile.cs" t="Include" />
           <e p="PackageProfile.cs" t="Include" />
           <e p="PaymentProfile.cs" t="Include" />
-          <e p="Service.cs" t="Include" />
+          <e p="ServiceProfile.cs" t="Include" />
+          <e p="SortingProfile.cs" t="Include" />
+          <e p="SupportIssueProfile.cs" t="Include" />
           <e p="UserProfile.cs" t="Include" />
           <e p="VehicleProfile.cs" t="Include" />
         </e>
@@ -76,27 +102,20 @@
           <e p="GetPackagesQuery.cs" t="Include" />
           <e p="GetPaymentsQuery.cs" t="Include" />
           <e p="GetServicesQuery.cs" t="Include" />
+          <e p="GetSortingsQuery.cs" t="Include" />
+          <e p="GetSupportIssuesQuery.cs" t="Include" />
+          <e p="GetUserPackagesQuery.cs" t="Include" />
           <e p="GetUsersQuery.cs" t="Include" />
+          <e p="GetUserSupportIssuesQuery.cs" t="Include" />
           <e p="GetVehiclesQuery.cs" t="Include" />
           <e p="LogInQuery.cs" t="Include" />
         </e>
         <e p="ServiceCollectionExtensions.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
-        <e p="appsettings.Development.json" t="Include" />
-        <e p="appsettings.json" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="net5.0" t="Include">
-              <e p="Api.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
       </e>
       <e p="Console.ApiSandbox" t="IncludeRecursive">
-        <e p="Console.ApiSandbox.csproj" t="IncludeRecursive" />
-        <e p="Program.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Console.ApiSandbox.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -104,14 +123,21 @@
             </e>
           </e>
         </e>
+        <e p="Program.cs" t="Include" />
       </e>
       <e p="Contracts" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Contracts.csproj" t="IncludeRecursive" />
-        <e p="Requests" t="Include">
+        <e p="Dtos" t="Include">
           <e p="AddAddressDto.cs" t="Include" />
           <e p="AddressDto.cs" t="Include" />
           <e p="ChangePaymentStatusDto.cs" t="Include" />
+          <e p="ChangeSortingDetailsDto.cs" t="Include" />
+          <e p="ChangeSupportIssueStatusDto.cs" t="Include" />
           <e p="ChangeUserDetailsDto.cs" t="Include" />
+          <e p="ChangeUserPasswordDto.cs" t="Include" />
+          <e p="CreateAddressDto.cs" t="Include" />
+          <e p="CreatePaymentDto.cs" t="Include" />
           <e p="DroneDto.cs" t="Include" />
           <e p="LogInDto.cs" t="Include" />
           <e p="MoveDroneToSortingDto.cs" t="Include" />
@@ -120,28 +146,17 @@
           <e p="PaymentDto.cs" t="Include" />
           <e p="RegisterDroneDto.cs" t="Include" />
           <e p="RegisterPackageDto.cs" t="Include" />
+          <e p="RegisterServiceDto.cs" t="Include" />
+          <e p="RegisterSortingDto.cs" t="Include" />
+          <e p="RegisterSupportIssueDto.cs" t="Include" />
           <e p="RegisterUserDto.cs" t="Include" />
           <e p="RegisterVehicleDto.cs" t="Include" />
           <e p="ServiceDto.cs" t="Include" />
+          <e p="SortingDto.cs" t="Include" />
+          <e p="SupportIssueDto.cs" t="Include" />
           <e p="UserDto.cs" t="Include" />
           <e p="VehicleDto.cs" t="Include" />
         </e>
-        <e p="Responses" t="Include">
-          <e p="AddAddressResponse.cs" t="Include" />
-          <e p="ChangePaymentStatusResponse.cs" t="Include" />
-          <e p="ChangeUserDetailsResponse.cs" t="Include" />
-          <e p="IResponse.cs" t="Include" />
-          <e p="LogInResponse.cs" t="Include" />
-          <e p="MoveDroneToSortingResponse.cs" t="Include" />
-          <e p="RegisterDroneResponse.cs" t="Include" />
-          <e p="RegisterPackageResponse.cs" t="Include" />
-          <e p="RegisterUserResponse.cs" t="Include" />
-          <e p="RegisterVehicleResponse.cs" t="Include" />
-          <e p="Response.cs" t="Include" />
-          <e p="SeedResponse.cs" t="Include" />
-          <e p="UnregisterUserResponse.cs" t="Include" />
-        </e>
-        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -149,14 +164,34 @@
             </e>
           </e>
         </e>
+        <e p="Responses" t="Include">
+          <e p="AddAddressResponse.cs" t="Include" />
+          <e p="ChangePaymentStatusResponse.cs" t="Include" />
+          <e p="ChangeSortingDetailsResponse.cs" t="Include" />
+          <e p="ChangeSupportIssueStatusResponse.cs" t="Include" />
+          <e p="ChangeUserDetailsResponse.cs" t="Include" />
+          <e p="ChangeUserPasswordResponse.cs" t="Include" />
+          <e p="IResponse.cs" t="Include" />
+          <e p="LogInResponse.cs" t="Include" />
+          <e p="MoveDroneToSortingResponse.cs" t="Include" />
+          <e p="RegisterDroneResponse.cs" t="Include" />
+          <e p="RegisterPackageResponse.cs" t="Include" />
+          <e p="RegisterServiceResponse.cs" t="Include" />
+          <e p="RegisterSortingResponse.cs" t="Include" />
+          <e p="RegisterSupportIssueResponse.cs" t="Include" />
+          <e p="RegisterUserResponse.cs" t="Include" />
+          <e p="RegisterVehicleResponse.cs" t="Include" />
+          <e p="Response.cs" t="Include" />
+          <e p="SeedResponse.cs" t="Include" />
+          <e p="UnregisterUserResponse.cs" t="Include" />
+        </e>
       </e>
       <e p="Infrastructure" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Infrastructure.csproj" t="IncludeRecursive" />
         <e p="Interfaces" t="Include">
           <e p="IRepository.cs" t="Include" />
         </e>
-        <e p="Repository.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -164,14 +199,15 @@
             </e>
           </e>
         </e>
+        <e p="Repository.cs" t="Include" />
       </e>
       <e p="Logic" t="IncludeRecursive">
         <e p="AppSettings.cs" t="Include" />
-        <e p="ClientManager.cs" t="Include" />
-        <e p="Logic.csproj" t="IncludeRecursive" />
-        <e p="State.cs" t="Include" />
-        <e p="UserManager.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientManager.cs" t="Include" />
+        <e p="DroneManager.cs" t="Include" />
+        <e p="LocationManager.cs" t="Include" />
+        <e p="Logic.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -179,9 +215,15 @@
             </e>
           </e>
         </e>
+        <e p="PackageManager.cs" t="Include" />
+        <e p="SortingManager.cs" t="Include" />
+        <e p="State.cs" t="Include" />
+        <e p="UserManager.cs" t="Include" />
       </e>
+      <e p="packages" t="ExcludeRecursive" />
       <e p="PackagesOfFuture.sln" t="IncludeFlat" />
       <e p="Persistance" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
         <e p="Configurations" t="Include">
           <e p="AddressConfiguration.cs" t="Include" />
           <e p="ClientConfiguration.cs" t="Include" />
@@ -190,6 +232,7 @@
           <e p="PaymentConfiguration.cs" t="Include" />
           <e p="ServiceConfiguration.cs" t="Include" />
           <e p="SortingConfiguration.cs" t="Include" />
+          <e p="SupportIssueConfiguration.cs" t="Include" />
           <e p="VehicleConfiguration.cs" t="Include" />
         </e>
         <e p="Entities" t="Include">
@@ -199,24 +242,28 @@
           <e p="Payment.cs" t="Include" />
           <e p="Service.cs" t="Include" />
           <e p="Sorting.cs" t="Include" />
+          <e p="SupportIssue.cs" t="Include" />
           <e p="User.cs" t="Include" />
           <e p="Vehicle.cs" t="Include" />
         </e>
         <e p="Entity.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="ChangedtypeofUserType.Designer.cs" t="Include" />
+          <e p="AddedaddresstoSortingentity.cs" t="Include" />
+          <e p="AddedaddresstoSortingentity.Designer.cs" t="Include" />
+          <e p="AddedSupportIssuestable.cs" t="Include" />
+          <e p="AddedSupportIssuestable.Designer.cs" t="Include" />
           <e p="ChangedtypeofUserType.cs" t="Include" />
-          <e p="Initial.Designer.cs" t="Include" />
+          <e p="ChangedtypeofUserType.Designer.cs" t="Include" />
+          <e p="ChangedUserAddressrelation.cs" t="Include" />
+          <e p="ChangedUserAddressrelation.Designer.cs" t="Include" />
           <e p="Initial.cs" t="Include" />
+          <e p="Initial.Designer.cs" t="Include" />
           <e p="PackagesOfFutureDbContextModelSnapshot.cs" t="Include" />
-          <e p="Removedusernamefromuser.Designer.cs" t="Include" />
           <e p="Removedusernamefromuser.cs" t="Include" />
-          <e p="UserAddressrelationchangep1.Designer.cs" t="Include" />
+          <e p="Removedusernamefromuser.Designer.cs" t="Include" />
           <e p="UserAddressrelationchangep1.cs" t="Include" />
+          <e p="UserAddressrelationchangep1.Designer.cs" t="Include" />
         </e>
-        <e p="PackagesOfFutureDbContext.cs" t="Include" />
-        <e p="Persistance.csproj" t="IncludeRecursive" />
-        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
@@ -224,26 +271,99 @@
             </e>
           </e>
         </e>
+        <e p="PackagesOfFutureDbContext.cs" t="Include" />
+        <e p="Persistance.csproj" t="IncludeRecursive" />
       </e>
       <e p="ResourceEnums" t="IncludeRecursive">
-        <e p="PackageStatus.cs" t="Include" />
-        <e p="PaymentStatus.cs" t="Include" />
-        <e p="PaymentType.cs" t="Include" />
-        <e p="ResourceEnums.csproj" t="IncludeRecursive" />
-        <e p="UserType.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="ResourceEnums.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
+        <e p="PackageStatus.cs" t="Include" />
+        <e p="PaymentStatus.cs" t="Include" />
+        <e p="PaymentType.cs" t="Include" />
+        <e p="ResourceEnums.csproj" t="IncludeRecursive" />
+        <e p="SupportIssueStatus.cs" t="Include" />
+        <e p="UserType.cs" t="Include" />
       </e>
       <e p="UI" t="IncludeRecursive">
+        <e p="AdminIssuesPage.xaml" t="Include" />
+        <e p="AdminIssuesPage.xaml.cs" t="Include" />
+        <e p="AdminLocationPage.xaml" t="Include" />
+        <e p="AdminLocationPage.xaml.cs" t="Include" />
+        <e p="AdminPackagePage.xaml" t="Include" />
+        <e p="AdminPackagePage.xaml.cs" t="Include" />
+        <e p="AdminPage.xaml" t="Include" />
+        <e p="AdminPage.xaml.cs" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ChangeDataPage.xaml" t="Include" />
+        <e p="ChangeDataPage.xaml.cs" t="Include" />
+        <e p="ChangePasswordPage.xaml" t="Include" />
+        <e p="ChangePasswordPage.xaml.cs" t="Include" />
+        <e p="DeleteUserPage.xaml" t="Include" />
+        <e p="DeleteUserPage.xaml.cs" t="Include" />
+        <e p="delivery.png" t="Include" />
+        <e p="droneDelivery.png" t="Include" />
+        <e p="hands.png" t="Include" />
+        <e p="Image2.png" t="Include" />
+        <e p="LoginPage.xaml" t="Include" />
+        <e p="LoginPage.xaml.cs" t="Include" />
+        <e p="MainAppPage.xaml" t="Include" />
+        <e p="MainAppPage.xaml.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="ManageDronesPage.xaml" t="Include" />
+        <e p="ManageDronesPage.xaml.cs" t="Include" />
+        <e p="NewNotifyPage.xaml" t="Include" />
+        <e p="NewNotifyPage.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0-windows" t="Include">
+              <e p="AdminIssuesPage.g.cs" t="Include" />
+              <e p="AdminLocationPage.g.cs" t="Include" />
+              <e p="AdminPage.g.cs" t="Include" />
+              <e p="App.g.cs" t="Include" />
+              <e p="ChangeDataPage.g.cs" t="Include" />
+              <e p="ChangePasswordPage.g.cs" t="Include" />
+              <e p="DeleteUserPage.g.cs" t="Include" />
+              <e p="LoginPage.g.cs" t="Include" />
+              <e p="MainAppPage.g.cs" t="Include" />
+              <e p="MainWindow.g.cs" t="Include" />
+              <e p="ManageDronesPage.g.cs" t="Include" />
+              <e p="NewNotifyPage.g.cs" t="Include" />
+              <e p="RecoverPasswordPage.g.cs" t="Include" />
+              <e p="RegisterPage.g.cs" t="Include" />
+              <e p="ReviewNotifyPage.g.cs" t="Include" />
+              <e p="ReviewParcelPage.g.cs" t="Include" />
+              <e p="SendParcelPage.g.cs" t="Include" />
+              <e p="StartupPage.g.cs" t="Include" />
+              <e p="UI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="package.png" t="Include" />
+        <e p="RecoverPasswordPage.xaml" t="Include" />
+        <e p="RecoverPasswordPage.xaml.cs" t="Include" />
+        <e p="registerBackground1.jpg" t="Include" />
+        <e p="RegisterPage.xaml" t="Include" />
+        <e p="RegisterPage.xaml.cs" t="Include" />
+        <e p="ReviewNotifyPage.xaml" t="Include" />
+        <e p="ReviewNotifyPage.xaml.cs" t="Include" />
+        <e p="ReviewParcelPage.xaml" t="Include" />
+        <e p="ReviewParcelPage.xaml.cs" t="Include" />
+        <e p="SendParcelPage.xaml" t="Include" />
+        <e p="SendParcelPage.xaml.cs" t="Include" />
+        <e p="StartupPage.xaml" t="Include" />
+        <e p="StartupPage.xaml.cs" t="Include" />
         <e p="UI.csproj" t="IncludeRecursive" />
       </e>
-      <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

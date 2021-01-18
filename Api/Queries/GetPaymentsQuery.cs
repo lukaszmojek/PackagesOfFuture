@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Contracts.Requests;
+using Contracts.Dtos;
 using MediatR;
 
 namespace Api.Queries

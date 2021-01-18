@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Api.Factories;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Contracts.Responses;
 using Data.Entities;
 using Infrastructure;

@@ -1,7 +1,7 @@
 using Api.Commands;
 using Api.Controllers;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 
 namespace Api.Profiles

@@ -1,6 +1,6 @@
 ﻿using Api.Commands;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 
 namespace Api.Profiles
@@ -13,8 +13,11 @@ namespace Api.Profiles
             CreateMap<RegisterDroneCommand, Drone>();
 
             CreateMap<MoveDroneToSortingDto, MoveDroneToSortingCommand>();
-            
-            CreateMap<Drone, DroneDto>();
+
+            CreateMap<Drone, DroneDto>()
+                .ForMember(
+                x => x.SortingName, 
+                op => op.MapFrom(s => s.Sorting.Name));
         }
     }
 }

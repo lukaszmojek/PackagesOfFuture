@@ -18,11 +18,17 @@ namespace Api.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Seeds a database with predefined data
+        /// </summary>
+        /// <returns>Nothing</returns>
+        /// <response code="204">When data was seeded</response>
+        /// <response code="400">When error occurred</response>
         [HttpPost("")]
         public async Task<IActionResult> Seed()
         {
             var result = await _mediator.Send(new SeedCommand());
-            return result.Succeeded ? (IActionResult) Ok() : BadRequest();
+            return result.Succeeded ? (IActionResult) Ok() : BadRequest(result.Error);
         }
     }
 }

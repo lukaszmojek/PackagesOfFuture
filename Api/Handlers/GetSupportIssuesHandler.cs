@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Api.Queries;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using Data.Entities;
 using Infrastructure.Interfaces;
 using MediatR;
@@ -27,7 +27,8 @@ namespace Api.Handlers
         public async Task<ICollection<SupportIssueDto>> Handle(GetSupportIssuesQuery request, CancellationToken cancellationToken)
         {
             var supportIssues = await _dbContext.Set<SupportIssue>()
-                .ToListAsync();
+                .Include(x => x.User)
+                .ToListAsync(cancellationToken: cancellationToken);
 
             return _mapper.Map<ICollection<SupportIssueDto>>(supportIssues);
         }

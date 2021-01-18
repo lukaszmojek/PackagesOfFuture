@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Api.Queries;
 using AutoMapper;
-using Contracts.Requests;
+using Contracts.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +23,12 @@ namespace Api.Controllers
             _mapper = mapper;
         }
         
+        /// <summary>
+        /// Gets all users
+        /// </summary>
+        /// <returns>All users from database</returns>
+        /// <response code="200">When there are users</response>
+        /// <response code="404">If there are no users</response>
         [HttpGet("")]
         public async Task<ActionResult<ICollection<UserDto>>> GetUsers()
         {
@@ -32,6 +38,13 @@ namespace Api.Controllers
             return result.Any() ? (ActionResult<ICollection<UserDto>>) Ok(result) : NotFound();
         }        
         
+        /// <summary>
+        /// Registers a new user
+        /// </summary>
+        /// <param name="registerUserDto">Representation of user to register</param>
+        /// <returns>Nothing. Query GetUsers for current database status</returns>
+        /// <response code="204">When user was registered</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("")]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUserDto registerUserDto)
         {
@@ -40,7 +53,15 @@ namespace Api.Controllers
             
             return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
         }
-        
+
+        /// <summary>
+        /// Changes user details
+        /// </summary>
+        /// <param name="id">Id of a user</param>
+        /// <param name="changeUserDetailsDto">Representation of user details to change</param>
+        /// <returns>Nothing. Query GetUsers for current database status</returns>
+        /// <response code="204">When user details was changed</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("{id}/change-details")]
         public async Task<IActionResult> ChangeUserDetails(
             [FromRoute] int id,
@@ -52,6 +73,14 @@ namespace Api.Controllers
             return result.Succeeded ? (IActionResult) NoContent() : NotFound();
         }
         
+        /// <summary>
+        /// Changes user password
+        /// </summary>
+        /// <param name="id">Id of a user</param>
+        /// <param name="changeUserPasswordDto">Representation of user password to change</param>
+        /// <returns>Nothing. Query GetUsers for current database status</returns>
+        /// <response code="204">When user password was changed</response>
+        /// <response code="400">When error regarding input occurred</response>
         [HttpPost("{id}/change-password")]
         public async Task<IActionResult> ChangeUserPassword(
             [FromRoute] int id,
@@ -63,6 +92,13 @@ namespace Api.Controllers
             return result.Succeeded ? (IActionResult) NoContent() : NotFound();
         }
         
+        /// <summary>
+        /// Changes user details
+        /// </summary>
+        /// <param name="id">Id of a user</param>
+        /// <returns>Nothing. Query GetUsers for current database status</returns>
+        /// <response code="204">When user was unregistered</response>
+        /// <response code="404">When no user with selected id exists</response>
         [HttpDelete("{id}/unregister")]
         public async Task<IActionResult> UnregisterUser(
             [FromRoute] int id)

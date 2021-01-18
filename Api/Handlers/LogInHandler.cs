@@ -33,9 +33,12 @@ namespace Api.Handlers
                 .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
                                       && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
 
-            return user == null 
-                ? ResponseFactory.CreateFailureResponse<LogInResponse>() 
-                : ResponseFactory.CreateSuccessResponse(_mapper.Map<LogInResponse>(user));
+            if (user == null)
+            {
+                return ResponseFactory.CreateFailureResponse<LogInResponse>();
+            }
+
+            return ResponseFactory.CreateSuccessResponse(_mapper.Map<LogInResponse>(user));
         }
     }
 }
