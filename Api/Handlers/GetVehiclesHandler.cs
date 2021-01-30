@@ -12,8 +12,8 @@ namespace Api.Handlers
 {
     public class GetVehiclesHandler : IRequestHandler<GetVehiclesQuery, ICollection<VehicleDto>>
     {
-        private IRepository<Vehicle> _repository;
-        private IMapper _mapper;
+        private readonly IRepository<Vehicle> _repository;
+        private readonly IMapper _mapper;
         
         public GetVehiclesHandler(IRepository<Vehicle> repository, IMapper mapper)
         {

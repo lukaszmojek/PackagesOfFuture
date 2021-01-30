@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Api.Commands;
 using Api.Factories;
 using AutoMapper;
 using Contracts.Responses;
@@ -8,19 +9,17 @@ using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Api.Controllers
+namespace Api.Handlers
 {
     public class ChangeSortingDetailsHandler : IRequestHandler<ChangeSortingDetailsCommand, Response<ChangeSortingDetailsResponse>>
     {
-        private IRepository<Sorting> _sortingRepository;
-        private IRepository<Address> _addressRepository;
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly IRepository<Sorting> _sortingRepository;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public ChangeSortingDetailsHandler(IMapper mapper, IRepository<Address> addressRepository, IRepository<Sorting> sortingRepository, DbContext dbContext)
+        public ChangeSortingDetailsHandler(IMapper mapper, IRepository<Sorting> sortingRepository, DbContext dbContext)
         {
             _mapper = mapper;
-            _addressRepository = addressRepository;
             _sortingRepository = sortingRepository;
             _dbContext = dbContext;
         }
@@ -31,7 +30,7 @@ namespace Api.Controllers
 
             var sorting = await _dbContext.Set<Sorting>()
                 .Include(x => x.Address)
-                .FirstOrDefaultAsync(x => x.Id == request.Id);
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
             
             sorting.Address = address;
             sorting.Name = request.Name;

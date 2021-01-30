@@ -14,13 +14,11 @@ namespace Api.Handlers
 {
     public class GetUsersHandler : IRequestHandler<GetUsersQuery, ICollection<UserDto>>
     {
-        private readonly IRepository<User> _repository;
         private readonly IMapper _mapper;
         private readonly DbContext _dbContext;
         
-        public GetUsersHandler( IRepository<User> repository, IMapper mapper, DbContext dbContext)
+        public GetUsersHandler(IMapper mapper, DbContext dbContext)
         {
-            _repository = repository;
             _mapper = mapper;
             _dbContext = dbContext;
         }

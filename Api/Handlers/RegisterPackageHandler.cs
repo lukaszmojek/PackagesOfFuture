@@ -67,10 +67,10 @@ namespace Api.Handlers
             var service = await _serviceRepository.GetByIdAsync(request.ServiceId);
             package.Service = service;
 
-            // if (service == null)
-            // {
-            //     throw new NotImplementedException();
-            // }
+            if (service == null)
+            {
+                throw new ArgumentException(nameof(request.ServiceId));
+            }
 
             var payment = _mapper.Map<Payment>(request.Payment);
             payment.Status = PaymentStatus.InProgress;

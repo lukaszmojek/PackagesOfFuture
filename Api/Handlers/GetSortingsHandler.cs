@@ -12,8 +12,8 @@ namespace Api.Handlers
 {
     public class GetSortingsHandler : IRequestHandler<GetSortingsQuery, ICollection<SortingDto>>
     {
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
         public GetSortingsHandler(DbContext dbContext, IMapper mapper)
         {

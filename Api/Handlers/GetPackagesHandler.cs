@@ -15,13 +15,11 @@ namespace Api.Handlers
 {
     public class GetPackagesHandler : IRequestHandler<GetPackagesQuery, ICollection<PackageDto>>
     {
-        private readonly IRepository<Package> _repository;
         private readonly IMapper _mapper;
-        private DbContext _dbContext;
+        private readonly DbContext _dbContext;
 
-        public GetPackagesHandler(IRepository<Package> repository, IMapper mapper, DbContext dbContext)
+        public GetPackagesHandler(IMapper mapper, DbContext dbContext)
         {
-            _repository = repository;
             _mapper = mapper;
             _dbContext = dbContext;
         }
@@ -33,7 +31,7 @@ namespace Api.Handlers
                     .Include(x => x.Payment)
                     .Include(x => x.DeliveryAddress)
                     .Include(x => x.ReceiveAddress)
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken: cancellationToken);
 
             return this._mapper.Map<ICollection<PackageDto>>(packages);
         }

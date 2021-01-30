@@ -13,14 +13,12 @@ namespace Api.Handlers
 {
     public class GetSupportIssuesHandler : IRequestHandler<GetSupportIssuesQuery, ICollection<SupportIssueDto>>
     {
-        private IRepository<SupportIssue> _repository;
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetSupportIssuesHandler(IMapper mapper, IRepository<SupportIssue> repository, DbContext dbContext)
+        public GetSupportIssuesHandler(IMapper mapper, DbContext dbContext)
         {
             _mapper = mapper;
-            _repository = repository;
             _dbContext = dbContext;
         }
 

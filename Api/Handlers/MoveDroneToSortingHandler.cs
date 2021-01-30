@@ -25,7 +25,9 @@ namespace Api.Handlers
 
         public async Task<Response<MoveDroneToSortingResponse>> Handle(MoveDroneToSortingCommand request, CancellationToken cancellationToken)
         {
-            var drone = await _dbContext.Set<Drone>().Include(x => x.Sorting).FirstOrDefaultAsync(x => x.Id == request.DroneId, cancellationToken: cancellationToken);
+            var drone = await _dbContext.Set<Drone>()
+                .Include(x => x.Sorting)
+                .FirstOrDefaultAsync(x => x.Id == request.DroneId, cancellationToken: cancellationToken);
             
             if (drone.Sorting.Id == request.SortingId)
             {
@@ -33,7 +35,8 @@ namespace Api.Handlers
                     "Drone already exists in this sorting!");
             }
 
-            var sorting = await _dbContext.Set<Sorting>().FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
+            var sorting = await _dbContext.Set<Sorting>()
+                .FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
             drone.Sorting = sorting;
 
             await _repository.SaveChangesAsync();

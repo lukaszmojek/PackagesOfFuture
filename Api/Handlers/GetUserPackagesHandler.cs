@@ -13,8 +13,8 @@ namespace Api.Handlers
 {
     public class GetUserPackagesHandler : IRequestHandler<GetUserPackagesQuery, ICollection<PackageDto>>
     {
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
         public GetUserPackagesHandler(DbContext dbContext, IMapper mapper)
         {

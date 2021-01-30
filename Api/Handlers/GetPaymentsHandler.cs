@@ -16,8 +16,8 @@ namespace Api.Handlers
 {
     public class GetPaymentsHandler : IRequestHandler<GetPaymentsQuery, ICollection<PaymentDto>>
     {
-        private IRepository<Payment> _repository;
-        private IMapper _mapper;
+        private readonly IRepository<Payment> _repository;
+        private readonly IMapper _mapper;
 
         public GetPaymentsHandler(IRepository<Payment> repository, IMapper mapper)
         {

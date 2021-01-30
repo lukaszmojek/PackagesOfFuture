@@ -15,14 +15,10 @@ namespace Api.Handlers
 {
     public class ChangeUserDetailsHandler : IRequestHandler<ChangeUserDetailsCommand, Response<ChangeUserDetailsResponse>>
     {
-        private readonly IRepository<User> _repository;
-        private readonly IMapper _mapper;
         private readonly DbContext _dbContext;
         
-        public ChangeUserDetailsHandler(IRepository<User> repository, IMapper mapper, DbContext dbContext)
+        public ChangeUserDetailsHandler(DbContext dbContext)
         {
-            _repository = repository;
-            _mapper = mapper;
             _dbContext = dbContext;
         }
 

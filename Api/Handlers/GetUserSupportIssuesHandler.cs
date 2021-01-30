@@ -14,14 +14,12 @@ namespace Api.Handlers
 {
     public class GetUserSupportIssuesHandler : IRequestHandler<GetUserSupportIssuesQuery, ICollection<SupportIssueDto>>
     {
-        private IRepository<SupportIssue> _repository;
-        private DbContext _dbContext;
-        private IMapper _mapper;
+        private readonly DbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetUserSupportIssuesHandler(IMapper mapper, IRepository<SupportIssue> repository, DbContext dbContext)
+        public GetUserSupportIssuesHandler(IMapper mapper, DbContext dbContext)
         {
             _mapper = mapper;
-            _repository = repository;
             _dbContext = dbContext;
         }
 
@@ -30,7 +28,7 @@ namespace Api.Handlers
             var supportIssues = await _dbContext.Set<SupportIssue>()
                 .Include(x => x.User)
                 .Where(x => x.User.Id == request.UserId)
-                .ToListAsync();
+                .ToListAsync(cancellationToken: cancellationToken);
 
             return _mapper.Map<ICollection<SupportIssueDto>>(supportIssues);
         }
