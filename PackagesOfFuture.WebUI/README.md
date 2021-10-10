@@ -23,4 +23,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Note for DAWID BŁASZKIEWICZ
-For keeping code consistency across the whole application you will need to run `npm run prettify` after you are done making changes.
+For keeping code consistency across the whole application you will need to run `npm run prettify` after you are done making changes
