@@ -13,5 +13,5 @@ Requirements:
   <li>Rider 2021.2 or Visual Studio 2019 v16.8.3+</li>
   <li>Own database</li>
   <li>Some computer more powerful than a potato</li>
-  <li>And some operating system on top of it</li>
+  <li>And some operating system on top of it I guess</li>
 </ul>
