@@ -1,4 +1,4 @@
-name: Backend-PR
+name: PackagesOfFuture.Backend-PR
 
 on:
   pull_request:
