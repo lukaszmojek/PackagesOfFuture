@@ -50,9 +50,9 @@ namespace Api
 #if RELEASE
             //TODO: Add secure configuration here once we would want to start deploying somewhere
             services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
-                    builder.UseSqlServer(Configuration.GetConnectionString("DatabaseUrl"))
+                    builder.UseNpgsql(Configuration.GetConnectionString("DatabaseUrl"))
                         .EnableSensitiveDataLogging())
-                .RegisterRepositories();      
+                .RegisterRepositories();    
 #endif
         }
 
