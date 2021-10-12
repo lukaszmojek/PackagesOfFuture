@@ -40,10 +40,20 @@ namespace Api
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
 
+#if DEBUG
             services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
-                builder.UseSqlServer(Configuration.GetConnectionString("DatabaseUrl"))
-                    .EnableSensitiveDataLogging())
-                .RegisterRepositories();
+                    builder.UseNpgsql(Configuration.GetConnectionString("DatabaseUrl"))
+                        .EnableSensitiveDataLogging())
+                .RegisterRepositories();      
+#endif
+            
+#if RELEASE
+            //TODO: Add secure configuration here once we would want to start deploying somewhere
+            services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
+                    builder.UseNpgsql(Configuration.GetConnectionString("DatabaseUrl"))
+                        .EnableSensitiveDataLogging())
+                .RegisterRepositories();    
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
