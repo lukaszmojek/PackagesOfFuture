@@ -7,6 +7,7 @@
 ## Requirements for running it locally:
 - .NET 5.0.x SDK
 - IDE, I recommend latest version of Rider, but Visual Studio should also do the trick for Backend
+- [NodeJS installed](https://nodejs.org/en/)
 - [VS Code for Frontend](https://code.visualstudio.com/)
 - [Docker installed](https://www.docker.com/get-started)
 - [EF Core tools installed](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
