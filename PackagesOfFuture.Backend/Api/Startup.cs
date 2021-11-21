@@ -40,6 +40,28 @@ namespace Api
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
 
+            var builder = services.AddIdentityServer(
+                    options =>
+                    {
+                        options.IssuerUri = "PackagesOfFuture i elo";
+                        options.LowerCaseIssuerUri = false;
+
+                        options.Endpoints.EnableAuthorizeEndpoint = true;
+
+                        // options.Discovery.ShowApiScopes = false;
+                        // options.Discovery.ShowClaims = false;
+
+                        // options.UserInteraction.LoginUrl = "";
+                        // options.UserInteraction.LogoutUrl = "";
+                        // options.UserInteraction.ConsentUrl = "";
+                        // options.UserInteraction.ErrorUrl = "";
+                        // options.UserInteraction.DeviceVerificationUrl = "";
+                    }
+                );
+                // .AddInMemoryClients(Configuration.Clients)
+                // .AddInMemoryIdentityResources(Configuration.IdentityResources)
+                // .AddInMemoryApiScopes(Configuration.ApiScopes);
+
 #if DEBUG
             services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>
                     builder.UseNpgsql(Configuration.GetConnectionString("DatabaseUrl"))
@@ -69,7 +91,7 @@ namespace Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseIdentityServer();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
