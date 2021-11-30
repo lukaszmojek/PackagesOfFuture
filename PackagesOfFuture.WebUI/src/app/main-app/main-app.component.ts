@@ -11,7 +11,7 @@ import { IAuthState } from '../auth/auth.reducer';
 export class MainAppComponent {
   public isLoggedIn$: Observable<boolean>
 
-  constructor(private store: Store<IAuthState>) { 
-    this.isLoggedIn$ = store.select(x => x.isLoggedIn)
+  constructor(private store: Store<{auth: IAuthState}>) { 
+    this.isLoggedIn$ = store.select(x => x.auth.isLoggedIn)
   }
 }

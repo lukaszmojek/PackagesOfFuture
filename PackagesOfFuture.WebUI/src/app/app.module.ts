@@ -8,7 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { MainAppComponent } from './main-app/main-app.component';
 import { MenuComponent } from './menu/menu.component';
 import { StoreModule } from '@ngrx/store'
-import { authReducer } from './auth/auth.reducer'
+import { AuthModule } from './auth/auth.module'
 
 @NgModule({
   declarations: [AppComponent, MainAppComponent, MenuComponent],
@@ -17,9 +17,8 @@ import { authReducer } from './auth/auth.reducer'
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    StoreModule.forRoot({
-      auth: authReducer
-    }, {}),
+    StoreModule.forRoot({}, {}),
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

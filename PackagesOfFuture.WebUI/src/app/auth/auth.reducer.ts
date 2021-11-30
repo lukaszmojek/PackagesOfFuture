@@ -1,8 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
 import * as AuthActions from './auth.actions';
 
+export const authFeatureKey = 'auth'
+
 export const initialState: IAuthState = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   isActionInProgress: false,
 }
 
