@@ -6,7 +6,8 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { SharedModule } from './shared/shared.module';
 import { MainAppComponent } from './main-app/main-app.component';
-import { MenuComponent } from './menu/menu.component'
+import { MenuComponent } from './menu/menu.component';
+import { StoreModule } from '@ngrx/store'
 
 @NgModule({
   declarations: [AppComponent, MainAppComponent, MenuComponent],
@@ -15,6 +16,7 @@ import { MenuComponent } from './menu/menu.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
