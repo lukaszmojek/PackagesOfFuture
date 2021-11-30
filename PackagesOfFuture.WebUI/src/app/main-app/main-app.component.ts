@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '../shared/services/authentication/authentication.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { IAuthState } from '../auth/auth.reducer';
 
 @Component({
   selector: 'pof-main-app',
@@ -7,7 +9,9 @@ import { AuthenticationService } from '../shared/services/authentication/authent
   styleUrls: ['./main-app.component.sass']
 })
 export class MainAppComponent {
-  public isLoggedIn$ = this.authentication.isLoggedIn$
+  public isLoggedIn$: Observable<boolean>
 
-  constructor(private authentication: AuthenticationService) { }
+  constructor(private store: Store<IAuthState>) { 
+    this.isLoggedIn$ = store.select(x => x.isLoggedIn)
+  }
 }
