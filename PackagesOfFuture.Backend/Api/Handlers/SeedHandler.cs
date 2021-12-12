@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
@@ -40,6 +41,7 @@ namespace Api.Handlers
                     FirstName = "Dawid",
                     LastName = "Blaszkiewicz",
                     Email = "dawid@gmail.com",
+                    Password = "test123"
                     //Type = UserType.Client
                 }
             };
@@ -83,8 +85,12 @@ namespace Api.Handlers
                 }
             };
             
-            await _packageRepository.AddAsync(package);
-            await _packageRepository.SaveChangesAsync();
+            // await _packageRepository.AddAsync(package);
+            // await _packageRepository.SaveChangesAsync();
+
+            await _userRepository.AddAsync(users.First());
+            
+            await _userRepository.SaveChangesAsync();
 
             return ResponseFactory.CreateSuccessResponse<SeedResponse>();
         }

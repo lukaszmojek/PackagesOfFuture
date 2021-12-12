@@ -35,9 +35,9 @@ namespace Api.Controllers
             var command = new GetUsersQuery();
             var result = await _mediator.Send(command);
             
-            return result.Any() ? (ActionResult<ICollection<UserDto>>) Ok(result) : NotFound();
-        }        
-        
+            return result.Any() ? Ok(result) : NotFound();
+        }
+
         /// <summary>
         /// Registers a new user
         /// </summary>
@@ -51,7 +51,7 @@ namespace Api.Controllers
             var command = _mapper.Map<RegisterUserCommand>(registerUserDto);
             var result = await _mediator.Send(command);
             
-            return result.Succeeded ? (IActionResult) NoContent() : BadRequest(result.Error);
+            return result.Succeeded ? NoContent() : BadRequest(result.Error);
         }
 
         /// <summary>

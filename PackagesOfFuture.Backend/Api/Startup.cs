@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using Api.Services;
 using AutoMapper;
 using Data;
 using MediatR;
@@ -39,6 +40,7 @@ namespace Api
             
             services.AddMediatR(typeof(Startup));
             services.AddAutoMapper(typeof(Startup).Assembly);
+            services.AddSingleton<IUserService, UserService>();
 
 #if DEBUG
             services.AddDbContext<DbContext, PackagesOfFutureDbContext>(builder =>

@@ -8,7 +8,7 @@ namespace Api.Profiles
     {
         public LoginProfile()
         {
-            CreateMap<LogInDto, LogInQuery>();
+            CreateMap<AuthenticateUserDto, AuthenticateUserQuery>();
         }
     }
 }
