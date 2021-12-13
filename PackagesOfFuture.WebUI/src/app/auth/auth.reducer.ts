@@ -1,15 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
-import * as AuthActions from './auth.actions';
+import { AuthActions } from './auth.actions';
 
 export const authFeatureKey = 'auth'
 
 export const initialState: IAuthState = {
-  isLoggedIn: true,
+  isLoggedIn: false,
   isActionInProgress: false,
 }
 
 export interface IAuthState {
-  // token?: string
+  token?: string
   isLoggedIn: boolean,
   isActionInProgress: boolean
 }
@@ -20,9 +20,9 @@ const _authReducer = createReducer(
     ...state,
     isActionInProgress: true
   })),
-  on(AuthActions.loginSuccess, (state) => ({
+  on(AuthActions.loginSuccess, (state, { token }) => ({
     ...state,
-    // token: 
+    token,
     isLoggedIn: true,
     isActionInProgress: false
   })),
@@ -36,7 +36,7 @@ const _authReducer = createReducer(
   })),
   on(AuthActions.logoutSuccess, (state) => ({
     ...state,
-    // token: undefined,
+    token: undefined,
     isLoggedIn: false,
     isActionInProgress: false
   })),
