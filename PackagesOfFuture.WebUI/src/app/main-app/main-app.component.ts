@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IAuthState } from '../auth/auth.reducer';
 import { selectIsLoggedIn } from '../auth/auth.selectors';
-import StoreConnectedComponent from '../shared/components/utilities/store-connected.componet';
+import StoreConnectedComponent from '../shared/components/utilities/store-connected.component';
 import { IApplicationState } from '../state';
 
 @Component({
@@ -14,6 +14,7 @@ import { IApplicationState } from '../state';
 export class MainAppComponent extends StoreConnectedComponent<IApplicationState> {
   public isLoggedIn$: Observable<boolean>
 
+  //TODO: Change to restict type of the store  
   constructor(private store: Store<{auth: IAuthState}>) {
     super(store)
     this.isLoggedIn$ = this.safeSelect$(selectIsLoggedIn)

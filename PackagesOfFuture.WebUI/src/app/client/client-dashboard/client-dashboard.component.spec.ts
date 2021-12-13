@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainClientComponent } from './main-client.component';
+import { ClientDashboardComponent } from './client-dashboard.component';
 
-describe('MainClientComponent', () => {
-  let component: MainClientComponent;
-  let fixture: ComponentFixture<MainClientComponent>;
+describe('ClientDashboardComponent', () => {
+  let component: ClientDashboardComponent;
+  let fixture: ComponentFixture<ClientDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainClientComponent ]
+      declarations: [ ClientDashboardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainClientComponent);
+    fixture = TestBed.createComponent(ClientDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

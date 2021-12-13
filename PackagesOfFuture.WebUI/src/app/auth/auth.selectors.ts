@@ -8,4 +8,3 @@ export const selectIsLoggedIn = createSelector(
   selectAuthFeature,
   (state: IAuthState) => state.isLoggedIn
 )
-
