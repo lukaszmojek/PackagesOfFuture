@@ -4,13 +4,17 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule } from '@angular/material/card'
+import { MatInputModule } from '@angular/material/input'
 
 const materialModules = [
   MatSliderModule,
   MatToolbarModule,
   MatSidenavModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
 ]
 
 @NgModule({

@@ -9,6 +9,7 @@ import { MainAppComponent } from './main-app/main-app.component';
 import { MenuComponent } from './menu/menu.component';
 import { StoreModule } from '@ngrx/store'
 import { AuthModule } from './auth/auth.module'
+import { CommonModule } from '@angular/common'
 
 @NgModule({
   declarations: [AppComponent, MainAppComponent, MenuComponent],
@@ -16,9 +17,10 @@ import { AuthModule } from './auth/auth.module'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
     StoreModule.forRoot({}, {}),
     AuthModule,
+    CommonModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
