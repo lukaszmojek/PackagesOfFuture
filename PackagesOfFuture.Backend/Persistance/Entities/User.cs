@@ -10,6 +10,7 @@ namespace Data.Entities
         public string Email { get; set; }
         public UserType Type { get; set; }
         public string Password { get; set; }
+        public bool IsActive { get; set; }
         
         public virtual Address Address { get; set; }
         public virtual ICollection<SupportIssue> SupportIssues { get; set; }

@@ -18,8 +18,8 @@ namespace Api.Profiles
             CreateMap<ChangeUserDetailsDto, ChangeUserDetailsCommand>();
             CreateMap<ChangeUserDetailsCommand, User>();
 
-            CreateMap<LogInDto, LogInQuery>();
-            CreateMap<User, LogInResponse>();
+            CreateMap<AuthenticateUserDto, AuthenticateUserQuery>();
+            CreateMap<User, AuthenticateUserResponse>();
 
             CreateMap<User, UserDto>();
 
