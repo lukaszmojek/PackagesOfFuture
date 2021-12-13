@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { AuthenticationService } from 'src/app/auth/authentication.service';
 
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,8 +16,8 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent {
-  public emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  public passwordFormControl = new FormControl('', [Validators.required]);
+  public emailFormControl = new FormControl('')//, [Validators.required, Validators.email]);
+  public passwordFormControl = new FormControl('')//, [Validators.required]);
 
   public matcher = new MyErrorStateMatcher();
   
@@ -24,5 +25,11 @@ export class LoginComponent {
     return this.emailFormControl.valid && this.passwordFormControl.valid
   }
 
-  constructor() { }
+  constructor(private auth: AuthenticationService) { }
+
+  public logIn() {
+    this.auth.logIn$('dawid@gmail.com', 'test123').subscribe(x => {
+      console.log(x)
+    })
+  }
 }

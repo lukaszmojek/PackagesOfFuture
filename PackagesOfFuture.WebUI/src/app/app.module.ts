@@ -9,7 +9,8 @@ import { MainAppComponent } from './main-app/main-app.component';
 import { MenuComponent } from './menu/menu.component';
 import { StoreModule } from '@ngrx/store'
 import { AuthModule } from './auth/auth.module'
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent, MainAppComponent, MenuComponent],
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common'
     AuthModule,
     CommonModule,
     SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

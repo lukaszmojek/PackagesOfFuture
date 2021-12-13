@@ -9,6 +9,7 @@ export const initialState: IAuthState = {
 }
 
 export interface IAuthState {
+  // token?: string
   isLoggedIn: boolean,
   isActionInProgress: boolean
 }
@@ -21,6 +22,7 @@ const _authReducer = createReducer(
   })),
   on(AuthActions.loginSuccess, (state) => ({
     ...state,
+    // token: 
     isLoggedIn: true,
     isActionInProgress: false
   })),
@@ -34,6 +36,7 @@ const _authReducer = createReducer(
   })),
   on(AuthActions.logoutSuccess, (state) => ({
     ...state,
+    // token: undefined,
     isLoggedIn: false,
     isActionInProgress: false
   })),
