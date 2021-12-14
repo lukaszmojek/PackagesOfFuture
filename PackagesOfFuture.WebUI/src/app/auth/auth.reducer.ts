@@ -17,31 +17,31 @@ export interface IAuthState {
 
 const _authReducer = createReducer(
   initialState,
-  on(AuthActions.login, (state) => ({
+  on(AuthActions.logIn, (state) => ({
     ...state,
     isActionInProgress: true
   })),
-  on(AuthActions.loginSuccess, (state, { token }) => ({
+  on(AuthActions.logInSuccess, (state, { token }) => ({
     ...state,
     token,
     isLoggedIn: true,
     isActionInProgress: false
   })),
-  on(AuthActions.loginFailed, (state) => ({
+  on(AuthActions.logInFailed, (state) => ({
     ...state,
     isActionInProgress: false
   })),
-  on(AuthActions.logout, (state) => ({
+  on(AuthActions.logOut, (state) => ({
     ...state,
     isActionInProgress: true
   })),
-  on(AuthActions.logoutSuccess, (state) => ({
+  on(AuthActions.logOutSuccess, (state) => ({
     ...state,
     token: '',
     isLoggedIn: false,
     isActionInProgress: false
   })),
-  on(AuthActions.logoutFailed, (state) => ({
+  on(AuthActions.logOutFailed, (state) => ({
     ...state,
     isActionInProgress: false
   })),

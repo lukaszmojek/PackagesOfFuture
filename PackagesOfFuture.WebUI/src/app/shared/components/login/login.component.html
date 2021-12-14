@@ -37,13 +37,22 @@
       </mat-error>
     </mat-form-field>
 
-    <button [disabled]="!areEmailAndPasswordValid"
+    <button [disabled]="!areEmailAndPasswordValid || isLoggedIn"
       type="button"
       mat-flat-button
       color="primary"
       (click)="logIn()"
     >
       Login
+    </button>
+
+    <button [disabled]="!isLoggedIn"
+      type="button"
+      mat-flat-button
+      color="primary"
+      (click)="logOut()"
+    >
+      Logout
     </button>
   </form>
 </mat-card>

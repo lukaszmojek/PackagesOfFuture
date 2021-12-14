@@ -18,4 +18,10 @@ export class AuthenticationService {
 
     return this.http.post<IApiResponse<ITokenResponse>>(AppSettings.authEndpoint, request)
   }
+
+  public logOut$(): Observable<any> {
+    //TODO: Think how to change that to different observable,
+    //TODO: there might be something more appropiate to use here
+    return of('')
+  }
 }

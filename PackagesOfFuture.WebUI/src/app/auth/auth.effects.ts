@@ -8,11 +8,21 @@ import { of } from "rxjs";
 @Injectable()
 export class AuthEffects {
   logIn$ = createEffect(() => this.actions$.pipe(
-    ofType(AuthActions.login),
+    ofType(AuthActions.logIn),
     exhaustMap(action => this.auth.logIn$(action.email, action.password)
       .pipe(
-        map(response => AuthActions.loginSuccess({token: response.content.token})),
-        catchError(error => of(AuthActions.loginFailed()))
+        map(response => AuthActions.logInSuccess({token: response.content.token})),
+        catchError(_ => of(AuthActions.logInFailed()))
+      ))
+    )
+  );
+
+  logOut$ = createEffect(() => this.actions$.pipe(
+    ofType(AuthActions.logOut),
+    exhaustMap(action => this.auth.logOut$()
+      .pipe(
+        map(_ => AuthActions.logOutSuccess()),
+        catchError(_ => of(AuthActions.logOutFailed()))
       ))
     )
   );
