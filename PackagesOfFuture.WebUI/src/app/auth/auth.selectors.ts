@@ -8,3 +8,8 @@ export const selectIsLoggedIn = createSelector(
   selectAuthFeature,
   (state: IAuthState) => state.isLoggedIn
 )
+
+export const selectToken = createSelector(
+  selectAuthFeature,
+  (state: IAuthState) => state.token
+)

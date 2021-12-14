@@ -4,12 +4,13 @@ import { AuthActions } from './auth.actions';
 export const authFeatureKey = 'auth'
 
 export const initialState: IAuthState = {
+  token: '',
   isLoggedIn: false,
   isActionInProgress: false,
 }
 
 export interface IAuthState {
-  token?: string
+  token: string
   isLoggedIn: boolean,
   isActionInProgress: boolean
 }
@@ -36,7 +37,7 @@ const _authReducer = createReducer(
   })),
   on(AuthActions.logoutSuccess, (state) => ({
     ...state,
-    token: undefined,
+    token: '',
     isLoggedIn: false,
     isActionInProgress: false
   })),

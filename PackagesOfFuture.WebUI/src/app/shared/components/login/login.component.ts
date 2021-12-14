@@ -31,7 +31,7 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState>{
 
   constructor(store$: Store<{auth: IAuthState}>) {
     super(store$)
-   }
+  }
 
   public logIn() {
     this.store$.dispatch(
