@@ -14,8 +14,11 @@ export class AuthorizationService {
 
   constructor(private store$: Store<{auth: IAuthState}>) {
     this.store$.select(selectToken).subscribe(token => {
+      if (!token) {
+        return
+      }
+      
       this._decodedToken = jwtDecode<DecodedToken>(token)
-      console.log(this._decodedToken)
     })
   }
 
