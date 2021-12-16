@@ -1,14 +1,20 @@
-<mat-toolbar color="primary">
-  <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<mat-toolbar color="primary" class="toolbar">
+  <button *ngIf="isLoggedIn$ | async"
+    (click)="drawer.toggle()" 
+    mat-icon-button 
+    class="example-icon">
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span>My App</span>
+  <span>PackagesOfFuture</span>
 </mat-toolbar>
 
-<mat-drawer-container class="example-container" [hasBackdrop]="false">
-  <mat-drawer #drawer mode="push">I'm a drawer</mat-drawer>
+<mat-drawer-container class="container max-width max-height" [hasBackdrop]="false">
+  <mat-drawer #drawer mode="push">
+    <pof-menu></pof-menu>
+  </mat-drawer>
+
   <mat-drawer-content>
-    And I am a content
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

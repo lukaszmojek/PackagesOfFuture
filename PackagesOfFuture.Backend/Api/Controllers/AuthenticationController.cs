@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
-    [Route("[controller]")]
-    public class LoginController : ControllerBase
+    [Route("auth")]
+    public class AuthenticationController : ControllerBase
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
         
-        public LoginController(IMediator mediator, IMapper mapper)
+        public AuthenticationController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
             _mapper = mapper;
@@ -23,17 +23,18 @@ namespace Api.Controllers
         /// <summary>
         /// Logs user into the system
         /// </summary>
-        /// <param name="logInDto">Representation of login details</param>
+        /// <param name="authenticateUserDto">Representation of login details</param>
         /// <returns>User details</returns>
         /// <response code="200">When user was logged in</response>
         /// <response code="400">When no user with selected email and password exists</response>
         [HttpPost("")]
-        public async Task<ActionResult<Response<LogInResponse>>> LogIn([FromBody] LogInDto logInDto)
+        public async Task<ActionResult<Response<AuthenticateUserResponse>>> Authenticate([FromBody] AuthenticateUserDto authenticateUserDto)
         {
-            var query = _mapper.Map<LogInQuery>(logInDto);
+            var query = _mapper.Map<AuthenticateUserQuery>(authenticateUserDto);
             var result = await _mediator.Send(query);
             
-            return result.Succeeded ? (ActionResult<Response<LogInResponse>>) Ok(result) : BadRequest();
+            //TODO: Add some kind of resources?
+            return result.Succeeded ? Ok(result) : BadRequest("Username or password is incorrect");
         }
     }
 }
