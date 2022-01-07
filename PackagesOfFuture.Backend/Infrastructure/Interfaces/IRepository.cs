@@ -13,7 +13,8 @@ namespace Infrastructure.Interfaces
         
         public Task AddRangeAsync(IReadOnlyCollection<T> collection);
 
-        public void DeleteAsync(T resource);
+        public void Delete(T resource);
+        public void DeleteRange(IReadOnlyCollection<T> collection);
 
         public Task SaveChangesAsync();
     }

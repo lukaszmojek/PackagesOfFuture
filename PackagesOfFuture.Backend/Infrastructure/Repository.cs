@@ -40,10 +40,15 @@ namespace Infrastructure
         {
             await _dbSet.AddRangeAsync(collection);
         }
-        
-        public void DeleteAsync(T resource)
+
+        public void Delete(T resource)
         {
             _dbSet.Remove(resource);
+        }
+
+        public void DeleteRange(IReadOnlyCollection<T> collection)
+        {
+            _dbSet.RemoveRange(collection);
         }
 
         public async Task SaveChangesAsync()

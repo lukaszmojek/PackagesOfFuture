@@ -114,7 +114,7 @@ namespace Api.Controllers
         public async Task<Response<UnregisterDroneResponse>> Handle(UnregisterDroneCommand request, CancellationToken cancellationToken)
         {
             var drone = await _repository.GetByIdAsync(request.Id);
-            _repository.DeleteAsync(drone);
+            _repository.Delete(drone);
             await _repository.SaveChangesAsync();
             
             return ResponseFactory.CreateSuccessResponse<UnregisterDroneResponse>();
