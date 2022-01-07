@@ -46,28 +46,7 @@ namespace Api.Handlers
             
             await SeedUsers();
             await SeedAddresses();
-            
-            var package = new Package
-            {
-                Id = 1,
-                DeliveryDate = DateTime.Now,
-                Status = PackageStatus.Delivered,
-                Width = 12,
-                Height = 12,
-                Length = 12,
-                Weight = 30,
-                DeliveryAddressId = 1,
-                ReceiveAddressId = 2,
-                Payment = new Payment
-                {
-                    Status = PaymentStatus.InProgress,
-                    Amount = 12.34
-                }
-            };
-
-            await _packageRepository.AddAsync(package);
-            await _packageRepository.SaveChangesAsync();
-            Console.WriteLine("Packages seeded");
+            await SeedPackages();
 
             return ResponseFactory.CreateSuccessResponse<SeedResponse>();
         }
@@ -122,6 +101,30 @@ namespace Api.Handlers
                     _paymentRepository.DeleteRange(payments);
                     await _paymentRepository.SaveChangesAsync();
                     Console.WriteLine("Payments purged");
+                }
+                
+                var sortings = await _sortingRepository.GetAsync();
+                if (sortings.Count > 0)
+                {
+                    _sortingRepository.DeleteRange(sortings);
+                    await _sortingRepository.SaveChangesAsync();
+                    Console.WriteLine("Sortings purged");
+                }
+                
+                var vehicles = await _vehicleRepository.GetAsync();
+                if (vehicles.Count > 0)
+                {
+                    _vehicleRepository.DeleteRange(vehicles);
+                    await _vehicleRepository.SaveChangesAsync();
+                    Console.WriteLine("Vehicles purged");
+                }
+                
+                var supportIssues = await _supportIssueRepository.GetAsync();
+                if (supportIssues.Count > 0)
+                {
+                    _supportIssueRepository.DeleteRange(supportIssues);
+                    await _supportIssueRepository.SaveChangesAsync();
+                    Console.WriteLine("SupportIssues purged");
                 }
             }
             catch (Exception e)
@@ -228,6 +231,44 @@ namespace Api.Handlers
             await _addressRepository.AddRangeAsync(addresses);
             await _addressRepository.SaveChangesAsync();
             Console.WriteLine("Addresses seeded");
+        }
+        
+        private async Task SeedPackages()
+        {
+            var packages = new List<Package>
+            {
+                new() {
+                    Id = 1,
+                    DeliveryDate = DateTime.Now,
+                    Status = PackageStatus.Delivered,
+                    Width = 12,
+                    Height = 12,
+                    Length = 12,
+                    Weight = 30,
+                    DeliveryAddressId = 1,
+                    ReceiveAddressId = 2,
+                    Payment = new Payment
+                    {
+                        Status = PaymentStatus.InProgress,
+                        Amount = 12.34
+                    },
+                    Sorting = new Sorting
+                    {
+                        Name = "Zakliczyn",
+                        AddressId = 2,
+                    },
+                    Service = new Service
+                    {
+                        Name = "Dostawa dronem",
+                        Description = "Dostawa z użyciem drona w ciągu 1h",
+                        Price = 100,
+                    }
+                }
+            };
+
+            await _packageRepository.AddRangeAsync(packages);
+            await _packageRepository.SaveChangesAsync();
+            Console.WriteLine("Packages seeded");
         }
     }
 }

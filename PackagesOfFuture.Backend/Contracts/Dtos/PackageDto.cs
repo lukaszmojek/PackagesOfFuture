@@ -5,6 +5,7 @@ namespace Contracts.Dtos
 {
     public class PackageDto
     {
+        public int Id { get; set; }
         public DateTime DeliveryDate { get; set; }
         public PackageStatus Status { get; set; }
         
