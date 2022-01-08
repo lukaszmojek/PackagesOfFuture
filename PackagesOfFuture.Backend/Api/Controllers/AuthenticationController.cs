@@ -33,8 +33,7 @@ namespace Api.Controllers
             var query = _mapper.Map<AuthenticateUserQuery>(authenticateUserDto);
             var result = await _mediator.Send(query);
             
-            //TODO: Add some kind of resources?
-            return result.Succeeded ? Ok(result) : BadRequest("Username or password is incorrect");
+            return result.Succeeded ? Ok(result) : BadRequest(result.Error);
         }
     }
 }

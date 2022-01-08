@@ -2,35 +2,29 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Api.Configuration;
 using Data.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Api.Services
-{
+namespace Api.Services;
+
     public class UserService : IUserService
     {
-        // private readonly AppSettings _appSettings;
+        private readonly IPofConfiguration _configuration;
 
-        public UserService()//IOptions<AppSettings> appSettings)
+        public UserService(IPofConfiguration configuration)
         {
-            // _appSettings = appSettings.Value;
+            _configuration = configuration;
         }
 
-        public string Authenticate(User user)
-        {
-            // authentication successful so generate jwt token
-            var token = GenerateJwtToken(user);
-
-            return token;
-        }
+        public string Authenticate(User user) => GenerateJwtToken(user);
 
         private string GenerateJwtToken(User user)
         {
-            // var claimsAndRoles = new Dictionary<string, object>();
-            // claimsAndRoles.Add("claims", new Dictionary<string, string>{{"hasAccessToManager", "no"}});
             var tokenHandler = new JwtSecurityTokenHandler();
-            //TODO: Move that 'secret' to appsettings and change it
-            var key = Encoding.ASCII.GetBytes("dupa123asdfasdgasdffasdasdfghasdfasdfasdwfawefasdv");//_appSettings.Secret);
+            var secret = _configuration.JwtSecret();
+            var key = Encoding.ASCII.GetBytes(secret);
+            
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
@@ -38,7 +32,7 @@ namespace Api.Services
                     new Claim("id", user.Id.ToString()), 
                     new Claim("role", user.Type.ToString())
                 }),
-                // Claims = claimsAndRoles,
+                
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
@@ -47,7 +41,7 @@ namespace Api.Services
             };
             
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            
             return tokenHandler.WriteToken(token);
         }
     }
-}
