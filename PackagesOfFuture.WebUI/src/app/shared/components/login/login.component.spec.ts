@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { IApplicationState } from 'src/app/state';
@@ -14,6 +15,9 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
+      imports: [
+        HttpClientTestingModule
+      ],
       providers: [
         provideMockStore({ initialState })
       ]

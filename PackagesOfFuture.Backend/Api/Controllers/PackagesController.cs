@@ -58,7 +58,6 @@ public class PackagesController : ControllerBase
     /// <returns>Nothing. Query GetPackages for current database status</returns>
     /// <response code="204">When package was registered</response>
     /// <response code="400">When error regarding input occurred</response>
-    [IsAdmin]
     [HttpPost("")]
     public async Task<IActionResult> RegisterPackage([FromBody] RegisterPackageDto registerPackageDto)
     {
