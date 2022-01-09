@@ -23,7 +23,7 @@ namespace Api.Handlers
         {
             var user = await _repository.GetByIdAsync(request.UserId);
             
-            _repository.DeleteAsync(user);
+            _repository.Delete(user);
             await _repository.SaveChangesAsync();
             
             return ResponseFactory.CreateSuccessResponse<UnregisterUserResponse>();

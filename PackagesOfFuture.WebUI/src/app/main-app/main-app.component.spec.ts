@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { MenuComponent } from '../menu/menu.component';
 import { MaterialModule } from '../shared/material.module';
 import { IApplicationState } from '../state';
 
@@ -16,7 +17,7 @@ describe('MainAppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainAppComponent ],
+      declarations: [ MainAppComponent, MenuComponent ],
       imports: [ RouterTestingModule, MaterialModule, BrowserAnimationsModule ],
       providers: [
         provideMockStore({ initialState })

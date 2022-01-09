@@ -1,34 +1,32 @@
 ﻿using System.Threading.Tasks;
 using Api.Commands;
-using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers
+namespace Api.Controllers;
+
+// TODO: Uncomment below attribute once we are finished with improvements for seeding
+// [IsAdmin]
+[Route("[controller]")]
+public class SeedController : ControllerBase
 {
-    [Route("[controller]")]
-    public class SeedController : ControllerBase
+    private readonly IMediator _mediator;
+
+    public SeedController(IMediator mediator)
     {
-        private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
-        
-        public SeedController(IMediator mediator, IMapper mapper)
-        {
-            _mediator = mediator;
-            _mapper = mapper;
-        }
-        
-        /// <summary>
-        /// Seeds a database with predefined data
-        /// </summary>
-        /// <returns>Nothing</returns>
-        /// <response code="204">When data was seeded</response>
-        /// <response code="400">When error occurred</response>
-        [HttpPost("")]
-        public async Task<IActionResult> Seed()
-        {
-            var result = await _mediator.Send(new SeedCommand());
-            return result.Succeeded ? (IActionResult) Ok() : BadRequest(result.Error);
-        }
+        _mediator = mediator;
+    }
+
+    /// <summary>
+    /// Seeds a database with predefined data
+    /// </summary>
+    /// <returns>Nothing</returns>
+    /// <response code="204">When data was seeded</response>
+    /// <response code="400">When error occurred</response>
+    [HttpPost("")]
+    public async Task<IActionResult> Seed()
+    {
+        var result = await _mediator.Send(new SeedCommand());
+        return result.Succeeded ? Ok() : BadRequest(result.Error);
     }
 }
