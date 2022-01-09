@@ -10,10 +10,17 @@ import { DecodedToken } from './decoded-token';
   providedIn: 'root'
 })
 export class AuthorizationService {
+  private _rawToken: string = ''
   private _decodedToken!: DecodedToken;
+
+  public get rawToken(): string {
+    return this._rawToken
+  }
 
   constructor(private store$: Store<{auth: IAuthState}>) {
     this.store$.select(selectToken).subscribe(token => {
+      this._rawToken = token
+
       if (!token) {
         return
       }

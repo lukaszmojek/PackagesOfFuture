@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AuthActions } from 'src/app/auth/auth.actions';
 import { IAuthState } from 'src/app/auth/auth.reducer';
 import { selectIsLoggedIn } from 'src/app/auth/auth.selectors';
+import { PackagesService } from 'src/app/packages/packages.service';
 import { IApplicationState } from 'src/app/state';
 import StoreConnectedComponent from '../utilities/store-connected.component';
 
@@ -38,7 +39,7 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState> i
     return this.emailFormControl.valid && this.passwordFormControl.valid
   }
 
-  constructor(store$: Store<{auth: IAuthState}>) {
+  constructor(store$: Store<{auth: IAuthState}>, private packages: PackagesService) {
     super(store$)
   }
 
@@ -59,6 +60,12 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState> i
     this.store$.dispatch(
       AuthActions.logOut()
     )
+  }
+
+  public getPackages(): void {
+    this.packages.getPackages().subscribe(response => {
+      console.log(response)
+    })
   }
 
   private subscribeToIsLoggedIn(): void {
