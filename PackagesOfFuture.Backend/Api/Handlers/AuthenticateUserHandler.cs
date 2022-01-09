@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Api.Auth;
 using Contracts.Responses;
 using Api.Factories;
 using Api.Queries;
-using Api.Services;
 using Data.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
