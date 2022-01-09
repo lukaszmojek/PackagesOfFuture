@@ -210,21 +210,24 @@ namespace Api.Handlers
                     Id = 1,
                     City = "Mielec",
                     HouseAndFlatNumber = "12/3",
-                    Street = "Osla laka"
+                    Street = "Osla laka",
+                    PostalCode = "30-123"
                 },
                 new()
                 {
                     Id = 2,
                     City = "Kraków",
                     HouseAndFlatNumber = "2",
-                    Street = "Myślenicka"
+                    Street = "Myślenicka",
+                    PostalCode = "30-144"
                 },
                 new()
                 {
                     Id = 3,
                     City = "Wilcza",
                     HouseAndFlatNumber = "73",
-                    Street = "-"
+                    Street = "-",
+                    PostalCode = "69-420"
                 }
             };
             

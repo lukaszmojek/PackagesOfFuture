@@ -6,7 +6,7 @@ using Api.Configuration;
 using Data.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Api.Services;
+namespace Api.Auth;
 
     public class UserService : IUserService
     {
