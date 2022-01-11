@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ParcelType } from 'src/app/models/parcel-type';
-import { PaymentType } from 'src/app/models/payment-type';
-import { CourierType } from 'src/app/models/service-model';
-import { PackagesService } from 'src/app/services/packages/packages.service';
+import { ParcelType } from 'src/app/models/parcels';
+import { PaymentType } from 'src/app/models/payments';
+import { CourierType } from 'src/app/models/couriers';
+import { PackagesService } from 'src/app/services/packages.service';
 import { StupidDataService } from 'src/app/services/stupid-data.service';
 
 @Component({

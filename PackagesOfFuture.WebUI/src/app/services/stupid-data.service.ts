@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ParcelType } from '../models/parcel-type';
-import { PaymentType } from '../models/payment-type';
+import { ParcelType } from '../models/parcels';
+import { PaymentType } from '../models/payments';
 
 @Injectable({
   providedIn: 'root'

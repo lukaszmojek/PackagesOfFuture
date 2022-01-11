@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CourierType } from 'src/app/models/service-model';
-import { AppSettings } from '../../common/appsettings';
+import { CourierType } from 'src/app/models/couriers';
+import { AppSettings } from '../common/appsettings';
 
 @Injectable({
   providedIn: 'root'

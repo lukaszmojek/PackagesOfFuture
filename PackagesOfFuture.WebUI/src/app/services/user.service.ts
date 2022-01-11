@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ChangePasswordDto } from 'src/app/models/users';
-import { AppSettings } from '../../common/appsettings';
+import { AppSettings } from '../common/appsettings';
 
 @Injectable({
   providedIn: 'root'
