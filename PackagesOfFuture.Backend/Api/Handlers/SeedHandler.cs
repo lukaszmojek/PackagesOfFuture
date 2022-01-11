@@ -150,6 +150,7 @@ namespace Api.Handlers
                     Type = UserType.Administrator,
                     Address = new Address
                     {
+                        Id = 1,
                         City = "Mielec",
                         HouseAndFlatNumber = "13/53",
                         PostalCode = "39-300",
@@ -166,10 +167,11 @@ namespace Api.Handlers
                     Type = UserType.Administrator,
                     Address = new Address
                     {
-                        City = "Wilcza",
-                        HouseAndFlatNumber = "6969",
-                        PostalCode = "43-013",
-                        Street = "--"
+                        Id = 2,
+                        City = "Czarnocin",
+                        HouseAndFlatNumber = "77",
+                        PostalCode = "28-506",
+                        Street = "Kolosy"
                     }
                 },
                 new()
@@ -221,7 +223,7 @@ namespace Api.Handlers
             {
                 new()
                 {
-                    Id = 1,
+                    Id = 11,
                     City = "Mielec",
                     HouseAndFlatNumber = "12/3",
                     Street = "Osla laka",
@@ -229,7 +231,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
-                    Id = 2,
+                    Id = 12,
                     City = "Kraków",
                     HouseAndFlatNumber = "2",
                     Street = "Myślenicka",
@@ -237,11 +239,11 @@ namespace Api.Handlers
                 },
                 new()
                 {
-                    Id = 3,
-                    City = "Wilcza",
-                    HouseAndFlatNumber = "73",
-                    Street = "-",
-                    PostalCode = "69-420"
+                    Id = 13,
+                    City = "Czarnocin",
+                    HouseAndFlatNumber = "77",
+                    Street = "Kolosy",
+                    PostalCode = "28-506"
                 }
             };
             
@@ -262,8 +264,8 @@ namespace Api.Handlers
                     Height = 12,
                     Length = 12,
                     Weight = 30,
-                    DeliveryAddressId = 1,
-                    ReceiveAddressId = 2,
+                    DeliveryAddressId = 11,
+                    ReceiveAddressId = 12,
                     Payment = new Payment
                     {
                         Status = PaymentStatus.InProgress,
@@ -272,7 +274,7 @@ namespace Api.Handlers
                     Sorting = new Sorting
                     {
                         Name = "Zakliczyn",
-                        AddressId = 2,
+                        AddressId = 12,
                     },
                     Service = new Service
                     {
