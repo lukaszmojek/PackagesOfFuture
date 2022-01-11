@@ -1,5 +1,4 @@
-﻿using Api.Controllers;
-using Contracts.Responses;
+﻿using Contracts.Responses;
 using MediatR;
 
 namespace Api.Commands

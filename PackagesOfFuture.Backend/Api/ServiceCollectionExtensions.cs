@@ -1,6 +1,5 @@
 ﻿using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Api
@@ -9,7 +8,7 @@ namespace Api
     {
         public static IServiceCollection RegisterRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IRepository<User>, Repository<User>>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRepository<Address>, Repository<Address>>();
             services.AddScoped<IRepository<Package>, Repository<Package>>();
             services.AddScoped<IRepository<Sorting>, Repository<Sorting>>();

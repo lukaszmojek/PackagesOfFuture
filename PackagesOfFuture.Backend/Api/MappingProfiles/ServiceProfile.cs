@@ -1,6 +1,4 @@
 using Api.Commands;
-using Api.Controllers;
-using Api.Handlers;
 using AutoMapper;
 using Contracts.Dtos;
 using Data.Entities;

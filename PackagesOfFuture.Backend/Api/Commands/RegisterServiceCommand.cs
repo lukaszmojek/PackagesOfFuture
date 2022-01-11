@@ -1,4 +1,3 @@
-using Api.Handlers;
 using Contracts.Responses;
 using MediatR;
 

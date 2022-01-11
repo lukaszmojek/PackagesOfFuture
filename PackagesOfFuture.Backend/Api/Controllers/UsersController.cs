@@ -7,7 +7,6 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Dtos;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -73,7 +72,7 @@ public class UsersController : ControllerBase
         var command = _mapper.Map<ChangeUserDetailsCommand>(changeUserDetailsDto);
         var result = await _mediator.Send(command);
 
-        return result.Succeeded ? (IActionResult) NoContent() : NotFound();
+        return result.Succeeded ? NoContent() : NotFound();
     }
 
     /// <summary>
@@ -93,7 +92,7 @@ public class UsersController : ControllerBase
         var command = _mapper.Map<ChangeUserPasswordCommand>(changeUserPasswordDto);
         var result = await _mediator.Send(command);
 
-        return result.Succeeded ? (IActionResult) NoContent() : NotFound();
+        return result.Succeeded ? NoContent() : NotFound();
     }
 
     /// <summary>
@@ -110,6 +109,6 @@ public class UsersController : ControllerBase
     {
         var result = await _mediator.Send(new UnregisterUserCommand() {UserId = id});
 
-        return result.Succeeded ? (IActionResult) NoContent() : NotFound();
+        return result.Succeeded ? NoContent() : NotFound();
     }
 }

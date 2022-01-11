@@ -2,14 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
-using Api.Controllers;
 using Api.Factories;
 using AutoMapper;
 using Contracts.Responses;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using ResourceEnums;
 
 namespace Api.Handlers
@@ -17,15 +15,13 @@ namespace Api.Handlers
     public class RegisterSupportIssueHandler : IRequestHandler<RegisterSupportIssueCommand, Response<RegisterSupportIssueResponse>>
     {
         private IRepository<SupportIssue> _supportIssueRepository;
-        private IRepository<User> _userRepository;
-        private DbContext _dbContext;
+        private IUserRepository _userRepository;
         private IMapper _mapper;
 
-        public RegisterSupportIssueHandler(IMapper mapper, IRepository<SupportIssue> supportIssueRepository, DbContext dbContext, IRepository<User> userRepository)
+        public RegisterSupportIssueHandler(IMapper mapper, IRepository<SupportIssue> supportIssueRepository, IUserRepository userRepository)
         {
             _mapper = mapper;
             _supportIssueRepository = supportIssueRepository;
-            _dbContext = dbContext;
             _userRepository = userRepository;
         }
 

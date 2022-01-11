@@ -3,18 +3,16 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
-using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers
 {
     public class UnregisterUserHandler : IRequestHandler<UnregisterUserCommand, Response<UnregisterUserResponse>>
     {
-        private readonly IRepository<User> _repository;
+        private readonly IUserRepository _repository;
         
-        public UnregisterUserHandler(IRepository<User> repository)
+        public UnregisterUserHandler(IUserRepository repository)
         {
             _repository = repository;
         }

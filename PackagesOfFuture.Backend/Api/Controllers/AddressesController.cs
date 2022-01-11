@@ -41,6 +41,19 @@ public class AddressesController : ControllerBase
         var result = await _mediator.Send(new GetAddressesQuery());
         return result.Any() ? Ok(result) : NotFound();
     }
+    
+    /// <summary>
+    /// Get address of the userId
+    /// </summary>
+    /// <returns>Address of the user</returns>
+    /// <response code="200">When user with given id exist</response>
+    /// <response code="404">When error regarding input occurred</response>
+    [HttpGet("getByUserId/{userId}")]
+    public async Task<ActionResult<AddressDto>> GetAddressesByUserId(int userId)
+    {
+        var result = await _mediator.Send(new GetAddressByUserIdQuery(userId));
+        return result != null ? Ok(result) : NotFound();
+    }
 
     /// <summary>
     /// Registers a new package

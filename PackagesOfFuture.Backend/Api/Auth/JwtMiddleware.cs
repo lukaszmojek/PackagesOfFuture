@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Api.Configuration;
-using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 
@@ -22,7 +21,7 @@ public class JwtMiddleware
         _configuration = configuration;
     }
 
-    public async Task Invoke(HttpContext context, IRepository<User> userRepository)
+    public async Task Invoke(HttpContext context, IUserRepository userRepository)
     {
         var token = context.Request
             .Headers["Authorization"]
@@ -38,7 +37,7 @@ public class JwtMiddleware
         await _next(context);
     }
 
-    private async Task attachUserToContext(HttpContext context, IRepository<User> userRepository, string token)
+    private async Task attachUserToContext(HttpContext context, IUserRepository userRepository, string token)
     {
         try
         {
