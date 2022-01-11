@@ -1,5 +1,5 @@
-export class CourierType {
-    name: string;
+export class ParcelType {
+    id: number;
     description: string;
     price: number;
 }
