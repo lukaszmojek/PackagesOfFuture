@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { AuthorizationService } from 'src/app/auth/authorization.service';
-import { AlertService } from 'src/app/services/alert.service';
 import { UserService } from 'src/app/services/user/user-service';
 
 class SimpleErrorStateMatcher implements ErrorStateMatcher {
@@ -35,8 +34,8 @@ export class ChangePasswordComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private authorizationService: AuthorizationService,
-    private alertService: AlertService) { }
+    private authorizationService: AuthorizationService
+   ) { }
 
   ngOnInit(): void {
     this.getCurrentUserId();

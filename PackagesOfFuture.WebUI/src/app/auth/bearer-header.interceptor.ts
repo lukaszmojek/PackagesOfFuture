@@ -1,7 +1,7 @@
 export interface Auth {
 }
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpEvent, HttpResponse, HttpRequest, HttpHandler } from '@angular/common/http';
+import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthorizationService } from './authorization.service';
 

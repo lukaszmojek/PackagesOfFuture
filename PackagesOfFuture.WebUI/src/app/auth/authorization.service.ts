@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { IAuthState } from './auth.reducer';
 import { selectToken } from './auth.selectors';
 import jwtDecode from "jwt-decode";
-import { EMPTY, Observable, of } from 'rxjs';
 import { DecodedToken } from './decoded-token';
 
 @Injectable({
