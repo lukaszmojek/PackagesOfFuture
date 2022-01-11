@@ -1,5 +1,5 @@
-export class CourierType {
-    name: string;
-    description: string;
-    price: number;
+export class ServiceModel {
+    name!: string;
+    description!: string;
+    price!: number;
 }
