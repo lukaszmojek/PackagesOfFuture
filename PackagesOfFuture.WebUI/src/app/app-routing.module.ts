@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AuthGuard } from './auth/auth.guard'
 import { LoginComponent } from './shared/components/login/login.component'
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
     //TODO: Create LoginGuard
     // canActivate: LoginGuard
   },
   {
-    path: 'client', 
+    path: '',
+    canLoad: [AuthGuard],
     loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ]
 

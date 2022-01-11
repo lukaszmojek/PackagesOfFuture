@@ -17,6 +17,10 @@ export class AuthorizationService {
     return this._rawToken
   }
 
+  public get isAuthorized(): boolean {
+    return !!this._rawToken
+  }
+
   constructor(private store$: Store<{auth: IAuthState}>) {
     this.store$.select(selectToken).subscribe(token => {
       this._rawToken = token
@@ -24,7 +28,7 @@ export class AuthorizationService {
       if (!token) {
         return
       }
-      
+
       this._decodedToken = jwtDecode<DecodedToken>(token)
     })
   }
