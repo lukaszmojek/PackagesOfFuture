@@ -8,8 +8,7 @@ using AutoMapper;
 using Contracts.Dtos;
 using Contracts.Responses;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using ResourceEnums;
 

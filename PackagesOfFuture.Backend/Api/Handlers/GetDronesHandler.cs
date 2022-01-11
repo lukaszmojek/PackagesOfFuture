@@ -4,10 +4,8 @@ using System.Threading.Tasks;
 using Api.Queries;
 using AutoMapper;
 using Contracts.Dtos;
-using Infrastructure;
 using MediatR;
 using Data.Entities;
-using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Handlers

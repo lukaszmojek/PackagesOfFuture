@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Api.Handlers;
 using Contracts.Dtos;
 using MediatR;
 

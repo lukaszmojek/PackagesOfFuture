@@ -1,12 +1,10 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

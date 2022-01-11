@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Queries;
 using AutoMapper;
 using Contracts.Dtos;
-using Contracts.Responses;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers

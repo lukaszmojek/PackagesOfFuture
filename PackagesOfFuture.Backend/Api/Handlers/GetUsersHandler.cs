@@ -5,8 +5,6 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Dtos;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

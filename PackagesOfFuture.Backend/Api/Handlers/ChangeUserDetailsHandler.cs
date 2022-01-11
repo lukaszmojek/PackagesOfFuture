@@ -4,10 +4,7 @@ using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
-using AutoMapper;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Api.Factories;
 using Contracts.Responses;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Controllers;

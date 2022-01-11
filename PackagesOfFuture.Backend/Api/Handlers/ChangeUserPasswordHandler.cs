@@ -2,20 +2,18 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
-using Api.Controllers;
 using Api.Factories;
 using Contracts.Responses;
-using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers
 {
     public class ChangeUserPasswordHandler : IRequestHandler<ChangeUserPasswordCommand, Response<ChangeUserPasswordResponse>>
     {
-        private readonly IRepository<User> _repository;
+        private readonly IUserRepository _repository;
 
-        public ChangeUserPasswordHandler(IRepository<User> repository)
+        public ChangeUserPasswordHandler(IUserRepository repository)
         {
             _repository = repository;
         }

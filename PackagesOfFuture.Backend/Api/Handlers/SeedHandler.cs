@@ -6,7 +6,7 @@ using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using ResourceEnums;
 
@@ -15,7 +15,7 @@ namespace Api.Handlers
     public class SeedHandler : IRequestHandler<SeedCommand, Response<SeedResponse>>
     {
         private readonly IRepository<Package> _packageRepository;
-        private readonly IRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IRepository<Service> _serviceRepository;
         private readonly IRepository<Drone> _droneRepository;
         private readonly IRepository<Address> _addressRepository;
@@ -24,7 +24,7 @@ namespace Api.Handlers
         private readonly IRepository<Vehicle> _vehicleRepository;
         private readonly IRepository<Sorting> _sortingRepository;
 
-        public SeedHandler(IRepository<Package> packageRepository, IRepository<Service> serviceRepository, IRepository<Drone> droneRepository, IRepository<Address> addressRepository, IRepository<User> userRepository, IRepository<SupportIssue> supportIssueRepository, IRepository<Payment> paymentRepository, IRepository<Vehicle> vehicleRepository, IRepository<Sorting> sortingRepository)
+        public SeedHandler(IRepository<Package> packageRepository, IRepository<Service> serviceRepository, IRepository<Drone> droneRepository, IRepository<Address> addressRepository, IUserRepository userRepository, IRepository<SupportIssue> supportIssueRepository, IRepository<Payment> paymentRepository, IRepository<Vehicle> vehicleRepository, IRepository<Sorting> sortingRepository)
         {
             _packageRepository = packageRepository;
             _userRepository = userRepository;
@@ -147,7 +147,14 @@ namespace Api.Handlers
                     LastName = "Mojek",
                     Email = "lukasz@pof.com",
                     Password = "test123",
-                    Type = UserType.Administrator
+                    Type = UserType.Administrator,
+                    Address = new Address
+                    {
+                        City = "Mielec",
+                        HouseAndFlatNumber = "13/53",
+                        PostalCode = "39-300",
+                        Street = "Pisarka"
+                    }
                 },
                 new()
                 {
@@ -156,7 +163,14 @@ namespace Api.Handlers
                     LastName = "Blaszkiewicz",
                     Email = "dawid@pof.com",
                     Password = "test123",
-                    Type = UserType.Administrator
+                    Type = UserType.Administrator,
+                    Address = new Address
+                    {
+                        City = "Wilcza",
+                        HouseAndFlatNumber = "6969",
+                        PostalCode = "43-013",
+                        Street = "--"
+                    }
                 },
                 new()
                 {
