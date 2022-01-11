@@ -1,9 +1,30 @@
-<h4>Basic mat-select</h4>
-<mat-form-field appearance="fill">
-  <mat-label>Rodzaj wysyłki</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let service of packageServiceTypes" [value]="service.name" >
-      {{service.name}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+<form [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>Rodzaj przesyłki</mat-label>
+    <mat-select formControlName="typeOfParcel">
+      <mat-option *ngFor="let parcel of parcelTypes" [value]="parcel.id" >
+        {{parcel.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rodzaj dostawy</mat-label>
+    <mat-select formControlName="typeOfCourier">
+      <mat-option *ngFor="let courier of courierTypes" [value]="courier.name" >
+        {{courier.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rodzaj płatności</mat-label>
+    <mat-select formControlName="typeOfPayment">
+      <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id" >
+        {{paymentType.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+</form>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ServiceModel } from 'src/app/models/service-model';
+import { CourierType } from 'src/app/models/service-model';
 import { AppSettings } from '../../common/appsettings';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class PackagesService {
     return this.http.get(AppSettings.packagesEndpoint)
   }
 
-  public getServices(): Observable<ServiceModel[]> {
-    return this.http.get<ServiceModel[]>(AppSettings.servicesEndpoint)
+  public getServices(): Observable<CourierType[]> {
+    return this.http.get<CourierType[]>(AppSettings.servicesEndpoint)
   }
 }
