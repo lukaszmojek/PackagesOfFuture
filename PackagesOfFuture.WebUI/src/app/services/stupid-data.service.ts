@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PaymentType } from '../models/payment-type';
+import { PaymentType } from '../models/payments';
 
 @Injectable({
   providedIn: 'root'

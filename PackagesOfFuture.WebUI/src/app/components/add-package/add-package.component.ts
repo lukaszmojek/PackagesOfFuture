@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PaymentType } from 'src/app/models/payment-type';
-import { ServiceModel } from 'src/app/models/service-model';
+import { PaymentType } from 'src/app/models/payments';
+import { ServiceModel } from 'src/app/models/services';
 import { PackagesService } from 'src/app/services/packages/packages.service';
 import { StupidDataService } from 'src/app/services/stupid-data.service';
 
