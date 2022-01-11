@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IAuthState } from '../auth/auth.reducer';
-import { selectIsLoggedIn } from '../auth/auth.selectors';
-import StoreConnectedComponent from '../shared/components/utilities/store-connected.component';
-import { IApplicationState } from '../state';
+import { IAuthState } from 'src/app/auth/auth.reducer';
+import { selectIsLoggedIn } from 'src/app/auth/auth.selectors';
+import { IApplicationState } from 'src/app/state';
+import StoreConnectedComponent from 'src/app/utilities/store-connected.component';
 
 @Component({
   selector: 'pof-main-app',

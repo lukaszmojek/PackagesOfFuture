@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { AddPackageComponent } from './add-package/add-package.component'
-import { ChangePasswordComponent } from './change-password/change-password.component'
-import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component'
+import { AddPackageComponent } from './components/add-package/add-package.component'
+import { ChangePasswordComponent } from './components/change-password/change-password.component'
+import { ClientDashboardComponent } from './components/client-dashboard/client-dashboard.component'
 
 const routes: Routes = [
   { path: '', component: ClientDashboardComponent },

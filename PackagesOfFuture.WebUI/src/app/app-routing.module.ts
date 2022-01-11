@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { AuthGuard } from './auth/auth.guard'
-import { LoginComponent } from './shared/components/login/login.component'
+import { LoginComponent } from './components/login/login.component'
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     canLoad: [AuthGuard],
-    loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+    loadChildren: () => import('./main.module').then(m => m.MainModule)
   },
   {
     path: '**',

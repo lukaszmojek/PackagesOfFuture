@@ -7,7 +7,7 @@ import { IAuthState } from 'src/app/auth/auth.reducer';
 import { selectIsLoggedIn } from 'src/app/auth/auth.selectors';
 import { PackagesService } from 'src/app/services/packages/packages.service';
 import { IApplicationState } from 'src/app/state';
-import StoreConnectedComponent from '../utilities/store-connected.component';
+import StoreConnectedComponent from 'src/app/utilities/store-connected.component';
 
 class SimpleErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

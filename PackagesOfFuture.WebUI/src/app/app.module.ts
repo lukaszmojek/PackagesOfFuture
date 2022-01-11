@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { SharedModule } from './shared/shared.module';
-import { MainAppComponent } from './main-app/main-app.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { StoreModule } from '@ngrx/store'
 import { AuthModule } from './auth/auth.module'
 import { CommonModule } from '@angular/common';
@@ -14,10 +12,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment'
+import { SharedModule } from './shared.module'
+import { MainAppComponent } from './components/main-app/main-app.component'
+import { LoginComponent } from './components/login/login.component'
 
 
 @NgModule({
-  declarations: [AppComponent, MainAppComponent, MenuComponent],
+  declarations: [AppComponent, MainAppComponent, MenuComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { MenuComponent } from '../menu/menu.component';
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from '../material.module';
 import { IApplicationState } from '../state';
 
 import { MainAppComponent } from './main-app.component';
