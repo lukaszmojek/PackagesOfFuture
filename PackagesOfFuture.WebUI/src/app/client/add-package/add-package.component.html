@@ -1,0 +1,9 @@
+<h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Rodzaj wysyłki</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let service of packageServiceTypes" [value]="service.name" >
+      {{service.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

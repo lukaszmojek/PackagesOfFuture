@@ -29,6 +29,11 @@ namespace Api.Handlers
                 throw new ArgumentException(nameof(request.UserId));
             }
 
+            if (user.Password != request.OldPassword)
+            {
+                throw new ArgumentException(nameof(request.OldPassword));
+            }
+
             user.Password = request.NewPassword;
             await _repository.SaveChangesAsync();
             

@@ -29,11 +29,19 @@ export class AuthorizationService {
     })
   }
 
-  private role$(): Observable<string> {
+  public role(): string {
     if (!this._decodedToken) {
-      return EMPTY
+      return ''
     }
 
-    return of(this._decodedToken.role)
+    return this._decodedToken.role;
+  }
+
+  public currentUserId(): number {
+    if (!this._decodedToken) {
+      return 0;
+    }
+
+    return this._decodedToken.id;
   }
 }

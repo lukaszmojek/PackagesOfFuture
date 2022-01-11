@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AuthActions } from 'src/app/auth/auth.actions';
 import { IAuthState } from 'src/app/auth/auth.reducer';
 import { selectIsLoggedIn } from 'src/app/auth/auth.selectors';
-import { PackagesService } from 'src/app/packages/packages.service';
+import { PackagesService } from 'src/app/services/packages/packages.service';
 import { IApplicationState } from 'src/app/state';
 import StoreConnectedComponent from '../utilities/store-connected.component';
 

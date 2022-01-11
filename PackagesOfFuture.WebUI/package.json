@@ -26,7 +26,9 @@
     "@ngrx/effects": "^13.0.2",
     "@ngrx/store": "^13.0.1",
     "@ngrx/store-devtools": "^13.0.2",
+    "@progress/kendo-angular-notification": "^3.0.3",
     "jwt-decode": "^3.1.2",
+    "ngx-toastr": "^14.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -35,6 +37,7 @@
     "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.2",
+    "@angular/localize": "^13.0.2",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
