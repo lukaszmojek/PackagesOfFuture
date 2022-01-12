@@ -42,9 +42,17 @@ export class AuthorizationService {
 
   public currentUserId(): number {
     if (!this._decodedToken) {
-      return 0;
+      return 0
     }
 
-    return this._decodedToken.id;
+    return this._decodedToken.id
+  }
+
+  public currentUserName(): string {
+    if (!this._decodedToken) {
+      return ''
+    }
+
+    return this._decodedToken.name
   }
 }

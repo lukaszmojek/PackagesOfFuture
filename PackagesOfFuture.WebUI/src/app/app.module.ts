@@ -22,6 +22,7 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 import { AddUserComponent } from './components/add-user/add-user.component'
 import { ChangeUserDetailsComponent } from './components/change-user-details/change-user-details.component'
 import { PackagePaymentModalComponent } from './components/package-payment-modal/package-payment-modal.component'
+import { LoggedUserComponent } from './components/logged-user/logged-user.component'
 
 const components = [
   AppComponent, 
@@ -34,7 +35,8 @@ const components = [
   ChangeUserDetailsComponent,
   PackageListComponent,
   PackageDetailsModalComponent,
-  PackagePaymentModalComponent
+  PackagePaymentModalComponent,
+  LoggedUserComponent
 ]
 @NgModule({
   declarations: [...components],

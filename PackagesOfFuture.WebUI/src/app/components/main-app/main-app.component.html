@@ -1,12 +1,18 @@
 <mat-toolbar color="primary" class="toolbar">
-  <button *ngIf="isLoggedIn$ | async"
+  <button [ngClass]="{'visibility-hidden': !isLoggedIn}"
     (click)="drawer.toggle()" 
     mat-icon-button 
-    class="example-icon">
+    class="menu-button"
+  >
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span>PackagesOfFuture</span>
+  <span>
+    PackagesOfFuture
+  </span>
+
+  <pof-logged-user [ngClass]="{'visibility-hidden': !isLoggedIn}">
+  </pof-logged-user>
 </mat-toolbar>
 
 <mat-drawer-container class="container max-width max-height" [hasBackdrop]="false">

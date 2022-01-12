@@ -119,7 +119,6 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   private subscribeToUserIdFromRoute() {
     this.route.params.subscribe(params => {
       this.userId = params['id']
-      // console.log(this.userId)
     })
   }
 

@@ -145,13 +145,15 @@
     </div>
   </form>
 
-  <button 
-    [disabled]="!isFormValid"
-    type="button"
-    mat-flat-button
-    color="primary"
-    (click)="emitSubmittedEvent()"
-  >
-    {{ actionButtonName }}
-  </button>
+  <div class="action-buttons">
+    <button 
+      [disabled]="!isFormValid"
+      type="button"
+      mat-flat-button
+      color="primary"
+      (click)="emitSubmittedEvent()"
+    >
+      {{ actionButtonName }}
+    </button>
+  </div>
 </mat-card>

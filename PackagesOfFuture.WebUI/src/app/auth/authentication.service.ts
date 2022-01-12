@@ -14,11 +14,11 @@ import { IApiResponse, ITokenResponse } from './models';
 export class AuthenticationService {
   private readonly localStorageTokenKey = 'pof_token_key'
 
-  public get tokenEntryExistsInLocalStorage(): boolean {
+  private get tokenEntryExistsInLocalStorage(): boolean {
     return !!this.tokenFromLocalStorage
   }
 
-  public get tokenFromLocalStorage(): string | null {
+  private get tokenFromLocalStorage(): string | null {
     return localStorage.getItem(this.localStorageTokenKey)
   }
 
@@ -44,8 +44,6 @@ export class AuthenticationService {
   public logOut$(): Observable<any> {
     localStorage.removeItem(this.localStorageTokenKey)
     
-    //TODO: Think how to change that to different observable,
-    //TODO: there might be something more appropiate to use here
     return of('')
   }
 }

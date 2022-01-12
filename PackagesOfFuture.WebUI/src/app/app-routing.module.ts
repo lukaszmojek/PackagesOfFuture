@@ -11,13 +11,13 @@ const routes: Routes = [
     //TODO: Create LoginGuard
     // canActivate: LoginGuard
   },
-  { 
+  {
     path: 'register',
-    component: RegisterUserComponent 
+    component: RegisterUserComponent
   },
   {
     path: '',
-    // canLoad: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: () => import('./main.module').then(m => m.MainModule)
   },
   {

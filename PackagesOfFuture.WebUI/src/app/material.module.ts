@@ -7,10 +7,13 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatListModule } from '@angular/material/list'
+import { MatTableModule } from '@angular/material/table'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const materialModules = [
   MatSliderModule,
@@ -24,7 +27,11 @@ const materialModules = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSelectModule,
+  MatExpansionModule,
+  MatListModule,
+  MatProgressBarModule
 ]
 
 @NgModule({
