@@ -12,6 +12,10 @@
           formControlName="firstName"
           placeholder="Imię"
         >
+
+        <mat-error *ngIf="formControl('firstName').hasError('required')">
+          Imię jest <strong>wymagane</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill">
@@ -21,6 +25,10 @@
           formControlName="lastName"
           placeholder="Nazwisko"
         >
+
+        <mat-error *ngIf="formControl('lastName').hasError('required')">
+          Nazwisko jest <strong>wymagane</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill">
@@ -30,6 +38,10 @@
           formControlName="email"
           placeholder="Np. lukasz@abc.com"
         >
+
+        <mat-error *ngIf="formControl('email').hasError('required')">
+          Adres e-mail jest <strong>wymagany</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill"
@@ -41,6 +53,10 @@
           formControlName="password"
           placeholder="********"
         >
+
+        <mat-error *ngIf="formControl('password').hasError('required')">
+          Hasło jest <strong>wymagane</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill"
@@ -52,6 +68,14 @@
           formControlName="repeatPassword"
           placeholder="********"
         >
+
+        <mat-error *ngIf="formControl('repeatPassword').hasError('required')">
+          Powtórzenie hasła jest <strong>wymagane</strong>
+        </mat-error>
+
+        <mat-error *ngIf="formControl('repeatPassword').hasError('notIdentical')">
+          Hasłą nie są identyczne
+        </mat-error>
       </mat-form-field>
     </div>
 
@@ -63,6 +87,10 @@
           formControlName="street"
           placeholder="Ulica"
         >
+
+        <mat-error *ngIf="formControl('street').hasError('required')">
+          Ulica jest <strong>wymagana</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill">
@@ -72,6 +100,10 @@
           formControlName="houseAndFlatNumber"
           placeholder="Numer domu i mieszkania"
         >
+
+        <mat-error *ngIf="formControl('houseAndFlatNumber').hasError('required')">
+          Numer domu i mieszkania są <strong>wymagane</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill">
@@ -81,6 +113,10 @@
           formControlName="postalCode"
           placeholder="XX-XXX"
         >
+
+        <mat-error *ngIf="formControl('postalCode').hasError('required')">
+          Kod pocztowy jest <strong>wymagany</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill">
@@ -90,6 +126,10 @@
           formControlName="city"
           placeholder="user.address.city"
         >
+
+        <mat-error *ngIf="formControl('city').hasError('required')">
+          Miasto jest <strong>wymagane</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="flex--row" appearance="fill"
@@ -105,6 +145,7 @@
   </form>
 
   <button 
+    [disabled]="!isFormValid"
     type="button"
     mat-flat-button
     color="primary"
