@@ -40,6 +40,19 @@ public class UsersController : ControllerBase
     }
 
     /// <summary>
+    /// Get user by id
+    /// </summary>
+    /// <returns>User by id from database</returns>
+    /// <response code="200">When there is user</response>
+    /// <response code="404">If there isnt user</response>
+    [HttpGet("getByUserId/{userId}")]
+    public async Task<ActionResult<ICollection<UserDto>>> GetUserById(int userId)
+    {
+        var result = await _mediator.Send(new GetUserByIdQuery(userId));
+        return result != null ? Ok(result) : NotFound();
+    }
+
+    /// <summary>
     /// Registers a new user
     /// </summary>
     /// <param name="registerUserDto">Representation of user to register</param>
