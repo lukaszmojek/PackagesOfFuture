@@ -15,4 +15,18 @@
   <a class="menu-item" [routerLink]="['packageList']">
     Lista przesyłek
   </a>
+  
+  <a class="menu-item" [routerLink]="['changeUserDetails', userId]">
+    Edytuj profil
+  </a>
+
+  <!-- TODO: tylko admin -->
+  <a class="menu-item" [routerLink]="['addUser']">
+    Dodaj użytkownika
+  </a>
+
+  <!-- TODO: tylko admin -->
+  <a class="menu-item" [routerLink]="['listUsers']">
+    Lista użytkowników
+  </a>
 </div>
