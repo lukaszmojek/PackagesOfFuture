@@ -136,10 +136,11 @@
         [ngClass]="{'visibility-hidden': isRegisterUserAction}"
       >
         <mat-label>Typ</mat-label>
-        <input type="text" 
-          matInput
-          placeholder="********"
-        >
+        <mat-select [(value)]="selectedUserType">
+          <mat-option [value]="0">Klient</mat-option>
+          <mat-option [value]="1">Kierowca</mat-option>
+          <mat-option [value]="2">Administrator</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
   </form>

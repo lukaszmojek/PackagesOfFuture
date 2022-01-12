@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { IAuthState } from 'src/app/auth/auth.reducer';
 import { CreateAddressDto } from 'src/app/models/addresses';
-import { UserActionType, AddUserDto, ChangeUserDetailsDto, RegisterUserDto, User, UserType, UserActionDto } from 'src/app/models/users';
+import { UserActionType, ChangeUserDetailsDto, RegisterUserDto, User, UserType, UserActionDto } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user/user-service';
 import { IApplicationState } from 'src/app/state';
 import StoreConnectedComponent from 'src/app/utilities/store-connected.component';
@@ -53,6 +53,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   public userDetailsFormGroup: FormGroup
   public matcher = new UserDetailsErrorStateMatcher();
   public user: User 
+  public selectedUserType: number
 
   public get isFormValid(): boolean {
     return this.userDetailsFormGroup.valid
@@ -187,13 +188,13 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
     } as ChangeUserDetailsDto
   }
 
-  private getAddUserDto(): AddUserDto {
+  private getAddUserDto(): RegisterUserDto {
     return {
       firstName: this.controlValue<string>('firstName'),
       lastName: this.controlValue<string>('lastName'),
       email: this.controlValue<string>('email'),
       password: this.controlValue<string>('password'),
-      type: this.controlValue<number>('type'),
+      type: this.selectedUserType,
       address: {
         houseAndFlatNumber: this.controlValue<string>('houseAndFlatNumber'),
         postalCode: this.controlValue<string>('postalCode'),

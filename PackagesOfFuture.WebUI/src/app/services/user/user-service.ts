@@ -35,7 +35,6 @@ export class UserService {
     return this.http.get<User[]>(url)
   }
 
-  //TODO: test this
   public registerUser(registerUserDto: RegisterUserDto): Observable<any> {
     const url = `${AppSettings.userEndpoint}`
 

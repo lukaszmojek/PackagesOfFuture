@@ -1,6 +1,6 @@
 import { Address, CreateAddressDto } from "./addresses";
 
-export type UserActionDto = RegisterUserDto | ChangeUserDetailsDto | AddUserDto
+export type UserActionDto = RegisterUserDto | ChangeUserDetailsDto
 
 export enum UserActionType {
   Register,
@@ -32,16 +32,6 @@ export interface RegisterUserDto {
   password: string
   address: CreateAddressDto
 }
-
-export interface AddUserDto {
-  firstName: string
-  lastName: string
-  email: string
-  type: number
-  password: string
-  address: CreateAddressDto
-}
-
 export interface ChangeUserDetailsDto {
   firstName: string
   lastName: string
