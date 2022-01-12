@@ -15,10 +15,19 @@ import { environment } from '../environments/environment'
 import { SharedModule } from './shared.module'
 import { MainAppComponent } from './components/main-app/main-app.component'
 import { LoginComponent } from './components/login/login.component'
+import { UserDetailsComponent } from './components/user-details/user-details.component'
+import { RegisterUserComponent } from './components/register-user/register-user.component'
 
-
+const components = [
+  AppComponent, 
+  MainAppComponent, 
+  MenuComponent, 
+  LoginComponent,
+  UserDetailsComponent, 
+  RegisterUserComponent
+]
 @NgModule({
-  declarations: [AppComponent, MainAppComponent, MenuComponent, LoginComponent],
+  declarations: [...components],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: '', component: ClientDashboardComponent },
   { path: 'changePassword', component: ChangePasswordComponent },
   { path: 'addPackage', component: AddPackageComponent },
-  { path: 'register', component: UserDetailsComponent },
   { path: 'user/:id', component: UserDetailsComponent },
 ]
 
