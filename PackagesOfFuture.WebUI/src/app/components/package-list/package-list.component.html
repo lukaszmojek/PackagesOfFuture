@@ -1,0 +1,65 @@
+<mat-card class="flex--column card">
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+
+        <!-- Delivery Column -->
+        <ng-container matColumnDef="deliveryDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Planowana data doręczenia </th>
+            <td mat-cell *matCellDef="let element"> {{element.deliveryDate | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="packageStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status przesyłki </th>
+            <td mat-cell *matCellDef="let element"> {{ getPackageStatus(element.status) }} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="deliveryAddress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Adres nadawcy </th>
+            <td mat-cell *matCellDef="let element"> {{element.deliveryAddress.street}} {{element.deliveryAddress.houseAndFlatNumber}} 
+                {{element.deliveryAddress.postalCode}} {{element.deliveryAddress.city}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="receiverAddress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Adres odbiorcy </th>
+            <td mat-cell *matCellDef="let element"> {{element.receiveAddress.street}} {{element.receiveAddress.houseAndFlatNumber}} 
+                {{element.receiveAddress.postalCode}} {{element.receiveAddress.city}}
+            </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="paymentAmount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Wartość usługi </th>
+            <td mat-cell *matCellDef="let element"> {{ element.payment.amount }} zł </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="paymentStatus">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status płatności </th>
+            <td mat-cell *matCellDef="let element"> {{ getPaymentStatus(element.payment.status) }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef> Szczegóły </th>   
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button (click)="getDetails(element)">Szczegóły</button> 
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="pay">
+            <th mat-header-cell *matHeaderCellDef> Opłać </th>   
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button [disabled]=!canPayForPackage(element.payment.status) (click)="payForPackage(element)">Opłać</button> 
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    
+        <mat-paginator [pageSizeOptions]="[5, 10, 15]"
+                    showFirstLastButtons 
+                    aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</mat-card>

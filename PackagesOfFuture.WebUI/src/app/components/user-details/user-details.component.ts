@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { IAuthState } from 'src/app/auth/auth.reducer';
 import { CreateAddressDto } from 'src/app/models/addresses';
 import { UserActionType, ChangeUserDetailsDto, RegisterUserDto, User, UserType, UserActionDto } from 'src/app/models/users';
-import { UserService } from 'src/app/services/user/user-service';
+import { UserService } from 'src/app/services/user.service';
 import { IApplicationState } from 'src/app/state';
 import StoreConnectedComponent from 'src/app/utilities/store-connected.component';
 

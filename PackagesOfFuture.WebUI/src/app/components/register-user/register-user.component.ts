@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegisterUserDto, UserActionDto, UserActionType } from 'src/app/models/users';
-import { UserService } from 'src/app/services/user/user-service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'pof-register-user',

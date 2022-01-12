@@ -18,4 +18,16 @@ public class UserRepository : Repository<User>, IUserRepository
 
         return user.Address;
     }
+
+    public async Task<User> GetUserById(int userId)
+    {
+        var user = await _dbSet.FirstOrDefaultAsync(x => x.Id == userId);
+
+        if (user == null)
+        {
+            throw new Exception("User does not exists");
+        }
+
+        return user;
+    }
 }

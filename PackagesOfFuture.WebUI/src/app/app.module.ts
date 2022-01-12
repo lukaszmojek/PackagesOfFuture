@@ -14,11 +14,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment'
 import { SharedModule } from './shared.module'
 import { MainAppComponent } from './components/main-app/main-app.component'
-import { LoginComponent } from './components/login/login.component'
+import { LoginComponent } from './components/login/login.component';
+import { PackageListComponent } from './components/package-list/package-list.component';
+import { PackageDetailsModalComponent } from './components/package-details-modal/package-details-modal.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component'
 import { RegisterUserComponent } from './components/register-user/register-user.component'
 import { AddUserComponent } from './components/add-user/add-user.component'
 import { ChangeUserDetailsComponent } from './components/change-user-details/change-user-details.component'
+import { PackagePaymentModalComponent } from './components/package-payment-modal/package-payment-modal.component'
 
 const components = [
   AppComponent, 
@@ -28,7 +31,10 @@ const components = [
   UserDetailsComponent, 
   RegisterUserComponent,
   AddUserComponent,
-  ChangeUserDetailsComponent
+  ChangeUserDetailsComponent,
+  PackageListComponent,
+  PackageDetailsModalComponent,
+  PackagePaymentModalComponent
 ]
 @NgModule({
   declarations: [...components],

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { AuthorizationService } from 'src/app/auth/authorization.service';
-import { UserService } from 'src/app/services/user/user-service';
+import { UserService } from 'src/app/services/user.service';
 
 class SimpleErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -56,11 +56,9 @@ export class ChangePasswordComponent implements OnInit {
     const oldPassword = this.oldPasswordFormControl.value;
     this.userService.changePassword(this.currentUserId, oldPassword, newPassword).subscribe( 
       () => {
-        // this.alertService.showSuccess("Pomyślnie zmieniono hasło")
         this.resetForms();
       },
       () => {
-        // this.alertService.showError("Wystąpił błąd")
       }
     )
   }
