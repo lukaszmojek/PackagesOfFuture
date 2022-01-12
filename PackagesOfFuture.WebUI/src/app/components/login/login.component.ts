@@ -63,7 +63,7 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState> i
   }
 
   public getPackages(): void {
-    this.packages.getPackages().subscribe(response => {
+    this.packages.getPackagesByAdmin().subscribe(response => {
       console.log(response)
     })
   }

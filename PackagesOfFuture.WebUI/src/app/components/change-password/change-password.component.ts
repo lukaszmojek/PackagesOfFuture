@@ -56,11 +56,9 @@ export class ChangePasswordComponent implements OnInit {
     const oldPassword = this.oldPasswordFormControl.value;
     this.userService.changePassword(this.currentUserId, oldPassword, newPassword).subscribe( 
       () => {
-        // this.alertService.showSuccess("Pomyślnie zmieniono hasło")
         this.resetForms();
       },
       () => {
-        // this.alertService.showError("Wystąpił błąd")
       }
     )
   }

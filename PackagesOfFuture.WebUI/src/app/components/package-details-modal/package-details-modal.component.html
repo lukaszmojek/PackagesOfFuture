@@ -1,0 +1,22 @@
+
+<h1 mat-dialog-title>Szczegóły paczki</h1>
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Szerokość paczki (cm)</mat-label>
+    <input matInput [disabled]="true" [(ngModel)]="data.width">
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Długość paczki (cm)</mat-label>
+    <input matInput [disabled]="true" [(ngModel)]="data.length">
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Wysokość paczki (cm)</mat-label>
+    <input matInput [disabled]="true" [(ngModel)]="data.height">
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Waga paczki (kg)</mat-label>
+    <input matInput [disabled]="true" [(ngModel)]="data.weight">
+</mat-form-field>

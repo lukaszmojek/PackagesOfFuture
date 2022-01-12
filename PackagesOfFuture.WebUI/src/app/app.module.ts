@@ -14,11 +14,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment'
 import { SharedModule } from './shared.module'
 import { MainAppComponent } from './components/main-app/main-app.component'
-import { LoginComponent } from './components/login/login.component'
+import { LoginComponent } from './components/login/login.component';
+import { PackageListComponent } from './components/package-list/package-list.component';
+import { PackageDetailsModalComponent } from './components/package-details-modal/package-details-modal.component';
+import { PackagePaymentModalComponent } from './components/package-payment-modal/package-payment-modal.component';
 
 
 @NgModule({
-  declarations: [AppComponent, MainAppComponent, MenuComponent, LoginComponent],
+  declarations: [AppComponent, MainAppComponent, MenuComponent, LoginComponent, PackageListComponent, PackageDetailsModalComponent, PackagePaymentModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
