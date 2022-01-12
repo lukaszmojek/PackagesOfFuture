@@ -6,4 +6,5 @@ export const AppSettings = {
   packagesEndpoint: `${apiUrl}/packages`,
   userEndpoint: `${apiUrl}/users`,
   servicesEndpoint: `${apiUrl}/services`,
+  addressEndpoint: `${apiUrl}/addresses`
 }

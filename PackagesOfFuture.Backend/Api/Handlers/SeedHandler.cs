@@ -24,7 +24,16 @@ namespace Api.Handlers
         private readonly IRepository<Vehicle> _vehicleRepository;
         private readonly IRepository<Sorting> _sortingRepository;
 
-        public SeedHandler(IRepository<Package> packageRepository, IRepository<Service> serviceRepository, IRepository<Drone> droneRepository, IRepository<Address> addressRepository, IUserRepository userRepository, IRepository<SupportIssue> supportIssueRepository, IRepository<Payment> paymentRepository, IRepository<Vehicle> vehicleRepository, IRepository<Sorting> sortingRepository)
+        public SeedHandler(
+            IRepository<Package> packageRepository, 
+            IRepository<Service> serviceRepository, 
+            IRepository<Drone> droneRepository, 
+            IRepository<Address> addressRepository, 
+            IUserRepository userRepository, 
+            IRepository<SupportIssue> supportIssueRepository,
+            IRepository<Payment> paymentRepository, 
+            IRepository<Vehicle> vehicleRepository, 
+            IRepository<Sorting> sortingRepository)
         {
             _packageRepository = packageRepository;
             _userRepository = userRepository;
@@ -47,6 +56,8 @@ namespace Api.Handlers
             await SeedUsers();
             await SeedAddresses();
             await SeedPackages();
+            await SeedSorting();
+            await SeedServices();
 
             return ResponseFactory.CreateSuccessResponse<SeedResponse>();
         }
@@ -288,6 +299,76 @@ namespace Api.Handlers
             await _packageRepository.AddRangeAsync(packages);
             await _packageRepository.SaveChangesAsync();
             Console.WriteLine("Packages seeded");
+        }
+
+        private async Task SeedServices()
+        {
+            var services = new List<Service>
+            {
+                new Service
+                {
+                    Name = "Standard",
+                    Description = "Standardowa dostawa",
+                    Price = 10,
+                },
+                new Service
+                {
+                    Name = "Express",
+                    Description = "Dostawa w 1 dzień roboczy",
+                    Price = 15,
+                },
+                new Service
+                {
+                    Name = "Weekend",
+                    Description = "Dostawa w weekend",
+                    Price = 20,
+                },
+            };
+
+            await _serviceRepository.AddRangeAsync(services);
+            await _serviceRepository.SaveChangesAsync();
+            Console.WriteLine("Services seeded");
+        }
+
+        private async Task SeedSorting()
+        {
+            var addressSorting1 = new Address
+            {
+                City = "Kraków",
+                HouseAndFlatNumber = "12",
+                PostalCode = "22-420",
+                Street = "Warszawska"
+            };
+
+            var addressSorting2 = new Address
+            {
+                City = "Katowice",
+                HouseAndFlatNumber = "210",
+                PostalCode = "12-592",
+                Street = "Kolejowa"
+            };
+
+            await _addressRepository.AddAsync(addressSorting1);
+            await _addressRepository.AddAsync(addressSorting2);
+            await _addressRepository.SaveChangesAsync();
+
+            var sortings = new List<Sorting>
+            {
+                new Sorting
+                {
+                    Name = "Sortownia Kraków",
+                    Address = addressSorting1
+                },
+                new Sorting
+                {
+                    Name = "Sortownia Katowice",
+                    Address = addressSorting2
+                }
+            };
+
+            await _sortingRepository.AddRangeAsync(sortings);
+            await _sortingRepository.SaveChangesAsync();
+            Console.WriteLine("Sorting seeded");
         }
     }
 }

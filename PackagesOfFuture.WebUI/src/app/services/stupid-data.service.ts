@@ -13,19 +13,19 @@ export class StupidDataService {
     return [
       {
         id: 1,
-        description: "Przelew"
-      },
-      {
-        id: 2,
-        description: "Karta"
-      },
-      {
-        id: 3,
         description: "Blik"
       },
       {
+        id: 2,
+        description: "Czek"
+      },
+      {
+        id: 3,
+        description: "Gotówka"
+      },
+      {
         id: 4,
-        description: "Za pobraniem"
+        description: "Przelew bankowy"
       }
     ];
   }
@@ -35,17 +35,29 @@ export class StupidDataService {
       {
         id: 1,
         description: "Paczka 1kg",
+        height: 10,
+        length: 10,
+        weight: 1,
+        width: 10,
+        price: 5
+      },
+      {
+        id: 2,
+        description: "Paczka 5kg",
+        height: 20,
+        length: 20,
+        weight: 5,
+        width: 20,
         price: 10
       },
       {
-        id: 1,
-        description: "Paczka 5kg",
-        price: 15
-      },
-      {
-        id: 1,
+        id: 3,
         description: "Paczka 10kg",
-        price: 20
+        height: 30,
+        length: 30,
+        weight: 10,
+        width: 30,
+        price: 15
       }
     ];
   }
