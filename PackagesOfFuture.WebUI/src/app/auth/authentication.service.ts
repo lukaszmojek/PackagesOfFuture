@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppSettings } from '../common/appsettings';
+import { AuthActions } from './auth.actions';
+import { IAuthState } from './auth.reducer';
 import { IApiResponse, ITokenResponse } from './models';
 
 @Injectable({
@@ -12,10 +15,18 @@ export class AuthenticationService {
   private readonly localStorageTokenKey = 'pof_token_key'
 
   public get tokenEntryExistsInLocalStorage(): boolean {
-    return !!localStorage.getItem(this.localStorageTokenKey)
+    return !!this.tokenFromLocalStorage
   }
 
-  constructor(private http: HttpClient) { }
+  public get tokenFromLocalStorage(): string | null {
+    return localStorage.getItem(this.localStorageTokenKey)
+  }
+
+  constructor(private store$: Store<{auth: IAuthState}>, private http: HttpClient) {
+    if (this.tokenEntryExistsInLocalStorage) {
+      this.store$.dispatch(AuthActions.logInSuccess({token: this.tokenFromLocalStorage!}))
+    }
+  }
 
   public logIn$(email: string, password: string): Observable<IApiResponse<ITokenResponse>> {
     const request = {
@@ -38,3 +49,4 @@ export class AuthenticationService {
     return of('')
   }
 }
+
