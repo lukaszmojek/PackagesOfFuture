@@ -15,9 +15,9 @@ import StoreConnectedComponent from 'src/app/utilities/store-connected.component
   styleUrls: ['./user-details.component.sass']
 })
 export class UserDetailsComponent extends StoreConnectedComponent<IApplicationState> implements OnInit {
-  @Input() formTitle: string = 'Zarejestruj się'
-  @Input() actionButtonName: string = 'Zarejestruj'
-  @Input() actionType: UserActionType = UserActionType.Register
+  @Input() formTitle: string
+  @Input() actionButtonName: string
+  @Input() actionType: UserActionType
 
   @Output() formSubmitted: EventEmitter<UserActionDto>
 
@@ -88,9 +88,9 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
     this.users.getUserById(1).subscribe(user => {
       this.user = user
       
-      // if (!!this.userId) {
+      if (!!this.userId) {
         this.fillFormWithUserDetails()
-      // }
+      }
     })
   }
 
@@ -104,8 +104,6 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
     this.userDetailsFormGroup.get('city')?.setValue(this.user.address.city)
     this.userDetailsFormGroup.get('type')?.setValue(this.user.type)
     this.userDetailsFormGroup.updateValueAndValidity()
-
-    // console.log(this.getProvidedUserDetails())
   }
 
   private getUserDetailsForAction(): UserActionDto {
