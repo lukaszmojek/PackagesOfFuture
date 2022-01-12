@@ -82,12 +82,12 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
     private route: ActivatedRoute
   ) {
     super(store$)
-    this.createUserDetailsForm()
     this.subscribeToUserIdFromRoute()
     this.formSubmitted = new EventEmitter<any>()
   }
 
   public ngOnInit(): void {
+    this.createUserDetailsForm()
     this.subscribeToUserDetails()
   }
 
@@ -109,7 +109,6 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
       'houseAndFlatNumber': this.formBuilder.control('', [Validators.required]),
       'postalCode': this.formBuilder.control('', [Validators.required]),
       'city': this.formBuilder.control('', [Validators.required]),
-      'type': this.formBuilder.control('', this.isAddUserAction ? [Validators.required] : []),
     })
 
     passwordFormControl.valueChanges.subscribe(_ => {
@@ -120,7 +119,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   private subscribeToUserIdFromRoute() {
     this.route.params.subscribe(params => {
       this.userId = params['id']
-      console.log(this.userId)
+      // console.log(this.userId)
     })
   }
 
@@ -142,7 +141,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
     this.userDetailsFormGroup.get('houseAndFlatNumber')?.setValue(this.user.address.houseAndFlatNumber)
     this.userDetailsFormGroup.get('postalCode')?.setValue(this.user.address.postalCode)
     this.userDetailsFormGroup.get('city')?.setValue(this.user.address.city)
-    this.userDetailsFormGroup.get('type')?.setValue(this.user.type)
+    this.selectedUserType = this.user.type
     this.userDetailsFormGroup.updateValueAndValidity()
   }
 
@@ -176,6 +175,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
 
   private getChangeUserDetailsDto(): ChangeUserDetailsDto {
     return {
+      id: this.userId,
       firstName: this.controlValue<string>('firstName'),
       lastName: this.controlValue<string>('lastName'),
       email: this.controlValue<string>('email'),

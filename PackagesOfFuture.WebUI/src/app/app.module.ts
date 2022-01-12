@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component'
 import { UserDetailsComponent } from './components/user-details/user-details.component'
 import { RegisterUserComponent } from './components/register-user/register-user.component'
 import { AddUserComponent } from './components/add-user/add-user.component'
+import { ChangeUserDetailsComponent } from './components/change-user-details/change-user-details.component'
 
 const components = [
   AppComponent, 
@@ -26,7 +27,8 @@ const components = [
   LoginComponent,
   UserDetailsComponent, 
   RegisterUserComponent,
-  AddUserComponent
+  AddUserComponent,
+  ChangeUserDetailsComponent
 ]
 @NgModule({
   declarations: [...components],

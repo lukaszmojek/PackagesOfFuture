@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Address } from 'src/app/models/addresses';
-import { ChangePasswordDto, RegisterUserDto, User } from 'src/app/models/users';
+import { ChangePasswordDto, ChangeUserDetailsDto, RegisterUserDto, User } from 'src/app/models/users';
 import { AppSettings } from '../../common/appsettings';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class UserService {
       firstName: 'firstName',        
       lastName: 'lastName',
       email: 'email',
-      type: 'type',
+      type: 1,
       password: 'password',
       address: {
         street: 'street',
@@ -39,6 +39,12 @@ export class UserService {
     const url = `${AppSettings.userEndpoint}`
 
     return this.http.post(url, registerUserDto)
+  }
+
+  public changeUserDetails(changeUserDetailsDto: ChangeUserDetailsDto): Observable<any> {
+    const url = `${AppSettings.userEndpoint}/${changeUserDetailsDto.id}/change-details`
+
+    return this.http.post(url, changeUserDetailsDto)
   }
 
   public changePassword(userId: number, oldPassword: string, newPassword: string): Observable<any> {

@@ -20,7 +20,7 @@ export interface User {
   firstName: string        
   lastName: string
   email: string
-  type: string
+  type: UserType
   address: Address
 }
 
@@ -33,6 +33,7 @@ export interface RegisterUserDto {
   address: CreateAddressDto
 }
 export interface ChangeUserDetailsDto {
+  id: string
   firstName: string
   lastName: string
   email: string
