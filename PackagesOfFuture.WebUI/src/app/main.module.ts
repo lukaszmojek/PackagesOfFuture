@@ -6,11 +6,13 @@ import { MaterialModule } from './material.module';
 import { ClientDashboardComponent } from './components/client-dashboard/client-dashboard.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AddPackageComponent } from './components/add-package/add-package.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 const components = [
   ClientDashboardComponent,
   ChangePasswordComponent,
   AddPackageComponent,
+  UsersListComponent
 ]
 
 @NgModule({

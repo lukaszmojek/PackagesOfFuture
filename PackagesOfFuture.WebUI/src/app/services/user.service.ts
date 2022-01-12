@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { IApiResponse } from 'src/app/auth/models';
 import { Address } from 'src/app/models/addresses';
 import { ChangePasswordDto, ChangeUserDetailsDto, RegisterUserDto, User } from 'src/app/models/users';
 import { AppSettings } from '../common/appsettings';
@@ -57,5 +58,11 @@ export class UserService {
     }
 
     return this.http.post(url, data)
+  }
+
+  public unregisterUser(userId: number): Observable<IApiResponse<any>> {
+    const url = `${AppSettings.userEndpoint}/${userId}/unregister`
+
+    return this.http.delete<IApiResponse<any>>(url)
   }
 }
