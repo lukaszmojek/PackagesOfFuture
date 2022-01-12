@@ -2,8 +2,8 @@ namespace ResourceEnums
 {
     public enum UserType
     {
-        Client,
-        Driver,
-        Administrator
+        Client = 0,
+        Driver = 1,
+        Administrator = 2
     }
 }

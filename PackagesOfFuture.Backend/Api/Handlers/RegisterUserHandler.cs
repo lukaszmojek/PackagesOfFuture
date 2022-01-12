@@ -31,6 +31,8 @@ namespace Api.Handlers
             {
                 return ResponseFactory.CreateFailureResponse<RegisterUserResponse>("Mail już znajduje się w bazie!");
             }
+
+            user.Id = usersInDatabase.Max(x => x.Id) + 1;
             
             await _repository.AddAsync(user);
             await _repository.SaveChangesAsync();

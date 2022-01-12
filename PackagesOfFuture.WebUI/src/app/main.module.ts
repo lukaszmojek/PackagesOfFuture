@@ -10,7 +10,7 @@ import { AddPackageComponent } from './components/add-package/add-package.compon
 const components = [
   ClientDashboardComponent,
   ChangePasswordComponent,
-  AddPackageComponent
+  AddPackageComponent,
 ]
 
 @NgModule({
