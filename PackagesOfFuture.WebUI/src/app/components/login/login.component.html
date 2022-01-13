@@ -37,30 +37,24 @@
       </mat-error>
     </mat-form-field>
 
-    <button [disabled]="!areEmailAndPasswordValid || isLoggedIn"
-      type="button"
-      mat-flat-button
-      color="primary"
-      (click)="logIn()"
-    >
-      Login
-    </button>
+    <div class="flex">
+      <button [disabled]="!areEmailAndPasswordValid || isLoggedIn"
+        type="button"
+        mat-flat-button
+        color="primary"
+        (click)="logIn()"
+      >
+        Login
+      </button>
 
-    <button [disabled]="!isLoggedIn"
-      type="button"
-      mat-flat-button
-      color="primary"
-      (click)="logOut()"
-    >
-      Logout
-    </button>
-
-    <button type="button"
-      mat-flat-button
-      color="primary"
-      (click)="getPackages()"
-    >
-      Get packages
-    </button>
+      <button class="register-button"
+        type="button"
+        mat-flat-button
+        color="primary"
+        [routerLink]="['..', 'register']"
+      >
+        Register
+      </button>
+    </div>
   </form>
 </mat-card>

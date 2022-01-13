@@ -21,7 +21,8 @@ public class UserRepository : Repository<User>, IUserRepository
 
     public async Task<User> GetUserById(int userId)
     {
-        var user = await _dbSet.FirstOrDefaultAsync(x => x.Id == userId);
+        var user = await _dbSet.Include(x => x.Address)
+            .FirstOrDefaultAsync(x => x.Id == userId);
 
         if (user == null)
         {

@@ -1,24 +1,34 @@
 
 <div class="menu-container">
-  <a class="menu-item" [routerLink]="['']">
-    Blank
-  </a>
-
-  <a class="menu-item" [routerLink]="['changePassword']">
-    Zmień hasło
-  </a>
-
-  <a class="menu-item" [routerLink]="['addPackage']">
-    Nadaj paczkę
-  </a>
-
-  <a class="menu-item" [routerLink]="['packageList']">
-    Lista przesyłek
-  </a>
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['dashboard']">
+    Dashboard
+  </button>
   
-  <a class="menu-item" [routerLink]="['changeUserDetails', userId]">
+  <mat-divider></mat-divider>
+
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['changePassword']">
+    Zmień hasło
+  </button>
+  
+  <mat-divider></mat-divider>
+
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['addPackage']">
+    Nadaj paczkę
+  </button>
+  
+  <mat-divider></mat-divider>
+
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['packageList']">
+    Lista przesyłek
+  </button>
+    
+  <mat-divider></mat-divider>
+
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['changeUserDetails', userId]">
     Edytuj profil
-  </a>
+  </button>
+  
+  <mat-divider></mat-divider>
 
   <a class="menu-item" [routerLink]="['manageSorting']">
     Zarządzaj sortowniami
@@ -30,12 +40,14 @@
 
 
   <!-- TODO: tylko admin -->
-  <a class="menu-item" [routerLink]="['addUser']">
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['addUser']">
     Dodaj użytkownika
-  </a>
+  </button>
+  
+  <mat-divider></mat-divider>
 
   <!-- TODO: tylko admin -->
-  <a class="menu-item" [routerLink]="['listUsers']">
+  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['listUsers']">
     Lista użytkowników
-  </a>
+  </button>
 </div>

@@ -1,21 +1,20 @@
-@mixin flexbox($direction: column, $basis: auto, $shrink: 1fr, $grow: 1fr, $justify-content: center, $align-items: center)
-  display: flexbox
+@mixin flex($direction: column, $basis: auto, $shrink: 1fr, $grow: 1fr, $justify-content: center, $align-items: center)
+  display: flex
   flex-direction: $direction
   flex-shrink: $shrink
   flex-grow: $grow
   justify-content: $justify-content
   align-items: $align-items
 
-
 :host
-  @include flexbox
+  @include flex
 
   .menu-container
     width: 200px
+    @include flex
 
   .menu-item
     display: block
     width: calc(100% - 20px)
     padding: 10px
     margin-top: 10px
-    background-color: #acacac

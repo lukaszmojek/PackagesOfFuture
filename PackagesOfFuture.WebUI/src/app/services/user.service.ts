@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IApiResponse } from 'src/app/auth/models';
-import { Address } from 'src/app/models/addresses';
 import { ChangePasswordDto, ChangeUserDetailsDto, RegisterUserDto, User } from 'src/app/models/users';
 import { AppSettings } from '../common/appsettings';
 
@@ -12,22 +11,10 @@ import { AppSettings } from '../common/appsettings';
 export class UserService {
   constructor(private http: HttpClient) { }
 
-  //TODO: implement this
-  public getUserById(id: number): Observable<User> {
-    return of({
-      id: id,
-      firstName: 'firstName',        
-      lastName: 'lastName',
-      email: 'email',
-      type: 1,
-      password: 'password',
-      address: {
-        street: 'street',
-        houseAndFlatNumber: 'houseAndFlatNumber',
-        city: 'city',
-        postalCode: 'postalCode',
-      } as Address
-    } as User)
+  public getUserById(userId: number): Observable<User> {
+    const url = `${AppSettings.userEndpoint}/getByUserId/${userId}`
+
+    return this.http.get<User>(url)
   }
 
   public getAllUsers(): Observable<User[]> {
