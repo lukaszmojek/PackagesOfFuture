@@ -10,15 +10,17 @@ import StoreConnectedComponent from 'src/app/utilities/store-connected.component
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.sass']
 })
-export class DashboardComponent extends StoreConnectedComponent<IApplicationState> implements OnInit {
+export class DashboardComponent extends StoreConnectedComponent<IApplicationState> {
   public get isAdministartor(): boolean {
     return this.auth.isAdministrator()
+  }
+
+  public get userId(): number {
+    return this.auth.currentUserId()
   }
 
   constructor(store$: Store<{auth: IAuthState}>, private auth: AuthorizationService ) {
     super(store$)
   }
 
-  ngOnInit(): void {
-  }
 }
