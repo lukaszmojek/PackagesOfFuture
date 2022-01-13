@@ -22,7 +22,13 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 import { AddUserComponent } from './components/add-user/add-user.component'
 import { ChangeUserDetailsComponent } from './components/change-user-details/change-user-details.component'
 import { PackagePaymentModalComponent } from './components/package-payment-modal/package-payment-modal.component'
-import { LoggedUserComponent } from './components/logged-user/logged-user.component'
+import { LoggedUserComponent } from './components/logged-user/logged-user.component';
+import { ManageSortingComponent } from './components/manage-sorting/manage-sorting.component';
+import { RemoveObjectModalComponent } from './components/remove-object-modal/remove-object-modal.component';
+import { ManageDronesComponent } from './components/manage-drones/manage-drones.component';
+import { AddDroneModalComponent } from './components/add-drone-modal/add-drone-modal.component';
+import { SortingModalComponent } from './components/sorting-modal/sorting-modal.component';
+import { ChangePackageStatusModalComponent } from './components/change-package-status-modal/change-package-status-modal.component'
 
 const components = [
   AppComponent, 
@@ -39,7 +45,7 @@ const components = [
   LoggedUserComponent
 ]
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, ManageSortingComponent, RemoveObjectModalComponent, ManageDronesComponent, AddDroneModalComponent, SortingModalComponent, ChangePackageStatusModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

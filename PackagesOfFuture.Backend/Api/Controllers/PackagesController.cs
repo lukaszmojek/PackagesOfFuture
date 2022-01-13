@@ -66,4 +66,20 @@ public class PackagesController : ControllerBase
 
         return result.Succeeded ? Ok() : NotFound();
     }
+
+
+    /// <summary>
+    /// Change package status
+    /// </summary>
+    /// <returns>Nothing. Query GetPackages for current database status</returns>
+    /// <response code="204">When package was registered</response>
+    /// <response code="400">When error regarding input occurred</response>
+    [HttpPost("changeStatus")]
+    public async Task<IActionResult> ChangeStatus([FromBody] ChangePackageStatusDto changePackageStatusDto)
+    {
+        var command = _mapper.Map<ChangePackageStatusCommand>(changePackageStatusDto);
+        var result = await _mediator.Send(command);
+
+        return result.Succeeded ? Ok() : NotFound();
+    }
 }

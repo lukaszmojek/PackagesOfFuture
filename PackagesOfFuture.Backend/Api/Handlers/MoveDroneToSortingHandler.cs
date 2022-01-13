@@ -36,6 +36,8 @@ namespace Api.Handlers
             var sorting = await _dbContext.Set<Sorting>()
                 .FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
             drone.Sorting = sorting;
+            drone.Range = request.Range;
+            drone.Model = request.Model;
 
             await _repository.SaveChangesAsync();
             

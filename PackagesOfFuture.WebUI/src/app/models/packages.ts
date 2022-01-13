@@ -21,6 +21,7 @@ export interface PackageDetailsDto {
 }
 
 export interface PackageDto {
+    id: number;
     deliveryDate: Date;
     status: number;
     width: number;
@@ -45,4 +46,9 @@ export interface PaymentDto {
 export interface ChangeStatusPaymentDto {
     paymentId: number;
     paymentStatus: number;
+}
+
+export interface ChangePackageStatusDto {
+    packageId: number;
+    statusId: number;
 }

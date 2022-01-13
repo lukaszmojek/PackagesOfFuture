@@ -30,6 +30,15 @@
   
   <mat-divider></mat-divider>
 
+  <a class="menu-item" [routerLink]="['manageSorting']">
+    Zarządzaj sortowniami
+  </a>
+
+  <a class="menu-item" [routerLink]="['manageDrones']">
+    Zarządzaj dronami
+  </a>
+
+
   <!-- TODO: tylko admin -->
   <button mat-flat-button color="accent" class="menu-item" [routerLink]="['addUser']">
     Dodaj użytkownika

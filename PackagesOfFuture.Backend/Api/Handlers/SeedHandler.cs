@@ -56,7 +56,7 @@ namespace Api.Handlers
             await SeedUsers();
             await SeedAddresses();
             await SeedPackages();
-            await SeedSorting();
+            await SeedSortingWithDrones();
             await SeedServices();
 
             return ResponseFactory.CreateSuccessResponse<SeedResponse>();
@@ -330,7 +330,7 @@ namespace Api.Handlers
             Console.WriteLine("Services seeded");
         }
 
-        private async Task SeedSorting()
+        private async Task SeedSortingWithDrones()
         {
             var addressSorting1 = new Address
             {
@@ -352,23 +352,57 @@ namespace Api.Handlers
             await _addressRepository.AddAsync(addressSorting2);
             await _addressRepository.SaveChangesAsync();
 
-            var sortings = new List<Sorting>
+            var sorting1 = new Sorting
             {
-                new Sorting
+                Name = "Sortownia Kraków",
+                Address = addressSorting1
+            };
+
+            var sorting2 = new Sorting
+            {
+                Name = "Sortownia Katowice",
+                Address = addressSorting2
+            };
+
+            var drones = new List<Drone>
+            {
+                new Drone
                 {
-                    Name = "Sortownia Kraków",
-                    Address = addressSorting1
+                    Model = "Sony Speed 2",
+                    Range = 100,
+                    Sorting = sorting1
                 },
-                new Sorting
+                new Drone
                 {
-                    Name = "Sortownia Katowice",
-                    Address = addressSorting2
+                    Model = "Xioami Water",
+                    Range = 44,
+                    Sorting = sorting2
+                },
+                new Drone
+                {
+                    Model = "Samsung GT",
+                    Range = 50,
+                    Sorting = sorting1
+                },
+                new Drone
+                {
+                    Model = "Honda 2022",
+                    Range = 110,
+                    Sorting = sorting2
                 }
             };
 
-            await _sortingRepository.AddRangeAsync(sortings);
+            await _sortingRepository.AddAsync(sorting1);
+            await _sortingRepository.AddAsync(sorting2);
+
+            await _droneRepository.AddRangeAsync(drones);
+
             await _sortingRepository.SaveChangesAsync();
-            Console.WriteLine("Sorting seeded");
+            await _droneRepository.SaveChangesAsync();
+            Console.WriteLine("Sorting with drones seeded");
         }
+
+
+
     }
 }

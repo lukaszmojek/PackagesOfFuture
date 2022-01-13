@@ -1,0 +1,34 @@
+<h1 *ngIf="!editMode" mat-dialog-title>Dodaj nowego drona</h1>
+<h1 *ngIf="editMode" mat-dialog-title>Edytuj drona</h1>
+
+
+<form [formGroup]="form">
+    <mat-card class="flex--column card">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Model</mat-label>
+        <input formControlName="model" matInput [(ngModel)]="model">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Zasięg</mat-label>
+        <input formControlName="range" matInput type="number" maxlength="3" [(ngModel)]="range">
+    </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Sortownia</mat-label>
+        <mat-select formControlName="sorting" [(ngModel)]="sortingId">
+          <mat-option *ngFor="let sorting of sortings" [value]="sorting.id">
+            {{sorting.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </mat-card>
+</form>
+
+<div mat-dialog-actions>
+    <button mat-button *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Utwórz</button>
+    <button mat-button *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Edytuj</button>
+    <button mat-button [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
+</div>

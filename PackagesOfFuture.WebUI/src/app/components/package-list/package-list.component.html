@@ -52,6 +52,13 @@
               <button mat-raised-button [disabled]=!canPayForPackage(element.payment.status) (click)="payForPackage(element)">Opłać</button> 
             </td>
         </ng-container>
+
+        <ng-container matColumnDef="changeStatus">
+            <th mat-header-cell *matHeaderCellDef> Zmień status </th>   
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button [disabled]=!canChangeStatus(element.status) (click)="changeStatus(element)">Zmień status</button> 
+            </td>
+        </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

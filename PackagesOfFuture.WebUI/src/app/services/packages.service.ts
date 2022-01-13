@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CourierType } from 'src/app/models/couriers';
 import { AppSettings } from '../common/appsettings';
-import { ChangeStatusPaymentDto, PackageDto, RegisterPackageDto } from '../models/packages';
+import { ChangePackageStatusDto, ChangeStatusPaymentDto, PackageDto, RegisterPackageDto } from '../models/packages';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,9 @@ export class PackagesService {
 
   public changePaymentStatus(paymentDto: ChangeStatusPaymentDto): Observable<any> {
     return this.http.post(`${AppSettings.paymentEndpoint}/change-status`, paymentDto);
+  }
+
+  public changePackageStatus(request: ChangePackageStatusDto): Observable<any> {
+    return this.http.post(`${AppSettings.packagesEndpoint}/changeStatus`, request);
   }
 }

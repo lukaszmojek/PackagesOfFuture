@@ -14,6 +14,8 @@ namespace Api.Profiles
             CreateMap<RegisterPackageDto, RegisterPackageCommand>();
             
             CreateMap<PackageDetailsDto, Package>();
+
+            CreateMap<ChangePackageStatusDto, ChangePackageStatusCommand>();
         }
     }
 }

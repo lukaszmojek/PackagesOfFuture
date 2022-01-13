@@ -10,6 +10,7 @@ import { PackageStatus, PaymentStatus, RoleEnumType } from 'src/app/models/enums
 import { PackagesService } from 'src/app/services/packages.service';
 import { PackageDetailsModalComponent } from '../package-details-modal/package-details-modal.component';
 import { PackagePaymentModalComponent } from '../package-payment-modal/package-payment-modal.component';
+import { ChangePackageStatusModalComponent } from '../change-package-status-modal/change-package-status-modal.component';
 
 @Component({
   selector: 'pof-package-list',
@@ -27,6 +28,7 @@ export class PackageListComponent implements OnInit {
   private currentUserRole: string;
 
   public isAdmin: boolean = false;
+  public isDriver: boolean = false;
   public packageList: PackageDto[];
 
   constructor(
@@ -55,19 +57,20 @@ export class PackageListComponent implements OnInit {
 
     if (this.currentUserRole === RoleEnumType.Administrator) {
       this.isAdmin = true;
+    } else if (this.currentUserRole === RoleEnumType.Driver) {
+      this.isDriver = true;
+      this.displayedColumns.push('changeStatus')
     } else {
       this.displayedColumns.push('pay')
     }
   }
 
   private async getPackages() {
-    if (this.isAdmin) {
+    if (this.isAdmin || this.isDriver) {
       this.packageList = await this.packageService.getPackagesByAdmin().toPromise();
     } else {
       this.packageList = await this.packageService.getPackagesByUserId(this.currentUserId).toPromise();
     }
-
-    console.log(this.packageList)
   }
 
     /** Announce the change in sort state for assistive technology. */
@@ -120,5 +123,31 @@ export class PackageListComponent implements OnInit {
         return true;
       }
       return false;
+    }
+
+    public async changeStatus(pack: PackageDto) {
+      const dialogRef = this.dialog.open(ChangePackageStatusModalComponent, {
+        data: pack.status
+      });
+
+      const result = await dialogRef.afterClosed().toPromise();
+      if (result) {
+        const data = {
+          packageId: pack.id,
+          statusId: result
+        }
+
+        console.log(data)
+        await this.packageService.changePackageStatus(data).toPromise();
+        await this.setPackages();
+      }
+    }
+
+    public canChangeStatus(status: number) {
+      if (status === PackageStatus.Delivered) {
+        return false;
+      }
+      
+      return true;
     }
 }
