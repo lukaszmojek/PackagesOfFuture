@@ -12,22 +12,10 @@ import { AppSettings } from '../common/appsettings';
 export class UserService {
   constructor(private http: HttpClient) { }
 
-  //TODO: implement this
-  public getUserById(id: number): Observable<User> {
-    return of({
-      id: id,
-      firstName: 'firstName',        
-      lastName: 'lastName',
-      email: 'email',
-      type: 1,
-      password: 'password',
-      address: {
-        street: 'street',
-        houseAndFlatNumber: 'houseAndFlatNumber',
-        city: 'city',
-        postalCode: 'postalCode',
-      } as Address
-    } as User)
+  public getUserById(userId: number): Observable<User> {
+    const url = `${AppSettings.userEndpoint}/getByUserId/${userId}`
+
+    return this.http.get<User>(url)
   }
 
   public getAllUsers(): Observable<User[]> {
