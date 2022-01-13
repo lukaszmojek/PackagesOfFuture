@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/users';
+import { User, UserType } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -26,6 +26,12 @@ export class UsersListComponent implements OnInit {
       this.users = []
       this.loadUsers()
     })
+  }
+
+  public userTypeString(userType: number): string {
+    if (userType === UserType.Administrator) return 'Administrator'
+    if (userType === UserType.Driver) return 'Driver'
+    return'Client'
   }
 
   private loadUsers(): void {
