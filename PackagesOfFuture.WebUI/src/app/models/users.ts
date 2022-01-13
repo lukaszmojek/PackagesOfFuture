@@ -33,7 +33,7 @@ export interface RegisterUserDto {
   address: CreateAddressDto
 }
 export interface ChangeUserDetailsDto {
-  id: string
+  id: number
   firstName: string
   lastName: string
   email: string

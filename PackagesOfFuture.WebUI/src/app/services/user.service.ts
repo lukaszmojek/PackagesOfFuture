@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IApiResponse } from 'src/app/auth/models';
-import { Address } from 'src/app/models/addresses';
 import { ChangePasswordDto, ChangeUserDetailsDto, RegisterUserDto, User } from 'src/app/models/users';
 import { AppSettings } from '../common/appsettings';
 

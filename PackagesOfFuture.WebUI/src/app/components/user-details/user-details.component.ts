@@ -48,7 +48,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
 
   @Output() formSubmitted: EventEmitter<UserActionDto>
 
-  private userId: string
+  private userId: number
 
   public userDetailsFormGroup: FormGroup
   public matcher = new UserDetailsErrorStateMatcher();
@@ -123,7 +123,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   }
 
   private subscribeToUserDetails(): void {
-    this.users.getUserById(1).subscribe(user => {
+    this.users.getUserById(this.userId).subscribe(user => {
       this.user = user
       
       if (!!this.userId) {
@@ -178,6 +178,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
       firstName: this.controlValue<string>('firstName'),
       lastName: this.controlValue<string>('lastName'),
       email: this.controlValue<string>('email'),
+      type: this.selectedUserType,
       address: {
         houseAndFlatNumber: this.controlValue<string>('houseAndFlatNumber'),
         postalCode: this.controlValue<string>('postalCode'),
