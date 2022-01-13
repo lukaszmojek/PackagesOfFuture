@@ -1,5 +1,7 @@
 export enum RoleEnumType {
-    Administrator = 'Administrator'
+  Administrator = 'Administrator',
+  Driver = 'Driver',
+  Client = 'Client'
 }
 
 export enum PackageStatus {

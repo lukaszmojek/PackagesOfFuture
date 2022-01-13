@@ -13,6 +13,7 @@ export class AuthEffects {
     exhaustMap(action => this.auth.logIn$(action.email, action.password)
       .pipe(
         map(response => AuthActions.logInSuccess({token: response.content.token})),
+        tap(_ => {this.router.navigateByUrl('dashboard')}),
         catchError(_ => of(AuthActions.logInFailed()))
       ))
     )

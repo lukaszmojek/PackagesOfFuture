@@ -4,6 +4,7 @@ import { IAuthState } from './auth.reducer';
 import { selectToken } from './auth.selectors';
 import jwtDecode from "jwt-decode";
 import { DecodedToken } from './decoded-token';
+import { RoleEnumType as RoleEnum } from '../models/enums';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,14 @@ export class AuthorizationService {
     }
 
     return this._decodedToken.role;
+  }
+
+  public isAdministrator(): boolean {
+    if (!this._decodedToken) {
+      return false
+    }
+
+    return this._decodedToken.role === RoleEnum.Administrator;
   }
 
   public currentUserId(): number {
