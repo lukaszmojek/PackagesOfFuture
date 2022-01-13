@@ -14,6 +14,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field'
 
 const materialModules = [
   MatSliderModule,
@@ -31,7 +32,8 @@ const materialModules = [
   MatSelectModule,
   MatExpansionModule,
   MatListModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatFormFieldModule
 ]
 
 @NgModule({

@@ -7,5 +7,8 @@ export const AppSettings = {
   userEndpoint: `${apiUrl}/users`,
   servicesEndpoint: `${apiUrl}/services`,
   addressEndpoint: `${apiUrl}/addresses`,
-  paymentEndpoint: `${apiUrl}/payments`
+  paymentEndpoint: `${apiUrl}/payments`,
+  sortingEndpoint: `${apiUrl}/sortings`,
+  dronesEndpoint: `${apiUrl}/drones`
+
 }
