@@ -2,8 +2,9 @@ import { Injectable } from "@angular/core";
 import { AuthenticationService } from "./authentication.service";
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthActions } from "./auth.actions";
-import { exhaustMap, catchError, map } from "rxjs/operators";
+import { exhaustMap, catchError, map, tap } from "rxjs/operators";
 import { of } from "rxjs";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthEffects {
@@ -22,6 +23,7 @@ export class AuthEffects {
     exhaustMap(action => this.auth.logOut$()
       .pipe(
         map(_ => AuthActions.logOutSuccess()),
+        tap(_ => {this.router.navigateByUrl('login')}),
         catchError(_ => of(AuthActions.logOutFailed()))
       ))
     )
@@ -29,6 +31,7 @@ export class AuthEffects {
 
   constructor(
     private actions$: Actions,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private router: Router
   ) {}
 }
