@@ -21,7 +21,7 @@ namespace Tests
         public async Task RegisterPackageWithRandomService()
         {
 
-            var connectionString = "User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=PackagesOfFuture2;Pooling=true";
+            var connectionString = "User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=PackagesOfFuture;Pooling=true";
 
             var optionsBuilder = new DbContextOptionsBuilder<PackagesOfFutureDbContext>();
 
