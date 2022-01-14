@@ -81,18 +81,18 @@ namespace Api.Handlers
                         package.DeliveryAddressId = destinationAddress.Id;
                     }
 
-                    var service = await _serviceRepository.GetByIdAsync(request.ServiceId);
-                    package.Service = service;
+                    var payment = _mapper.Map<Payment>(request.Payment);
+                    payment.Status = PaymentStatus.InProgress;
+                    await _paymentRepository.AddAsync(payment);
+                    await _paymentRepository.SaveChangesAsync();
 
+                    var service = await _serviceRepository.GetByIdAsync(request.ServiceId);
                     if (service == null)
                     {
                         throw new ArgumentException(nameof(request.ServiceId));
                     }
 
-                    var payment = _mapper.Map<Payment>(request.Payment);
-                    payment.Status = PaymentStatus.InProgress;
-                    await _paymentRepository.AddAsync(payment);
-                    await _paymentRepository.SaveChangesAsync();
+                    package.Service = service;
 
                     package.Id = 10;
                     package.Payment = payment;
@@ -111,10 +111,18 @@ namespace Api.Handlers
                     transaction.Commit();
 
                     return ResponseFactory.CreateSuccessResponse<RegisterPackageResponse>();
+
                 } catch (Exception ex)
                 {
                     transaction.Rollback();
-                    throw ex;
+                    if (ex is ArgumentException exception)
+                    {
+                        throw exception;
+                    }
+                    else
+                    {
+                        throw ex;
+                    }
                 }
             }
         }
