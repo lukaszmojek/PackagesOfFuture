@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
 
-[Authorize]
 [Route("[controller]")]
 public class UsersController : ControllerBase
 {
@@ -30,6 +29,7 @@ public class UsersController : ControllerBase
     /// <returns>All users from database</returns>
     /// <response code="200">When there are users</response>
     /// <response code="404">If there are no users</response>
+    [Authorize]
     [HttpGet("")]
     public async Task<ActionResult<ICollection<UserDto>>> GetUsers()
     {
@@ -45,6 +45,7 @@ public class UsersController : ControllerBase
     /// <returns>User by id from database</returns>
     /// <response code="200">When there is user</response>
     /// <response code="404">If there isnt user</response>
+    [Authorize]
     [HttpGet("getByUserId/{userId}")]
     public async Task<ActionResult<ICollection<UserDto>>> GetUserById(int userId)
     {
@@ -76,6 +77,7 @@ public class UsersController : ControllerBase
     /// <returns>Nothing. Query GetUsers for current database status</returns>
     /// <response code="204">When user details was changed</response>
     /// <response code="400">When error regarding input occurred</response>
+    [Authorize]
     [HttpPost("{id}/change-details")]
     public async Task<IActionResult> ChangeUserDetails(
         [FromRoute] int id,
@@ -96,6 +98,7 @@ public class UsersController : ControllerBase
     /// <returns>Nothing. Query GetUsers for current database status</returns>
     /// <response code="204">When user password was changed</response>
     /// <response code="400">When error regarding input occurred</response>
+    [Authorize]
     [HttpPost("{id}/change-password")]
     public async Task<IActionResult> ChangeUserPassword(
         [FromRoute] int id,
@@ -115,6 +118,7 @@ public class UsersController : ControllerBase
     /// <returns>Nothing. Query GetUsers for current database status</returns>
     /// <response code="204">When user was unregistered</response>
     /// <response code="404">When no user with selected id exists</response>
+    [Authorize]
     [HttpDelete("{id}/unregister")]
     public async Task<IActionResult> UnregisterUser(
         [FromRoute] int id
