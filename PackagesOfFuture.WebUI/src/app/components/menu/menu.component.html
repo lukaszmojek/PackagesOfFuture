@@ -55,7 +55,8 @@
   
   <mat-divider></mat-divider>
 
-  <button mat-flat-button 
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
     color="accent" 
     class="menu-item" 
     [routerLink]="['manageSorting']" 
@@ -77,8 +78,8 @@
 
   <mat-divider></mat-divider>
 
-  <!-- TODO: tylko admin -->
-  <button mat-flat-button 
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
     color="accent" 
     class="menu-item" 
     [routerLink]="['addUser']" 
@@ -89,8 +90,8 @@
   
   <mat-divider></mat-divider>
 
-  <!-- TODO: tylko admin -->
-  <button mat-flat-button 
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
     color="accent" 
     class="menu-item" 
     [routerLink]="['listUsers']" 

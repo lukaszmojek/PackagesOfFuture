@@ -11,5 +11,9 @@ export class MenuComponent {
     return this.auth.currentUserId()
   }
 
+  public get isAdministrator(): boolean {
+    return this.auth.isAdministrator()
+  }
+
   constructor(private auth: AuthorizationService) { }
 }
