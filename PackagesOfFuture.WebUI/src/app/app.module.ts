@@ -29,6 +29,7 @@ import { ManageDronesComponent } from './components/manage-drones/manage-drones.
 import { AddDroneModalComponent } from './components/add-drone-modal/add-drone-modal.component';
 import { SortingModalComponent } from './components/sorting-modal/sorting-modal.component';
 import { ChangePackageStatusModalComponent } from './components/change-package-status-modal/change-package-status-modal.component'
+import { SnackbarMessageComponent } from './components/snackbar-message/snackbar-message.component'
 
 const components = [
   AppComponent, 
@@ -42,7 +43,8 @@ const components = [
   PackageListComponent,
   PackageDetailsModalComponent,
   PackagePaymentModalComponent,
-  LoggedUserComponent
+  LoggedUserComponent,
+  SnackbarMessageComponent
 ]
 @NgModule({
   declarations: [...components, ManageSortingComponent, RemoveObjectModalComponent, ManageDronesComponent, AddDroneModalComponent, SortingModalComponent, ChangePackageStatusModalComponent],

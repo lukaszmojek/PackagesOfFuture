@@ -27,8 +27,4 @@ export class DroneService {
   public editDrone(request: EditDroneDto): Observable<any> {
     return this.http.post(`${AppSettings.dronesEndpoint}/${request.droneId}/move-to-sorting`, request)
   }
-
-
-
-
 }
