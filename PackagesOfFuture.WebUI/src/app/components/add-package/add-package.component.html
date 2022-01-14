@@ -3,99 +3,116 @@
     <mat-card-header class="card-title">
       Podstawowe informacje
     </mat-card-header>
-    <mat-form-field appearance="fill">
-      <mat-label>Rodzaj przesyłki</mat-label>
-      <mat-select formControlName="typeOfParcel" (selectionChange)="onSelectChange($event)" [(ngModel)]="selectedParcelTypeId">
-        <mat-option *ngFor="let parcel of parcelTypes" [value]="parcel.id">
-          {{parcel.description}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Rodzaj dostawy</mat-label>
-      <mat-select formControlName="typeOfCourier" (selectionChange)="onSelectChange($event)" [(ngModel)]="selectedCourierId">
-        <mat-option *ngFor="let courier of courierTypes" [value]="courier.id" >
-          {{courier.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Rodzaj przesyłki</mat-label>
+  
+        <mat-select formControlName="typeOfParcel" (selectionChange)="onSelectChange($event)" [(ngModel)]="selectedParcelTypeId">
+          <mat-option *ngFor="let parcel of parcelTypes" [value]="parcel.id">
+            {{parcel.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Rodzaj dostawy</mat-label>
+  
+        <mat-select formControlName="typeOfCourier" (selectionChange)="onSelectChange($event)" [(ngModel)]="selectedCourierId">
+          <mat-option *ngFor="let courier of courierTypes" [value]="courier.id" >
+            {{courier.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Do zapłaty</mat-label>
-      <input formControlName="amountToPay" matInput [ngModel]="amountToPay">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Rodzaj płatności</mat-label>
-      <mat-select formControlName="typeOfPayment" [(ngModel)]="selectedPaymentTypeId">
-        <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id" >
-          {{paymentType.description}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Do zapłaty</mat-label>
+        <input formControlName="amountToPay" matInput [ngModel]="amountToPay">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Rodzaj płatności</mat-label>
+  
+        <mat-select formControlName="typeOfPayment" [(ngModel)]="selectedPaymentTypeId">
+          <mat-option *ngFor="let paymentType of paymentTypes" [value]="paymentType.id" >
+            {{paymentType.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </mat-card>
 
   <mat-card class="flex--column card">
     <mat-card-header class="card-title">
       Adres nadawcy
     </mat-card-header>
-    <mat-form-field appearance="fill">
-      <mat-label>Ulica</mat-label>
-      <input formControlName="street" matInput>
-    </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Numer domu</mat-label>
-      <input formControlName="houseNumber" matInput>
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Ulica</mat-label>
+        <input formControlName="street" matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Numer domu</mat-label>
+        <input formControlName="houseNumber" matInput>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Kod pocztowy</mat-label>
-      <input formControlName="postalCode" matInput>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Miasto</mat-label>
-      <input formControlName="city" matInput>
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Kod pocztowy</mat-label>
+        <input formControlName="postalCode" matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Miasto</mat-label>
+        <input formControlName="city" matInput>
+      </mat-form-field>
+    </div>
   </mat-card>
 
   <mat-card class="flex--column card">
     <mat-card-header class="card-title">
       Adres odbiorcy
     </mat-card-header>
-    <mat-form-field appearance="fill">
-      <mat-label>Ulica</mat-label>
-      <input formControlName="receiverStreet" matInput [(ngModel)]="receiverAddress.street">
-    </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Numer domu</mat-label>
-      <input formControlName="receiverHouseNumber" matInput [(ngModel)]="receiverAddress.houseAndFlatNumber">
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Ulica</mat-label>
+        <input formControlName="receiverStreet" matInput [(ngModel)]="receiverAddress.street">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Numer domu</mat-label>
+        <input formControlName="receiverHouseNumber" matInput [(ngModel)]="receiverAddress.houseAndFlatNumber">
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Kod pocztowy</mat-label>
-      <input formControlName="receiverPostalCode" matInput [(ngModel)]="receiverAddress.postalCode">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Miasto</mat-label>
-      <input formControlName="receiverCity" matInput [(ngModel)]="receiverAddress.city">
-    </mat-form-field>
+    <div class="flex--row">
+      <mat-form-field appearance="fill">
+        <mat-label>Kod pocztowy</mat-label>
+        <input formControlName="receiverPostalCode" matInput [(ngModel)]="receiverAddress.postalCode">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Miasto</mat-label>
+        <input formControlName="receiverCity" matInput [(ngModel)]="receiverAddress.city">
+      </mat-form-field>
+    </div>
   </mat-card>
 
-  <mat-card class="flex--column card">
-
+  <mat-card class="flex--column card card-actions">
     <button
-    [disabled]="form.invalid"
-    type="button"
-    mat-flat-button
-    color="primary"
-    (click)="addPackage()"
-  >
-    Nadaj przesyłkę
-  </button>
+      [disabled]="form.invalid"
+      type="button"
+      mat-flat-button
+      color="primary"
+      (click)="addPackage()"
+    >
+      Nadaj przesyłkę
+    </button>
   </mat-card>
 </form>

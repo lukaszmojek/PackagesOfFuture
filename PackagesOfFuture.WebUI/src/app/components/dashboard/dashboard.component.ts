@@ -11,7 +11,7 @@ import StoreConnectedComponent from 'src/app/utilities/store-connected.component
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent extends StoreConnectedComponent<IApplicationState> {
-  public get isAdministartor(): boolean {
+  public get isAdministrator(): boolean {
     return this.auth.isAdministrator()
   }
 

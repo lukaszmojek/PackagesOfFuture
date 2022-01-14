@@ -25,7 +25,7 @@
     </button>
   </div>
   
-  <div class="dashboard-row">
+  <div *ngIf="isAdministrator" class="dashboard-row">
     <!-- TODO: tylko admin -->
     <button mat-flat-button color="accent" class="menu-item" [routerLink]="['..', 'addUser']">
       Dodaj użytkownika

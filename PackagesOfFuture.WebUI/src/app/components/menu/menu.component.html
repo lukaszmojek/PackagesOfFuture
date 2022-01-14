@@ -1,53 +1,102 @@
 
 <div class="menu-container">
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['dashboard']">
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['dashboard']" 
+    routerLinkActive="active"
+  >
     Dashboard
   </button>
   
   <mat-divider></mat-divider>
 
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['changePassword']">
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['changePassword']" 
+    routerLinkActive="active"
+  >
     Zmień hasło
   </button>
   
   <mat-divider></mat-divider>
 
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['addPackage']">
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['addPackage']" 
+    routerLinkActive="active"
+  >
     Nadaj paczkę
   </button>
   
   <mat-divider></mat-divider>
 
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['packageList']">
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['packageList']" 
+    routerLinkActive="active"
+  >
     Lista przesyłek
   </button>
     
   <mat-divider></mat-divider>
 
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['changeUserDetails', userId]">
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['changeUserDetails', userId]" 
+    routerLinkActive="active"
+  >
     Edytuj profil
   </button>
   
   <mat-divider></mat-divider>
 
-  <a class="menu-item" [routerLink]="['manageSorting']">
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['manageSorting']" 
+    routerLinkActive="active"
+  >
     Zarządzaj sortowniami
-  </a>
+  </button>
 
-  <a class="menu-item" [routerLink]="['manageDrones']">
+  <mat-divider></mat-divider>
+
+  <button mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['manageDrones']" 
+    routerLinkActive="active"
+  >
     Zarządzaj dronami
-  </a>
+  </button>
 
+  <mat-divider></mat-divider>
 
-  <!-- TODO: tylko admin -->
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['addUser']">
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['addUser']" 
+    routerLinkActive="active"
+  >
     Dodaj użytkownika
   </button>
   
   <mat-divider></mat-divider>
 
-  <!-- TODO: tylko admin -->
-  <button mat-flat-button color="accent" class="menu-item" [routerLink]="['listUsers']">
+  <button *ngIf="isAdministrator"
+    mat-flat-button 
+    color="accent" 
+    class="menu-item" 
+    [routerLink]="['listUsers']" 
+    routerLinkActive="active"
+  >
     Lista użytkowników
   </button>
 </div>
