@@ -89,9 +89,7 @@ export class ManageDronesComponent implements OnInit {
       }
 
       const sorting = this.sortings.find(x => x.name === drone.sortingName);
-      if (editDrone.sortingId === sorting?.id) {
-        return;
-      }
+
       await this.droneService.editDrone(editDrone).toPromise();
       await this.getDrones();
     }

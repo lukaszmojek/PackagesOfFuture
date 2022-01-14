@@ -27,11 +27,11 @@ namespace Api.Handlers
                 .Include(x => x.Sorting)
                 .FirstOrDefaultAsync(x => x.Id == request.DroneId, cancellationToken: cancellationToken);
             
-            if (drone.Sorting.Id == request.SortingId)
-            {
-                return ResponseFactory.CreateFailureResponse<MoveDroneToSortingResponse>(
-                    "Drone already exists in this sorting!");
-            }
+            //if (drone.Sorting.Id == request.SortingId)
+            //{
+            //    return ResponseFactory.CreateFailureResponse<MoveDroneToSortingResponse>(
+            //        "Drone already exists in this sorting!");
+            //}
 
             var sorting = await _dbContext.Set<Sorting>()
                 .FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
