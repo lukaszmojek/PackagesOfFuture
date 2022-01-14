@@ -9,13 +9,14 @@ import { Store } from '@ngrx/store'
 import { IAuthState } from './auth.reducer'
 import { AuthActions } from './auth.actions'
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { SnackbarService } from '../services/snackbar.service'
 
 @Injectable()
 export class BearerHeaderInterceptor implements HttpInterceptor {
   constructor(
     private authorizationService: AuthorizationService, 
     private store$: Store<{auth: IAuthState}>,
-    private _snackBar: MatSnackBar
+    private snackBar: SnackbarService
   ) {}
 
   intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -35,7 +36,7 @@ export class BearerHeaderInterceptor implements HttpInterceptor {
       })
     ).pipe(
       catchError((error: HttpErrorResponse) => {
-        this._snackBar.open('ERORR')
+        this.snackBar.displaySnackbar(`Błąd - ${error.status}`)
         let errorMsg = ''
 
         if (error.error instanceof ErrorEvent) {

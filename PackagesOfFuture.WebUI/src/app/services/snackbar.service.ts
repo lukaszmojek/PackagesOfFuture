@@ -8,7 +8,7 @@ import { SnackbarMessageComponent, SnackBarType } from '../components/snackbar-m
   providedIn: 'root'
 })
 export class SnackbarService {
-  private durationInSeconds = 2
+  private durationInSeconds = 5
   
   constructor(private snackbar: MatSnackBar) { }
 
@@ -22,7 +22,7 @@ export class SnackbarService {
   }
 
   displaySnackbar(message: string): void {
-    let snackbarRef = this.snackbar.open(message, 'OK', {
+    let snackbarRef = this.snackbar.open(message, 'Ukryj', {
       duration: this.durationInSeconds * 1000
     })
   }
