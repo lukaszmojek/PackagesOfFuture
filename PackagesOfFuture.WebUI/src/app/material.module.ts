@@ -15,6 +15,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatDividerModule } from '@angular/material/divider'
 
 const materialModules = [
   MatSliderModule,
@@ -33,7 +35,9 @@ const materialModules = [
   MatExpansionModule,
   MatListModule,
   MatProgressBarModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatSnackBarModule,
+  MatDividerModule
 ]
 
 @NgModule({
