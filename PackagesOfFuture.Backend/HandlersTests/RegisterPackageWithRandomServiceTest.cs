@@ -1,4 +1,5 @@
-﻿using Api.Handlers;
+﻿using System;
+using Api.Handlers;
 using AutoMapper;
 using Data;
 using Microsoft.EntityFrameworkCore;
@@ -103,9 +104,8 @@ namespace Tests
             });
 
 
-            var res = await handler.Handle(command, CancellationToken.None);
-
-            var result = res.ToString();
+            await Assert.ThrowsAsync<ArgumentException>(async () 
+                => await handler.Handle(command, CancellationToken.None));
         }
     }
 }
