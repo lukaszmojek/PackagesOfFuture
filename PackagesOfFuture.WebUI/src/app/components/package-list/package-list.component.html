@@ -4,57 +4,57 @@
 
         <!-- Delivery Column -->
         <ng-container matColumnDef="deliveryDate">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Planowana data doręczenia </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="deliveryDate"> Planowana data doręczenia </th>
             <td mat-cell *matCellDef="let element"> {{element.deliveryDate | date: 'dd/MM/yyyy'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="packageStatus">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status przesyłki </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="packageStatus"> Status przesyłki </th>
             <td mat-cell *matCellDef="let element"> {{ getPackageStatus(element.status) }} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="deliveryAddress">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Adres nadawcy </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="deliveryAddress"> Adres nadawcy </th>
             <td mat-cell *matCellDef="let element"> {{element.deliveryAddress.street}} {{element.deliveryAddress.houseAndFlatNumber}} 
                 {{element.deliveryAddress.postalCode}} {{element.deliveryAddress.city}}
             </td>
         </ng-container>
 
         <ng-container matColumnDef="receiverAddress">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Adres odbiorcy </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="receiverAddress"> Adres odbiorcy </th>
             <td mat-cell *matCellDef="let element"> {{element.receiveAddress.street}} {{element.receiveAddress.houseAndFlatNumber}} 
                 {{element.receiveAddress.postalCode}} {{element.receiveAddress.city}}
             </td>
         </ng-container>
         
         <ng-container matColumnDef="paymentAmount">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Wartość usługi </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="paymentAmount"> Wartość usługi </th>
             <td mat-cell *matCellDef="let element"> {{ element.payment.amount }} zł </td>
         </ng-container>
 
 
         <ng-container matColumnDef="paymentStatus">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status płatności </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="paymentStatus"> Status płatności </th>
             <td mat-cell *matCellDef="let element"> {{ getPaymentStatus(element.payment.status) }} </td>
         </ng-container>
 
         <ng-container matColumnDef="details">
-            <th mat-header-cell *matHeaderCellDef> Szczegóły </th>   
+            <th mat-header-cell *matHeaderCellDef class="details"> Szczegóły </th>   
             <td mat-cell *matCellDef="let element"> 
               <button mat-raised-button (click)="getDetails(element)">Szczegóły</button> 
             </td>
         </ng-container>
 
         <ng-container matColumnDef="pay">
-            <th mat-header-cell *matHeaderCellDef> Opłać </th>   
+            <th mat-header-cell *matHeaderCellDef class="pay"> Opłać </th>   
             <td mat-cell *matCellDef="let element"> 
               <button mat-raised-button [disabled]=!canPayForPackage(element.payment.status) (click)="payForPackage(element)">Opłać</button> 
             </td>
         </ng-container>
 
         <ng-container matColumnDef="changeStatus">
-            <th mat-header-cell *matHeaderCellDef> Zmień status </th>   
+            <th mat-header-cell *matHeaderCellDef class="changeStatus"> Zmień status </th>   
             <td mat-cell *matCellDef="let element"> 
               <button mat-raised-button [disabled]=!canChangeStatus(element.status) (click)="changeStatus(element)">Zmień status</button> 
             </td>
