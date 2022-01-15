@@ -60,7 +60,7 @@ export class BearerHeaderInterceptor implements HttpInterceptor {
     switch (code as number) {
       case HttpStatusCode.Unauthorized: return 'Brak uprawnień'
       case HttpStatusCode.BadRequest: return 'Zapytanie nie mogło zostac wykonane z powodu złych danych'
-      case HttpStatusCode.NotFound: return 'Zasób o podanym id nie mógł zostać odnaleziony'
+      case HttpStatusCode.NotFound: return 'Nie znaleziono'
       case 0: return 'Brak połączania z API'
       default: return 'Nieznany błąd'
     }

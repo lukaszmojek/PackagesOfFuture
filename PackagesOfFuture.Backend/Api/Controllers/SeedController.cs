@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
+using Api.Auth;
 using Api.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
 
-// TODO: Uncomment below attribute once we are finished with improvements for seeding
-// [IsAdmin]
+[IsAdmin]
 [Route("[controller]")]
 public class SeedController : ControllerBase
 {
