@@ -5,15 +5,15 @@
 <form [formGroup]="form">
     <mat-card class="flex--column card">
 
-    <mat-form-field appearance="fill">
-        <mat-label>Model</mat-label>
-        <input formControlName="model" matInput [(ngModel)]="model">
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Model</mat-label>
+          <input formControlName="model" matInput [(ngModel)]="model">
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Zasięg</mat-label>
-        <input formControlName="range" matInput type="number" maxlength="3" [(ngModel)]="range">
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Zasięg</mat-label>
+          <input formControlName="range" matInput type="number" maxlength="3" [(ngModel)]="range">
+      </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Sortownia</mat-label>
@@ -27,8 +27,8 @@
     </mat-card>
 </form>
 
-<div mat-dialog-actions>
-    <button mat-button *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Utwórz</button>
-    <button mat-button *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Edytuj</button>
-    <button mat-button [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
+<div mat-dialog-actions class="actions">
+    <button mat-flat-button color="accent" *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Utwórz</button>
+    <button mat-flat-button color="accent" *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getNewDroneData()" cdkFocusInitial>Edytuj</button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
 </div>
