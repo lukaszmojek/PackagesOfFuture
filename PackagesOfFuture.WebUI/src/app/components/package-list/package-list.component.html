@@ -1,6 +1,4 @@
-<mat-card class="flex--column card">
-    <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
 
         <!-- Delivery Column -->
         <ng-container matColumnDef="deliveryDate">
@@ -42,21 +40,21 @@
         <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef class="details"> Szczegóły </th>   
             <td mat-cell *matCellDef="let element"> 
-              <button mat-raised-button (click)="getDetails(element)">Szczegóły</button> 
+              <button mat-flat-button color="primary" (click)="getDetails(element)">Szczegóły</button> 
             </td>
         </ng-container>
 
         <ng-container matColumnDef="pay">
             <th mat-header-cell *matHeaderCellDef class="pay"> Opłać </th>   
             <td mat-cell *matCellDef="let element"> 
-              <button mat-raised-button [disabled]=!canPayForPackage(element.payment.status) (click)="payForPackage(element)">Opłać</button> 
+              <button mat-flat-button color="accent" [disabled]=!canPayForPackage(element.payment.status) (click)="payForPackage(element)">Opłać</button> 
             </td>
         </ng-container>
 
         <ng-container matColumnDef="changeStatus">
             <th mat-header-cell *matHeaderCellDef class="changeStatus"> Zmień status </th>   
             <td mat-cell *matCellDef="let element"> 
-              <button mat-raised-button [disabled]=!canChangeStatus(element.status) (click)="changeStatus(element)">Zmień status</button> 
+              <button mat-flat-button color="accent" [disabled]=!canChangeStatus(element.status) (click)="changeStatus(element)">Zmień status</button> 
             </td>
         </ng-container>
     
@@ -64,9 +62,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     
-        <mat-paginator [pageSizeOptions]="[5, 10, 15]"
+        <mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[5, 10, 15]"
                     showFirstLastButtons 
                     aria-label="Select page of periodic elements">
         </mat-paginator>
-    </div>
-</mat-card>

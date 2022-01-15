@@ -24,7 +24,9 @@ export class AuthenticationService {
 
   constructor(private store$: Store<{auth: IAuthState}>, private http: HttpClient) {
     if (this.tokenEntryExistsInLocalStorage) {
-      this.store$.dispatch(AuthActions.logInSuccess({token: this.tokenFromLocalStorage!}))
+      this.store$.dispatch(
+        AuthActions.logInSuccess({token: this.tokenFromLocalStorage!})
+      )
     }
   }
 
@@ -34,10 +36,12 @@ export class AuthenticationService {
       password: password
     }
 
-    return this.http.post<IApiResponse<ITokenResponse>>(AppSettings.authEndpoint, request).pipe(
-      tap(tokenResponse => {
-        localStorage.setItem(this.localStorageTokenKey, tokenResponse.content.token)
-      })
+    return this.http
+      .post<IApiResponse<ITokenResponse>>(AppSettings.authEndpoint, request)
+      .pipe(
+        tap(tokenResponse => {
+          localStorage.setItem(this.localStorageTokenKey, tokenResponse.content.token)
+        })
     )
   }
 
