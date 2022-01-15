@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers;
 
 [Route("[controller]")]
-public class UsersController : ControllerBase
+public class UsersController : BaseController
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
@@ -85,6 +85,8 @@ public class UsersController : ControllerBase
     )
     {
         var command = _mapper.Map<ChangeUserDetailsCommand>(changeUserDetailsDto);
+        command.RequestingUser = User(HttpContext);
+        
         var result = await _mediator.Send(command);
 
         return result.Succeeded ? NoContent() : NotFound();
