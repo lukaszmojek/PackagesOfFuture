@@ -58,7 +58,7 @@ namespace Tests
                 },
                 ReceiveAddress = new AddressDto
                 {
-                    City = "Kraków",
+                    City = "KrakÃ³w",
                     HouseAndFlatNumber = "130",
                     PostalCode = "22-545",
                     Street = "Kapelana"
@@ -76,7 +76,7 @@ namespace Tests
                     Weight = 5,
                     Width = 20
                 },
-                ServiceId = 4 // w moim przypadku Weekend (dostepne mam Id 3, 4, 5, 6) - mozemy walnac bledem ze nie znajdzie takiego service
+                ServiceId = 21 // w moim przypadku Weekend (dostepne mam Id 3, 4, 5, 6) - mozemy walnac bledem ze nie znajdzie takiego service
             };
 
             mapper.Setup(mapper => mapper.Map<Package>(It.IsAny<PackageDetailsDto>())).Returns(new Package
