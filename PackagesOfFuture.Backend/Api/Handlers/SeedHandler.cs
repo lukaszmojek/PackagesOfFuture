@@ -151,6 +151,7 @@ namespace Api.Handlers
             {
                 new()
                 {
+                    Id = 1,
                     FirstName = "Łukasz",
                     LastName = "Mojek",
                     Email = "lukasz@pof.com",
@@ -166,6 +167,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
+                    Id = 2,
                     FirstName = "Dawid",
                     LastName = "Blaszkiewicz",
                     Email = "dawid@pof.com",
@@ -181,6 +183,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
+                    Id = 3,
                     FirstName = "Zbiegniew",
                     LastName = "Gaźnik",
                     Email = "zbych@pof.com",
@@ -196,6 +199,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
+                    Id = 4,
                     FirstName = "Marysia",
                     LastName = "Znajdek",
                     Email = "marysia@email.com",
@@ -212,6 +216,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
+                    Id = 5,
                     FirstName = "Adam",
                     LastName = "Kiełbasa",
                     Email = "adam@email.com",
@@ -227,6 +232,7 @@ namespace Api.Handlers
                 },
                 new()
                 {
+                    Id = 6,
                     FirstName = "Tomasz",
                     LastName = "Długowłosy",
                     Email = "tomasz@email.com",
@@ -238,6 +244,54 @@ namespace Api.Handlers
                         HouseAndFlatNumber = "500",
                         PostalCode = "44-229",
                         Street = "Stalowa Wola"
+                    }
+                },
+                new()
+                {
+                    Id = 7,
+                    FirstName = "Marek",
+                    LastName = "Siwizna",
+                    Email = "marek@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Skawina",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Rusznikarska"
+                    }
+                },
+                new()
+                {
+                    Id = 8,
+                    FirstName = "Jan",
+                    LastName = "Paliwo",
+                    Email = "jan@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Warszawa",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Tęczowa"
+                    }
+                },
+                new()
+                {
+                    Id = 9,
+                    FirstName = "Monika",
+                    LastName = "Małecka",
+                    Email = "monia123@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Lublin",
+                        HouseAndFlatNumber = "3/12",
+                        PostalCode = "34-523",
+                        Street = "Postępu"
                     }
                 },
             };
