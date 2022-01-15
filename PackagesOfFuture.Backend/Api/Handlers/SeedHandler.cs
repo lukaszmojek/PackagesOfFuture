@@ -54,8 +54,6 @@ namespace Api.Handlers
             }
             
             await SeedUsers();
-            await SeedAddresses();
-            await SeedPackages();
             await SeedSortingWithDrones();
             await SeedServices();
 
@@ -153,7 +151,6 @@ namespace Api.Handlers
             {
                 new()
                 {
-                    Id = 1,
                     FirstName = "Łukasz",
                     LastName = "Mojek",
                     Email = "lukasz@pof.com",
@@ -161,7 +158,6 @@ namespace Api.Handlers
                     Type = UserType.Administrator,
                     Address = new Address
                     {
-                        Id = 1,
                         City = "Mielec",
                         HouseAndFlatNumber = "13/53",
                         PostalCode = "39-300",
@@ -170,7 +166,6 @@ namespace Api.Handlers
                 },
                 new()
                 {
-                    Id = 2,
                     FirstName = "Dawid",
                     LastName = "Blaszkiewicz",
                     Email = "dawid@pof.com",
@@ -178,7 +173,6 @@ namespace Api.Handlers
                     Type = UserType.Administrator,
                     Address = new Address
                     {
-                        Id = 2,
                         City = "Czarnocin",
                         HouseAndFlatNumber = "77",
                         PostalCode = "28-506",
@@ -187,39 +181,64 @@ namespace Api.Handlers
                 },
                 new()
                 {
-                    Id = 3,
                     FirstName = "Zbiegniew",
                     LastName = "Gaźnik",
                     Email = "zbych@pof.com",
                     Password = "test123",
-                    Type = UserType.Driver
+                    Type = UserType.Driver,
+                    Address = new Address
+                    {
+                        City = "Podwawelska",
+                        HouseAndFlatNumber = "130c",
+                        PostalCode = "14-540",
+                        Street = "Proszowice"
+                    }
                 },
                 new()
                 {
-                    Id = 4,
                     FirstName = "Marysia",
                     LastName = "Znajdek",
                     Email = "marysia@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Krzyzowa",
+                        HouseAndFlatNumber = "123",
+                        PostalCode = "42-135",
+                        Street = "Kazimierza Wielka"
+                    }
+
                 },
                 new()
                 {
-                    Id = 5,
                     FirstName = "Adam",
                     LastName = "Kiełbasa",
                     Email = "adam@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Woronicza",
+                        HouseAndFlatNumber = "32",
+                        PostalCode = "55-214",
+                        Street = "Kraków"
+                    }
                 },
                 new()
                 {
-                    Id = 6,
                     FirstName = "Tomasz",
                     LastName = "Długowłosy",
                     Email = "tomasz@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Wiślana",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Stalowa Wola"
+                    }
                 },
             };
             
@@ -228,79 +247,6 @@ namespace Api.Handlers
             Console.WriteLine("Users seeded");
         }
         
-        private async Task SeedAddresses()
-        {
-            var addresses = new List<Address>
-            {
-                new()
-                {
-                    Id = 11,
-                    City = "Mielec",
-                    HouseAndFlatNumber = "12/3",
-                    Street = "Osla laka",
-                    PostalCode = "30-123"
-                },
-                new()
-                {
-                    Id = 12,
-                    City = "Kraków",
-                    HouseAndFlatNumber = "2",
-                    Street = "Myślenicka",
-                    PostalCode = "30-144"
-                },
-                new()
-                {
-                    Id = 13,
-                    City = "Czarnocin",
-                    HouseAndFlatNumber = "77",
-                    Street = "Kolosy",
-                    PostalCode = "28-506"
-                }
-            };
-            
-            await _addressRepository.AddRangeAsync(addresses);
-            await _addressRepository.SaveChangesAsync();
-            Console.WriteLine("Addresses seeded");
-        }
-        
-        private async Task SeedPackages()
-        {
-            var packages = new List<Package>
-            {
-                new() {
-                    Id = 1,
-                    DeliveryDate = DateTime.Now,
-                    Status = PackageStatus.Delivered,
-                    Width = 12,
-                    Height = 12,
-                    Length = 12,
-                    Weight = 30,
-                    DeliveryAddressId = 11,
-                    ReceiveAddressId = 12,
-                    Payment = new Payment
-                    {
-                        Status = PaymentStatus.InProgress,
-                        Amount = 12.34
-                    },
-                    Sorting = new Sorting
-                    {
-                        Name = "Zakliczyn",
-                        AddressId = 12,
-                    },
-                    Service = new Service
-                    {
-                        Name = "Dostawa dronem",
-                        Description = "Dostawa z użyciem drona w ciągu 1h",
-                        Price = 100,
-                    }
-                }
-            };
-
-            await _packageRepository.AddRangeAsync(packages);
-            await _packageRepository.SaveChangesAsync();
-            Console.WriteLine("Packages seeded");
-        }
-
         private async Task SeedServices()
         {
             var services = new List<Service>
@@ -323,6 +269,12 @@ namespace Api.Handlers
                     Description = "Dostawa w weekend",
                     Price = 20,
                 },
+                new Service
+                {
+                    Name = "Dostawa dronem",
+                    Description = "Dostawa z użyciem drona w ciągu 1h",
+                    Price = 100,
+                }
             };
 
             await _serviceRepository.AddRangeAsync(services);
@@ -348,6 +300,14 @@ namespace Api.Handlers
                 Street = "Kolejowa"
             };
 
+            var addressSorting3 = new Address
+            {
+                City = "Warszawa",
+                HouseAndFlatNumber = "553",
+                PostalCode = "44-200",
+                Street = "Potocka"
+            };
+
             await _addressRepository.AddAsync(addressSorting1);
             await _addressRepository.AddAsync(addressSorting2);
             await _addressRepository.SaveChangesAsync();
@@ -362,6 +322,12 @@ namespace Api.Handlers
             {
                 Name = "Sortownia Katowice",
                 Address = addressSorting2
+            };
+
+            var sorting3 = new Sorting
+            {
+                Name = "Sortownia Warszawa",
+                Address = addressSorting3
             };
 
             var drones = new List<Drone>
@@ -389,6 +355,12 @@ namespace Api.Handlers
                     Model = "Honda 2022",
                     Range = 110,
                     Sorting = sorting2
+                },
+                new Drone
+                {
+                    Model = "Logitech G603",
+                    Range = 110,
+                    Sorting = sorting3
                 }
             };
 
@@ -401,8 +373,5 @@ namespace Api.Handlers
             await _droneRepository.SaveChangesAsync();
             Console.WriteLine("Sorting with drones seeded");
         }
-
-
-
     }
 }
