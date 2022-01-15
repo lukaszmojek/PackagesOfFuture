@@ -123,12 +123,13 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   }
 
   private subscribeToUserDetails(): void {
+    if (!this.userId) {
+      return
+    }
+
     this.users.getUserById(this.userId).subscribe(user => {
       this.user = user
-      
-      if (!!this.userId) {
-        this.fillFormWithUserDetails()
-      }
+      this.fillFormWithUserDetails()
     })
   }
 
