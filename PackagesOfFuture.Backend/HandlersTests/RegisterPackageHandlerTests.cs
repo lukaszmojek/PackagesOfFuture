@@ -16,16 +16,14 @@ using Api.Profiles;
 
 namespace Tests
 {
-    public class RegisterPackageHandlerTests
+    public class RegisterPackageHandlerTests : HandlerTestBase
     {
         [Fact]
-        public async Task SuccessfullyRegisterPackageTest()
+        public async Task When_TryingToRegisterPackageWithExistingService_Should_RegisterPackageSuccessfully()
         {
-            var connectionString = "User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=PackagesOfFuture;Pooling=true";
-
             var optionsBuilder = new DbContextOptionsBuilder<PackagesOfFutureDbContext>();
 
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseNpgsql(DatabaseConnectionString);
 
             var context = new PackagesOfFutureDbContext(optionsBuilder.Options);
 
@@ -94,7 +92,7 @@ namespace Tests
         }
 
         [Fact]
-        public async Task RegisterPackageWithRandomService()
+        public async Task When_TryingToRegisterPackageWithServiceNotExisting_Should_ThrowException()
         {
 
             var connectionString = "User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=PackagesOfFuture;Pooling=true";

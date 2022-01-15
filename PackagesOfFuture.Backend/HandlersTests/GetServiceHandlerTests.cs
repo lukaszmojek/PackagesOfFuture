@@ -14,17 +14,15 @@ using Api.Profiles;
 
 namespace Tests
 {
-    public class GetServiceHandlerTests
+    public class GetServiceHandlerTests : HandlerTestBase
     {
         [Fact]
-        public async Task GetServiceTest()
+        public async Task When_RequestingDetailsAboutServiceExistingInDatabse_Should_GetDetailsSuccessfully()
         {
-
-            var connectionString = "User ID=postgres;Password=Password12!;Host=localhost;Port=5432;Database=PackagesOfFuture;Pooling=true";
 
             var optionsBuilder = new DbContextOptionsBuilder<PackagesOfFutureDbContext>();
 
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseNpgsql(DatabaseConnectionString);
 
             var context = new PackagesOfFutureDbContext(optionsBuilder.Options);
 

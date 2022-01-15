@@ -307,24 +307,28 @@ namespace Api.Handlers
             {
                 new Service
                 {
+                    Id = 1,
                     Name = "Standard",
                     Description = "Standardowa dostawa",
                     Price = 10,
                 },
                 new Service
                 {
+                    Id = 2,
                     Name = "Express",
                     Description = "Dostawa w 1 dzień roboczy",
                     Price = 15,
                 },
                 new Service
                 {
+                    Id = 3,
                     Name = "Weekend",
                     Description = "Dostawa w weekend",
                     Price = 20,
                 },
                 new Service
                 {
+                    Id = 4,
                     Name = "Dostawa dronem",
                     Description = "Dostawa z użyciem drona w ciągu 1h",
                     Price = 100,
