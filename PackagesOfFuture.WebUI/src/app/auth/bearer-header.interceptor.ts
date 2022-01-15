@@ -36,7 +36,7 @@ export class BearerHeaderInterceptor implements HttpInterceptor {
       })
     ).pipe(
       catchError((error: HttpErrorResponse) => {
-        this.snackBar.displaySnackbar(`Błąd - ${error.status}`)
+        this.snackBar.displaySnackbar(`Błąd - Status ${error.status}: ${this.mapHttpStatusCode(error.status)}`)
         let errorMsg = ''
 
         if (error.error instanceof ErrorEvent) {
@@ -54,5 +54,14 @@ export class BearerHeaderInterceptor implements HttpInterceptor {
         return throwError(errorMsg)
       })
     )
+  }
+
+  private mapHttpStatusCode(code: HttpStatusCode): string {
+    switch (code) {
+      case HttpStatusCode.Unauthorized: return 'Brak uprawnień'
+      case HttpStatusCode.BadRequest: return 'Zapytanie nie mogło zostac wykonane z powodu złych danych'
+      case HttpStatusCode.NotFound: return 'Zasób o podanym id nie mógł zostać odnaleziony'
+      default: return 'Nieznany błąd'
+    }
   }
 }
