@@ -1,5 +1,21 @@
-<h1 mat-dialog-title>Jesteś pewien? </h1>
-<div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="1" cdkFocusInitial>Tak</button>
-    <button mat-button [mat-dialog-close]="0" cdkFocusInitial>Nie</button>
+<h1 mat-dialog-title>
+  Jesteś pewien?
+</h1>
+
+<div mat-dialog-actions class="actions">
+    <button mat-flat-button
+      color="accent"
+      [mat-dialog-close]="1"
+      cdkFocusInitial
+    >
+      Tak
+    </button>
+    
+    <button mat-flat-button
+      color="warn"
+      [mat-dialog-close]="0"
+      cdkFocusInitial
+    >
+      Nie
+    </button>
 </div>

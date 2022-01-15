@@ -1,6 +1,6 @@
 <mat-card class="flex--column card">
   <mat-card-header class="card-title">
-    Log in
+    Zaloguj
   </mat-card-header>
 
   <form class="flex--column login-form">
@@ -14,16 +14,16 @@
       >
 
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-        Please enter a valid email address
+        Wprowadź poprawny adres email
       </mat-error>
 
       <mat-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
+        Email jest <strong>wymagany</strong>
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="flex--row password" appearance="fill">
-      <mat-label>Password</mat-label>
+      <mat-label>Hasło</mat-label>
 
       <input type="password"
         matInput
@@ -33,7 +33,7 @@
       >
       
       <mat-error *ngIf="passwordFormControl.hasError('required')">
-        Password is <strong>required</strong>
+        Hasło jest <strong>wymagane</strong>
       </mat-error>
     </mat-form-field>
 
@@ -44,7 +44,7 @@
         color="primary"
         (click)="logIn()"
       >
-        Login
+        Zaloguj
       </button>
 
       <button class="register-button"
@@ -53,7 +53,7 @@
         color="primary"
         [routerLink]="['..', 'register']"
       >
-        Register
+        Rejestracja
       </button>
     </div>
   </form>

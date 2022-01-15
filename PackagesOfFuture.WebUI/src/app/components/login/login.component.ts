@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AuthActions } from 'src/app/auth/auth.actions';
 import { IAuthState } from 'src/app/auth/auth.reducer';
@@ -38,7 +39,7 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState> i
     return this.emailFormControl.valid && this.passwordFormControl.valid
   }
 
-  constructor(store$: Store<{auth: IAuthState}>) {
+  constructor(store$: Store<{auth: IAuthState}>, private router: Router) {
     super(store$)
   }
 
@@ -58,6 +59,10 @@ export class LoginComponent extends StoreConnectedComponent<IApplicationState> i
   private subscribeToIsLoggedIn(): void {
     this.safeSelect$(selectIsLoggedIn).subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn
+      
+      if (this.isLoggedIn) {
+        this.router.navigateByUrl('/dashboard')
+      }
     })
   }
 }

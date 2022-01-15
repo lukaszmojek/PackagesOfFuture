@@ -6,10 +6,13 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    component: LoginComponent,
+  },
+  {
     path: 'login',
     component: LoginComponent,
-    //TODO: Create LoginGuard
-    // canActivate: LoginGuard
   },
   {
     path: 'register',

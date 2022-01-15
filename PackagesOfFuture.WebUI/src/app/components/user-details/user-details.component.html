@@ -151,9 +151,12 @@
       type="button"
       mat-flat-button
       color="primary"
+      class="register-button"
       (click)="emitSubmittedEvent()"
     >
       {{ actionButtonName }}
     </button>
+
+    <ng-content></ng-content>
   </div>
 </mat-card>

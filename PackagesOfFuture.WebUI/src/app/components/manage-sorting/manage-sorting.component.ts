@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SortingDto } from 'src/app/models/sorting';
 import { SortingService } from 'src/app/services/sorting.service';
-import { RemoveObjectModalComponent } from '../remove-object-modal/remove-object-modal.component';
 import { SortingModalComponent } from '../sorting-modal/sorting-modal.component';
 
 @Component({
