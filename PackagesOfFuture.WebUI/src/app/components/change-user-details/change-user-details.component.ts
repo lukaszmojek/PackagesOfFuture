@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizationService } from 'src/app/auth/authorization.service';
 import { ChangeUserDetailsDto, UserActionDto, UserActionType } from 'src/app/models/users';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,7 +13,11 @@ export class ChangeUserDetailsComponent {
   actionButtonName: string = 'Edytuj'
   actionType: UserActionType = UserActionType.ChangeDetails
 
-  constructor(private users: UserService) { }
+  public get isAdministrator(): boolean {
+    return this.auth.isAdministrator()
+  }
+
+  constructor(private users: UserService, private auth: AuthorizationService) { }
 
   public onFormSubmitted(event$: UserActionDto): void {
     this.users.changeUserDetails(event$ as ChangeUserDetailsDto).subscribe(_ => {})

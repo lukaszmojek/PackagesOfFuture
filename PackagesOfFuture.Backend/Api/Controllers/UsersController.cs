@@ -89,7 +89,7 @@ public class UsersController : BaseController
         
         var result = await _mediator.Send(command);
 
-        return result.Succeeded ? NoContent() : NotFound();
+        return result.Succeeded ? NoContent() : BadRequest();
     }
 
     /// <summary>

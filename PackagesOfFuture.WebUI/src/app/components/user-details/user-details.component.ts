@@ -45,6 +45,7 @@ export class UserDetailsComponent extends StoreConnectedComponent<IApplicationSt
   @Input() formTitle: string
   @Input() actionButtonName: string
   @Input() actionType: UserActionType
+  @Input() isAdministrator: boolean = false
 
   @Output() formSubmitted: EventEmitter<UserActionDto>
 

@@ -136,7 +136,9 @@
         [ngClass]="{'visibility-hidden': isRegisterUserAction}"
       >
         <mat-label>Typ</mat-label>
-        <mat-select [(value)]="selectedUserType">
+        <mat-select [(value)]="selectedUserType"
+          [disabled]="!isAdministrator"
+        >
           <mat-option [value]="0">Klient</mat-option>
           <mat-option [value]="1">Kierowca</mat-option>
           <mat-option [value]="2">Administrator</mat-option>
