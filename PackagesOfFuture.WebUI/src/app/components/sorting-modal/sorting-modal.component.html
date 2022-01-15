@@ -2,8 +2,6 @@
 <h1 *ngIf="editMode" mat-dialog-title>Edytuj sortownie</h1>
 
 <form [formGroup]="form">
-    <mat-card class="flex--column card">
-
     <mat-form-field appearance="fill">
         <mat-label>Nazwa sortowni</mat-label>
         <input formControlName="name" matInput [(ngModel)]="name">
@@ -28,12 +26,10 @@
         <mat-label>Miasto</mat-label>
         <input formControlName="city" matInput [(ngModel)]="city">
     </mat-form-field>
-
-    </mat-card>
 </form>
 
 <div mat-dialog-actions>
-    <button mat-button *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getAddSortingData()" cdkFocusInitial>Utwórz</button>
-    <button mat-button *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getChangeSortingData()" cdkFocusInitial>Edytuj</button>
-    <button mat-button [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
+    <button mat-flat-button color="accent" *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getAddSortingData()" cdkFocusInitial>Utwórz</button>
+    <button mat-flat-button color="accent" *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getChangeSortingData()" cdkFocusInitial>Edytuj</button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
 </div>
