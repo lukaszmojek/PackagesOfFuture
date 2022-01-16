@@ -44,7 +44,8 @@ namespace Api.Handlers
             _dbContext = dbContext;
         }
 
-        public async Task<Response<RegisterPackageResponse>> Handle(RegisterPackageCommand request, CancellationToken cancellationToken)
+        public async Task<Response<RegisterPackageResponse>> Handle(
+            RegisterPackageCommand request, CancellationToken cancellationToken)
         {
             using (var transaction = _dbContext.Database.BeginTransaction(IsolationLevel.Serializable))
             {
@@ -53,8 +54,10 @@ namespace Api.Handlers
                     var addresses = await _addressRepository.GetAsync();
                     var sortings = await _sortingRepository.GetAsync();
 
-                    var pickupAddress = addresses.FirstOrDefault(x => AddressesAreEqual(x, request.ReceiveAddress));
-                    var destinationAddress = addresses.FirstOrDefault(x => AddressesAreEqual(x, request.DeliveryAddress));
+                    var pickupAddress = addresses.FirstOrDefault(x => 
+                        AddressesAreEqual(x, request.ReceiveAddress));
+                    var destinationAddress = addresses.FirstOrDefault(x => 
+                        AddressesAreEqual(x, request.DeliveryAddress));
                     var defaultSorting = sortings.FirstOrDefault();
 
                     var package = _mapper.Map<Package>(request.Package);
@@ -93,7 +96,6 @@ namespace Api.Handlers
                     }
 
                     package.Service = service;
-
                     package.Id = 10;
                     package.Payment = payment;
                     package.DeliveryDate = DateTime.UtcNow.AddDays(4);
@@ -119,20 +121,15 @@ namespace Api.Handlers
                     {
                         throw exception;
                     }
-                    else
-                    {
-                        throw ex;
-                    }
+                    throw ex;
                 }
             }
         }
 
-        private bool AddressesAreEqual(Address address, AddressDto requestDeliveryAddress)
-        {
-            return address.City == requestDeliveryAddress.City &&
-                   address.Street == requestDeliveryAddress.Street &&
-                   address.PostalCode == requestDeliveryAddress.PostalCode &&
-                   address.HouseAndFlatNumber == requestDeliveryAddress.HouseAndFlatNumber;
-        }
+        private bool AddressesAreEqual(Address address, AddressDto requestDeliveryAddress) =>
+            address.City == requestDeliveryAddress.City 
+            && address.Street == requestDeliveryAddress.Street 
+            && address.PostalCode == requestDeliveryAddress.PostalCode 
+            && address.HouseAndFlatNumber == requestDeliveryAddress.HouseAndFlatNumber;
     }
 }

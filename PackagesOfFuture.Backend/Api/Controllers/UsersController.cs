@@ -71,6 +71,8 @@ public class UsersController : BaseController
 
     /// <summary>
     /// Changes user details
+    /// Only administrator is able to change details of all users
+    /// Non admin users can only change their own profile
     /// </summary>
     /// <param name="id">Id of a user</param>
     /// <param name="changeUserDetailsDto">Representation of user details to change</param>

@@ -18,24 +18,36 @@ namespace Api.Handlers
             _repository = repository;
         }
 
-        public async Task<Response<ChangeUserPasswordResponse>> Handle(ChangeUserPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<Response<ChangeUserPasswordResponse>> Handle(
+            ChangeUserPasswordCommand request, CancellationToken cancellationToken)
         {
-            var user = await _repository.GetByIdAsync(request.UserId);
-
-            if (user == null)
+            try
             {
-                throw new ArgumentException(nameof(request.UserId));
-            }
+                var user = await _repository.GetByIdAsync(request.UserId);
 
-            if (user.Password != request.OldPassword)
+                if (user == null)
+                {
+                    throw new ArgumentException(nameof(request.UserId));
+                }
+
+                if (user.Password != request.OldPassword)
+                {
+                    throw new ArgumentException(nameof(request.OldPassword));
+                }
+
+                user.Password = request.NewPassword;
+                await _repository.SaveChangesAsync();
+
+                return ResponseFactory.CreateSuccessResponse<ChangeUserPasswordResponse>();
+            }
+            catch (ArgumentException e)
             {
-                throw new ArgumentException(nameof(request.OldPassword));
+                return ResponseFactory.CreateFailureResponse<ChangeUserPasswordResponse>(e.Message);
             }
-
-            user.Password = request.NewPassword;
-            await _repository.SaveChangesAsync();
-            
-            return  ResponseFactory.CreateSuccessResponse<ChangeUserPasswordResponse>();
+            catch (Exception e)
+            {
+                return ResponseFactory.CreateFailureResponse<ChangeUserPasswordResponse>(e.Message);
+            }
         }
     }
 }

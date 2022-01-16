@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Api.Auth;
 using Contracts.Responses;
@@ -23,29 +24,32 @@ namespace Api.Handlers
         
         public async Task<Response<AuthenticateUserResponse>> Handle(AuthenticateUserQuery request, CancellationToken cancellationToken)
         {
-            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+            try
             {
-                var errorMessage = "Email and Password have to be provided!";
-                
-                return ResponseFactory.CreateFailureResponse<AuthenticateUserResponse>(errorMessage);
-            }
+                if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+                {
+                    var errorMessage = "Email and Password have to be provided!";
+                    throw new ArgumentException(errorMessage);
+                }
             
-            var user = await _dbContext.Set<User>()
-                .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
-                                      && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
+                var user = await _dbContext.Set<User>()
+                    .SingleOrDefaultAsync(u => u.Email.Equals(request.Email)
+                                               && u.Password.Equals(request.Password), cancellationToken: cancellationToken);
 
-            if (user == null)
+                if (user == null)
+                {
+                    var errorMessage = "User with provided credentials do not exist!";
+                    throw new ArgumentException(errorMessage);
+                }
+
+                var token = this._userService.Authenticate(user);
+            
+                return ResponseFactory.CreateSuccessResponse(new AuthenticateUserResponse {Token = token});
+            }
+            catch (ArgumentException e)
             {
-                var errorMessage = "User with provided credentials do not exist!";
-
-                return ResponseFactory.CreateFailureResponse<AuthenticateUserResponse>(errorMessage);
+                return ResponseFactory.CreateFailureResponse<AuthenticateUserResponse>(e.Message);
             }
-
-            var los = "";
-            
-            var token = this._userService.Authenticate(user);
-            
-            return ResponseFactory.CreateSuccessResponse(new AuthenticateUserResponse {Token = token});
         }
     }
 }

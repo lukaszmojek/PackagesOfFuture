@@ -25,7 +25,8 @@ namespace Api.Handlers
             _userRepository = userRepository;
         }
 
-        public async Task<Response<RegisterSupportIssueResponse>> Handle(RegisterSupportIssueCommand request, CancellationToken cancellationToken)
+        public async Task<Response<RegisterSupportIssueResponse>> Handle(
+            RegisterSupportIssueCommand request, CancellationToken cancellationToken)
         {
             var user = await _userRepository.GetByIdAsync(request.UserId);
 
