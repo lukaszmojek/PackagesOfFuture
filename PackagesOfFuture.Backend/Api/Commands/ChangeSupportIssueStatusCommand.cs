@@ -1,6 +1,4 @@
-﻿using Api.Controllers;
-using Contracts.Responses;
-using Data.Entities;
+﻿using Contracts.Responses;
 using MediatR;
 using ResourceEnums;
 

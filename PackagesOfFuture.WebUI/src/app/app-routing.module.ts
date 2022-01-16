@@ -1,17 +1,31 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { LoginComponent } from './shared/components/login/login.component'
+import { AuthGuard } from './auth/auth.guard'
+import { LoginComponent } from './components/login/login.component'
+import { RegisterUserComponent } from './components/register-user/register-user.component'
 
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: LoginComponent,
-    //TODO: Create LoginGuard
-    // canActivate: LoginGuard
   },
   {
-    path: 'client', 
-    loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterUserComponent
+  },
+  {
+    path: '',
+    canLoad: [AuthGuard],
+    loadChildren: () => import('./main.module').then(m => m.MainModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 ]
 

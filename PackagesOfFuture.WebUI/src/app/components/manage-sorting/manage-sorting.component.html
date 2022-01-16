@@ -1,0 +1,51 @@
+<table mat-table [dataSource]="sortings" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef class="sorting-id"> ID </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="sorting-name"> Nazwa </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="street">
+    <th mat-header-cell *matHeaderCellDef class="sorting-street"> Ulica </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.address.street}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="houseNumber">
+    <th mat-header-cell *matHeaderCellDef class="sorting-house"> Numer lokalu </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.address.houseAndFlatNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="postalCode">
+    <th mat-header-cell *matHeaderCellDef class="sorting-postal"> Kod pocztowy </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.address.postalCode}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef class="sorting-city"> Miasto </th>
+    <td mat-cell *matCellDef="let sorting"> {{sorting.address.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef class="sorting-actions"> Akcje </th>
+    <td mat-cell *matCellDef="let sorting"> 
+      <button mat-flat-button color="primary" class="change-details-button"
+        (click)="editSorting(sorting)"
+      >
+        Edytuj
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button mat-raised-button color="accent"
+  (click)="addSorting()"
+>
+  Dodaj sortownie
+</button>

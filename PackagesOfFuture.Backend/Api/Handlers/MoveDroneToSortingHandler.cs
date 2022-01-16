@@ -1,12 +1,10 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,15 +27,17 @@ namespace Api.Handlers
                 .Include(x => x.Sorting)
                 .FirstOrDefaultAsync(x => x.Id == request.DroneId, cancellationToken: cancellationToken);
             
-            if (drone.Sorting.Id == request.SortingId)
-            {
-                return ResponseFactory.CreateFailureResponse<MoveDroneToSortingResponse>(
-                    "Drone already exists in this sorting!");
-            }
+            //if (drone.Sorting.Id == request.SortingId)
+            //{
+            //    return ResponseFactory.CreateFailureResponse<MoveDroneToSortingResponse>(
+            //        "Drone already exists in this sorting!");
+            //}
 
             var sorting = await _dbContext.Set<Sorting>()
                 .FirstOrDefaultAsync(x => x.Id == request.SortingId, cancellationToken: cancellationToken);
             drone.Sorting = sorting;
+            drone.Range = request.Range;
+            drone.Model = request.Model;
 
             await _repository.SaveChangesAsync();
             

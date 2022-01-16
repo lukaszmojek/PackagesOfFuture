@@ -3,11 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Api.Commands;
 using Api.Factories;
-using AutoMapper;
 using Contracts.Responses;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers

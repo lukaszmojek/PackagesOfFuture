@@ -29,7 +29,8 @@ namespace Api.Auth;
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim("id", user.Id.ToString()), 
+                    new Claim("id", user.Id.ToString()),
+                    new Claim("name", user.FirstName), 
                     new Claim("role", user.Type.ToString())
                 }),
                 

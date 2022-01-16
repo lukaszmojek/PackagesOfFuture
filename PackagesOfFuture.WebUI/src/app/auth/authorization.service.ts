@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { IAuthState } from './auth.reducer';
 import { selectToken } from './auth.selectors';
 import jwtDecode from "jwt-decode";
-import { EMPTY, Observable, of } from 'rxjs';
 import { DecodedToken } from './decoded-token';
+import { RoleEnumType as RoleEnum } from '../models/enums';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,10 @@ export class AuthorizationService {
     return this._rawToken
   }
 
+  public get isAuthorized(): boolean {
+    return !!this._rawToken
+  }
+
   constructor(private store$: Store<{auth: IAuthState}>) {
     this.store$.select(selectToken).subscribe(token => {
       this._rawToken = token
@@ -24,16 +28,40 @@ export class AuthorizationService {
       if (!token) {
         return
       }
-      
+
       this._decodedToken = jwtDecode<DecodedToken>(token)
     })
   }
 
-  private role$(): Observable<string> {
+  public role(): string {
     if (!this._decodedToken) {
-      return EMPTY
+      return ''
     }
 
-    return of(this._decodedToken.role)
+    return this._decodedToken.role;
+  }
+
+  public isAdministrator(): boolean {
+    if (!this._decodedToken) {
+      return false
+    }
+
+    return this._decodedToken.role === RoleEnum.Administrator;
+  }
+
+  public currentUserId(): number {
+    if (!this._decodedToken) {
+      return 0
+    }
+
+    return this._decodedToken.id
+  }
+
+  public currentUserName(): string {
+    if (!this._decodedToken) {
+      return ''
+    }
+
+    return this._decodedToken.name
   }
 }

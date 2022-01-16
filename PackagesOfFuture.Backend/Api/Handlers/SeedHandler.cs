@@ -6,7 +6,7 @@ using Api.Commands;
 using Contracts.Responses;
 using Api.Factories;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using ResourceEnums;
 
@@ -15,7 +15,7 @@ namespace Api.Handlers
     public class SeedHandler : IRequestHandler<SeedCommand, Response<SeedResponse>>
     {
         private readonly IRepository<Package> _packageRepository;
-        private readonly IRepository<User> _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IRepository<Service> _serviceRepository;
         private readonly IRepository<Drone> _droneRepository;
         private readonly IRepository<Address> _addressRepository;
@@ -24,7 +24,16 @@ namespace Api.Handlers
         private readonly IRepository<Vehicle> _vehicleRepository;
         private readonly IRepository<Sorting> _sortingRepository;
 
-        public SeedHandler(IRepository<Package> packageRepository, IRepository<Service> serviceRepository, IRepository<Drone> droneRepository, IRepository<Address> addressRepository, IRepository<User> userRepository, IRepository<SupportIssue> supportIssueRepository, IRepository<Payment> paymentRepository, IRepository<Vehicle> vehicleRepository, IRepository<Sorting> sortingRepository)
+        public SeedHandler(
+            IRepository<Package> packageRepository, 
+            IRepository<Service> serviceRepository, 
+            IRepository<Drone> droneRepository, 
+            IRepository<Address> addressRepository, 
+            IUserRepository userRepository, 
+            IRepository<SupportIssue> supportIssueRepository,
+            IRepository<Payment> paymentRepository, 
+            IRepository<Vehicle> vehicleRepository, 
+            IRepository<Sorting> sortingRepository)
         {
             _packageRepository = packageRepository;
             _userRepository = userRepository;
@@ -45,8 +54,8 @@ namespace Api.Handlers
             }
             
             await SeedUsers();
-            await SeedAddresses();
-            await SeedPackages();
+            await SeedSortingWithDrones();
+            await SeedServices();
 
             return ResponseFactory.CreateSuccessResponse<SeedResponse>();
         }
@@ -147,7 +156,14 @@ namespace Api.Handlers
                     LastName = "Mojek",
                     Email = "lukasz@pof.com",
                     Password = "test123",
-                    Type = UserType.Administrator
+                    Type = UserType.Administrator,
+                    Address = new Address
+                    {
+                        City = "Mielec",
+                        HouseAndFlatNumber = "13/53",
+                        PostalCode = "39-300",
+                        Street = "Pisarka"
+                    }
                 },
                 new()
                 {
@@ -156,7 +172,14 @@ namespace Api.Handlers
                     LastName = "Blaszkiewicz",
                     Email = "dawid@pof.com",
                     Password = "test123",
-                    Type = UserType.Administrator
+                    Type = UserType.Administrator,
+                    Address = new Address
+                    {
+                        City = "Czarnocin",
+                        HouseAndFlatNumber = "77",
+                        PostalCode = "28-506",
+                        Street = "Kolosy"
+                    }
                 },
                 new()
                 {
@@ -165,7 +188,14 @@ namespace Api.Handlers
                     LastName = "Gaźnik",
                     Email = "zbych@pof.com",
                     Password = "test123",
-                    Type = UserType.Driver
+                    Type = UserType.Driver,
+                    Address = new Address
+                    {
+                        City = "Podwawelska",
+                        HouseAndFlatNumber = "130c",
+                        PostalCode = "14-540",
+                        Street = "Proszowice"
+                    }
                 },
                 new()
                 {
@@ -174,7 +204,15 @@ namespace Api.Handlers
                     LastName = "Znajdek",
                     Email = "marysia@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Krzyzowa",
+                        HouseAndFlatNumber = "123",
+                        PostalCode = "42-135",
+                        Street = "Kazimierza Wielka"
+                    }
+
                 },
                 new()
                 {
@@ -183,7 +221,14 @@ namespace Api.Handlers
                     LastName = "Kiełbasa",
                     Email = "adam@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Woronicza",
+                        HouseAndFlatNumber = "32",
+                        PostalCode = "55-214",
+                        Street = "Kraków"
+                    }
                 },
                 new()
                 {
@@ -192,7 +237,62 @@ namespace Api.Handlers
                     LastName = "Długowłosy",
                     Email = "tomasz@email.com",
                     Password = "test123",
-                    Type = UserType.Client
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Wiślana",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Stalowa Wola"
+                    }
+                },
+                new()
+                {
+                    Id = 7,
+                    FirstName = "Marek",
+                    LastName = "Siwizna",
+                    Email = "marek@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Skawina",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Rusznikarska"
+                    }
+                },
+                new()
+                {
+                    Id = 8,
+                    FirstName = "Jan",
+                    LastName = "Paliwo",
+                    Email = "jan@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Warszawa",
+                        HouseAndFlatNumber = "500",
+                        PostalCode = "44-229",
+                        Street = "Tęczowa"
+                    }
+                },
+                new()
+                {
+                    Id = 9,
+                    FirstName = "Monika",
+                    LastName = "Małecka",
+                    Email = "monia123@email.com",
+                    Password = "test123",
+                    Type = UserType.Client,
+                    Address = new Address
+                    {
+                        City = "Lublin",
+                        HouseAndFlatNumber = "3/12",
+                        PostalCode = "34-523",
+                        Street = "Postępu"
+                    }
                 },
             };
             
@@ -201,77 +301,135 @@ namespace Api.Handlers
             Console.WriteLine("Users seeded");
         }
         
-        private async Task SeedAddresses()
+        private async Task SeedServices()
         {
-            var addresses = new List<Address>
+            var services = new List<Service>
             {
-                new()
+                new Service
                 {
                     Id = 1,
-                    City = "Mielec",
-                    HouseAndFlatNumber = "12/3",
-                    Street = "Osla laka",
-                    PostalCode = "30-123"
+                    Name = "Standard",
+                    Description = "Standardowa dostawa",
+                    Price = 10,
                 },
-                new()
+                new Service
                 {
                     Id = 2,
-                    City = "Kraków",
-                    HouseAndFlatNumber = "2",
-                    Street = "Myślenicka",
-                    PostalCode = "30-144"
+                    Name = "Express",
+                    Description = "Dostawa w 1 dzień roboczy",
+                    Price = 15,
                 },
-                new()
+                new Service
                 {
                     Id = 3,
-                    City = "Wilcza",
-                    HouseAndFlatNumber = "73",
-                    Street = "-",
-                    PostalCode = "69-420"
-                }
-            };
-            
-            await _addressRepository.AddRangeAsync(addresses);
-            await _addressRepository.SaveChangesAsync();
-            Console.WriteLine("Addresses seeded");
-        }
-        
-        private async Task SeedPackages()
-        {
-            var packages = new List<Package>
-            {
-                new() {
-                    Id = 1,
-                    DeliveryDate = DateTime.Now,
-                    Status = PackageStatus.Delivered,
-                    Width = 12,
-                    Height = 12,
-                    Length = 12,
-                    Weight = 30,
-                    DeliveryAddressId = 1,
-                    ReceiveAddressId = 2,
-                    Payment = new Payment
-                    {
-                        Status = PaymentStatus.InProgress,
-                        Amount = 12.34
-                    },
-                    Sorting = new Sorting
-                    {
-                        Name = "Zakliczyn",
-                        AddressId = 2,
-                    },
-                    Service = new Service
-                    {
-                        Name = "Dostawa dronem",
-                        Description = "Dostawa z użyciem drona w ciągu 1h",
-                        Price = 100,
-                    }
+                    Name = "Weekend",
+                    Description = "Dostawa w weekend",
+                    Price = 20,
+                },
+                new Service
+                {
+                    Id = 4,
+                    Name = "Dostawa dronem",
+                    Description = "Dostawa z użyciem drona w ciągu 1h",
+                    Price = 100,
                 }
             };
 
-            await _packageRepository.AddRangeAsync(packages);
-            await _packageRepository.SaveChangesAsync();
-            Console.WriteLine("Packages seeded");
+            await _serviceRepository.AddRangeAsync(services);
+            await _serviceRepository.SaveChangesAsync();
+            Console.WriteLine("Services seeded");
+        }
+
+        private async Task SeedSortingWithDrones()
+        {
+            var addressSorting1 = new Address
+            {
+                City = "Kraków",
+                HouseAndFlatNumber = "12",
+                PostalCode = "22-420",
+                Street = "Warszawska"
+            };
+
+            var addressSorting2 = new Address
+            {
+                City = "Katowice",
+                HouseAndFlatNumber = "210",
+                PostalCode = "12-592",
+                Street = "Kolejowa"
+            };
+
+            var addressSorting3 = new Address
+            {
+                City = "Warszawa",
+                HouseAndFlatNumber = "553",
+                PostalCode = "44-200",
+                Street = "Potocka"
+            };
+
+            await _addressRepository.AddAsync(addressSorting1);
+            await _addressRepository.AddAsync(addressSorting2);
+            await _addressRepository.SaveChangesAsync();
+
+            var sorting1 = new Sorting
+            {
+                Name = "Sortownia Kraków",
+                Address = addressSorting1
+            };
+
+            var sorting2 = new Sorting
+            {
+                Name = "Sortownia Katowice",
+                Address = addressSorting2
+            };
+
+            var sorting3 = new Sorting
+            {
+                Name = "Sortownia Warszawa",
+                Address = addressSorting3
+            };
+
+            var drones = new List<Drone>
+            {
+                new Drone
+                {
+                    Model = "Sony Speed 2",
+                    Range = 100,
+                    Sorting = sorting1
+                },
+                new Drone
+                {
+                    Model = "Xioami Water",
+                    Range = 44,
+                    Sorting = sorting2
+                },
+                new Drone
+                {
+                    Model = "Samsung GT",
+                    Range = 50,
+                    Sorting = sorting1
+                },
+                new Drone
+                {
+                    Model = "Honda 2022",
+                    Range = 110,
+                    Sorting = sorting2
+                },
+                new Drone
+                {
+                    Model = "Logitech G603",
+                    Range = 110,
+                    Sorting = sorting3
+                }
+            };
+
+            await _sortingRepository.AddAsync(sorting1);
+            await _sortingRepository.AddAsync(sorting2);
+
+            await _droneRepository.AddRangeAsync(drones);
+
+            await _sortingRepository.SaveChangesAsync();
+            await _droneRepository.SaveChangesAsync();
+            Console.WriteLine("Sorting with drones seeded");
         }
     }
 }

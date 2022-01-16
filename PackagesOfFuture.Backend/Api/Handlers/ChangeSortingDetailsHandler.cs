@@ -5,7 +5,7 @@ using Api.Factories;
 using AutoMapper;
 using Contracts.Responses;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

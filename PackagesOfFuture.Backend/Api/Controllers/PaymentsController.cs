@@ -44,7 +44,7 @@ public class PaymentsController : ControllerBase
     /// <returns>Nothing. Query GetPayments for current database status</returns>
     /// <response code="204">When payment status was changed</response>
     /// <response code="400">When error regarding input occurred</response>
-    [HttpPost("change-status/{id}")]
+    [HttpPost("change-status")]
     public async Task<IActionResult> ChangePaymentStatus([FromBody] ChangePaymentStatusDto changePaymentStatus)
     {
         var command = _mapper.Map<ChangePaymentStatusCommand>(changePaymentStatus);

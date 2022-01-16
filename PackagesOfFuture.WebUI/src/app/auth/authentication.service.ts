@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppSettings } from '../common/appsettings';
+import { AuthActions } from './auth.actions';
+import { IAuthState } from './auth.reducer';
 import { IApiResponse, ITokenResponse } from './models';
 
 @Injectable({
@@ -11,11 +14,21 @@ import { IApiResponse, ITokenResponse } from './models';
 export class AuthenticationService {
   private readonly localStorageTokenKey = 'pof_token_key'
 
-  public get tokenEntryExistsInLocalStorage(): boolean {
-    return !!localStorage.getItem(this.localStorageTokenKey)
+  private get tokenEntryExistsInLocalStorage(): boolean {
+    return !!this.tokenFromLocalStorage
   }
 
-  constructor(private http: HttpClient) { }
+  private get tokenFromLocalStorage(): string | null {
+    return localStorage.getItem(this.localStorageTokenKey)
+  }
+
+  constructor(private store$: Store<{auth: IAuthState}>, private http: HttpClient) {
+    if (this.tokenEntryExistsInLocalStorage) {
+      this.store$.dispatch(
+        AuthActions.logInSuccess({token: this.tokenFromLocalStorage!})
+      )
+    }
+  }
 
   public logIn$(email: string, password: string): Observable<IApiResponse<ITokenResponse>> {
     const request = {
@@ -23,18 +36,19 @@ export class AuthenticationService {
       password: password
     }
 
-    return this.http.post<IApiResponse<ITokenResponse>>(AppSettings.authEndpoint, request).pipe(
-      tap(tokenResponse => {
-        localStorage.setItem(this.localStorageTokenKey, tokenResponse.content.token)
-      })
+    return this.http
+      .post<IApiResponse<ITokenResponse>>(AppSettings.authEndpoint, request)
+      .pipe(
+        tap(tokenResponse => {
+          localStorage.setItem(this.localStorageTokenKey, tokenResponse.content.token)
+        })
     )
   }
 
   public logOut$(): Observable<any> {
     localStorage.removeItem(this.localStorageTokenKey)
     
-    //TODO: Think how to change that to different observable,
-    //TODO: there might be something more appropiate to use here
     return of('')
   }
 }
+

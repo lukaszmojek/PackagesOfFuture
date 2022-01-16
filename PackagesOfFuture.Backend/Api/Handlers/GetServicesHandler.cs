@@ -5,7 +5,7 @@ using Api.Queries;
 using AutoMapper;
 using Contracts.Dtos;
 using Data.Entities;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers

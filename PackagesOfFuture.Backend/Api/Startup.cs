@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using Api.Auth;
 using Api.Configuration;
-using Api.Helpers;
 using Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

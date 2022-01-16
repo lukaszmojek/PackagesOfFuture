@@ -1,0 +1,75 @@
+<mat-card class="dashboard">
+  <div class="dashboard-row">
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'changeUserDetails', userId]"
+    >
+      Edytuj profil
+    </button>
+  
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'changePassword']"
+    >
+      Zmień hasło
+    </button>
+  </div>
+
+  <div class="dashboard-row">
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'addPackage']"
+    >
+      Nadaj paczkę
+    </button>
+  
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'packageList']"
+    >
+      Lista przesyłek
+    </button>
+  </div>
+  
+  <!-- Admin only below -->
+  
+  <div *ngIf="isAdministrator" class="dashboard-row">
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'addUser']"
+    >
+      Dodaj użytkownika
+    </button>
+
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'listUsers']"
+    >
+      Zarządzaj użytkownikami
+    </button>
+  </div>
+
+  <div *ngIf="isAdministrator" class="dashboard-row">
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'manageDrones']"
+    >
+      Zarządzaj dronami
+    </button>
+
+    <button mat-flat-button 
+      color="accent" 
+      class="menu-item" 
+      [routerLink]="['..', 'manageSorting']"
+    >
+      Zarządzaj sortowniami
+    </button>
+  </div>
+</mat-card>

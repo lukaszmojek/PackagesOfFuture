@@ -6,18 +6,17 @@ using Contracts.Responses;
 using Api.Factories;
 using AutoMapper;
 using Data.Entities;
-using Infrastructure;
-using Infrastructure.Interfaces;
+using Infrastructure.Repositories;
 using MediatR;
 
 namespace Api.Handlers
 {
     public class RegisterUserHandler : IRequestHandler<RegisterUserCommand, Response<RegisterUserResponse>>
     {
-        private readonly IRepository<User> _repository;
+        private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
         
-        public RegisterUserHandler(IRepository<User> repository, IMapper mapper)
+        public RegisterUserHandler(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -32,6 +31,8 @@ namespace Api.Handlers
             {
                 return ResponseFactory.CreateFailureResponse<RegisterUserResponse>("Mail już znajduje się w bazie!");
             }
+
+            user.Id = usersInDatabase.Max(x => x.Id) + 1;
             
             await _repository.AddAsync(user);
             await _repository.SaveChangesAsync();

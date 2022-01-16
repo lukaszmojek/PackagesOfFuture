@@ -1,0 +1,35 @@
+<h1 *ngIf="!editMode" mat-dialog-title>Dodaj sortownie</h1>
+<h1 *ngIf="editMode" mat-dialog-title>Edytuj sortownie</h1>
+
+<form [formGroup]="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Nazwa sortowni</mat-label>
+        <input formControlName="name" matInput [(ngModel)]="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Ulica</mat-label>
+        <input formControlName="street" matInput [(ngModel)]="street">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Numer lokalu</mat-label>
+        <input formControlName="houseNumber" matInput [(ngModel)]="houseNumber">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Kod pocztowy</mat-label>
+        <input formControlName="postalCode" matInput [(ngModel)]="postalCode">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Miasto</mat-label>
+        <input formControlName="city" matInput [(ngModel)]="city">
+    </mat-form-field>
+</form>
+
+<div mat-dialog-actions>
+    <button mat-flat-button color="accent" *ngIf="!editMode" [disabled]="form.invalid" [mat-dialog-close]="getAddSortingData()" cdkFocusInitial>Utwórz</button>
+    <button mat-flat-button color="accent" *ngIf="editMode" [disabled]="!canEdit()" [mat-dialog-close]="getChangeSortingData()" cdkFocusInitial>Edytuj</button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="0" cdkFocusInitial>Anuluj</button>
+</div>
